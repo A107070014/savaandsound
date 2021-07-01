@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: space-between;
     height: 100px;
+    border:2px solid #000;
 }
 .text{
     background: #3b1e1e;
@@ -16,26 +17,80 @@
     align-items: center;
     justify-content: center;
     /* padding: 10px; */
-    margin-left: 50px;
+    margin-left: 200px;
+}
+.signupin{
+    color:#d9a200;
+    font-size:20px;
+}
+.logo{
+    display:inline;
+    padding: 5px;
+}
+.logoname{
+    color:#d9a200;
+    font-size:30px;
+    letter-spacing: 5px;
+}
+a{
+    text-decoration:none;
+    vertical-align: middle;
+}
+.search{
+    margin-left:10px;
+
+}
+
+.searchbox{
+    width:35em;
+    height:2.5em;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.searchbutton{
+    width:5em;
+    height:2.5em;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+.searchicon{
+    margin-top:3.5px;
 }
 .btn{
     /* padding: 10px; */
     margin: 50px;
-    background: white;
+    background: #3b1e1e;
     padding: 20px;
 }
-.logo{
-    /* padding-left: 10px;
-    padding-right: 10px; */
-    padding: 10px 20px 0 100px; /*上右下左*/   
-}
-.logoname{
-    color:#d9a200;
-}
 .left{
-    background: violet;
+    background: #ceb195;
     float: left;
-    width: 30%;
+    width: 20%;
     height: calc(100vh - 100px);
+    border:2px solid #000;
+}
+.cate{
+    font-size: 25px;
+    border-bottom:2px solid #000;
+    padding:10px 0px 10px 30px;
+}
+.catetitle{
+    font-size: 20px;
+    color:#fff;
+    padding:10px 0px 10px 30px;
+}
+.right{
+    background: #fff;
+    float: right;
+    width: 80%;
+    height: calc(100vh - 100px);
+}
+.postheader{
+    border-bottom:2px solid #000;
+    padding:30px 0px 10px 35px;
+}
+.posttitle{
+    font-size:20px;
+    
 }
 
