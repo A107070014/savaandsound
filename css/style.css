@@ -23,6 +23,11 @@
     color:#d9a200;
     font-size:20px;
 }
+.signupin:hover{
+    border-style:solid;
+    border-radius: 5px;
+    padding:5px;
+}
 .logo{
     display:inline;
     padding: 5px;
@@ -36,6 +41,7 @@ a{
     text-decoration:none;
     vertical-align: middle;
 }
+
 .search{
     margin-left:10px;
 
@@ -46,12 +52,14 @@ a{
     height:2.5em;
     border-radius: 10px;
     vertical-align: middle;
+    border:0px solid #d9a200;
 }
 .searchbutton{
     width:5em;
     height:2.5em;
     border-radius: 10px;
     vertical-align: middle;
+    border:0px solid #d9a200;
 }
 .searchicon{
     margin-top:3.5px;
@@ -76,8 +84,13 @@ a{
 }
 .catetitle{
     font-size: 20px;
-    color:#fff;
+    color:rgb(0, 0, 0);
     padding:10px 0px 10px 30px;
+}
+.catetitle:hover{
+    background: #3b1e1e;
+    color:#fff;
+    
 }
 .right{
     background: #fff;
@@ -88,9 +101,21 @@ a{
 .postheader{
     border-bottom:2px solid #000;
     padding:30px 0px 10px 35px;
+    
+}
+.posthead{
+    display: flex;
+}
+.postnumber{
+    width:30px;
 }
 .posttitle{
-    font-size:20px;
-    
+    width:400px;
+}
+.publisher{
+    width:400px;
+}
+.postdate{
+    width:250px;
 }
 
