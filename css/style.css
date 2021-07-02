@@ -3,12 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+.body{
+    font-family: 'Noto Sans TC', sans-serif;
+}
 .header{
     background:#3b1e1e;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height:100px;
     border:2px solid #000;
 }
 .text{
@@ -18,10 +21,12 @@
     justify-content: center;
     /* padding: 10px; */
     margin-left: 200px;
+    height:100px;
 }
 .signupin{
     color:#d9a200;
     font-size:20px;
+    height:100px;
 }
 .signupin:hover{
     border-style:solid;
@@ -65,10 +70,8 @@ a{
     margin-top:3.5px;
 }
 .btn{
-    /* padding: 10px; */
-    margin: 50px;
+    margin-right: 50px;
     background: #3b1e1e;
-    padding: 20px;
 }
 .left{
     background: #ceb195;
