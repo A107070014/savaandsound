@@ -11,8 +11,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height:100px;
     border:2px solid #000;
+    
+}
+a{
+    text-decoration:none;
+    vertical-align: middle;
 }
 .text{
     background: #3b1e1e;
@@ -21,35 +25,25 @@
     justify-content: center;
     /* padding: 10px; */
     margin-left: 200px;
-    height:100px;
-}
-.signupin{
-    color:#d9a200;
-    font-size:20px;
-    height:100px;
-}
-.signupin:hover{
-    border-style:solid;
-    border-radius: 5px;
-    padding:5px;
+    white-space: nowrap;
 }
 .logo{
-    display:inline;
-    padding: 5px;
+    white-space: nowrap;
+    display: inline;
 }
+
 .logoname{
     color:#d9a200;
-    font-size:30px;
+    font-size:25px;
     letter-spacing: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    white-space: nowrap;
+    display: inline;
 }
-a{
-    text-decoration:none;
-    vertical-align: middle;
-}
-
 .search{
     margin-left:10px;
-
+    white-space: nowrap;
 }
 
 .searchbox{
@@ -72,6 +66,16 @@ a{
 .btn{
     margin-right: 50px;
     background: #3b1e1e;
+}
+.signupin{
+    color:#d9a200;
+    font-size:20px;
+    
+}
+.signupin:hover{
+    border-style:solid;
+    border-radius: 5px;
+    padding:5px;
 }
 .left{
     background: #ceb195;
