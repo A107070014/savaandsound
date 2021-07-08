@@ -17,7 +17,7 @@
 a{
     text-decoration:none;
     vertical-align: middle;
-    
+    color:#d9a200;
 }
 
 .text{
@@ -95,7 +95,6 @@ a{
     height: 74%;
     width:25%;
     padding:30px;
-    
 }
 .dialog>.close{
     position: absolute;
@@ -284,33 +283,34 @@ a{
     margin-left: 30px;
     
 }
-
+#tool:hover{
+    color:#e6ad03;
+}
 .another{
     position: fixed;
-    top:70px;
+    top:50px;
     left:93%;
     transform:translate(-120px,0px);
-    width:145px;
+    width:200px;
     padding:10px;
     border:none;
-    border-radius: 10px 0px 10px 10px;
-    border-top-right-radius: ;
-    background-color: #ceb195;
-    /*display:none;*/
+    border-radius: 10px;
+    background-color: #3b1e1ee8;
+    display:none;
     text-align: center;
 }
-
 ul{
     list-style-type:none;
     font-size: 20px;
+    
 }
 li{
     margin-bottom:7px;
     margin-top:7px;
+    padding:7px;
+    
 }
 li:hover{
     background: #3b1e1e;
-    color:#d9a200;
-
+    border-radius: 10px;
 }
-
