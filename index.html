@@ -6,20 +6,35 @@
 <meta name="theme-color" content="#3B1E1E">
 <meta name="supported-color-schemes" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" >
-<link href="css/style.css" type="text/css" rel="stylesheet" >
+<link href="../css/style.css" type="text/css" rel="stylesheet" >
 <title>留聲跡</title>
-<link rel="icon" href="img/logo.png" type="image/x-icon">
+<link rel="icon" href="../img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+
+<script>
+    var dialog;
+    window.onload=function(){
+        dialog=document.getElementById("dialog");
+    }
+    function showdialog(){
+        dialog.style.display="block";
+    }
+    function closedialog(){
+        dialog.style.display="none";
+    }
+</script>
+
 </head>
 <body>
 <div id="wholepage">
+    <!--標題列-->
     <div class="header">
         <div class="text">
             <div>
                 <div class="logo">
                     <a title="留聲跡" href="">
-                        <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
+                        <img src="../img/logo.png" alt="留聲跡" width="50" height="50" >
                     </a>
                 </div>
                 <div class="logoname">
@@ -31,7 +46,7 @@
             <div class="search">
                 <div class="key">
                     <form action="">
-                        <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox"/>
+                        <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50"/>
                         <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="searchicon" height="75%">
                                 <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path>
@@ -40,13 +55,12 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <div>
-            <a class="btn" title="註冊/登入" role="button" href="">
-                <b><span class="signupin">註冊/登入</span></b>
-            </a>
+            <div class="btn">
+                <button onclick="showdialog();" class="signupin" style="cursor: pointer;">註冊/登入</button>
+            </div>
         </div>
     </div>
+    <!--分類欄-->
     <div class="left">
         <div class="space">
             <div class="cate">分類</div>
@@ -79,6 +93,7 @@
             </div>
         </div>
     </div>
+    <!--聲音故事欄-->
     <div class="right">
         <div class="space">
             <div class="postheader">
@@ -113,5 +128,100 @@
             </div>
         </div>        
     </div>
-</div>    
+</div>
+<div id="dialog" class="dialog">
+    <div class="close">
+        <img src="../img/close1.png" width="15px" height="15px" onclick="closedialog();"
+        onmouseover="this.src='../img/close2.png'"
+        onmouseout="this.src='../img/close1.png'"/>
+    </div> 
+    <div class="la">
+    <h1 class="login-acount" id="login" style="font-size: 25px;">登入你的帳號</h1>
+    </div>
+    <div class="use-google-login">
+        <button class="google-account-login-button" type="button">
+            <span class="TcNIhA">
+                <span aria-hidden="true" class="NA_Img dkWypw">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" style="float: left;">
+                        <g fill="none" fill-rule="evenodd">
+                            <path d="M20.64 12.2c0-.63-.06-1.25-.16-1.84H12v3.49h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92a8.78 8.78 0 0 0 2.68-6.62z" fill="#4285F4">
+                            </path>
+                            <path d="M12 21a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.4 5.4 0 0 1-8.09-2.85h-3v2.33A9 9 0 0 0 12 21z" fill="#34A853">
+                            </path>
+                            <path d="M6.96 13.71a5.41 5.41 0 0 1 0-3.42V7.96h-3a9 9 0 0 0 0 8.08l3-2.33z" fill="#FBBC05">
+                            </path>
+                            <path d="M12 6.58c1.32 0 2.5.45 3.44 1.35l2.58-2.59A9 9 0 0 0 3.96 7.95l3 2.34A5.36 5.36 0 0 1 12 6.58z" fill="#EA4335">
+                            </path>
+                        </g>
+                    </svg>
+                </span>
+            </span>
+            <span class="use-google-acount-login">使用 Google 帳號登入</span>
+        </button>
+    </div>
+    <div class="use-facebook-login">
+        <button class="facebook-account-login-button" type="button">
+            <span class="TcNIhA">
+                <span aria-hidden="true" class="NA_Img dkWypw hMrffw">
+                    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" style="float: left;">
+                        <path d="M21.5 12.058c0-5.28-4.253-9.558-9.5-9.558s-9.5 4.279-9.5 9.558c0 4.771 3.473 8.725 8.016 9.442v-6.68H8.104v-2.762h2.412V9.952c0-2.395 1.417-3.718 3.588-3.718 1.04 0 2.126.186 2.126.186v2.352h-1.198c-1.18 0-1.548.738-1.548 1.494v1.792h2.635l-.421 2.763h-2.214V21.5c4.543-.717 8.016-4.67 8.016-9.442z" fill="currentColor">
+                        </path>
+                    </svg>
+                </span>
+            </span>
+            <span class="use-facebook-acount-login">使用 Facebook 帳號登入
+            </span>
+        </button>
+    </div>
+    <div class="Separate">
+        <hr class="Divider">
+        <span class="or">或</span>
+        <hr class="Divider">
+    </div>
+    <div class="b1">
+        <form method="post" class="b2" aria-labelledby="b3">
+            <div class="b4">
+                <label for="b5" id="b6">
+                    <p class="b7" >電子郵件地址/行動裝置號碼</p>
+                </label>
+                <div>
+                    <div class="b8">
+                        <div class="b9">
+                            <div class="b10">
+                                <input id="b5" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email" required="" placeholder="電子郵件地址或行動裝置號碼" name="email" aria-required="true" aria-labelledby="b6" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="b12">
+                <label for="b13" id="b14">
+                    <p class="b15">密碼</p>
+                </label>
+                <div class="b16" >
+                        <div class="b17">
+                            <input id="b13" class="b11" type="password" autocomplete="current-password" required="" placeholder="••••••••••••" name="password" aria-required="true" value="" >
+                        </div>
+                        <div class="b18">
+                            <button id="b13" class="b19" disabled="" type="button" aria-label="顯示密碼" style="cursor: pointer;">
+                                <img src="../img/visibility.png" width="10" height="10">
+                            </button>
+                        </div>
+                </div>
+            </div>
+                <button class="b21" type="submit">
+                    <b><span class="b22">登入</span></b>
+                </button>
+        </form>
+    </div>
+    
+    <a class="b23" href="" draggable="false"><!--忘記密碼連記得放-->
+        <span class="b24">忘記密碼嗎？</span>
+    </a>
+    <div></div>
+    <p class="b25">第一次使用 留聲跡 嗎？
+        <a class="b26" href="" draggable="false">立即註冊</a><!--忘記密碼連記得放-->
+    </p>
+</div>
+</body>
 </html>
