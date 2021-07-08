@@ -12,16 +12,6 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-<script>
-   function toggleMenu(){
-       var menu = document.getElementById("another");
-       if(another.style.display=="none"){
-           menu.style.display="block";
-       }else{
-        menu.style.display="none";
-       }
-   }
-</script>
 </head>
 <body >
 <div>
@@ -67,21 +57,21 @@
                 <div>
                     <a id="tool" class="inform" title="通知" role="button" href="">通知</a>
                 </div> 
-                <div id="tool">
-                    <div onclick="toggleMenu()">
+                <div id="tool" class="icon">
+                    <div class="icon">
                         <img src="img/another1.png" alt="其他" width="25" height="26" style="cursor: pointer;" 
                             onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
-                        <div id="another" class="another">
-                            <ul>
-                                <a href="" title="關於我們"><li>關於我們</li></a>
-                                <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                                <a href="" title="募資平台"><li>募資平台</li></a>
-                                <a href="" title="設定"><li>設定</li></a>
-                                <a href="" title="登出"><li>登出</li></a>
-                            </ul>
-                        </div>
+                            <div id="another" class="another">
+                                <ul>
+                                    <a href="" title="關於我們"><li>關於我們</li></a>
+                                    <a href="" title="聯絡我們"><li>聯絡我們</li></a>
+                                    <a href="" title="募資平台"><li>募資平台</li></a>
+                                    <a href="" title="設定"><li>設定</li></a>
+                                    <a href="" title="登出"><li>登出</li></a>
+                                </ul>
+                            </div>
                     </div>
-                </div>
+                 </div>
             </div>
         </div>
     </div>
