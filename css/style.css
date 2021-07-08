@@ -17,8 +17,9 @@
 a{
     text-decoration:none;
     vertical-align: middle;
-    color:rgb(0, 0, 0);
+    
 }
+
 .text{
     background: #3b1e1e;
     display: flex;
