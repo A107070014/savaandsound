@@ -487,6 +487,7 @@ li:hover{
     border-radius: 10px;
     background-color: #fff;
     display:none;
+    z-index:1002;
 }
 .article>.close{
     position: absolute;
