@@ -5,6 +5,7 @@
 }
 .body{
     font-family: 'Noto Sans TC', sans-serif;
+    
 }
 .header{
     background:#3b1e1e;
@@ -12,11 +13,11 @@
     align-items: center;
     justify-content: space-between;
     border:2px solid #000;
-    
 }
 a{
     text-decoration:none;
     vertical-align: middle;
+    color:rgb(0, 0, 0);
 }
 .text{
     background: #3b1e1e;
@@ -47,7 +48,6 @@ a{
 }
 
 .searchbox{
-    width:35em;
     height:2.5em;
     border-radius: 10px;
     vertical-align: middle;
@@ -63,26 +63,167 @@ a{
 .searchicon{
     margin-top:3.5px;
 }
-.btn{
-    margin-right: 50px;
-    background: #3b1e1e;
-}
 .signupin{
+    margin-left: 550px;
     color:#d9a200;
+    background: #3b1e1e;
     font-size:20px;
-    
+    font-weight: bold;
+    white-space: nowrap;
+    border:none;
 }
 .signupin:hover{
     border-style:solid;
     border-radius: 5px;
-    padding:5px;
+    border-color: #d9a200;
+    padding: 5px 5px;
 }
+
+/* 註冊/登入 */
+.dialog{
+    position: fixed;
+    top:100px;
+    left:45%;
+    transform:translate(-120px,0px);
+    width:240px;
+    padding:10px;
+    border:1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display:none;
+    height: 74%;
+    width:25%;
+    padding:30px;
+    
+}
+.dialog>.close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.use-google-login{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.google-account-login-button{
+    height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+}
+.google-account-login-button:hover{
+    background: rgb(211, 210, 210);
+}
+.use-google-acount-login{
+    text-align:center;
+    display: block;
+    padding-top: 3px;
+    white-space: nowrap;
+}
+.facebook-account-login-button{
+    height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+}
+.facebook-account-login-button:hover{
+    background: rgb(211, 210, 210);
+}
+.use-facebook-acount-login{
+    text-align:center;
+    display: block;
+    padding-top: 3px;
+    white-space: nowrap;
+}
+.Separate{
+    display:flex;
+    margin:20px;
+    color:#eee;
+
+}
+.Divider{
+    width:50%;
+    border: 1px solid #eee;
+    height: 0px;
+    background-color: #eee;
+    margin-top: 10px;
+}
+.b7{
+    white-space: nowrap;
+    font-size: 14px;
+    margin-bottom:3px;
+}
+.b11{
+    width:100%;
+    height:40px;
+    border-radius: 5px;
+    border:1.5px solid #eee;
+    padding-left: 15px;
+    outline-color:#d9a200;
+}
+.b11:hover{
+    border:1.5px solid #d9a200;
+    border-radius: 5px;
+}
+.b12{
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+.b15{
+    white-space: nowrap;
+    font-size: 14px;
+    margin-bottom:3px;
+}
+/*
+.b16{
+    display: flex;
+}
+*/
+.b21{
+    width:100%;
+    height:40px;
+    border-radius: 5px;
+    border:none;
+    background: #d9a200;
+    cursor: pointer;
+    color:#fff;
+    margin-bottom: 10px;
+    
+}
+.b21:hover{
+    background: #e6ad03;
+}
+.b22{
+    cursor: pointer;
+    
+}
+.b1{
+    margin-bottom: 10px;
+}
+.b24{
+    font-size: 12px;
+    line-height: 25px;
+}
+.b25{
+    font-size: 12px;
+}
+.b26{
+    font-size: 12px;
+    vertical-align: top;
+}
+
 .left{
     background: #ceb195;
     float: left;
     width: 20%;
     height: calc(100vh - 100px);
     border:2px solid #000;
+    
 }
 .cate{
     font-size: 25px;
@@ -104,25 +245,71 @@ a{
     float: right;
     width: 80%;
     height: calc(100vh - 100px);
+    
 }
 .postheader{
     border-bottom:2px solid #000;
-    padding:30px 0px 10px 35px;
     
 }
 .posthead{
     display: flex;
 }
 .postnumber{
-    width:30px;
+    width:
 }
 .posttitle{
-    width:400px;
+    width:
 }
 .publisher{
-    width:400px;
+    width:
 }
 .postdate{
-    width:250px;
+    width:
+}
+.posttime{
+    width:
+}
+
+/*已登入首頁home2*/
+.tool{
+    display: flex;
+    margin-left: 240px;
+    padding-top: 3px;
+}
+#tool{
+    color:#d9a200;
+    font-size:20px;
+    font-weight:bold;
+    margin-left: 30px;
+    
+}
+
+.another{
+    position: fixed;
+    top:70px;
+    left:93%;
+    transform:translate(-120px,0px);
+    width:145px;
+    padding:10px;
+    border:none;
+    border-radius: 10px 0px 10px 10px;
+    border-top-right-radius: ;
+    background-color: #ceb195;
+    /*display:none;*/
+    text-align: center;
+}
+
+ul{
+    list-style-type:none;
+    font-size: 20px;
+}
+li{
+    margin-bottom:7px;
+    margin-top:7px;
+}
+li:hover{
+    background: #3b1e1e;
+    color:#d9a200;
+
 }
 
