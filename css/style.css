@@ -86,14 +86,12 @@ a{
     top:100px;
     left:45%;
     transform:translate(-120px,0px);
-    width:240px;
-    padding:10px;
+    width:400px;
     border:1px solid #000;
     border-radius: 10px;
     background-color: #fff;
     display:none;
-    height: 74%;
-    width:25%;
+    height: 35em;
     padding:30px;
 }
 .dialog>.close{
@@ -313,4 +311,52 @@ li{
 li:hover{
     background: #3b1e1e;
     border-radius: 10px;
+}
+
+/*發文*/
+.article{
+    position: fixed;
+    top:100px;
+    left:45%;
+    transform:translate(-185px,0px);
+    width:600px;
+    padding:30px;
+    border:1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display:none;
+}
+.article>.close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.classification{
+    border-radius: 5px;
+    border:1.5px solid #eee;
+}
+textarea{
+    border-radius: 5px;
+    border:1.5px solid #eee;
+    padding-left: 10px;
+    padding-top: 5px;
+    outline-color:#d9a200;
+}
+textarea:hover{
+    border:1.5px solid #d9a200;
+    border-radius: 5px;
+}
+.publish{
+    border-radius: 5px;
+    border:2px solid #3b1e1e;
+    background: #ceb195;
+    color:#3b1e1e;
+    padding:5px 10px;
+    float: right;
+    font-weight:bold;
+    cursor: pointer;
+}
+.publish:hover{
+    background: #ceb195dc;
 }

@@ -6,10 +6,10 @@
 <meta name="theme-color" content="#3B1E1E"/>
 <meta name="supported-color-schemes" content="light"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<link rel="stylesheet" href="css/style.css" type="text/css">
-<link rel="stylesheet" href="css/tags.css" type="text/css">
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<link rel="stylesheet" href="../css/tags.css" type="text/css">
 <title>留聲跡</title>
-<link rel="icon" href="img/logo.png" type="image/x-icon">
+<link rel="icon" href="../img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 <script>
@@ -22,6 +22,18 @@
        }
    }
 </script>
+<script>
+    var article;
+    window.onload=function(){
+        article=document.getElementById("article");
+    }
+    function showarticle(){
+        article.style.display="block";
+    }
+    function closearticle(){
+        article.style.display="none";
+    }
+</script>
 </head>
 <body >
 <div >
@@ -30,7 +42,7 @@
             <div>
                 <div class="logo">
                     <a title="留聲跡" href="">
-                        <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
+                        <img src="../img/logo.png" alt="留聲跡" width="50" height="50" >
                     </a>
                 </div>
                 <div class="logoname">
@@ -53,7 +65,7 @@
             </div>
             <div class="tool">
                 <div>
-                    <a id="tool" class="postw" title="發文" role="button" href="">發文</a>
+                    <button id="tool" class="postw" title="發文" onclick="showarticle()" style="cursor: pointer;background:#3b1e1e;border:none">發文</button>
                 </div>
                 <div>
                     <a id="tool" class="game" title="小遊戲" role="button" href="">小遊戲</a>
@@ -66,8 +78,8 @@
                 </div> 
                 <div id="tool">
                     <div onclick="toggleMenu()">
-                        <img src="img/another1.png" alt="其他" width="25" height="26" style="cursor: pointer;" 
-                            onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
+                        <img src="../img/another1.png" alt="其他" width="25" height="26" style="cursor: pointer;" 
+                            onmouseover="this.src='../img/another2.png'" onmouseout="this.src='../img/another1.png'"/>
                         <div id="another" class="another">
                             <ul>
                                 <a href="" title="關於我們"><li>關於我們</li></a>
@@ -150,26 +162,62 @@
             </div>
         </div>        
     </div>
-    <!--發文-->
-    <div class="post">
-        <div>大頭貼/姓名</div>
-        <div>標題</div>
-        <div>選擇分類</div>
-        <textarea name="mytext" placeholder="內文......"rows="20" cols="40"required></textarea>
-        <p>輸入 tags:</p>
-        <p>
-            <div class="tags-input" data-name="tags-input"></div>
-        </p>
-        <div>
-            <form action="/somewhere/to/upload" enctype="multipart/form-data">
-                <input name="progressbarTW_img" type="file" accept="image/gif, image/jpeg, image/png">
+</div>
+<!--發文-->
+<div id="article" class="article">
+    <div class="close">
+        <img src="../img/close1.png" width="15px" height="15px" onclick="closearticle();"
+        onmouseover="this.src='../img/close2.png'"
+        onmouseout="this.src='../img/close1.png'"/>
+    </div>
+    <h1>發表貼文</h1>
+    <div>大頭貼/姓名</div>
+    <div>
+        <form >
+            <select  name="classification" style="cursor: pointer;">
+              <option value="disabled selected hidden" style="display: none;">選擇分類</option>
+              <option value="nature">自然</option>
+            　<option value="city">都市</option>
+            　<option value="instrument">器械</option>
+            　<option value="vocal">人聲</option>
+            　<option value="nostalgia">懷舊</option>
+            </select>
+        </form>
+    </div>
+    <div>
+        <textarea name="mytext" placeholder="標題"rows="" cols="70"required ></textarea>
+        <textarea name="mytext" placeholder="聲音故事......"rows="10" cols="70"required></textarea>
+    </div>
+    <p>輸入 tags:</p>
+    <p>
+        <div class="tags-input" data-name="tags-input" ></div>
+    </p>
+    <div>
+        <div style="display:inline;">
+            <form action="/somewhere/to/upload" enctype="multipart/form-data"></form>
+                <label>
+                    <input name="progressbarTW_img" type="file" accept="image/gif, image/jpeg, image/png" style="display:none;">
+                    <img src="../img/picture1.png" width="50" height="50" style="cursor: pointer;"
+                        onmouseover="this.src='../img/picture2.png'" onmouseout="this.src='../img/picture1.png'">
+                </label>
             </form>
         </div>
-        <div>
-            <input type="file" accept="audio/*">
+        <div style="display:inline;">
+            <label>
+                <input type="file" accept="audio/*" style="display:none;">
+                <img src="../img/music1.png" width="50" height="50" style="cursor: pointer;"
+                    onmouseover="this.src='../img/music2.png'" onmouseout="this.src='../img/music1.png'">
+            </label>
         </div>
     </div>
+    <div >
+        <form action="">
+            <label class="publish">
+                <input type="submit" value="發佈" style="display:none;">發佈
+            </label>
+        </form>
+    </div>
 </div>
-<script src="js/tags.js"></script>      
+<script src="../js/tags.js"></script>      
 </body>
 </html>
