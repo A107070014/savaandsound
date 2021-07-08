@@ -81,18 +81,32 @@ a{
 }
 
 /* 註冊/登入 */
+.black_overlay{ 
+    display: none; 
+    position: absolute; 
+    top: 0%; 
+    left: 0%; 
+    width: 100%; 
+    height: 100%; 
+    background-color: black; 
+    z-index:1001; 
+    -moz-opacity: 0.8; 
+    opacity:.80; 
+    filter: alpha(opacity=88); 
+} 
 .dialog{
-    position: fixed;
+    position:fixed;
     top:100px;
     left:45%;
     transform:translate(-120px,0px);
     width:400px;
+    height: 35em;
     border:1px solid #000;
     border-radius: 10px;
     background-color: #fff;
     display:none;
-    height: 35em;
     padding:30px;
+    z-index:1002; 
 }
 .dialog>.close{
     position: absolute;
@@ -198,12 +212,12 @@ a{
 }
 .b22{
     cursor: pointer;
-    
+    font-size: 12px;
 }
 .b1{
     margin-bottom: 10px;
 }
-.b24{
+.b23{
     font-size: 12px;
     line-height: 25px;
 }
@@ -215,6 +229,7 @@ a{
     vertical-align: top;
 }
 
+/*分類*/
 .left{
     background: #ceb195;
     float: left;
@@ -266,6 +281,153 @@ a{
 }
 .posttime{
     width:
+}
+
+/*忘記密碼*/
+.close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.forgetpassword{
+    position: fixed;
+    top:100px;
+    left:45%;
+    transform:translate(-120px,0px);
+    width:400px;
+    height: 35em;
+    padding:10px;
+    border:1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display:none;
+    padding:30px;
+    z-index:1002;
+}
+.c9{
+    font-size: 25px;
+}
+.c10{
+    font-size: 14px;
+    margin:10px 0px 20px 0px;
+}
+.c18{
+    width: 100%;
+    height:40px;
+    border-radius: 5px;
+    border:1.5px solid #eee;
+    padding-left: 15px;
+    outline-color:#d9a200;
+    margin-bottom:20px;
+}
+.c18:hover{
+    border:1.5px solid #d9a200;
+    border-radius: 5px;
+}
+.c19{
+    width:100%;
+    height:40px;
+    border-radius: 5px;
+    border:none;
+    background: #d9a200;
+    cursor: pointer;
+    color:#fff;
+    margin-bottom: 10px;
+    
+}
+.c19:hover{
+    background: #e6ad03;
+}
+.c23{
+    font-size: 12px;
+    vertical-align: top;
+}
+
+/*註冊*/
+.close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.d1{
+  position: fixed;
+  top:100px;
+  left:45%;
+  transform:translate(-120px,0px);
+  width:400px;
+  height: 35em;
+  padding:10px;
+  border:1px solid #000;
+  border-radius: 10px;
+  background-color: #fff;
+  display:none;
+  padding:30px;
+  z-index:1002;
+}
+.d10{
+  font-size: 25px;
+  margin-bottom:10px;
+}
+.d11{
+  font-size: 14px;
+}
+.d14{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.d15{
+  height:40px;
+  width: 100%;
+  border:none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding:10px;
+}
+.d15:hover{
+  background: rgb(211, 210, 210);
+}
+.d18{
+  text-align:center;
+  display: block;
+  padding-top: 3px;
+  white-space: nowrap;
+}
+.d19{
+  margin-bottom: 20px;
+}
+.d20{
+  height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+}
+.d20:hover{
+  background: rgb(211, 210, 210);
+}
+.d22{
+  height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+}
+.d22:hover{
+  background: rgb(211, 210, 210);
+}
+.d23{
+    margin-top:10px;
+}
+.d24{
+    font-size: 12px;
+}
+.d25{
+  font-size: 12px;
+  vertical-align: top;
 }
 
 /*已登入首頁home2*/

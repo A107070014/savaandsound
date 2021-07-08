@@ -11,7 +11,7 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-
+<!--
 <script>
     var dialog;
     window.onload=function(){
@@ -23,11 +23,15 @@
     function closedialog(){
         dialog.style.display="none";
     }
-</script>
+    function forgetpassword(){
 
+    }
+</script>
+-->
 </head>
 <body>
 <div id="wholepage">
+    <div id="fade" class="black_overlay"></div> 
     <!--標題列-->
     <div class="header">
         <div class="text">
@@ -56,7 +60,9 @@
                 </div>
             </div>
             <div class="btn">
-                <button onclick="showdialog();" class="signupin" style="cursor: pointer;">註冊/登入</button>
+                <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('fade').style.display='block'"
+                    class="signupin" style="cursor: pointer;">註冊/登入
+                </a>
             </div>
         </div>
     </div>
@@ -131,9 +137,11 @@
 </div>
 <div id="dialog" class="dialog">
     <div class="close">
-        <img src="img/close1.png" width="15px" height="15px" onclick="closedialog();"
-        onmouseover="this.src='img/close2.png'"
-        onmouseout="this.src='img/close1.png'"/>
+        
+        <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
     </div> 
     <div class="la">
     <h1 class="login-acount" id="login" style="font-size: 25px;">登入你的帳號</h1>
@@ -215,21 +223,25 @@
         </form>
     </div>
     
-    <a class="b23" href="" draggable="false" target="_top"><!--忘記密碼連記得放-->
-        <span class="b24">忘記密碼嗎？</span> 
+    <a href = "javascript:void(0)" onclick = "document.getElementById('forgetpassword').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
+         class="b23" style="cursor: pointer;">忘記密碼嗎？
     </a>
-    <div></div>
+    
+    
     <p class="b25">第一次使用 留聲跡 嗎？
-        <a class="b26" href="" draggable="false">立即註冊</a><!--忘記密碼連記得放-->
+        <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
+            class="b26" style="cursor: pointer;">立即註冊
+        </a>
     </p>
 </div>
 
 <!--忘記密碼-->
-<div class="forget-password">
+<div id="forgetpassword" class="forgetpassword">
     <div class="close">
-        <img src="img/close1.png" width="15px" height="15px" onclick="closedialog();"
-        onmouseover="this.src='img/close2.png'"
-        onmouseout="this.src='img/close1.png'"/>
+        <a href = "javascript:void(0)" onclick = "document.getElementById('forgetpassword').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
     </div> 
     <div class="c1">
         <div class="c2">
@@ -263,8 +275,8 @@
                             </form>
                         </div>
                         <div class="c21">
-                            <a class="c22" href="/login2" draggable="false"><!--不確定連結是否成功-->
-                                <span class="c23">返回登入畫面</span>
+                            <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('forgetpassword').style.display='none';document.getElementById('fade').style.display='block'"
+                                class="b22" draggable="false" style="cursor: pointer;">返回登入畫面
                             </a>
                         </div>
                     </div>
@@ -277,9 +289,10 @@
 <!--註冊-->
 <div id="d1" class="d1">
   <div class="close">
-    <img src="img/close1.png" width="15px" height="15px" onclick="closedialog();"
-    onmouseover="this.src='img/close2.png'"
-    onmouseout="this.src='img/close1.png'"/>
+    <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='none'">
+        <img src="img/close1.png" width="15px" height="15px" 
+            onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+    </a>
   </div> 
   <div class="d2">
     <div class="d3">
@@ -330,8 +343,10 @@
                   </button>
                 </div>
                 <div class="d23">
-                  <p class="d24">已經註冊了嗎？
-                  <a class="d25" href="/login2" draggable="false">立即登入</a><!--不確定連結是否成功-->
+                    <p class="d24">已經註冊了嗎？
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
+                        class="d25" draggable="false" style="cursor: pointer;">立即登入
+                    </a>
                   </p>
                 </div>
               </div>
@@ -342,5 +357,7 @@
     </div>
   </div>
 </div>
+
+
 </body>
 </html>
