@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#3B1E1E">
 <meta name="supported-color-schemes" content="light">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" >
-<link href="../css/style.css" type="text/css" rel="stylesheet" >
+<link href="css/style.css" type="text/css" rel="stylesheet" >
 <title>留聲跡</title>
-<link rel="icon" href="../img/logo.png" type="image/x-icon">
+<link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
@@ -34,7 +34,7 @@
             <div>
                 <div class="logo">
                     <a title="留聲跡" href="">
-                        <img src="../img/logo.png" alt="留聲跡" width="50" height="50" >
+                        <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                     </a>
                 </div>
                 <div class="logoname">
@@ -131,9 +131,9 @@
 </div>
 <div id="dialog" class="dialog">
     <div class="close">
-        <img src="../img/close1.png" width="15px" height="15px" onclick="closedialog();"
-        onmouseover="this.src='../img/close2.png'"
-        onmouseout="this.src='../img/close1.png'"/>
+        <img src="img/close1.png" width="15px" height="15px" onclick="closedialog();"
+        onmouseover="this.src='img/close2.png'"
+        onmouseout="this.src='img/close1.png'"/>
     </div> 
     <div class="la">
     <h1 class="login-acount" id="login" style="font-size: 25px;">登入你的帳號</h1>
@@ -204,7 +204,7 @@
                         </div>
                         <div class="b18">
                             <button id="b13" class="b19" disabled="" type="button" aria-label="顯示密碼" style="cursor: pointer;">
-                                <img src="../img/visibility.png" width="10" height="10">
+                                <img src="img/visibility.png" width="10" height="10">
                             </button>
                         </div>
                 </div>
@@ -215,13 +215,132 @@
         </form>
     </div>
     
-    <a class="b23" href="" draggable="false"><!--忘記密碼連記得放-->
-        <span class="b24">忘記密碼嗎？</span>
+    <a class="b23" href="" draggable="false" target="_top"><!--忘記密碼連記得放-->
+        <span class="b24">忘記密碼嗎？</span> 
     </a>
     <div></div>
     <p class="b25">第一次使用 留聲跡 嗎？
         <a class="b26" href="" draggable="false">立即註冊</a><!--忘記密碼連記得放-->
     </p>
+</div>
+
+<!--忘記密碼-->
+<div class="forget-password">
+    <div class="close">
+        <img src="img/close1.png" width="15px" height="15px" onclick="closedialog();"
+        onmouseover="this.src='img/close2.png'"
+        onmouseout="this.src='img/close1.png'"/>
+    </div> 
+    <div class="c1">
+        <div class="c2">
+            <div class="c3" aria-live="polite" role="region">
+                <div class="c4" aria-hidden="false">
+                    <div class="c5">
+                        <div class="c6">
+                            <div class="c7">
+                                <div class="c8">
+                                    <h1 class="c9">忘記密碼了？</h1>
+                                </div>
+                                    <h2 class="c10">別擔心，我們會傳送訊息給你，以協助你重設密碼。</h2>
+                            </div>
+                        </div>
+                        <div class="c11">
+                            <form class="c12" method="post">
+                                <div class="c13">
+                                    <div>
+                                        <div class="c14">
+                                            <div class="c15">
+                                                <div class="c16">
+                                                    <input id="c17" class="c18" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email" required="" placeholder="電子郵件地址或行動裝置號碼" name="email" aria-required="true" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="c19" type="submit">
+                                    <span class="c20">繼續</span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="c21">
+                            <a class="c22" href="/login2" draggable="false"><!--不確定連結是否成功-->
+                                <span class="c23">返回登入畫面</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--註冊-->
+<div id="d1" class="d1">
+  <div class="close">
+    <img src="img/close1.png" width="15px" height="15px" onclick="closedialog();"
+    onmouseover="this.src='img/close2.png'"
+    onmouseout="this.src='img/close1.png'"/>
+  </div> 
+  <div class="d2">
+    <div class="d3">
+      <div class="d4" aria-live="polite" role="region">
+        <div class="d5" aria-hidden="false">
+          <div class="d6">
+            <div class="d7">
+              <div class="d9">
+                <h1 class="d10">開始使用 留聲跡</h1>
+              </div>
+              <h2 class="d11">建立免費帳號</h2>
+            </div>
+            <div class="d12">
+              <div class="d13">
+                <div class="d14">
+                    <button class="d15" type="button">
+                    <span class="d16">
+                    <span aria-hidden="true" class="d17">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" style="float: left;">
+                    <g fill="none" fill-rule="evenodd">
+                    <path d="M20.64 12.2c0-.63-.06-1.25-.16-1.84H12v3.49h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92a8.78 8.78 0 0 0 2.68-6.62z" fill="#4285F4">
+                    </path>
+                    <path d="M12 21a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.4 5.4 0 0 1-8.09-2.85h-3v2.33A9 9 0 0 0 12 21z" fill="#34A853"></path>
+                    <path d="M6.96 13.71a5.41 5.41 0 0 1 0-3.42V7.96h-3a9 9 0 0 0 0 8.08l3-2.33z" fill="#FBBC05"></path>
+                    <path d="M12 6.58c1.32 0 2.5.45 3.44 1.35l2.58-2.59A9 9 0 0 0 3.96 7.95l3 2.34A5.36 5.36 0 0 1 12 6.58z" fill="#EA4335">
+                    </path>
+                    </g>
+                    </svg>
+                    </span>
+                    </span>
+                    <span class="d18">使用 Google 帳號註冊</span>
+                    </button>
+                </div>
+                <div class="d19">
+                    <button class="d20" type="button">
+                    <span class="TcNIhA">
+                    <span aria-hidden="true" class="d21">
+                    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" style="float: left;">
+                    <path d="M21.5 12.058c0-5.28-4.253-9.558-9.5-9.558s-9.5 4.279-9.5 9.558c0 4.771 3.473 8.725 8.016 9.442v-6.68H8.104v-2.762h2.412V9.952c0-2.395 1.417-3.718 3.588-3.718 1.04 0 2.126.186 2.126.186v2.352h-1.198c-1.18 0-1.548.738-1.548 1.494v1.792h2.635l-.421 2.763h-2.214V21.5c4.543-.717 8.016-4.67 8.016-9.442z" fill="currentColor">
+                    </path>
+                    </svg></span></span>
+                    <span class="d18">使用 Facebook 帳號註冊</span>
+                    </button>
+                </div>
+                <div class="d26">
+                  <button class="d22" type="button">
+                  <span class="d18">使用電子郵件地址註冊</span>
+                  </button>
+                </div>
+                <div class="d23">
+                  <p class="d24">已經註冊了嗎？
+                  <a class="d25" href="/login2" draggable="false">立即登入</a><!--不確定連結是否成功-->
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
