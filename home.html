@@ -22,21 +22,10 @@
        }
    }
 </script>
-<script>
-    var article;
-    window.onload=function(){
-        article=document.getElementById("article");
-    }
-    function showarticle(){
-        article.style.display="block";
-    }
-    function closearticle(){
-        article.style.display="none";
-    }
-</script>
 </head>
 <body >
-<div >
+<div>
+    <div id="fade" class="black_overlay"></div> 
     <div class="header">
         <div class="text">
             <div>
@@ -65,7 +54,9 @@
             </div>
             <div class="tool">
                 <div>
-                    <button id="tool" class="postw" title="發文" onclick="showarticle()" style="cursor: pointer;background:#3b1e1e;border:none">發文</button>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
+                    id="tool" class="postw" style="cursor: pointer;">發文
+                    </a>
                 </div>
                 <div>
                     <a id="tool" class="game" title="小遊戲" role="button" href="">小遊戲</a>
@@ -166,9 +157,10 @@
 <!--發文-->
 <div id="article" class="article">
     <div class="close">
-        <img src="img/close1.png" width="15px" height="15px" onclick="closearticle();"
-        onmouseover="this.src='img/close2.png'"
-        onmouseout="this.src='img/close1.png'"/>
+        <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
     </div>
     <h1>發表貼文</h1>
     <div>大頭貼/姓名</div>
@@ -188,10 +180,12 @@
         <textarea name="mytext" placeholder="標題"rows="" cols="70"required ></textarea>
         <textarea name="mytext" placeholder="聲音故事......"rows="10" cols="70"required></textarea>
     </div>
+    
     <p>輸入 tags:</p>
     <p>
         <div class="tags-input" data-name="tags-input" ></div>
     </p>
+    
     <div>
         <div style="display:inline;">
             <form action="/somewhere/to/upload" enctype="multipart/form-data"></form>
@@ -218,6 +212,6 @@
         </form>
     </div>
 </div>
-<script src="../js/tags.js"></script>      
+<script src="js/tags.js"></script>      
 </body>
 </html>
