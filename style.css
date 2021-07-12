@@ -1,0 +1,568 @@
+*{
+    margin: 0px auto;
+    box-sizing: border-box;
+}
+.body{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+a{
+    text-decoration:none;
+}
+nav{
+    background:#3b1e1e;
+    border:2px solid #000;
+    display:flex;
+}
+nav>.logo{
+    flex:none;/*沒有彈性*/
+    width:180px;/*固定尺寸*/
+    display:flex;
+    margin-left: 200px;
+}
+nav>.search{
+    flex:auto;/*盡量把容器的空間張滿*/
+    white-space: nowrap;
+    margin-top: 10px;
+}
+nav>.btn{
+    flex:none;
+    width:100px;
+    text-align: center;
+    padding-top: 12px;
+    margin-right: 100px;
+}
+nav>.tool{
+    flex:none;
+    width:500px;
+    display: flex;
+    padding-top: 12px;
+    padding-right: 15px;
+    
+}
+main{
+    display:flex;
+    justify-content:center;
+    background-color: #fff;
+    
+}
+main>.left{
+    flex:none;
+    width:300px;
+    background-color:#ceb195;
+    margin:0px auto;
+}
+main>.right{
+    flex:auto;
+    width:300px;
+    background-color: antiquewhite;
+    margin:0px auto;
+    border-left:2px solid #000;
+}
+@media(max-width:1200px){
+    nav>.logo{
+        width:;
+    }
+    nav>.search{
+        width:;
+    }
+    nav>.btn{
+        width:;
+    }
+    main>.left{
+        width:;
+    }
+    main>.right{
+        width:;
+    }
+}
+@media(max-width:500px){
+    nav>.logo{
+        width:;
+    }
+    nav>.search{
+        width:;
+    }
+    nav>.btn{
+        width:;
+    }
+    main>.left{
+        width:;
+    }
+    main>.right{
+        width:;
+    }
+}
+.picture{
+    white-space: nowrap;
+    flex:none;
+}
+.logoname{
+    color:#d9a200;
+    font-size:25px;
+    letter-spacing: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    white-space: nowrap;
+    padding-top: 7px;
+}
+.searchbox{
+    height:2.5em;
+    border-radius: 10px;
+    border:0px solid #3b1e1e;
+}
+.searchbutton{
+    width:5em;
+    height:2.5em;
+    border-radius: 10px;
+    vertical-align: middle;
+    border:0px solid #d9a200;
+}
+.searchicon{
+    margin-top:3.5px;
+}
+.signupin{
+    color:#d9a200;
+    font-size:20px;
+    font-weight: bold;
+    white-space: nowrap;   
+}
+.signupin:hover{
+    border-style:solid;
+    border-radius: 5px;
+    border-color: #d9a200;
+    padding: 5px 5px;
+}
+/*分類*/
+.cate{
+    font-size: 25px;
+    border-bottom:2px solid #000;
+    padding:10px 0px 10px 30px;
+}
+.catetitle{
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    padding:10px 0px 10px 30px;
+}
+.catetitle:hover{
+    background: #3b1e1e;
+    color:#fff;
+}
+.postheader{
+    border-bottom:2px solid #000;
+}
+.posthead{
+    display: flex;
+}
+.postnumber{
+    
+}
+.posttitle{
+   
+}
+.publisher{
+    width:
+}
+.postdate{
+    width:
+}
+.posttime{
+    width:
+}
+
+/* 註冊/登入 */
+.black_overlay{ 
+    display: none; 
+    position: absolute; 
+    top: 0%; 
+    left: 0%; 
+    width: 100%; 
+    height: 100%; 
+    background-color: black; 
+    z-index:1001; 
+    -moz-opacity: 0.8; 
+    opacity:.80; 
+    filter: alpha(opacity=88); 
+} 
+.dialog{
+    position:fixed;
+    top:100px;
+    left:45%;
+    transform:translate(-120px,0px);
+    width:400px;
+    height: 35em;
+    border:1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display:none;
+    padding:30px;
+    z-index:1002; 
+}
+.dialog>.close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.use-google-login{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.google-account-login-button{
+    height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+}
+.google-account-login-button:hover{
+    background: rgb(211, 210, 210);
+}
+.use-google-acount-login{
+    text-align:center;
+    display: block;
+    padding-top: 3px;
+    white-space: nowrap;
+}
+.facebook-account-login-button{
+    height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+}
+.facebook-account-login-button:hover{
+    background: rgb(211, 210, 210);
+}
+.use-facebook-acount-login{
+    text-align:center;
+    display: block;
+    padding-top: 3px;
+    white-space: nowrap;
+}
+.Separate{
+    display:flex;
+    margin:20px;
+    color:#eee;
+
+}
+.Divider{
+    width:50%;
+    border: 1px solid #eee;
+    height: 0px;
+    background-color: #eee;
+    margin-top: 10px;
+}
+.b7{
+    white-space: nowrap;
+    font-size: 14px;
+    margin-bottom:3px;
+}
+.b11{
+    width:100%;
+    height:40px;
+    border-radius: 5px;
+    border:1.5px solid #eee;
+    padding-left: 15px;
+    outline-color:#d9a200;
+}
+.b11:hover{
+    border:1.5px solid #d9a200;
+    border-radius: 5px;
+}
+.b12{
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+.b15{
+    white-space: nowrap;
+    font-size: 14px;
+    margin-bottom:3px;
+}
+
+.b21{
+    width:100%;
+    height:40px;
+    border-radius: 5px;
+    border:none;
+    background: #d9a200;
+    cursor: pointer;
+    color:#fff;
+    margin-bottom: 10px;
+    
+}
+.b21:hover{
+    background: #e6ad03;
+}
+.b22{
+    cursor: pointer;
+    font-size: 16px;
+    font-weight:bold;
+}
+.b1{
+    margin-bottom: 10px;
+}
+.b23{
+    font-size: 12px;
+    line-height: 25px;
+}
+.b25{
+    font-size: 12px;
+}
+.b26{
+    font-size: 12px;
+    vertical-align: top;
+}
+
+
+
+/*忘記密碼*/
+.close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.forgetpassword{
+    position: fixed;
+    top:100px;
+    left:45%;
+    transform:translate(-120px,0px);
+    width:400px;
+    height: 35em;
+    padding:10px;
+    border:1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display:none;
+    padding:30px;
+    z-index:1002;
+}
+.c9{
+    font-size: 25px;
+}
+.c10{
+    font-size: 14px;
+    margin:10px 0px 20px 0px;
+}
+.c18{
+    width: 100%;
+    height:40px;
+    border-radius: 5px;
+    border:1.5px solid #eee;
+    padding-left: 15px;
+    outline-color:#d9a200;
+    margin-bottom:20px;
+}
+.c18:hover{
+    border:1.5px solid #d9a200;
+    border-radius: 5px;
+}
+.c19{
+    width:100%;
+    height:40px;
+    border-radius: 5px;
+    border:none;
+    background: #d9a200;
+    cursor: pointer;
+    color:#fff;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight:bold;
+}
+.c19:hover{
+    background: #e6ad03;
+}
+.c23{
+    font-size: 12px;
+    vertical-align: top;
+}
+.c22{
+    font-size: 12px;
+}
+/*註冊*/
+.close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.d1{
+  position: fixed;
+  top:100px;
+  left:45%;
+  transform:translate(-120px,0px);
+  width:400px;
+  height: 35em;
+  padding:10px;
+  border:1px solid #000;
+  border-radius: 10px;
+  background-color: #fff;
+  display:none;
+  padding:30px;
+  z-index:1002;
+}
+.d10{
+  font-size: 25px;
+  margin-bottom:10px;
+}
+.d11{
+  font-size: 14px;
+}
+.d14{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.d15{
+  height:40px;
+  width: 100%;
+  border:none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding:10px;
+}
+.d15:hover{
+  background: rgb(211, 210, 210);
+}
+.d18{
+  text-align:center;
+  display: block;
+  padding-top: 3px;
+  white-space: nowrap;
+}
+.d19{
+  margin-bottom: 20px;
+}
+.d20{
+  height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+}
+.d20:hover{
+  background: rgb(211, 210, 210);
+}
+.d22{
+  height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+}
+.d22:hover{
+  background: rgb(211, 210, 210);
+}
+.d23{
+    margin-top:10px;
+}
+.d24{
+    font-size: 12px;
+}
+.d25{
+  font-size: 12px;
+  vertical-align: top;
+}
+
+/*已登入首頁home2*/
+.icon{
+    position: relative;
+}
+.icon:hover .another {
+    display: block;
+}
+#tool{
+    color:#d9a200;
+    font-size:20px;
+    font-weight:bold;
+    margin-left: 30px;
+    
+}
+#tool:hover{
+    color:#e6ad03;
+}
+.another{
+    position: fixed;
+    top:50px;
+    left:93%;
+    transform:translate(-100px,0px);
+    width:200px;
+    padding:10px;
+    border:none;
+    border-radius: 10px;
+    background-color: #3b1e1ee8;
+    display:none;
+    text-align: center;
+}
+ul{
+    list-style-type:none;
+    font-size: 20px;
+    padding-right:30px;
+}
+ul>a{
+    color:#d9a200;
+}
+
+li{
+    margin-bottom:7px;
+    margin-top:7px;
+    padding:7px;
+    
+}
+li:hover{
+    background: #3b1e1e;
+    border-radius: 10px;
+    color:#e6ad03;
+}
+
+/*發文*/
+.article{
+    position: fixed;
+    top:100px;
+    left:45%;
+    transform:translate(-185px,0px);
+    width:600px;
+    padding:30px;
+    border:1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display:none;
+    z-index:1002;
+}
+.article>.close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.classification{
+    border-radius: 5px;
+    border:1.5px solid #eee;
+}
+textarea{
+    border-radius: 5px;
+    border:1.5px solid #eee;
+    padding-left: 10px;
+    padding-top: 5px;
+    outline-color:#d9a200;
+}
+textarea:hover{
+    border:1.5px solid #d9a200;
+    border-radius: 5px;
+}
+.publish{
+    border-radius: 5px;
+    border:2px solid #3b1e1e;
+    background: #ceb195;
+    color:#3b1e1e;
+    padding:5px 10px;
+    float: right;
+    font-weight:bold;
+    cursor: pointer;
+}
+.publish:hover{
+    background: #ceb195dc;
+}

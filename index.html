@@ -13,111 +13,110 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="wholepage">
     <div id="fade" class="black_overlay"></div> 
     <!--標題列-->
-    <div class="header">
-        <div class="text">
-            <div>
-                <div class="logo">
-                    <a title="留聲跡" href="">
-                        <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
-                    </a>
-                </div>
-                <div class="logoname">
-                    <a title="留聲跡" href="">
-                        <b><span class="logoname">留聲跡</span></b>
-                    </a>
-                </div>   
-            </div>
-            <div class="search">
-                <div class="key">
-                    <form action="">
-                        <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50"/>
-                        <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
-                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="searchicon" height="75%">
-                                <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path>
-                            </svg>   
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="btn">
-                <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('fade').style.display='block'"
-                    class="signupin" style="cursor: pointer;">註冊/登入
+    <nav>
+        <div class="logo">
+            <div class="picture">
+                <a title="留聲跡" href="">
+                    <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                 </a>
             </div>
+            <div class="logoname">
+                <a title="留聲跡" href="">
+                    <b><span class="logoname">留聲跡</span></b>
+                </a>
+            </div>   
         </div>
-    </div>
+        <div class="search">
+            <div class="key">
+                <form action="">
+                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50"/>
+                    <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="searchicon" height="75%">
+                            <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path>
+                        </svg>   
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="btn">
+            <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('fade').style.display='block'"
+                class="signupin" style="cursor: pointer;">註冊/登入
+            </a>
+        </div>
+    </nav>
+    
+<main>
     <!--分類欄-->
     <div class="left">
-        <div class="space">
-            <div class="cate">分類</div>
-            <div>
-                <a href="">
-                    <div>
-                        <div class="catetitle">自然</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div>
-                        <div class="catetitle">都市</div>
-                    </div>
-                </a>
-                 <a href="">
-                    <div>
-                        <div class="catetitle">器械</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div>
-                        <div class="catetitle">人聲</div>
-                    </div>
-                </a>
-                <a href="">
-                    <div>
-                        <div class="catetitle">懷舊</div>
-                    </div>
-                </a>
+            <div class="space">
+                <div class="cate">分類</div>
+                <div>
+                    <a href="">
+                        <div>
+                            <div class="catetitle">自然</div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div>
+                            <div class="catetitle">都市</div>
+                        </div>
+                    </a>
+                     <a href="">
+                        <div>
+                            <div class="catetitle">器械</div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div>
+                            <div class="catetitle">人聲</div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div>
+                            <div class="catetitle">懷舊</div>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
     </div>
-    <!--聲音故事欄-->
     <div class="right">
-        <div class="space">
-            <div class="postheader">
-                <div class="posthead">
-                    <div class="postheaddiv">
-                        <div class="postnumber">#</div>
-                    </div>
-                    <div class="postheaddiv">
-                        <div class="posttitle">
-                            <span>標題</span>
+        <!--聲音故事欄-->
+            <div class="space">
+                <div class="postheader">
+                    <div class="posthead">
+                        <div class="postheaddiv">
+                            <div class="postnumber">#</div>
                         </div>
-                    </div>
-                    <div class="postheaddiv">
-                        <div class="publisher">
-                            <span>發表者</span>
+                        <div class="postheaddiv">
+                            <div class="posttitle">
+                                <span>標題</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="postheaddiv">
-                        <div class="postdate">
-                            <span>新增日期</span>
+                        <div class="postheaddiv">
+                            <div class="publisher">
+                                <span>發表者</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="postheaddiv">
-                        <div class="posttime">
-                            <span>時長</span>
+                        <div class="postheaddiv">
+                            <div class="postdate">
+                                <span>新增日期</span>
+                            </div>
+                        </div>
+                        <div class="postheaddiv">
+                            <div class="posttime">
+                                <span>時長</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="postrow">
-                
-            </div>
-        </div>        
+                <div class="postrow">
+                    
+                </div>
+            </div>        
     </div>
-</div>
+</main>
 <div id="dialog" class="dialog">
     <div class="close">
         
