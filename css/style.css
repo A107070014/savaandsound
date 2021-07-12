@@ -1,40 +1,101 @@
 *{
-    padding: 0;
-    margin: 0;
+    margin: 0px auto;
     box-sizing: border-box;
 }
 .body{
     font-family: 'Noto Sans TC', sans-serif;
 }
-.header{
-    background:#3b1e1e;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border:2px solid #000;
-    position: sticky; 
-    
-}
 a{
     text-decoration:none;
-    vertical-align: middle;
-    color:#d9a200;
 }
-
-.text{
-    background: #3b1e1e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* padding: 10px; */
+nav{
+    background:#3b1e1e;
+    border:2px solid #000;
+    display:flex;
+}
+nav>.logo{
+    flex:none;/*沒有彈性*/
+    width:180px;/*固定尺寸*/
+    display:flex;
     margin-left: 200px;
-    white-space: nowrap;
 }
-.logo{
+nav>.search{
+    flex:auto;/*盡量把容器的空間張滿*/
     white-space: nowrap;
-    display: inline;
+    margin-top: 10px;
 }
-
+nav>.btn{
+    flex:none;
+    width:100px;
+    text-align: center;
+    padding-top: 12px;
+    margin-right: 100px;
+}
+nav>.tool{
+    flex:none;
+    width:500px;
+    display: flex;
+    padding-top: 12px;
+    padding-right: 15px;
+    
+}
+main{
+    display:flex;
+    justify-content:center;
+    background-color: #fff;
+    
+}
+main>.left{
+    flex:none;
+    width:300px;
+    background-color:#ceb195;
+    margin:0px auto;
+}
+main>.right{
+    flex:auto;
+    width:300px;
+    background-color: antiquewhite;
+    margin:0px auto;
+    border-left:2px solid #000;
+}
+@media(max-width:1200px){
+    nav>.logo{
+        width:;
+    }
+    nav>.search{
+        width:;
+    }
+    nav>.btn{
+        width:;
+    }
+    main>.left{
+        width:;
+    }
+    main>.right{
+        width:;
+    }
+}
+@media(max-width:500px){
+    nav>.logo{
+        width:;
+    }
+    nav>.search{
+        width:;
+    }
+    nav>.btn{
+        width:;
+    }
+    main>.left{
+        width:;
+    }
+    main>.right{
+        width:;
+    }
+}
+.picture{
+    white-space: nowrap;
+    flex:none;
+}
 .logoname{
     color:#d9a200;
     font-size:25px;
@@ -42,20 +103,12 @@ a{
     margin-left: 5px;
     margin-right: 10px;
     white-space: nowrap;
-    display: inline;
+    padding-top: 7px;
 }
-.search{
-    margin-left:10px;
-    white-space: nowrap;
-    
-}
-
 .searchbox{
     height:2.5em;
     border-radius: 10px;
-    vertical-align: middle;
     border:0px solid #3b1e1e;
-    padding-left: 5px;
 }
 .searchbutton{
     width:5em;
@@ -68,19 +121,52 @@ a{
     margin-top:3.5px;
 }
 .signupin{
-    margin-left: 550px;
     color:#d9a200;
-    background: #3b1e1e;
     font-size:20px;
     font-weight: bold;
-    white-space: nowrap;
-    border:none;
+    white-space: nowrap;   
 }
 .signupin:hover{
     border-style:solid;
     border-radius: 5px;
     border-color: #d9a200;
     padding: 5px 5px;
+}
+/*分類*/
+.cate{
+    font-size: 25px;
+    border-bottom:2px solid #000;
+    padding:10px 0px 10px 30px;
+}
+.catetitle{
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    padding:10px 0px 10px 30px;
+}
+.catetitle:hover{
+    background: #3b1e1e;
+    color:#fff;
+}
+.postheader{
+    border-bottom:2px solid #000;
+}
+.posthead{
+    display: flex;
+}
+.postnumber{
+    
+}
+.posttitle{
+   
+}
+.publisher{
+    width:
+}
+.postdate{
+    width:
+}
+.posttime{
+    width:
 }
 
 /* 註冊/登入 */
@@ -229,59 +315,7 @@ a{
     vertical-align: top;
 }
 
-/*分類*/
-.left{
-    background: #ceb195;
-    float: left;
-    width: 20%;
-    height: calc(100vh - 100px);
-    border:2px solid #000;
-    
-}
-.cate{
-    font-size: 25px;
-    border-bottom:2px solid #000;
-    padding:10px 0px 10px 30px;
-}
-.catetitle{
-    font-size: 20px;
-    color:rgb(0, 0, 0);
-    padding:10px 0px 10px 30px;
-}
-.catetitle:hover{
-    background: #3b1e1e;
-    color:#fff;
-    
-}
-.right{
-    background: #fff;
-    float: right;
-    width: 80%;
-    height: calc(100vh - 100px);
-    
-}
-.postheader{
-    border-bottom:2px solid #000;
-    
-}
-.posthead{
-    display: flex;
-}
-.postnumber{
-    width:
-}
-.posttitle{
-    width:
-}
-.publisher{
-    width:
-}
-.postdate{
-    width:
-}
-.posttime{
-    width:
-}
+
 
 /*忘記密碼*/
 .close{
@@ -440,11 +474,6 @@ a{
 .icon:hover .another {
     display: block;
 }
-.tool{
-    display: flex;
-    margin-left: 240px;
-    padding-top: 3px;
-}
 #tool{
     color:#d9a200;
     font-size:20px;
@@ -456,10 +485,10 @@ a{
     color:#e6ad03;
 }
 .another{
-    position: absolute;
-    top:30px;
+    position: fixed;
+    top:50px;
     left:93%;
-    transform:translate(-120px,0px);
+    transform:translate(-100px,0px);
     width:200px;
     padding:10px;
     border:none;
@@ -471,8 +500,12 @@ a{
 ul{
     list-style-type:none;
     font-size: 20px;
-    
+    padding-right:30px;
 }
+ul>a{
+    color:#d9a200;
+}
+
 li{
     margin-bottom:7px;
     margin-top:7px;
@@ -482,6 +515,7 @@ li{
 li:hover{
     background: #3b1e1e;
     border-radius: 10px;
+    color:#e6ad03;
 }
 
 /*發文*/
