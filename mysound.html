@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#3B1E1E"/>
+<meta name="supported-color-schemes" content="light"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/tags.css" type="text/css">
+<link rel="stylesheet" href="css/Notice-botton.css">
+<title>留聲跡</title>
+<link rel="icon" href="img/logo.png" type="image/x-icon">
+<!-- google 正體中文字型 -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="fade" class="black_overlay"></div> 
+    <!--標題列-->
+    <nav>
+        <div class="logo">
+            <div class="picture">
+                <a title="留聲跡" href="home.html">
+                    <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
+                </a>
+            </div>
+            <div class="logoname">
+                <a title="留聲跡" href="home.html">
+                    <b><span class="logoname">留聲跡</span></b>
+                </a>
+            </div>   
+        </div>
+        <div class="search">
+            <div class="key">
+                <form action="">
+                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50"/>
+                    <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="searchicon" height="75%">
+                            <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path>
+                        </svg>   
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="tool">
+            <div>
+                <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
+                id="tool" class="postw" style="cursor: pointer;">發文
+                </a>
+            </div>
+            <!--發文-->
+            <div id="article" class="article">
+                <div class="close">
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
+                        <img src="img/close1.png" width="15px" height="15px" 
+                            onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+                    </a>
+                </div>
+                <h1>發表貼文</h1>
+                <div>大頭貼/姓名</div>
+                <div>
+                    <form >
+                        <select  name="classification" style="cursor: pointer;">
+                        <option value="disabled selected hidden" style="display: none;">選擇分類</option>
+                        <option value="nature">自然</option>
+                        　<option value="city">都市</option>
+                        　<option value="instrument">器械</option>
+                        　<option value="vocal">人聲</option>
+                        　<option value="nostalgia">懷舊</option>
+                        </select>
+                    </form>
+                </div>
+                <div>
+                    <textarea name="mytext" placeholder="標題"rows="" cols="70"required ></textarea>
+                    <textarea name="mytext" placeholder="聲音故事......"rows="10" cols="70"required></textarea>
+                </div>
+                
+                <p>輸入 tags:</p>
+                <p>
+                    <div class="tags-input" data-name="tags-input" ></div>
+                </p>
+                
+                <div>
+                    <div style="display:inline;">
+                        <form action="/somewhere/to/upload" enctype="multipart/form-data"></form>
+                            <label>
+                                <input name="progressbarTW_img" type="file" accept="image/gif, image/jpeg, image/png" style="display:none;">
+                                <img src="img/picture1.png" width="50" height="50" style="cursor: pointer;"
+                                    onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">
+                            </label>
+                        </form>
+                    </div>
+                    <div style="display:inline;">
+                        <label>
+                            <input type="file" accept="audio/*" style="display:none;">
+                            <img src="img/music1.png" width="50" height="50" style="cursor: pointer;"
+                                onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
+                        </label>
+                    </div>
+                </div>
+                <div >
+                    <form action="">
+                        <label class="publish">
+                            <input type="submit" value="發佈" style="display:none;">發佈
+                        </label>
+                    </form>
+                </div>
+            </div>
+            <script src="js/tags.js"></script>      
+            <div>
+                <a id="tool" class="game" title="小遊戲" role="button" href="">小遊戲</a>
+            </div>
+            <div>
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="">我的聲跡</a>
+            </div>
+            <div>
+                <a id="tool" class="inform" title="通知" role="button" href="">通知</a>
+            </div> 
+            <div id="tool" class="icon">
+                <div class="icon">
+                    <img src="img/another1.png" alt="其他" width="25" height="26" style="cursor: pointer;" 
+                        onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
+                        <div id="another" class="another">
+                            <ul>
+                                <a href="" title="關於我們"><li>關於我們</li></a>
+                                <a href="" title="聯絡我們"><li>聯絡我們</li></a>
+                                <a href="" title="募資平台"><li>募資平台</li></a>
+                                <a href="" title="設定"><li>設定</li></a>
+                                <a href="" title="登出"><li>登出</li></a>
+                            </ul>
+                        </div>
+                </div>
+             </div>
+        </div>
+    </nav>
+    <main>
+        <div class="left">
+            <div class="space">
+                <div class="personal">
+                    <img src="" >大頭貼
+                    <p>名字</p>
+                </div>
+                <div>
+                    
+                        <div>
+                            <a class="catetitle" href ="">
+                                我的個人資料
+                            </a>
+                        </div>
+                    
+                    
+                        <div>
+                            <a class="catetitle" href ="">
+                                我的聲音故事
+                            </a>
+                        </div>
+                    
+                     
+                        <div>
+                            <a class="catetitle" href = "">
+                                聲音故事典藏
+                            </a>
+                        </div>
+                    
+                    
+                        <div>
+                            <a class="catetitle" href = "">
+                                設定
+                            </a>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="space">
+                <div id="myinfo" class="myinfo">
+                    <h2>我的個人資料</h2>
+                        <div class="myphotoandname">
+                            <img src="" title="大頭貼" width="50" height="50" style="border-radius: 5px;">
+                                <p>姓名</p>
+                                <button class="editpen">
+                                    <img src="img/pen.png" width="15" height="15">
+                                    編輯
+                                </button>
+                        </div>
+                        <table>
+                            <tr>
+                                <td class="z">生日</td>
+                                <td class="x">顯示生日</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="z">性別</td>
+                                <td class="x">顯示性別</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="z">信箱</td>
+                                <td class="x">顯示信箱</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="z">手機</td>
+                                <td class="x">顯示手機</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td class="z">密碼</td>
+                                <td class="x">顯示密碼</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="editmyinfo">
+                            <form class="" action="" method="post"><!--記得連結-->
+                                姓名<input type="text" name="name"/>
+                                <input type="date"value="2020-04-20" min="1921-01-01" max="2021-12-10"><br>
+                                <input type="radio" name="gender" value="男"> 男
+                                <input type="radio" name="gender" value="女"> 女<br>
+                                手機<input type="tel"><br>
+                                電子郵件<input type="mail" name="mail" value="" placeholder="輸入電子郵件"/><br>
+                                密碼<input type="text" name="password" value=""panel placeholder="輸入密碼"/>
+                                <input type="submit" name="correct" value="確認">
+                            </form>
+                        </div>    
+                </div>
+                <div id="set" class="set">
+                    <h2>設定</h2>
+                    <div class="center">
+                        <div class="info">
+                            <h3>通知</h3>
+                            <div class="switch_demo">
+                                <input type="checkbox" name="switch_demo" class="switch_demo-checkbox" id="switch_demo" checked>
+                                <label class="switch_demo-label" for="switch_demo">
+                                    <span class="switch_demo-inner"></span>
+                                    <span class="switch_demo-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="Terms">
+                            <h3>使用設定與條款</h3>
+                            <a href=""><h4>會員權益條款</h4></a>
+                            <a href=""><h4>個資告知條</h43></a>
+                            <a href=""><h4>音檔版權宣告</h4></a>
+                            <a href=""><h4>圖檔版權聲明</h4></a>
+                            <a href=""><h4>版歸聲明</h4></a>
+                        </div>
+                    </div>    
+                </div>
+
+                <div id="mycollect" class="mycollect" data-index="3">
+                    <article class="tgn9uw-0 bReysV" role="article" data-post-list-viewed-cell-no="4">
+                        <div class="tgn9uw-1 ceKcvN">
+                            <div class="euk31c-0 epbkjc">
+                                <div class="euk31c-4 hBautw">
+                                    <div class="yj50et-0 eOQgZp euk31c-5 etmCKd">
+                                        <svg viewBox="0 0 40 40" focusable="false" width="16" height="16" class="sc-husrwi dvqhOE">
+                                            <title>男</title>
+                                            <path fill="#81D4FA" d="M40 20a20 20 0 11-40 0 20 20 0 0140 0"></path>
+                                            <path fill="#2490BF" d="M16 7.9C12.4 7.4 9.3 6 9.3 6s5.5 4.3 5 5.3c-.4 1-4.2 0-4.2 0l4 2a9.7 9.7 0 00-1.5 4.6l.1 3.4a1.5 1.5 0 10.8 2.9 8.3 8.3 0 006.2 5.3c.6 0 .6 2 .6 3.2-1.6 1-2.5 3-2 5v2.2a20.2 20.2 0 009.9-1.6l-.7-2.7v-.4l-.2-.4-.2-.4-.2-.3-.2-.3c-.7-1-1.7-1.6-2.9-1.8l.6-2.3s1.4-1 3-2.6l.4 1.3 1.4-2.5.9-1.8s3.8-10.3.8-13.9c-2.6-3-11-1.9-14.7-2.3">
+                                            </path>
+                                         </svg>
+                                     </div>
+                                 </div>
+                                 <div class="euk31c-1 ftveEB">
+                                     <div class="euk31c-2 hkziuG">
+                                         <div class="euk31c-3 iVGtVg">戲劇綜藝</div>
+                                         <div class="euk31c-3 iVGtVg">世新大學</div>
+                                     </div>
+                                 </div>
+                                 <div class="uj732l-4 gFYeFH">
+                                     <div class="sc-1x2m678 eoESgl">
+                                         <button type="button" class="m8cvq2-0 hzLJit">
+                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false" role="img" aria-hidden="true" class="sc-husrwi dvqhOE">
+                                                 <g transform="translate(148)">
+                                                     <circle cx="2" cy="2" r="2" transform="translate(-138 4)"></circle>
+                                                     <circle cx="2" cy="2" r="2" transform="translate(-138 10)"></circle>
+                                                     <circle cx="2" cy="2" r="2" transform="translate(-138 16)"></circle>
+                                                 </g>
+                                             </svg>
+                                         </button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <h2 class="tgn9uw-2 jWUdzO">
+                             <a class="tgn9uw-3 cUGTXH" href="/f/tvepisode/p/236420616">
+                                 <span>台灣新生代女演員，最看好誰</span>
+                             </a>
+                         </h2>
+                         <div class="uj732l-0 cDiqBT">
+                             <div class="tgn9uw-4 jtaqbD">
+                                 <span>台灣新生代女演員們，有顏值，實力也在線，個人蠻喜歡以下幾位，若好好發展，未來一定可以成為頂尖女演員，＃王淨，1998 年 2 月 7 日（23歲），我女神 氣質好 又漂亮，王淨因2015年在計程車上翻
+                                 </span>
+                             </div>
+                         </div>
+                         <div class="uj732l-1 fFUtFn">
+                             <div class="uj732l-2 eaMAYW">
+                                 <div class="cgoejl-0 croAom">
+                                     <div class="cgoejl-2 fZnlej">
+                                         <img src="https://megapx-assets.dcard.tw/images/52057289-337a-4f2f-88c0-cb8a77ee422a/orig.png" title="愛心" class="cgoejl-1 liVVKX" style="z-index: 3;">
+                                         <img src="https://megapx-assets.dcard.tw/images/9a7cc9af-9f81-43ea-8d9b-968a6441ae51/orig.png" title="哈哈" class="cgoejl-1 liVVKX" style="z-index: 2;">
+                                         <img src="https://megapx-assets.dcard.tw/images/042b27f9-b507-473b-8f36-654aedcc37df/orig.png" title="森77" class="cgoejl-1 liVVKX" style="z-index: 1;">
+                                     </div>
+                                     <div class="cgoejl-3 jMiYgp">4449</div>
+                                 </div>
+                             </div>
+                             <div class="uj732l-2 eaMAYW">
+                                 <div class="uj732l-2 ghvDya">
+                                     <svg viewBox="0 0 24 24" focusable="false" role="img" aria-hidden="true" class="sc-husrwi dvqhOE">
+                                         <path d="M1.3330000000000002 12a10.667 10.667 0 1021.334 0 10.667 10.667 0 10-21.334 0zM15.5 6.5h-7A3.5 3.5 0 005 10v3.5A3.5 3.5 0 008.5 17H9v1.369a.75.75 0 001.238.57L12.5 17h3a3.5 3.5 0 003.5-3.5V10a3.5 3.5 0 00-3.5-3.5z" fill-rule="evenodd"></path>
+                                     </svg>
+                                     <span>345</span>
+                                 </div>
+                             </div>
+                             <div class="uj732l-4 gFYeFH">
+                                 <div class="uj732l-2 eaMAYW">
+                                     <svg viewBox="0 0 24 24" focusable="false" role="img" aria-hidden="true" class="sc-husrwi dvqhOE">
+                                         <path d="M17.65 21.39L12 17.5l-5.65 3.88A1.5 1.5 0 014 20.15V5a2.5 2.5 0 012.5-2.5h11A2.5 2.5 0 0120 5v15.15a1.5 1.5 0 01-2.35 1.24z">
+                                         </path>
+                                     </svg>
+                                     <span>收藏</span>
+                                 </div>
+                             </div>
+                         </div>
+                         <img class="sc-2rneb0-0 jTZxum tgn9uw-7 esWtrP" src="https://imgur.dcard.tw/f7JjuI9b.jpg" width="84px" height="84px" alt="" loading="lazy" referrerpolicy="no-referrer">
+                     </article>
+                 </div>
+            </div>        
+        </div>
+    </main>
+</body>

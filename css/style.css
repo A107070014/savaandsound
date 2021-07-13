@@ -54,7 +54,7 @@ main>.left{
 main>.right{
     flex:auto;
     width:300px;
-    background-color: antiquewhite;
+    /*background-color: antiquewhite;*/
     margin:0px auto;
     border-left:2px solid #000;
 }
@@ -138,9 +138,16 @@ main>.right{
     border-bottom:2px solid #000;
     padding:10px 0px 10px 30px;
 }
+.personal{
+    font-size: 25px;
+    color:#493d2f;
+    font-weight: bold;
+    padding:10px 0px 10px 30px;
+}
 .catetitle{
     font-size: 20px;
-    color:rgb(0, 0, 0);
+    font-weight: bold;
+    color:#493d2f;
     padding:10px 0px 10px 30px;
 }
 .catetitle:hover{
@@ -484,6 +491,7 @@ main>.right{
 #tool:hover{
     color:#e6ad03;
 }
+
 .another{
     position: fixed;
     top:50px;
@@ -565,4 +573,96 @@ textarea:hover{
 }
 .publish:hover{
     background: #ceb195dc;
+}
+
+/*我的聲跡*/
+.myinfo>h2{
+    margin: 20px 0px 30px 100px;
+}
+.myphotoandname{
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+.myphotoandname>p{
+    margin:5px 0px 5px 0px;
+}
+table{
+    border: 1.5px solid #000;
+    border-radius: 0px;
+    width:900px;
+    border-spacing: 0;
+}
+tr, td {
+    padding:10px 0px;
+    border-bottom: 1px solid #eee;
+    /*border-right-style: hidden;*/
+}
+tr:hover{
+    background-color: #eee;
+    
+}
+td:hover{
+    background-color: #eee;
+    
+}
+.z{
+    padding-left: 10px;
+    flex:none;
+    width:100px;
+}
+.x{
+    flex:none;
+    width:auto;
+}
+.y{
+    flex:none;
+    width:75px;
+}
+.editpen{
+    background-color:transparent;
+    border:none;
+    cursor: pointer;
+    color:#3b1e1e;
+    margin-right:10px;
+}
+.editpen:hover{
+    background-color:transparent;
+    text-decoration: underline dotted #3b1e1e;
+}
+
+
+
+
+/**/
+.myinfo{
+    display:none;
+}
+.editmyinfo{
+    display:none;
+}
+.set{
+    /*display:none;*/
+}
+.mycollect{
+    display:none;
+}
+.set>h2{
+    margin: 20px 0px 30px 100px;
+}
+.center{
+    border: 1.5px solid #000;
+    border-radius: 0px;
+    width:900px;
+}
+.info{
+    display: flex;
+    margin:10px 0px 10px 10px;
+}
+.info>h3{
+    display: contents;
+    
+}
+.Terms{
+    margin:10px 0px 10px 10px;
 }
