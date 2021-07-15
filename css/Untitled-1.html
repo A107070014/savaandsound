@@ -1,0 +1,40 @@
+<script>
+
+    $(function(){
+    
+    document.getElementById("parent").addEventListener("click",function(e){
+    
+    alert("我是最外層");
+    
+    });
+    
+    $(".layer-screen").click(function(e){
+    
+    alert("我是中間層");
+    
+    });
+    
+    $("a").click(function(e){
+    
+    alert("我是a標簽");
+    
+    });
+    
+    });
+    
+    </script>
+    <body>
+<div class="screen" id="parent">
+
+    <div class="layer-screen">
+    
+    <div class="screen-content">
+    
+    <a class="filter-tag" href="void(0);">點擊a標簽
+    
+    </div>
+    
+</div>
+    
+</div>
+</body>
