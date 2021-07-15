@@ -13,7 +13,22 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<script>  
+    var icon 
+    var another 
+    window.onload=function(){
+        another = document.getElementById('another'); 
+        icon = document.getElementById('icon');
+    }
 
+    function showanother(){
+        if(another.style.display === "none")  {
+            another.style.display = "block";  
+        } else {  
+            another.style.display = "none";  
+        }  
+    }
+</script>
 </head>
 <body>
     <div id="fade" class="black_overlay"></div> 
@@ -116,10 +131,10 @@
             </div>
             <div>
                 <a id="tool" class="inform" title="通知" role="button" href="">通知</a>
-            </div> 
+            </div>
             <div id="tool" class="icon">
                 <div class="icon">
-                    <img src="img/another1.png" alt="其他" width="25" height="26" style="cursor: pointer;" 
+                    <img onclick="showanother();" src="img/another1.png" alt="其他" width="25" height="26" style="cursor: pointer;" 
                         onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
                         <div id="another" class="another">
                             <ul>
@@ -142,40 +157,19 @@
                     <p>名字</p>
                 </div>
                 <div>
-                    
-                        <div>
-                            <a class="catetitle" href ="">
-                                我的個人資料
-                            </a>
-                        </div>
-                    
-                    
-                        <div>
-                            <a class="catetitle" href ="">
-                                我的聲音故事
-                            </a>
-                        </div>
-                    
-                     
-                        <div>
-                            <a class="catetitle" href = "">
-                                聲音故事典藏
-                            </a>
-                        </div>
-                    
-                    
-                        <div>
-                            <a class="catetitle" href = "">
-                                設定
-                            </a>
-                        </div>
-                    
+                        <ul>
+                            <li><a href="#tab-1">我的個人資料</a></li>
+                            <li><a href="#tab-2">我的聲音故事</a></li>
+                            <li><a href="#tab-3">聲音故事典藏</a></li>
+                            <li><a href="#tab-4">設定</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="right">
             <div class="space">
-                <div id="myinfo" class="myinfo">
+                <div id="myinfo" class="tab-content-1">
                     <h2>我的個人資料</h2>
                         <div class="myphotoandname">
                             <img src="" title="大頭貼" width="50" height="50" style="border-radius: 5px;">
@@ -250,7 +244,7 @@
                             </form>
                         </div>    
                 </div>
-                <div id="set" class="set">
+                <div id="set" class="tab-content-4">
                     <h2>設定</h2>
                     <div class="center">
                         <div class="info">
@@ -274,84 +268,7 @@
                     </div>    
                 </div>
 
-                <div id="mycollect" class="mycollect" data-index="3">
-                    <article class="tgn9uw-0 bReysV" role="article" data-post-list-viewed-cell-no="4">
-                        <div class="tgn9uw-1 ceKcvN">
-                            <div class="euk31c-0 epbkjc">
-                                <div class="euk31c-4 hBautw">
-                                    <div class="yj50et-0 eOQgZp euk31c-5 etmCKd">
-                                        <svg viewBox="0 0 40 40" focusable="false" width="16" height="16" class="sc-husrwi dvqhOE">
-                                            <title>男</title>
-                                            <path fill="#81D4FA" d="M40 20a20 20 0 11-40 0 20 20 0 0140 0"></path>
-                                            <path fill="#2490BF" d="M16 7.9C12.4 7.4 9.3 6 9.3 6s5.5 4.3 5 5.3c-.4 1-4.2 0-4.2 0l4 2a9.7 9.7 0 00-1.5 4.6l.1 3.4a1.5 1.5 0 10.8 2.9 8.3 8.3 0 006.2 5.3c.6 0 .6 2 .6 3.2-1.6 1-2.5 3-2 5v2.2a20.2 20.2 0 009.9-1.6l-.7-2.7v-.4l-.2-.4-.2-.4-.2-.3-.2-.3c-.7-1-1.7-1.6-2.9-1.8l.6-2.3s1.4-1 3-2.6l.4 1.3 1.4-2.5.9-1.8s3.8-10.3.8-13.9c-2.6-3-11-1.9-14.7-2.3">
-                                            </path>
-                                         </svg>
-                                     </div>
-                                 </div>
-                                 <div class="euk31c-1 ftveEB">
-                                     <div class="euk31c-2 hkziuG">
-                                         <div class="euk31c-3 iVGtVg">戲劇綜藝</div>
-                                         <div class="euk31c-3 iVGtVg">世新大學</div>
-                                     </div>
-                                 </div>
-                                 <div class="uj732l-4 gFYeFH">
-                                     <div class="sc-1x2m678 eoESgl">
-                                         <button type="button" class="m8cvq2-0 hzLJit">
-                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false" role="img" aria-hidden="true" class="sc-husrwi dvqhOE">
-                                                 <g transform="translate(148)">
-                                                     <circle cx="2" cy="2" r="2" transform="translate(-138 4)"></circle>
-                                                     <circle cx="2" cy="2" r="2" transform="translate(-138 10)"></circle>
-                                                     <circle cx="2" cy="2" r="2" transform="translate(-138 16)"></circle>
-                                                 </g>
-                                             </svg>
-                                         </button>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <h2 class="tgn9uw-2 jWUdzO">
-                             <a class="tgn9uw-3 cUGTXH" href="/f/tvepisode/p/236420616">
-                                 <span>台灣新生代女演員，最看好誰</span>
-                             </a>
-                         </h2>
-                         <div class="uj732l-0 cDiqBT">
-                             <div class="tgn9uw-4 jtaqbD">
-                                 <span>台灣新生代女演員們，有顏值，實力也在線，個人蠻喜歡以下幾位，若好好發展，未來一定可以成為頂尖女演員，＃王淨，1998 年 2 月 7 日（23歲），我女神 氣質好 又漂亮，王淨因2015年在計程車上翻
-                                 </span>
-                             </div>
-                         </div>
-                         <div class="uj732l-1 fFUtFn">
-                             <div class="uj732l-2 eaMAYW">
-                                 <div class="cgoejl-0 croAom">
-                                     <div class="cgoejl-2 fZnlej">
-                                         <img src="https://megapx-assets.dcard.tw/images/52057289-337a-4f2f-88c0-cb8a77ee422a/orig.png" title="愛心" class="cgoejl-1 liVVKX" style="z-index: 3;">
-                                         <img src="https://megapx-assets.dcard.tw/images/9a7cc9af-9f81-43ea-8d9b-968a6441ae51/orig.png" title="哈哈" class="cgoejl-1 liVVKX" style="z-index: 2;">
-                                         <img src="https://megapx-assets.dcard.tw/images/042b27f9-b507-473b-8f36-654aedcc37df/orig.png" title="森77" class="cgoejl-1 liVVKX" style="z-index: 1;">
-                                     </div>
-                                     <div class="cgoejl-3 jMiYgp">4449</div>
-                                 </div>
-                             </div>
-                             <div class="uj732l-2 eaMAYW">
-                                 <div class="uj732l-2 ghvDya">
-                                     <svg viewBox="0 0 24 24" focusable="false" role="img" aria-hidden="true" class="sc-husrwi dvqhOE">
-                                         <path d="M1.3330000000000002 12a10.667 10.667 0 1021.334 0 10.667 10.667 0 10-21.334 0zM15.5 6.5h-7A3.5 3.5 0 005 10v3.5A3.5 3.5 0 008.5 17H9v1.369a.75.75 0 001.238.57L12.5 17h3a3.5 3.5 0 003.5-3.5V10a3.5 3.5 0 00-3.5-3.5z" fill-rule="evenodd"></path>
-                                     </svg>
-                                     <span>345</span>
-                                 </div>
-                             </div>
-                             <div class="uj732l-4 gFYeFH">
-                                 <div class="uj732l-2 eaMAYW">
-                                     <svg viewBox="0 0 24 24" focusable="false" role="img" aria-hidden="true" class="sc-husrwi dvqhOE">
-                                         <path d="M17.65 21.39L12 17.5l-5.65 3.88A1.5 1.5 0 014 20.15V5a2.5 2.5 0 012.5-2.5h11A2.5 2.5 0 0120 5v15.15a1.5 1.5 0 01-2.35 1.24z">
-                                         </path>
-                                     </svg>
-                                     <span>收藏</span>
-                                 </div>
-                             </div>
-                         </div>
-                         <img class="sc-2rneb0-0 jTZxum tgn9uw-7 esWtrP" src="https://imgur.dcard.tw/f7JjuI9b.jpg" width="84px" height="84px" alt="" loading="lazy" referrerpolicy="no-referrer">
-                     </article>
-                 </div>
+                
             </div>        
         </div>
     </main>
