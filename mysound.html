@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="css/tags.css" type="text/css">
 <link rel="stylesheet" href="css/Notice-botton.css">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<!--<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>留聲跡</title>
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
@@ -28,6 +31,37 @@
             another.style.display = "none";  
         }  
     }
+</script>
+<script>
+    $(document).ready(function () {
+        $(".tab-item").hide();
+        $("#tab-item1").show();
+        $("#tab1").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab1").addClass("active");
+            $("#tab-item1").show();
+        });
+        $("#tab2").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab2").addClass("active");
+            $("#tab-item2").show();
+        });
+        $("#tab3").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab3").addClass("active");
+            $("#tab-item3").show();
+        });
+        $("#tab4").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab4").addClass("active");
+            $("#tab-item4").show();
+        });
+        
+    });
 </script>
 </head>
 <body>
@@ -124,10 +158,10 @@
             </div>
             <script src="js/tags.js"></script>      
             <div>
-                <a id="tool" class="game" title="小遊戲" role="button" href="">小遊戲</a>
+                <a id="tool" class="game" title="小遊戲" role="button" href="game.html">小遊戲</a>
             </div>
             <div>
-                <a id="tool" class="mysound" title="我的聲跡" role="button" href="">我的聲跡</a>
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html">我的聲跡</a>
             </div>
             <div>
                 <a id="tool" class="inform" title="通知" role="button" href="">通知</a>
@@ -138,7 +172,7 @@
                         onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
                         <div id="another" class="another">
                             <ul>
-                                <a href="" title="關於我們"><li>關於我們</li></a>
+                                <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
                                 <a href="" title="聯絡我們"><li>聯絡我們</li></a>
                                 <a href="" title="募資平台"><li>募資平台</li></a>
                                 <a href="" title="設定"><li>設定</li></a>
@@ -149,6 +183,127 @@
              </div>
         </div>
     </nav>
+    
+    <div class="row">
+        <div class="list-group col-md-4 col-xs-4">
+            <div class="personal">
+                <img src="" >大頭貼
+                <p>名字</p>
+            </div>
+            <a id="tab1" href="#" class="tab list-group-item active">我的個人資料</a>
+            <a id="tab2" href="#" class="tab list-group-item">我的聲音故事</a>
+            <a id="tab3" href="#" class="tab list-group-item">聲音故事收藏</a>
+            <a id="tab4" href="#" class="tab list-group-item">設定</a>
+        </div>
+        <div class="my col-md-8 col-xs-4">
+            <div id="tab-item1" class="tab-item">
+                <h2>我的個人資料</h2>
+                        <div class="myphotoandname">
+                            <img src="" title="大頭貼" width="50" height="50" style="border-radius: 5px;">
+                                <p>姓名</p>
+                                <button class="editpen">
+                                    <img src="img/pen.png" width="15" height="15">
+                                    編輯
+                                </button>
+                        </div>
+                        <table>
+                            <tr>
+                                <td class="z">生日</td>
+                                <td class="x">顯示生日</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="z">性別</td>
+                                <td class="x">顯示性別</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="z">信箱</td>
+                                <td class="x">顯示信箱</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="z">手機</td>
+                                <td class="x">顯示手機</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td class="z">密碼</td>
+                                <td class="x">顯示密碼</td>
+                                <td class="y">
+                                    <button class="editpen">
+                                        <img src="img/pen.png" width="15" height="15">
+                                        編輯
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="editmyinfo">
+                            <form class="" action="" method="post">
+                                姓名<input type="text" name="name"/>
+                                <input type="date"value="2020-04-20" min="1921-01-01" max="2021-12-10"><br>
+                                <input type="radio" name="gender" value="男"> 男
+                                <input type="radio" name="gender" value="女"> 女<br>
+                                手機<input type="tel"><br>
+                                電子郵件<input type="mail" name="mail" value="" placeholder="輸入電子郵件"/><br>
+                                密碼<input type="text" name="password" value=""panel placeholder="輸入密碼"/>
+                                <input type="submit" name="correct" value="確認">
+                            </form>
+                        </div>    
+            </div>
+            <div id="tab-item2" class="tab-item">
+                <h2>我的聲音故事</h2>
+            </div>
+            <div id="tab-item3" class="tab-item">
+                <h2>聲音故事收藏</h2>
+            </div>
+            <div id="tab-item4" class="tab-item">
+                <h2>設定</h2>
+                    <div class="center">
+                        <div class="info">
+                            <h3>通知</h3>
+                            <div class="switch_demo">
+                                <input type="checkbox" name="switch_demo" class="switch_demo-checkbox" id="switch_demo" checked>
+                                <label class="switch_demo-label" for="switch_demo">
+                                    <span class="switch_demo-inner"></span>
+                                    <span class="switch_demo-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="Terms">
+                            <h3>使用設定與條款</h3>
+                            <a href=""><h4>會員權益條款</h4></a>
+                            <a href=""><h4>個資告知條</h43></a>
+                            <a href=""><h4>音檔版權宣告</h4></a>
+                            <a href=""><h4>圖檔版權聲明</h4></a>
+                            <a href=""><h4>版歸聲明</h4></a>
+                        </div>
+                    </div>    
+            </div>
+        </div>
+    </div>   
+        
+<!--
     <main>
         <div class="left">
             <div class="space">
@@ -231,18 +386,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <div class="editmyinfo">
-                            <form class="" action="" method="post"><!--記得連結-->
-                                姓名<input type="text" name="name"/>
-                                <input type="date"value="2020-04-20" min="1921-01-01" max="2021-12-10"><br>
-                                <input type="radio" name="gender" value="男"> 男
-                                <input type="radio" name="gender" value="女"> 女<br>
-                                手機<input type="tel"><br>
-                                電子郵件<input type="mail" name="mail" value="" placeholder="輸入電子郵件"/><br>
-                                密碼<input type="text" name="password" value=""panel placeholder="輸入密碼"/>
-                                <input type="submit" name="correct" value="確認">
-                            </form>
-                        </div>    
+                        
                 </div>
                 <div id="set" class="tab-content-4">
                     <h2>設定</h2>
@@ -272,4 +416,5 @@
             </div>        
         </div>
     </main>
+-->
 </body>

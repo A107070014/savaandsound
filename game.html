@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#3B1E1E"/>
+<meta name="supported-color-schemes" content="light"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/tags.css" type="text/css">
+<link rel="stylesheet" href="css/Notice-botton.css">
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<!--<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>留聲跡</title>
+<link rel="icon" href="img/logo.png" type="image/x-icon">
+<!-- google 正體中文字型 -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<script>  
+    var icon 
+    var another 
+    window.onload=function(){
+        another = document.getElementById('another'); 
+        icon = document.getElementById('icon');
+    }
+
+    function showanother(){
+        if(another.style.display === "none")  {
+            another.style.display = "block";  
+        } else {  
+            another.style.display = "none";  
+        }  
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $(".tab-item").hide();
+        $("#tab-item1").show();
+        $("#tab1").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab1").addClass("active");
+            $("#tab-item1").show();
+        });
+        $("#tab2").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab2").addClass("active");
+            $("#tab-item2").show();
+        });
+        $("#tab3").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab3").addClass("active");
+            $("#tab-item3").show();
+        });
+        $("#tab4").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab4").addClass("active");
+            $("#tab-item4").show();
+        });
+        
+    });
+</script>
+</head>
+<body>
+    <div id="fade" class="black_overlay" ></div> 
+    <!--標題列-->
+    <nav>
+        <div class="logo">
+            <div class="picture">
+                <a title="留聲跡" href="">
+                    <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
+                </a>
+            </div>
+            <div class="logoname">
+                <a title="留聲跡" href="">
+                    <b><span class="logoname">留聲跡</span></b>
+                </a>
+            </div>   
+        </div>
+        <div class="search">
+            <div class="key">
+                <form action="">
+                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50"/>
+                    <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="searchicon" height="75%">
+                            <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path>
+                        </svg>   
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="tool">
+            <div>
+                <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
+                id="tool" class="postw" title="發文" style="cursor: pointer;">發文
+                </a>
+            </div>
+            <!--發文-->
+            <div id="article" class="article">
+                <div class="close">
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
+                        <img src="img/close1.png" width="15px" height="15px" 
+                            onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+                    </a>
+                </div>
+                <h1>發表貼文</h1>
+                <div>大頭貼/姓名</div>
+                <div>
+                    <form >
+                        <select  name="classification" style="cursor: pointer;">
+                        <option value="disabled selected hidden" style="display: none;">選擇分類</option>
+                        <option value="nature">自然</option>
+                        　<option value="city">都市</option>
+                        　<option value="instrument">器械</option>
+                        　<option value="vocal">人聲</option>
+                        　<option value="nostalgia">懷舊</option>
+                        </select>
+                    </form>
+                </div>
+                <div>
+                    <textarea name="mytext" placeholder="標題"rows="" cols="70"required ></textarea>
+                    <textarea name="mytext" placeholder="聲音故事......"rows="10" cols="70"required></textarea>
+                </div>
+                
+                <p>輸入 tags:</p>
+                <p>
+                    <div class="tags-input" data-name="tags-input" ></div>
+                </p>
+                
+                <div>
+                    <div style="display:inline;">
+                        <form action="/somewhere/to/upload" enctype="multipart/form-data"></form>
+                            <label>
+                                <input name="progressbarTW_img" type="file" accept="image/gif, image/jpeg, image/png" style="display:none;">
+                                <img src="img/picture1.png" width="50" height="50" style="cursor: pointer;"
+                                    onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">
+                            </label>
+                        </form>
+                    </div>
+                    <div style="display:inline;">
+                        <label>
+                            <input type="file" accept="audio/*" style="display:none;">
+                            <img src="img/music1.png" width="50" height="50" style="cursor: pointer;"
+                                onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
+                        </label>
+                    </div>
+                </div>
+                <div >
+                    <form action="">
+                        <label class="publish">
+                            <input type="submit" value="發佈" style="display:none;">發佈
+                        </label>
+                    </form>
+                </div>
+            </div>
+            <script src="js/tags.js"></script>
+            <div>
+                <a id="tool" class="game" title="小遊戲" role="button" href="game.html">小遊戲</a>
+            </div>
+            <div >
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html">我的聲跡</a>
+            </div>
+            <div>
+                <a id="tool" class="inform" title="通知" role="button" href="">通知</a>
+            </div> 
+            <div id="tool" class="icon">
+                <div class="icon">
+                    <img  onclick="showanother();" src="img/another1.png" title="其他" alt="其他" width="25" height="26" style="cursor: pointer;" 
+                        onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
+                        <div id="another" class="another" >
+                            <ul>
+                                <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
+                                <a href="" title="聯絡我們"><li>聯絡我們</li></a>
+                                <a href="" title="募資平台"><li>募資平台</li></a>
+                                <a href="" title="設定"><li>設定</li></a>
+                                <a href="" title="登出"><li>登出</li></a>
+                            </ul>
+                        </div>
+                </div>
+             </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="list-group col-md-4 col-xs-4">
+            <div class="play">
+                <h1>猜聲小遊戲</h1>
+              <div class="playsound">
+                <audio controls>
+                    <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
+                    <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
+                    <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                    遇到不支援的瀏覽器會出現這行字
+                </audio>
+              </div>
+              <div>
+                <label>選擇答案:</label>
+                <label><input type="radio" name="color" value="blue">藍色</label>
+                <label><input type="radio" name="color" value="yellow">黃色</label>
+                <label><input type="radio" name="color" value="red">紅色</label>
+                <label><input type="radio" name="color" value="green">綠色</label>
+                <button class="finish-game">結束遊戲</button>
+              </div>
+            </div>
+        </div>
+    </div>    
+</body>

@@ -39,25 +39,25 @@ nav>.tool{
     padding-right: 15px;
     
 }
-/*
 main{
     display:flex;
     justify-content:center;
-    background-color: #ceb195;
+    background-color: #fff;
+    
 }
-main>.left{
+main>#left{
     flex:none;
     width:300px;
     background-color:#ceb195;
     margin:0px auto;
 }
-main>.right{
+main>#right{
     flex:auto;
     width:300px;
+    /*background-color: antiquewhite;*/
     margin:0px auto;
     border-left:2px solid #000;
 }
-*/
 @media(max-width:1200px){
     nav>.logo{
         width:;
@@ -133,11 +133,9 @@ main>.right{
     padding: 5px 5px;
 }
 /*分類*/
-.space{
-    margin-bottom:40%;
-}
 .cate{
     font-size: 25px;
+    border-bottom:2px solid #000;
     padding:10px 0px 10px 30px;
 }
 .personal{
@@ -164,13 +162,14 @@ main>.right{
 }*/
 
 /*頁籤變換*/
-
 .choice>span{
     display:none;
 }
+
+
 #tab-1:target ~ #tab > ul li a[href$="#tab-1"],
 #tab-2:target ~ #tab > ul li a[href$="#tab-2"] {
-    border-bottom:5px solid #3b1e1e;
+    /*border-bottom:5px solid #3b1e1e;*/
 }
 /*頁籤內容顯示*/
 #tab-1:target ~ #tab > div.tab-content-1,
@@ -178,23 +177,22 @@ main>.right{
 
 }
 #tab{
-    width:1000px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    padding: 0px 15px;
-    background-color: #eee;
-    margin-left: -50px;
+    width:auto;
+    
 }
     /* 頁籤ul */
 #tab>ul{
     overflow: hidden;
-    margin: 0px;
-    padding: 10px 20px 0px 0px;
+    margin: 0;
+    padding: 10px 20px 0 80px;
     border-bottom:2px dotted #000;
     white-space: nowrap;
+    
+    
 }
 #tab>ul>li{
-    list-style-type: none; 
+    list-style-type: none;
+    
 }
 #tab>ul>li>a{
     text-decoration: none;
@@ -205,7 +203,7 @@ main>.right{
     margin-left: 5px;
     margin-right:50px;
     font-weight:bold;
-    
+   
 }
     /*頁籤div內容*/
 #tab>div {
@@ -236,7 +234,7 @@ span:target ~ #tab > div:first-of-type {
 span ~ #tab > ul li:first-child a,
 #tab-1:target ~ #tab > ul li a[href$="#tab-1"],
 #tab-2:target ~ #tab > ul li a[href$="#tab-2"]{
-    
+    background: #fff;
 }
     
 /*頁籤內容顯示&第一筆*/
@@ -245,6 +243,7 @@ span ~ #tab > div:first-of-type,
 #tab-2:target ~ #tab > div.tab-content-2 {
     visibility:visible;
     height:200px;
+    background: #fff;
     padding: 0px;
 }
 
@@ -666,6 +665,9 @@ textarea:hover{
 }
 
 /*我的聲跡*/
+.myinfo>h2{
+    margin: 20px 0px 30px 100px;
+}
 .myphotoandname{
     text-align: center;
     margin-top: 30px;
@@ -674,7 +676,6 @@ textarea:hover{
 .myphotoandname>p{
     margin:5px 0px 5px 0px;
 }
-
 table{
     border: 1.5px solid #000;
     border-radius: 0px;
@@ -718,60 +719,61 @@ td:hover{
     background-color:transparent;
     text-decoration: underline dotted #3b1e1e;
 }
+
 .editmyinfo{
     display:none;
 }
+
+
+
+
+.set>h2{
+    margin: 20px 0px 30px 100px;
+}
 .center{
     border: 1.5px solid #000;
+    border-radius: 0px;
     width:900px;
-    margin-top:50px;
 }
 .info{
     display: flex;
-    margin:15px 0px 15px 25px;
+    margin:10px 0px 10px 10px;
 }
 .info>h3{
     display: contents;
+    
 }
 .Terms{
-    margin: 20px 0px 15px 25px;
+    margin:10px 0px 10px 10px;
 }
 
-.row{display:flex;justify-content:center;margin-right:-15px;margin-left:0px;background-color: #ceb195;}
-.list-group{flex:none;width:300px;margin-bottom:100%;}
-.my{flex:auto;width:300px;margin-bottom:100%;}
-.tab-item{
-    margin: 20px 0px 30px 100px;
-    width:1000px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    padding: 0px 15px;
-    background-color: #eee;
-    }
+
+
+
+.row{display:flex;width:300px;margin-right:-15px;margin-left:0px}
+.list-group{flex:none;width:300px;}
+.my{flex:auto;width:300px;}
 .row:after,.row:before{display:table;content:" "}
 .row:after{clear:both}
-.list-group{padding-left:0;/*margin-bottom:100px;*/}
-.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;font-size: 20px;font-weight: bold;}
-/*.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}
+.list-group{padding-left:0;margin-bottom:20px}
+.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}
+.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}
 .list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}
-*/
-a.list-group-item,button.list-group-item{color:#493d2f}
+a.list-group-item,button.list-group-item{color:#555}
 a.list-group-item .list-group-item-heading,button.list-group-item .list-group-item-heading{color:#333}
 a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,button.list-group-item:hover{color:#555;text-decoration:none;background-color:#f5f5f5}
 button.list-group-item{width:100%;text-align:left}
 .list-group-item.disabled,.list-group-item.disabled:focus,.list-group-item.disabled:hover{color:#777;cursor:not-allowed;background-color:#eee}
 .list-group-item.disabled .list-group-item-heading,.list-group-item.disabled:focus .list-group-item-heading,.list-group-item.disabled:hover .list-group-item-heading{color:inherit}
-.list-group-item.disabled .list-group-item-text,.list-group-item.disabled:focus .list-group-item-text,.list-group-item.disabled:hover .list-group-item-text{color:#777;}
-.list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#3b1e1e;}
+.list-group-item.disabled .list-group-item-text,.list-group-item.disabled:focus .list-group-item-text,.list-group-item.disabled:hover .list-group-item-text{color:#777}
+.list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#337ab7;border-color:#337ab7}
 .list-group-item.active .list-group-item-heading,.list-group-item.active .list-group-item-heading>.small,.list-group-item.active .list-group-item-heading>small,.list-group-item.active:focus .list-group-item-heading,.list-group-item.active:focus .list-group-item-heading>.small,.list-group-item.active:focus .list-group-item-heading>small,.list-group-item.active:hover .list-group-item-heading,.list-group-item.active:hover .list-group-item-heading>.small,.list-group-item.active:hover .list-group-item-heading>small{color:inherit}
 .list-group-item.active .list-group-item-text,.list-group-item.active:focus .list-group-item-text,.list-group-item.active:hover .list-group-item-text{color:#c7ddef}
-/*
 .list-group-item-success{color:#3c763d;background-color:#dff0d8}
 a.list-group-item-success,button.list-group-item-success{color:#3c763d}
 a.list-group-item-success .list-group-item-heading,button.list-group-item-success .list-group-item-heading{color:inherit}
 a.list-group-item-success:focus,a.list-group-item-success:hover,button.list-group-item-success:focus,button.list-group-item-success:hover{color:#3c763d;background-color:#d0e9c6}
 a.list-group-item-success.active,a.list-group-item-success.active:focus,a.list-group-item-success.active:hover,button.list-group-item-success.active,button.list-group-item-success.active:focus,button.list-group-item-success.active:hover{color:#fff;background-color:#3c763d;border-color:#3c763d}
-
 .list-group-item-info{color:#31708f;background-color:#d9edf7}a.list-group-item-info,button.list-group-item-info{color:#31708f}a.list-group-item-info .list-group-item-heading,button.list-group-item-info .list-group-item-heading{color:inherit}
 a.list-group-item-info:focus,a.list-group-item-info:hover,button.list-group-item-info:focus,button.list-group-item-info:hover{color:#31708f;background-color:#c4e3f3}a.list-group-item-info.active,a.list-group-item-info.active:focus,a.list-group-item-info.active:hover,button.list-group-item-info.active,button.list-group-item-info.active:focus,button.list-group-item-info.active:hover{color:#fff;background-color:#31708f;border-color:#31708f}
 .list-group-item-warning{color:#8a6d3b;background-color:#fcf8e3}a.list-group-item-warning,button.list-group-item-warning{color:#8a6d3b}
@@ -794,14 +796,3 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 .panel-heading+.list-group .list-group-item:first-child{border-top-width:0}
 .list-group+.panel-footer{border-top-width:0}
 .panel-group .panel-heading+.panel-collapse>.list-group,.panel-group .panel-heading+.panel-collapse>.panel-body{border-top:1px solid #ddd}
-*/
-
-/*小遊戲*/
-.play{
-    margin: 20px;
-    width:500px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    padding: 0px 15px;
-    background-color: #eee;
-}
