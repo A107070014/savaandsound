@@ -136,10 +136,7 @@ main>.right{
 .space{
     margin-bottom:40%;
 }
-.cate{
-    font-size: 25px;
-    padding:10px 0px 10px 30px;
-}
+
 .personal{
     font-size: 25px;
     color:#493d2f;
@@ -247,6 +244,7 @@ span ~ #tab > div:first-of-type,
     height:200px;
     padding: 0px;
 }
+
 
 .posthead{
     display: flex;
@@ -581,6 +579,27 @@ span ~ #tab > div:first-of-type,
 #tool:hover{
     color:#e6ad03;
 }
+#inform{
+    position: fixed;
+    top:50px;
+    left:80%;
+    transform:translate(-140px,0px);
+    width:380px;
+    padding:10px;
+    border:none;
+    border-radius: 10px;
+    background-color: #3b1e1ee8;
+    display:none;
+    text-align: left;
+    float: left;
+}
+#inform>h3{
+    color:#d9a200;
+}
+#inform>div{
+    color:#eee;
+    padding:10px 0px;
+}
 
 .another{
     position: fixed;
@@ -719,7 +738,7 @@ td:hover{
     text-decoration: underline dotted #3b1e1e;
 }
 .editmyinfo{
-    display:none;
+    
 }
 .center{
     border: 1.5px solid #000;
@@ -751,18 +770,22 @@ td:hover{
 .row:after,.row:before{display:table;content:" "}
 .row:after{clear:both}
 .list-group{padding-left:0;/*margin-bottom:100px;*/}
-.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;font-size: 20px;font-weight: bold;}
+.list-group>h1{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;margin-left:5px;font-size: 20px;font-weight: bold;}
 /*.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}
 .list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}
 */
 a.list-group-item,button.list-group-item{color:#493d2f}
 a.list-group-item .list-group-item-heading,button.list-group-item .list-group-item-heading{color:#333}
-a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,button.list-group-item:hover{color:#555;text-decoration:none;background-color:#f5f5f5}
+a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,button.list-group-item:hover{color:#555;text-decoration:none;background-color:#f5f5f5;border-radius: 10px;}
 button.list-group-item{width:100%;text-align:left}
-.list-group-item.disabled,.list-group-item.disabled:focus,.list-group-item.disabled:hover{color:#777;cursor:not-allowed;background-color:#eee}
+.list-group-item.disabled,.list-group-item.disabled:focus,.list-group-item.disabled:hover{color:#777;cursor:not-allowed;background-color:#eee;}
 .list-group-item.disabled .list-group-item-heading,.list-group-item.disabled:focus .list-group-item-heading,.list-group-item.disabled:hover .list-group-item-heading{color:inherit}
 .list-group-item.disabled .list-group-item-text,.list-group-item.disabled:focus .list-group-item-text,.list-group-item.disabled:hover .list-group-item-text{color:#777;}
-.list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#3b1e1e;}
+.list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#3b1e1e;border-radius: 10px;}
 .list-group-item.active .list-group-item-heading,.list-group-item.active .list-group-item-heading>.small,.list-group-item.active .list-group-item-heading>small,.list-group-item.active:focus .list-group-item-heading,.list-group-item.active:focus .list-group-item-heading>.small,.list-group-item.active:focus .list-group-item-heading>small,.list-group-item.active:hover .list-group-item-heading,.list-group-item.active:hover .list-group-item-heading>.small,.list-group-item.active:hover .list-group-item-heading>small{color:inherit}
 .list-group-item.active .list-group-item-text,.list-group-item.active:focus .list-group-item-text,.list-group-item.active:hover .list-group-item-text{color:#c7ddef}
 /*
@@ -798,10 +821,27 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 
 /*小遊戲*/
 .play{
-    margin: 20px;
-    width:500px;
+    flex: none;
+    margin: 20px -250px;
+    width:800px;
     border: 2px solid #000;
     border-radius: 5px;
     padding: 0px 15px;
     background-color: #eee;
+    padding-bottom: 20px;
+}
+.play>h1{
+    padding:10px 0px;
+}
+.playgame{
+    padding:5px 0px;
+    text-align: center;
+}
+.answer>label{
+    padding:5px 10px;
+    display: block;
+    text-align: center;
+}
+.answer>button{
+    
 }

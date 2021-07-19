@@ -17,11 +17,11 @@
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 <script>  
-    var icon 
+    var inform 
     var another 
     window.onload=function(){
         another = document.getElementById('another'); 
-        icon = document.getElementById('icon');
+        inform  = document.getElementById('inform');
     }
 
     function showanother(){
@@ -29,6 +29,13 @@
             another.style.display = "block";  
         } else {  
             another.style.display = "none";  
+        }  
+    }
+    function showinform(){
+        if(inform .style.display === "none")  {
+            inform .style.display = "block";  
+        } else {  
+            inform .style.display = "none";  
         }  
     }
 </script>
@@ -126,10 +133,14 @@
                 </div>
                 
                 <p>輸入 tags:</p>
-                <p>
-                    <div class="tags-input" data-name="tags-input" ></div>
-                </p>
-                
+                <div class="simple-tags"
+                    id="container" 
+                    data-simple-tags="CodeHim, HTML, CSS, JavaScript, jQuery, Bootstrap">
+                </div>
+                <script>
+                    var el = document.getElementById('container');
+                    new Tags(el);
+                </script>    
                 <div>
                     <div style="display:inline;">
                         <form action="/somewhere/to/upload" enctype="multipart/form-data"></form>
@@ -164,8 +175,24 @@
                 <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html">我的聲跡</a>
             </div>
             <div>
-                <a id="tool" class="inform" title="通知" role="button" href="">通知</a>
+                <a onclick="showinform();" id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">通知</a>
             </div>
+            <div id="inform" class="inform">
+                <h3>本週</h3>
+                <div>
+                    本週訊息
+                </div>
+                
+                <h3>本月</h3>
+                <div>
+                    本月訊息
+                </div>
+                
+                <h3>更早之前</h3>
+                <div>
+                    更早之前訊息
+                </div>
+            </div> 
             <div id="tool" class="icon">
                 <div class="icon">
                     <img onclick="showanother();" src="img/another1.png" alt="其他" width="25" height="26" style="cursor: pointer;" 
@@ -197,75 +224,16 @@
         </div>
         <div class="my col-md-8 col-xs-4">
             <div id="tab-item1" class="tab-item">
-                <h2>我的個人資料</h2>
-                        <div class="myphotoandname">
-                            <img src="" title="大頭貼" width="50" height="50" style="border-radius: 5px;">
-                                <p>姓名</p>
-                                <button class="editpen">
-                                    <img src="img/pen.png" width="15" height="15">
-                                    編輯
-                                </button>
-                        </div>
-                        <table>
-                            <tr>
-                                <td class="z">生日</td>
-                                <td class="x">顯示生日</td>
-                                <td class="y">
-                                    <button class="editpen">
-                                        <img src="img/pen.png" width="15" height="15">
-                                        編輯
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="z">性別</td>
-                                <td class="x">顯示性別</td>
-                                <td class="y">
-                                    <button class="editpen">
-                                        <img src="img/pen.png" width="15" height="15">
-                                        編輯
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="z">信箱</td>
-                                <td class="x">顯示信箱</td>
-                                <td class="y">
-                                    <button class="editpen">
-                                        <img src="img/pen.png" width="15" height="15">
-                                        編輯
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="z">手機</td>
-                                <td class="x">顯示手機</td>
-                                <td class="y">
-                                    <button class="editpen">
-                                        <img src="img/pen.png" width="15" height="15">
-                                        編輯
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr >
-                                <td class="z">密碼</td>
-                                <td class="x">顯示密碼</td>
-                                <td class="y">
-                                    <button class="editpen">
-                                        <img src="img/pen.png" width="15" height="15">
-                                        編輯
-                                    </button>
-                                </td>
-                            </tr>
-                        </table>
+                <h2>我的個人資料</h2>               
                         <div class="editmyinfo">
                             <form class="" action="" method="post">
-                                姓名<input type="text" name="name"/>
-                                <input type="date"value="2020-04-20" min="1921-01-01" max="2021-12-10"><br>
-                                <input type="radio" name="gender" value="男"> 男
-                                <input type="radio" name="gender" value="女"> 女<br>
+                                頭貼<img src="" title="大頭貼" width="50" height="50" style="border-radius: 5px;"><br>
+                                姓名<input type="text" name="name"/><br>
+                                性別<input type="radio" name="gender" value="男"> 男
+                                    <input type="radio" name="gender" value="女"> 女<br>
+                                生日<input type="date"value="2020-04-20" min="1921-01-01" max="2021-12-10"><br>                 
                                 手機<input type="tel"><br>
-                                電子郵件<input type="mail" name="mail" value="" placeholder="輸入電子郵件"/><br>
+                                信箱/帳號<input type="mail" name="mail" value="" placeholder="輸入電子郵件"/><br>
                                 密碼<input type="text" name="password" value=""panel placeholder="輸入密碼"/>
                                 <input type="submit" name="correct" value="確認">
                             </form>
@@ -417,4 +385,8 @@
         </div>
     </main>
 -->
+<button class="editpen">
+    <img src="img/pen.png" width="15" height="15">
+    編輯
+</button>
 </body>

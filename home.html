@@ -17,11 +17,11 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
 <script>  
-    var icon 
+    var inform 
     var another 
     window.onload=function(){
         another = document.getElementById('another'); 
-        icon = document.getElementById('icon');
+        inform  = document.getElementById('inform');
     }
 
     function showanother(){
@@ -29,6 +29,13 @@
             another.style.display = "block";  
         } else {  
             another.style.display = "none";  
+        }  
+    }
+    function showinform(){
+        if(inform .style.display === "none")  {
+            inform .style.display = "block";  
+        } else {  
+            inform .style.display = "none";  
         }  
     }
 </script>
@@ -76,12 +83,12 @@
     <nav>
         <div class="logo">
             <div class="picture">
-                <a title="留聲跡" href="">
+                <a title="留聲跡" href="home.html">
                     <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                 </a>
             </div>
             <div class="logoname">
-                <a title="留聲跡" href="">
+                <a title="留聲跡" href="home.html">
                     <b><span class="logoname">留聲跡</span></b>
                 </a>
             </div>   
@@ -111,7 +118,23 @@
                 <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html">我的聲跡</a>
             </div>
             <div>
-                <a id="tool" class="inform" title="通知" role="button" href="">通知</a>
+                <a onclick="showinform();" id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">通知</a>
+            </div>
+            <div id="inform" class="inform">
+                <h3>本週</h3>
+                <div>
+                    本週訊息
+                </div>
+                
+                <h3>本月</h3>
+                <div>
+                    本月訊息
+                </div>
+                
+                <h3>更早之前</h3>
+                <div>
+                    更早之前訊息
+                </div>
             </div> 
             <div id="tool" class="icon">
                 <div class="icon">
@@ -134,7 +157,7 @@
     <!--分類欄-->
     <div class="row">
         <div class="list-group col-md-4 col-xs-4">
-            <div class="cate">分類</div>
+            <h1>分類</h1>
             <a id="tab1" href="#" class="tab list-group-item active">自然</a>
             <a id="tab2" href="#" class="tab list-group-item">都市</a>
             <a id="tab3" href="#" class="tab list-group-item">器械</a>
@@ -552,10 +575,14 @@
     </div>
     
     <p>輸入 tags:</p>
-    <p>
-        <div class="tags-input" data-name="tags-input" ></div>
-    </p>
-    
+    <div class="simple-tags"
+        id="container" 
+         data-simple-tags="CodeHim, HTML, CSS, JavaScript, jQuery, Bootstrap">
+    </div>
+    <script>
+        var el = document.getElementById('container');
+        new Tags(el);
+    </script>    
     <div>
         <div style="display:inline;">
             <form action="/somewhere/to/upload" enctype="multipart/form-data"></form>
