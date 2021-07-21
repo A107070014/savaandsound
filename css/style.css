@@ -12,6 +12,8 @@ nav{
     background:#3b1e1e;
     border:2px solid #000;
     display:flex;
+    position: fixed;
+    width: 100%;
 }
 nav>.logo{
     flex:none;/*沒有彈性*/
@@ -39,6 +41,7 @@ nav>.tool{
     padding-right: 15px;
     
 }
+
 /*
 main{
     display:flex;
@@ -161,28 +164,40 @@ main>.right{
 }*/
 
 /*頁籤變換*/
-
-.choice>span{
+.tab-item span{
     display:none;
 }
+
 #tab-1:target ~ #tab > ul li a[href$="#tab-1"],
-#tab-2:target ~ #tab > ul li a[href$="#tab-2"] {
-    border-bottom:5px solid #3b1e1e;
+#tab-2:target ~ #tab > ul li a[href$="#tab-2"],
+#tab-3:target ~ #tab > ul li a[href$="#tab-3"],
+#tab-4:target ~ #tab > ul li a[href$="#tab-4"],
+#tab-5:target ~ #tab > ul li a[href$="#tab-5"],
+#tab-6:target ~ #tab > ul li a[href$="#tab-6"],
+#tab-7:target ~ #tab > ul li a[href$="#tab-7"],
+#tab-8:target ~ #tab > ul li a[href$="#tab-8"],
+#tab-9:target ~ #tab > ul li a[href$="#tab-9"],
+#tab-10:target ~ #tab > ul li a[href$="#tab-10"],
+#tab-11:target ~ #tab > ul li a[href$="#tab-11"],
+#tab-12:target ~ #tab > ul li a[href$="#tab-12"]{
+    
 }
 /*頁籤內容顯示*/
-#tab-1:target ~ #tab > div.tab-content-1,
-#tab-2:target ~ #tab > div.tab-content-2{
-
+.tab-content-1>ul,
+.tab-content-2>ul{
+    list-style-type: none;
+    display: flex;
+    margin: 5px 0px 5px 0px;
 }
 #tab{
     width:1000px;
     border: 2px solid #000;
     border-radius: 5px;
     padding: 0px 15px;
-    background-color: #eee;
-    margin-left: -50px;
+    background-color: #fff;
+    margin: 20px 0px 0px 80px;
 }
-    /* 頁籤ul */
+/* 頁籤ul */
 #tab>ul{
     overflow: hidden;
     margin: 0px;
@@ -190,6 +205,7 @@ main>.right{
     border-bottom:2px dotted #000;
     white-space: nowrap;
 }
+
 #tab>ul>li{
     list-style-type: none; 
 }
@@ -204,7 +220,8 @@ main>.right{
     font-weight:bold;
     
 }
-    /*頁籤div內容*/
+
+/*頁籤div內容*/
 #tab>div {
     clear:both;
     padding: 15px;
@@ -219,10 +236,11 @@ main>.right{
 }
 
     
-/*第一筆的底色*/
+/*第一筆的底色
 span:target ~ #tab > ul li:first-child a {
-    
+    border-bottom: 5px solid #3b1e1e;   
 }
+*/
 span:target ~ #tab > div:first-of-type {
     visibility:hidden;
     height:0;
@@ -232,54 +250,54 @@ span:target ~ #tab > div:first-of-type {
 /*頁籤變換&第一筆*/
 span ~ #tab > ul li:first-child a,
 #tab-1:target ~ #tab > ul li a[href$="#tab-1"],
-#tab-2:target ~ #tab > ul li a[href$="#tab-2"]{
+#tab-2:target ~ #tab > ul li a[href$="#tab-2"],
+#tab-3:target ~ #tab > ul li a[href$="#tab-3"],
+#tab-4:target ~ #tab > ul li a[href$="#tab-4"],
+#tab-5:target ~ #tab > ul li a[href$="#tab-5"],
+#tab-6:target ~ #tab > ul li a[href$="#tab-6"],
+#tab-7:target ~ #tab > ul li a[href$="#tab-7"],
+#tab-8:target ~ #tab > ul li a[href$="#tab-8"],
+#tab-9:target ~ #tab > ul li a[href$="#tab-9"],
+#tab-10:target ~ #tab > ul li a[href$="#tab-10"],
+#tab-11:target ~ #tab > ul li a[href$="#tab-11"],
+#tab-12:target ~ #tab > ul li a[href$="#tab-12"]{
     
 }
     
 /*頁籤內容顯示&第一筆*/
 span ~ #tab > div:first-of-type,
 #tab-1:target ~ #tab > div.tab-content-1,
-#tab-2:target ~ #tab > div.tab-content-2 {
+#tab-2:target ~ #tab > div.tab-content-2,
+#tab-3:target ~ #tab > div.tab-content-1,
+#tab-4:target ~ #tab > div.tab-content-2,
+#tab-5:target ~ #tab > div.tab-content-1,
+#tab-6:target ~ #tab > div.tab-content-2,
+#tab-7:target ~ #tab > div.tab-content-1,
+#tab-8:target ~ #tab > div.tab-content-2,
+#tab-9:target ~ #tab > div.tab-content-1,
+#tab-10:target ~ #tab > div.tab-content-2,
+#tab-11:target ~ #tab > div.tab-content-1,
+#tab-12:target ~ #tab > div.tab-content-2 {
     visibility:visible;
     height:200px;
     padding: 0px;
 }
 
 
-.posthead{
-    display: flex;
-    margin: 10px 0px;
-}
-.postnumber{
-    
-}
-.posttitle{
-   
-}
-.publisher{
-    width:
-}
-.postdate{
-    width:
-}
-.posttime{
-    width:
-}
-
 /* 註冊/登入 */
 .black_overlay{ 
     display: none; 
     position: absolute; 
     top: 0%; 
-    left: 0%; 
+    left: 0%;
     width: 100%; 
-    height: 100%; 
-    background-color: black; 
+    height: 100%;
+    background-color: rgb(0, 0, 0);
     z-index:1001; 
     -moz-opacity: 0.8; 
     opacity:.80; 
-    filter: alpha(opacity=88); 
-} 
+    filter: alpha(opacity=88);
+}
 .dialog{
     position:fixed;
     top:100px;
@@ -600,7 +618,26 @@ span ~ #tab > div:first-of-type,
     color:#eee;
     padding:10px 0px;
 }
-
+#shard1 {
+    position: absolute;
+    display: none;
+    top: 0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+    cursor: default;
+}
+#shard2{
+    position: absolute;
+    display: none;
+    top: 0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    z-index:0;
+    cursor: default;
+}
 .another{
     position: fixed;
     top:50px;
@@ -613,11 +650,14 @@ span ~ #tab > div:first-of-type,
     background-color: #3b1e1ee8;
     display:none;
     text-align: center;
+    z-index:1002;
 }
+
 .another ul{
     list-style-type:none;
     font-size: 20px;
     padding-right:30px;
+    
 }
 .another ul>a{
     color:#d9a200;
@@ -626,7 +666,7 @@ span ~ #tab > div:first-of-type,
 .another li{
     margin-bottom:7px;
     margin-top:7px;
-    padding:7px;
+    padding:7px ;
     
 }
 .another li:hover{
@@ -638,7 +678,7 @@ span ~ #tab > div:first-of-type,
 /*發文*/
 .article{
     position: fixed;
-    top:100px;
+    top:35px;
     left:45%;
     transform:translate(-185px,0px);
     width:600px;
@@ -655,6 +695,9 @@ span ~ #tab > div:first-of-type,
     right:10px;
     cursor: pointer;
 }
+.article1{
+    margin:10px 0px 5px 0px;
+}
 .classification{
     border-radius: 5px;
     border:1.5px solid #eee;
@@ -669,6 +712,9 @@ textarea{
 textarea:hover{
     border:1.5px solid #d9a200;
     border-radius: 5px;
+}
+.article>p{
+    margin:10px 0px;
 }
 .publish{
     border-radius: 5px;
@@ -685,47 +731,6 @@ textarea:hover{
 }
 
 /*我的聲跡*/
-.myphotoandname{
-    text-align: center;
-    margin-top: 30px;
-    padding-bottom: 10px;
-}
-.myphotoandname>p{
-    margin:5px 0px 5px 0px;
-}
-
-table{
-    border: 1.5px solid #000;
-    border-radius: 0px;
-    width:900px;
-    border-spacing: 0;
-}
-tr, td {
-    padding:10px 0px;
-    border-bottom: 1px solid #eee;
-    /*border-right-style: hidden;*/
-}
-tr:hover{
-    background-color: #eee;
-    
-}
-td:hover{
-    background-color: #eee;
-    
-}
-.z{
-    padding-left: 10px;
-    flex:none;
-    width:100px;
-}
-.x{
-    flex:none;
-    width:auto;
-}
-.y{
-    flex:none;
-    width:75px;
-}
 .editpen{
     background-color:transparent;
     border:none;
@@ -737,43 +742,132 @@ td:hover{
     background-color:transparent;
     text-decoration: underline dotted #3b1e1e;
 }
-.editmyinfo{
-    
+/*我的個人資料*/
+.my h2{
+    margin: 10px 0px 30px 0px;
+}
+.i1{
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 0px 15px;
+    background-color: #eee;
+    margin: 20px 200px 0px 80px;
+}
+.myinfo>p{
+    display:inline;
+    line-height: 50px;
+}
+.myinfo>h3{
+    margin-top:20px
+}
+.myinfo input[type="radio"],
+.myinfo input[type="file"]{
+    display:none;
+}
+.myinfo input[type="radio"]:checked +.button{
+    background-color: #d9a200;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+}
+.myinfo img{
+    margin-left: 160px;
+}
+.photo{
+    position: relative;
+    top: -40px;
+}
+.myinfo .editphoto{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+    position: relative;
+    top: -43px;
+    white-space: nowrap;
+}
+
+.myinfo input[type="text"],
+.myinfo input[type="date"],
+.myinfo input[type="tel"],
+.myinfo input[type="mail"]{
+    height:40px;
+    width: 35%;
+    margin-left: 100px;
+    border-radius: 5px;
+    border:1.5px solid #dad8d8;
+    padding-left: 10px;
+    outline-color:#d9a200;   
+}
+.myinfo input[type="submit"]{
+    height:40px;
+    width: 10%;
+    position: relative;
+    left:45%;
+    margin:20px 0px;
+    background-color: #fff;
+    border:1.5px solid #dad8d8;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.myinfo input[type="submit"]:hover{
+    background-color: #d9a200;
+    color: #fff;  
+}
+.myinfo input:hover{
+    border:1.5px solid #d9a200;
+    border-radius: 5px;
+}
+.myinfo span{
+    background-color: #fff;
+    padding:10px;
+    cursor: pointer;
+    margin-left: 100px;
+    border-radius: 5px;
+}
+.myinfo .gender{
+    position: relative;
+    left:-80px   
+}
+.myinfo span:hover,
+.myinfo .editphoto:hover{
+    background-color: #d9a200;
+    color: #fff;  
+}
+.editpwd{
+    position: relative;
+    left:-16px
+}
+#editpwd{
+    position: relative;
+    right:32px;
 }
 .center{
-    border: 1.5px solid #000;
-    width:900px;
-    margin-top:50px;
+    margin-bottom: 10px; 
 }
 .info{
     display: flex;
-    margin:15px 0px 15px 25px;
+    
 }
 .info>h3{
     display: contents;
 }
 .Terms{
-    margin: 20px 0px 15px 25px;
+    margin-top: 20px;
+}
+.Terms h4{
+    margin: 10px 0px 0px 10px;
 }
 
-.row{display:flex;justify-content:center;margin-right:-15px;margin-left:0px;background-color: #ceb195;}
+.row{padding-top:60px;display:flex;justify-content:center;background-color: #ceb195;}
 .list-group{flex:none;width:300px;margin-bottom:100%;}
 .my{flex:auto;width:300px;margin-bottom:100%;}
-.tab-item{
-    margin: 20px 0px 30px 100px;
-    width:1000px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    padding: 0px 15px;
-    background-color: #eee;
-    }
 .row:after,.row:before{display:table;content:" "}
 .row:after{clear:both}
 .list-group{padding-left:0;/*margin-bottom:100px;*/}
-.list-group>h1{
-    padding-left: 20px;
-    padding-top: 10px;
-}
+.list-group>h1{padding: 10px 0px 0px 20px;}
 .list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;margin-left:5px;font-size: 20px;font-weight: bold;}
 /*.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}
 .list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}
@@ -788,6 +882,7 @@ button.list-group-item{width:100%;text-align:left}
 .list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#3b1e1e;border-radius: 10px;}
 .list-group-item.active .list-group-item-heading,.list-group-item.active .list-group-item-heading>.small,.list-group-item.active .list-group-item-heading>small,.list-group-item.active:focus .list-group-item-heading,.list-group-item.active:focus .list-group-item-heading>.small,.list-group-item.active:focus .list-group-item-heading>small,.list-group-item.active:hover .list-group-item-heading,.list-group-item.active:hover .list-group-item-heading>.small,.list-group-item.active:hover .list-group-item-heading>small{color:inherit}
 .list-group-item.active .list-group-item-text,.list-group-item.active:focus .list-group-item-text,.list-group-item.active:hover .list-group-item-text{color:#c7ddef}
+
 /*
 .list-group-item-success{color:#3c763d;background-color:#dff0d8}
 a.list-group-item-success,button.list-group-item-success{color:#3c763d}
@@ -821,6 +916,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 
 /*小遊戲*/
 .play{
+    
     flex: none;
     margin: 20px -250px;
     width:800px;
@@ -831,17 +927,63 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     padding-bottom: 20px;
 }
 .play>h1{
-    padding:10px 0px;
+    padding:0px 0px 10px 0px;
+}
+.finish-game{
+    margin-left:90%;
+    margin-top: 15px;
+    border:none;
+    background-color: #d9a200;
+    border-radius: 5px;
+    padding:10px;
+    color: #fff;
+    cursor: pointer;
+}
+.finish-game:hover{   
+    background-color: #e6ad03;    
 }
 .playgame{
     padding:5px 0px;
     text-align: center;
 }
-.answer>label{
-    padding:5px 10px;
-    display: block;
-    text-align: center;
+#radio input[type="radio"] {
+    display: none; 
 }
-.answer>button{
-    
+#radio input:checked + .button {
+    background: #d9a200; 
+    color: #fff; 
+    cursor: default; 
+}
+#radio .button { 
+    margin: 0 5px 15px 0; 
+    padding: 10px 10px; 
+    background: #f7f7f7; 
+    color: #333; 
+    cursor: pointer; 
+}
+#radio .round {
+    border-radius: 5px;
+    width:200px;
+    text-align:center;
+    display: block;
+    margin-left:37%;
+    margin-top:10px;
+}
+#radio .round:hover{
+    background: #d9a200;
+    color:#fff 
+}
+#radio>.next{
+    width:80px;
+    margin-left: 45%;
+    margin-top:5px;
+    border:none;
+    background-color: #d9a200;
+    border-radius: 5px;
+    padding:10px;
+    color: #fff;
+    cursor: pointer;
+}
+#radio>.next:hover{   
+    background-color: #e6ad03;    
 }
