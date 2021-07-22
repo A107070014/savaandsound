@@ -20,14 +20,6 @@
 <body>
     <!--登入-->
     <div id="fade" class="black_overlay" ></div>
-    <!--通知-->
-    <a href = "javascript:void(0)" onclick = "document.getElementById('inform').style.display='none';document.getElementById('shard1').style.display='none';">
-        <div id="shard1"></div>
-    </a>
-    <!--其他-->
-    <a href = "javascript:void(0)" onclick = "document.getElementById('another').style.display='none';document.getElementById('shard2').style.display='none';">
-        <div id="shard2"></div>
-    </a>
     <!--標題列-->
     <nav>
         <div class="logo">
@@ -66,42 +58,39 @@
             <div >
                 <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html">我的聲跡</a>
             </div>
-            <div>
-                <a  href = "javascript:void(0)" onclick = "document.getElementById('inform').style.display='block';document.getElementById('shard1').style.display='block';"
-                    id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
-                    通知
-                </a>
+            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+                <div class="inform-menu-style dropdown-menu">
+                    <span tabindex="0" onclick="return true">
+                        <a id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
+                        通知</a>
+                    </span>
+                    <div tabindex="0" onclick="return true"></div>
+                        <ul>
+                            <li><a href="#" onclick="sampleMenu(this)">本週</a></li>
+                                <p>本週訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">本月</a></li>
+                                <p>本月訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">更早之前</a></li>
+                                <p>更早之前訊息</p>
+                        </ul>
+                </div>
             </div>
-            <div id="inform" class="inform">
-                <h3>本週</h3>
-                <div>
-                    本週訊息
+            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+                <div class="another-menu-style dropdown-menu">
+                    <span tabindex="0" onclick="return true">
+                        <img  id="tool" src="img/another1.png" title="其他" alt="其他" width="25" height="26" style="cursor: pointer;" 
+                        onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
+                    </span>
+                    <div tabindex="0" onclick="return true"></div>
+                    <ul>
+                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
+                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
+                        <a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="" title="設定"><li>設定</li></a>
+                        <a href="" title="登出"><li>登出</li></a>
+                    </ul>
                 </div>
-                
-                <h3>本月</h3>
-                <div>
-                    本月訊息
-                </div>
-                
-                <h3>更早之前</h3>
-                <div>
-                    更早之前訊息
-                </div>
-            </div> 
-            <div id="tool" >              
-                <a href = "javascript:void(0)" onclick = "document.getElementById('another').style.display='block';document.getElementById('shard2').style.display='block';">
-                    <img  src="img/another1.png" title="其他" alt="其他" width="25" height="26" style="cursor: pointer;" 
-                        onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/></a>
-                        <div id="another" class="another" >
-                            <ul>
-                                <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                                <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                                <a href="" title="募資平台"><li>募資平台</li></a>
-                                <a href="" title="設定"><li>設定</li></a>
-                                <a href="" title="登出"><li>登出</li></a>
-                            </ul>
-                        </div>               
-             </div>
+            </div>
         </div>
     </nav>
     

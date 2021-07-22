@@ -12,8 +12,6 @@ nav{
     background:#3b1e1e;
     border:2px solid #000;
     display:flex;
-    position: fixed;
-    width: 100%;
 }
 nav>.logo{
     flex:none;/*沒有彈性*/
@@ -583,98 +581,94 @@ span ~ #tab > div:first-of-type,
 }
 
 /*已登入首頁home2*/
+/* 通知 & 其他 */
+.dropdown-menu {
+    position: relative;
+} 
+.dropdown-menu > ul {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    transition: visibility 0.5s;
+    opacity: 0;
+} 
+.dropdown-menu > span:focus ~ ul {
+    visibility: visible;
+    opacity: 1;
+}
+.inform-menu-style > ul {
+    width:1000%;
+    border:none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0px 0px -350px;
+    background-color: #3b1e1ee8;   
+  }
+.another-menu-style > ul{
+    width:900%;
+    border:none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0px 0px -170px;
+    background-color: #3b1e1ee8; 
+    text-align: center;
+}
+.inform-menu-style li,
+.another-menu-style li {   
+    padding: 0.2em 0.4em 0;
+    height: 1.5em;
+    white-space: nowrap;
+    list-style-type:none;
+}
+.another-menu-style li{
+    margin: 15px 0px;
+    padding:6px 0px 0px 0px;
+    height: 40px;
+}
+.another-menu-style li:hover{
+    background: #3b1e1e;
+    border-radius: 5px;
+}
+.inform-menu-style p{
+    color: #fff;
+    padding: 0.2em 0.4em 0;
+    height: 1.5em;
+    white-space: nowrap;
+    list-style-type:none;
+    margin:5px 0px; 
+} 
+.inform-menu-style li:not(:first-child),
+.another-menu-style li:not(:first-child){
+    border-top: none;
+  }
+.inform-menu-style a{
+    text-decoration: none;
+    color: #d9a200;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: default;
+}
+.another-menu-style a{
+    text-decoration: none;
+    color: #d9a200;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.another-menu-style a:hover{
+   color:#e6ad03;   
+}
 .icon{
     position: relative;
 }
-
 #tool{
     color:#d9a200;
     font-size:20px;
-    font-weight:bold;
-    margin-left: 30px;
-    
+    font-weight:bold; 
 }
 #tool:hover{
     color:#e6ad03;
 }
-#inform{
-    position: fixed;
-    top:50px;
-    left:80%;
-    transform:translate(-140px,0px);
-    width:380px;
-    padding:10px;
-    border:none;
-    border-radius: 10px;
-    background-color: #3b1e1ee8;
-    display:none;
-    text-align: left;
-    float: left;
-}
-#inform>h3{
-    color:#d9a200;
-}
-#inform>div{
-    color:#eee;
-    padding:10px 0px;
-}
-#shard1 {
-    position: absolute;
-    display: none;
-    top: 0px;
-    left:0px;
-    width: 100%;
-    height: 100%;
-    z-index:0;
-    cursor: default;
-}
-#shard2{
-    position: absolute;
-    display: none;
-    top: 0px;
-    left:0px;
-    width: 100%;
-    height: 100%;
-    z-index:0;
-    cursor: default;
-}
-.another{
-    position: fixed;
-    top:50px;
-    left:93%;
-    transform:translate(-100px,0px);
-    width:200px;
-    padding:10px;
-    border:none;
-    border-radius: 10px;
-    background-color: #3b1e1ee8;
-    display:none;
-    text-align: center;
-    z-index:1002;
-}
-
-.another ul{
-    list-style-type:none;
-    font-size: 20px;
-    padding-right:30px;
-    
-}
-.another ul>a{
-    color:#d9a200;
-}
-
-.another li{
-    margin-bottom:7px;
-    margin-top:7px;
-    padding:7px ;
-    
-}
-.another li:hover{
-    background: #3b1e1e;
-    border-radius: 10px;
-    color:#e6ad03;
-}
-
 /*發文*/
 .article{
     position: fixed;
@@ -861,7 +855,7 @@ textarea:hover{
     margin: 10px 0px 0px 10px;
 }
 
-.row{padding-top:60px;display:flex;justify-content:center;background-color: #ceb195;}
+.row{display:flex;justify-content:center;background-color: #ceb195;}
 .list-group{flex:none;width:300px;margin-bottom:100%;}
 .my{flex:auto;width:300px;margin-bottom:100%;}
 .row:after,.row:before{display:table;content:" "}
