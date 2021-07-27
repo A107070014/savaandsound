@@ -1,9 +1,13 @@
 *{
-    margin: 0px auto;
     box-sizing: border-box;
 }
-.body{
+body {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
 }
 a{
     text-decoration:none;
@@ -36,8 +40,7 @@ nav>.tool{
     width:500px;
     display: flex;
     padding-top: 12px;
-    padding-right: 15px;
-    
+    justify-content: space-evenly;
 }
 
 /*
@@ -186,26 +189,30 @@ main>.right{
     list-style-type: none;
     display: flex;
     margin: 5px 0px 5px 0px;
+    
+}
+.tab-content-1>ul>li,
+.tab-content-2>ul>li{
+    margin-right: 20%;
+    white-space: nowrap;
 }
 #tab{
-    width:1000px;
-    border: 2px solid #000;
-    border-radius: 5px;
+    width:100%;
     padding: 0px 15px;
-    background-color: #fff;
-    margin: 20px 0px 0px 80px;
+    margin: 5px 0px 0px 0px;
 }
 /* 頁籤ul */
 #tab>ul{
     overflow: hidden;
     margin: 0px;
-    padding: 10px 20px 0px 0px;
+    padding: 10px 20px 0px 30px;
     border-bottom:2px dotted #000;
     white-space: nowrap;
 }
 
 #tab>ul>li{
-    list-style-type: none; 
+    list-style-type: none;
+    
 }
 #tab>ul>li>a{
     text-decoration: none;
@@ -298,7 +305,7 @@ span ~ #tab > div:first-of-type,
 }
 .dialog{
     position:fixed;
-    top:100px;
+    top:80px;
     left:45%;
     transform:translate(-120px,0px);
     width:400px;
@@ -664,7 +671,10 @@ span ~ #tab > div:first-of-type,
 #tool{
     color:#d9a200;
     font-size:20px;
-    font-weight:bold; 
+    font-weight:bold;
+    position: relative;
+    
+    
 }
 #tool:hover{
     color:#e6ad03;
@@ -855,14 +865,14 @@ textarea:hover{
     margin: 10px 0px 0px 10px;
 }
 
-.row{display:flex;justify-content:center;background-color: #ceb195;}
-.list-group{flex:none;width:300px;margin-bottom:100%;}
-.my{flex:auto;width:300px;margin-bottom:100%;}
+.row{display:flex;justify-content:center;}
+.list-group{flex:none;width:300px;background-color: #ceb195;}
+.my{flex:auto;width:300px;margin-bottom:26%;}
 .row:after,.row:before{display:table;content:" "}
 .row:after{clear:both}
 .list-group{padding-left:0;/*margin-bottom:100px;*/}
-.list-group>h1{padding: 10px 0px 0px 20px;}
-.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;margin-left:5px;font-size: 20px;font-weight: bold;}
+.list-group>h1{padding: 0px 0px 0px 20px;}
+.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;margin-left:5px;margin-right:5px;font-size: 20px;font-weight: bold;}
 /*.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}
 .list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}
 */
@@ -909,10 +919,24 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 */
 
 /*小遊戲*/
+#play>h1{
+    text-align: center;
+}
+#play>a{
+    color:#fff;
+    background-color: #d9a200;
+    padding:10px;
+    border-radius: 5px;
+    margin-left: 44%;
+}
+#play>a:hover{
+    color:#fff;
+    background-color: #e6ad03;
+}
 .play{
     
     flex: none;
-    margin: 20px -250px;
+    margin: 20px 70px;
     width:800px;
     border: 2px solid #000;
     border-radius: 5px;
@@ -921,27 +945,24 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     padding-bottom: 20px;
 }
 .play>h1{
-    padding:0px 0px 10px 0px;
-}
-.finish-game{
-    margin-left:90%;
-    margin-top: 15px;
-    border:none;
-    background-color: #d9a200;
-    border-radius: 5px;
-    padding:10px;
-    color: #fff;
-    cursor: pointer;
-}
-.finish-game:hover{   
-    background-color: #e6ad03;    
+    padding:10px 0px 10px 0px;
 }
 .playgame{
-    padding:5px 0px;
     text-align: center;
 }
+.game_top{
+    display: flex;
+}
+.backhome{
+    margin-left: 83%;
+    margin-top: 3%;
+}
+
+#radio{
+    margin-top: 130px; 
+}
 #radio input[type="radio"] {
-    display: none; 
+    display: none;
 }
 #radio input:checked + .button {
     background: #d9a200; 
@@ -980,4 +1001,15 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 }
 #radio>.next:hover{   
     background-color: #e6ad03;    
+}
+#radio>a{
+    color:#fff;
+    background-color: #d9a200;
+    padding:10px;
+    border-radius: 5px;
+    margin-left: 89%;
+}
+#radio>a:hover{
+    color:#fff;
+    background-color: #e6ad03;
 }
