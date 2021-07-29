@@ -7,7 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Noto Sans TC', sans-serif;
-    margin: 0;
+    margin: 0 ;
 }
 a{
     text-decoration:none;
@@ -919,47 +919,70 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 */
 
 /*小遊戲*/
-#play>h1{
-    text-align: center;
-}
-#play>a{
-    color:#fff;
-    background-color: #d9a200;
-    padding:10px;
-    border-radius: 5px;
-    margin-left: 44%;
-}
-#play>a:hover{
-    color:#fff;
-    background-color: #e6ad03;
+#play>h1,
+#play_nature>h1,
+#play_city>h1,
+#play_instrument>h1,
+#play_vocal>h1,
+#play_old>h1{
+    margin-left: 410px;
 }
 .play{
-    
     flex: none;
-    margin: 20px 70px;
-    width:800px;
-    border: 2px solid #000;
+    margin: 5px 70px;
     border-radius: 5px;
     padding: 0px 15px;
-    background-color: #eee;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+    
 }
-.play>h1{
-    padding:10px 0px 10px 0px;
+.play>a{
+    color:#fff;
+    background-color: #d9a200;
+    padding:10px 40px;
+    border-radius: 5px;
+    margin-left:420px ;
+    
+}
+.play>a:hover{
+    background-color: #e6ad03;
+}
+
+.rule{
+    border:2px solid #eee;
+    border-radius:10px;
+    margin-bottom: 40px;
+    padding-left:15px;
+    width:500px;
+    margin-left: 23%;
+}
+.game_top>h1{
+    white-space: nowrap;
 }
 .playgame{
     text-align: center;
+    margin: 20px 0px 20px -80px;
 }
 .game_top{
     display: flex;
+    
 }
+#timetext{
+    height: 50px;
+    text-align: center;
+    margin:50px 0px 0px 400px;
+    border:none;
+    background-color: transparent;
+    position: absolute;
+    font-size: 28px;
+}
+
 .backhome{
     margin-left: 83%;
     margin-top: 3%;
 }
 
 #radio{
-    margin-top: 130px; 
+    margin:30px 0px 30px 300px;
 }
 #radio input[type="radio"] {
     display: none;
@@ -980,9 +1003,10 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     border-radius: 5px;
     width:200px;
     text-align:center;
-    display: block;
-    margin-left:37%;
-    margin-top:10px;
+    display: inline;
+    margin:10px 100px 0px 0px;
+    line-height: 100px;
+    padding: 10px 40px
 }
 #radio .round:hover{
     background: #d9a200;
@@ -1002,14 +1026,33 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 #radio>.next:hover{   
     background-color: #e6ad03;    
 }
-#radio>a{
-    color:#fff;
-    background-color: #d9a200;
-    padding:10px;
-    border-radius: 5px;
-    margin-left: 89%;
+
+#play6{
+    margin-top: 25px;
 }
-#radio>a:hover{
-    color:#fff;
-    background-color: #e6ad03;
+.total{
+    display: flex;
+}
+
+.backhome1{
+    margin-left: 83%;
+    margin-top: 1%;
+}
+.repeat{
+    margin-left: 15px;
+    margin-top: 1%;
+}
+
+.ranking ul{
+    border: 2px solid #eee;
+    border-radius: 10px;
+    width:40%;
+    display: flex;
+    margin-left: 260px;
+}
+.ranking ul li{
+    list-style-type: none;
+    display: inline;
+    flex:none;
+    width:150px;
 }

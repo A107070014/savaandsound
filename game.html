@@ -14,6 +14,7 @@
 <!--<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/story.js"></script>
+<script src="js/time1.js"></script>
 <title>留聲跡</title>
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
@@ -97,6 +98,8 @@
             </div>
         </div>
     </nav>
+
+    <!--遊戲-->
     <div class="row">
         <div class="list-group col-md-4 col-xs-4">
             <h1>猜聲小遊戲</h1>
@@ -110,17 +113,21 @@
         <div class="my col-md-8 col-xs-4">
             <!--全部-->
             <div id="tab-item1" class="tab-item">
+                <input type="text" id="timetext" value="00分00秒" readonly style="display:none"><br>
                 <div id="play" class="play">
                     <h1>猜聲小遊戲</h1>
-                    <h2>遊戲規則</h2>
-                    <a href = "javascript:void(0)" onclick = "document.getElementById('play1').style.display='block';document.getElementById('play').style.display='none';"                  
+                    <div class="rule">
+                        <h3>遊戲規則</h3>
+                        <p>...</p>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play1').style.display='block';document.getElementById('play').style.display='none';document.getElementById('timetext').style.display='block';start();"                  
                         class="" style="cursor: pointer;">開始遊戲
                     </a>
                 </div>
                 <div id="play1" class="play" style="display:none" >
                     <div class="game_top">
-                        <h1>第一題</h1>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play1').style.display='none';"
+                        <h1>第一題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play1').style.display='none';document.getElementById('timetext').style.display='none';Reset()"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
                             onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
@@ -128,26 +135,24 @@
                     </div>
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/baseball.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
                         <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play1').style.display='none';"
-                            class="" style="cursor: pointer;">下一題
-                        </a>
                     </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play1').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
                 </div>
                 <div id="play2" class="play" style="display:none">
                     <div class="game_top">
                         <h1>第二題</h1>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play2').style.display='none';"
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play2').style.display='none';document.getElementById('timetext').style.display='none';Reset();"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
                             onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
@@ -156,26 +161,24 @@
                     
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/clock.m4a" type="audio/m4a">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
                         <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play2').style.display='none';"
-                            class="" style="cursor: pointer;">下一題
-                        </a>
                     </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play2').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
                 </div>
                 <div id="play3" class="play" style="display:none">
                     <div class="game_top">
                         <h1>第三題</h1>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play3').style.display='none';"
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play3').style.display='none';document.getElementById('timetext').style.display='none';Reset();"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
                             onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
@@ -184,26 +187,24 @@
                     
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/drill.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play3').style.display='none';"
-                            class="" style="cursor: pointer;">下一題
-                        </a>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                        
                     </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play3').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
                 </div>
                 <div id="play4" class="play" style="display:none">
                     <div class="game_top">
                         <h1>第四題</h1>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play4').style.display='none';"
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play4').style.display='none';document.getElementById('timetext').style.display='none';Reset();"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
                             onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
@@ -212,26 +213,24 @@
                     
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/TV.m4a" type="audio/m4a">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play4').style.display='none';"
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                      
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play4').style.display='none';"
                             class="" style="cursor: pointer;">下一題
                         </a>
-                    </div>
                 </div>
                 <div id="play5" class="play" style="display:none">
                     <div class="game_top">
                         <h1>第五題</h1>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play5').style.display='none';"
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play5').style.display='none';document.getElementById('timetext').style.display='none';Reset();"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
                             onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
@@ -240,146 +239,904 @@
                     
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/window.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
                         <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play6').style.display='block';document.getElementById('play5').style.display='none';"
-                            class="" style="cursor: pointer;">結束遊戲
-                        </a>
                     </div>
-                </div>
-                <div id="play6" class="play" style="display:none">
-                    <p>花費時間...</p>
-                    <p>排行...</p>
-                    <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play6').style.display='none';"
-                            class="" style="cursor: pointer;">
-                        <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
-                        onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play6').style.display='block';document.getElementById('play5').style.display='none';stop();"
+                            class="" style="cursor: pointer;">結束遊戲
                     </a>
-                    <a href = "javascript:void(0)" onclick = "document.getElementById('play1').style.display='block';document.getElementById('play6').style.display='none';"
-                            class="" style="cursor: pointer;">
+                </div>
+                
+                <div id="play6" class="play" style="display:none">
+                    
+                    <div class="total">
+                        <h2>花費時間</h2>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play6').style.display='none';document.getElementById('timetext').style.display='none';Reset();"
+                            class="backhome1" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play1').style.display='block';document.getElementById('play6').style.display='none';Reset();start();"
+                            class="repeat" style="cursor: pointer;">
                             <img src="img/again1.png" alt="重新遊戲" title="重新遊戲" width="30" height="30"
                             onmouseover="this.src='img/again2.png'" onmouseout="this.src='img/again1.png'">
-                    </a>
+                        </a>
+                    </div> 
+                    <div class="ranking">
+                        <h2>排行榜</h2>
+                        <ul>
+                            <li>排名</li>
+                            <li>名字</li>
+                            <li>時間</li>
+                        </ul>
+                        <div class="list">
+
+                        </div>
+                    </div>
                 </div> 
             </div>
             <!--自然-->
             <div id="tab-item2" class="tab-item">
-                <div class="play">
-                    <button class="finish-game">結束遊戲</button>
+                <input type="text" id="timetext1" value="00分00秒" readonly style="display:none"><br>
+                <div id="play_nature" class="play">
                     <h1>猜聲小遊戲</h1>
+                    <div class="rule">
+                        <h3>遊戲規則</h3>
+                        <p>...</p>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature1').style.display='block';document.getElementById('play_nature').style.display='none';document.getElementById('timetext1').style.display='block';start();"                  
+                        class="" style="cursor: pointer;">開始遊戲
+                    </a>
+                </div>
+                <div id="play_nature1" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第一題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature').style.display='block';document.getElementById('play_nature1').style.display='none';document.getElementById('timetext1').style.display='none';Reset()"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/baseball.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
                         <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <button class="next">下一題</button>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature2').style.display='block';document.getElementById('play_nature1').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_nature2" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第二題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature').style.display='block';document.getElementById('play_nature2').style.display='none';document.getElementById('timetext1').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/clock.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature3').style.display='block';document.getElementById('play_nature2').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_nature3" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第三題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature').style.display='block';document.getElementById('play_nature3').style.display='none';document.getElementById('timetext1').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/drill.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                        
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature4').style.display='block';document.getElementById('play_nature3').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_nature4" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第四題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature').style.display='block';document.getElementById('play_nature4').style.display='none';document.getElementById('timetext1').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/TV.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                      
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature5').style.display='block';document.getElementById('play_nature4').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                        </a>
+                </div>
+                <div id="play_nature5" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第五題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature').style.display='block';document.getElementById('play_nature5').style.display='none';document.getElementById('timetext1').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/window.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature6').style.display='block';document.getElementById('play_nature5').style.display='none';stop();"
+                            class="" style="cursor: pointer;">結束遊戲
+                    </a>
+                </div>
+                
+                <div id="play_nature6" class="play" style="display:none">
+                    
+                    <div class="total">
+                        <h2>花費時間</h2>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature').style.display='block';document.getElementById('play_nature6').style.display='none';document.getElementById('timetext1').style.display='none';Reset();"
+                            class="backhome1" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_nature1').style.display='block';document.getElementById('play_nature6').style.display='none';Reset();start();"
+                            class="repeat" style="cursor: pointer;">
+                            <img src="img/again1.png" alt="重新遊戲" title="重新遊戲" width="30" height="30"
+                            onmouseover="this.src='img/again2.png'" onmouseout="this.src='img/again1.png'">
+                        </a>
                     </div> 
-                </div>     
+                    <div class="ranking">
+                        <h2>排行榜</h2>
+                        <ul>
+                            <li>排名</li>
+                            <li>名字</li>
+                            <li>時間</li>
+                        </ul>
+                        <div class="list">
+
+                        </div>
+                    </div>
+                </div> 
             </div>
             <!--都市-->
             <div id="tab-item3" class="tab-item">
-                <div class="play">
-                    <button class="finish-game">結束遊戲</button>
+                <input type="text" id="timetext2" value="00分00秒" readonly style="display:none"><br>
+                <div id="play_city" class="play">
                     <h1>猜聲小遊戲</h1>
+                    <div class="rule">
+                        <h3>遊戲規則</h3>
+                        <p>...</p>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_city1').style.display='block';document.getElementById('play_city').style.display='none';document.getElementById('timetext2').style.display='block';start();"                  
+                        class="" style="cursor: pointer;">開始遊戲
+                    </a>
+                </div>
+                <div id="play_city1" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第一題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_city').style.display='block';document.getElementById('play_city1').style.display='none';document.getElementById('timetext2').style.display='none';Reset()"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/baseball.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
                         <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <button class="next">下一題</button>
-                    </div> 
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_city2').style.display='block';document.getElementById('play_city1').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
                 </div>
+                <div id="play_city2" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第二題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_city').style.display='block';document.getElementById('play_city2').style.display='none';document.getElementById('timetext2').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/clock.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_city3').style.display='block';document.getElementById('play_city2').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_city3" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第三題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_city').style.display='block';document.getElementById('play_city3').style.display='none';document.getElementById('timetext2').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/drill.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                        
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_city4').style.display='block';document.getElementById('play_city3').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_city4" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第四題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_city').style.display='block';document.getElementById('play_city4').style.display='none';document.getElementById('timetext2').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/TV.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                      
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_city5').style.display='block';document.getElementById('play_city4').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                        </a>
+                </div>
+                <div id="play_city5" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第五題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_city').style.display='block';document.getElementById('play_city5').style.display='none';document.getElementById('timetext2').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/window.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_city6').style.display='block';document.getElementById('play_city5').style.display='none';stop();"
+                            class="" style="cursor: pointer;">結束遊戲
+                    </a>
+                </div>
+                
+                <div id="play_city6" class="play" style="display:none">
+                    
+                    <div class="total">
+                        <h2>花費時間</h2>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_city').style.display='block';document.getElementById('play_city6').style.display='none';document.getElementById('timetext2').style.display='none';Reset();"
+                            class="backhome1" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_city1').style.display='block';document.getElementById('play_city6').style.display='none';Reset();start();"
+                            class="repeat" style="cursor: pointer;">
+                            <img src="img/again1.png" alt="重新遊戲" title="重新遊戲" width="30" height="30"
+                            onmouseover="this.src='img/again2.png'" onmouseout="this.src='img/again1.png'">
+                        </a>
+                    </div> 
+                    <div class="ranking">
+                        <h2>排行榜</h2>
+                        <ul>
+                            <li>排名</li>
+                            <li>名字</li>
+                            <li>時間</li>
+                        </ul>
+                        <div class="list">
+
+                        </div>
+                    </div>
+                </div> 
             </div>
             <!--器械-->
             <div id="tab-item4" class="tab-item">
-                <div class="play">
-                    <button class="finish-game">結束遊戲</button>
+                <input type="text" id="timetext3" value="00分00秒" readonly style="display:none"><br>
+                <div id="play_instrument" class="play">
                     <h1>猜聲小遊戲</h1>
+                    <div class="rule">
+                        <h3>遊戲規則</h3>
+                        <p>...</p>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument1').style.display='block';document.getElementById('play_instrument').style.display='none';document.getElementById('timetext3').style.display='block';start();"                  
+                        class="" style="cursor: pointer;">開始遊戲
+                    </a>
+                </div>
+                <div id="play_instrument1" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第一題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument').style.display='block';document.getElementById('play_instrument1').style.display='none';document.getElementById('timetext3').style.display='none';Reset()"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/baseball.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
                         <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <button class="next">下一題</button>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument2').style.display='block';document.getElementById('play_instrument1').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_instrument2" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第二題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument').style.display='block';document.getElementById('play_instrument2').style.display='none';document.getElementById('timetext3').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/clock.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument3').style.display='block';document.getElementById('play_instrument2').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_instrument3" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第三題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument').style.display='block';document.getElementById('play_instrument3').style.display='none';document.getElementById('timetext3').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/drill.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                        
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument4').style.display='block';document.getElementById('play_instrument3').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_instrument4" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第四題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument').style.display='block';document.getElementById('play_instrument4').style.display='none';document.getElementById('timetext3').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/TV.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                      
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument5').style.display='block';document.getElementById('play_instrument4').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                        </a>
+                </div>
+                <div id="play_instrument5" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第五題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument').style.display='block';document.getElementById('play_instrument5').style.display='none';document.getElementById('timetext3').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/window.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument6').style.display='block';document.getElementById('play_instrument5').style.display='none';stop();"
+                            class="" style="cursor: pointer;">結束遊戲
+                    </a>
+                </div>
+                
+                <div id="play_instrument6" class="play" style="display:none">
+                    
+                    <div class="total">
+                        <h2>花費時間</h2>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument').style.display='block';document.getElementById('play_instrument6').style.display='none';document.getElementById('timetext3').style.display='none';Reset();"
+                            class="backhome1" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_instrument1').style.display='block';document.getElementById('play_instrument6').style.display='none';Reset();start();"
+                            class="repeat" style="cursor: pointer;">
+                            <img src="img/again1.png" alt="重新遊戲" title="重新遊戲" width="30" height="30"
+                            onmouseover="this.src='img/again2.png'" onmouseout="this.src='img/again1.png'">
+                        </a>
                     </div> 
-                </div>                  
+                    <div class="ranking">
+                        <h2>排行榜</h2>
+                        <ul>
+                            <li>排名</li>
+                            <li>名字</li>
+                            <li>時間</li>
+                        </ul>
+                        <div class="list">
+
+                        </div>
+                    </div>
+                </div> 
             </div>
             <!--人聲-->
             <div id="tab-item5" class="tab-item">
-                <div class="play">
-                    <button class="finish-game">結束遊戲</button>
+                <input type="text" id="timetext4" value="00分00秒" readonly style="display:none"><br>
+                <div id="play_vocal" class="play">
                     <h1>猜聲小遊戲</h1>
+                    <div class="rule">
+                        <h3>遊戲規則</h3>
+                        <p>...</p>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal1').style.display='block';document.getElementById('play_vocal').style.display='none';document.getElementById('timetext4').style.display='block';start();"                  
+                        class="" style="cursor: pointer;">開始遊戲
+                    </a>
+                </div>
+                <div id="play_vocal1" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第一題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal').style.display='block';document.getElementById('play_vocal1').style.display='none';document.getElementById('timetext4').style.display='none';Reset()"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/baseball.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
                         <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <button class="next">下一題</button>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal2').style.display='block';document.getElementById('play_vocal1').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_vocal2" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第二題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal').style.display='block';document.getElementById('play_vocal2').style.display='none';document.getElementById('timetext4').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/clock.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal3').style.display='block';document.getElementById('play_vocal2').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_vocal3" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第三題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal').style.display='block';document.getElementById('play_vocal3').style.display='none';document.getElementById('timetext4').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/drill.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                        
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal4').style.display='block';document.getElementById('play_vocal3').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_vocal4" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第四題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal').style.display='block';document.getElementById('play_vocal4').style.display='none';document.getElementById('timetext4').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/TV.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                      
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal5').style.display='block';document.getElementById('play_vocal4').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                        </a>
+                </div>
+                <div id="play_vocal5" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第五題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal').style.display='block';document.getElementById('play_vocal5').style.display='none';document.getElementById('timetext4').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/window.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal6').style.display='block';document.getElementById('play_vocal5').style.display='none';stop();"
+                            class="" style="cursor: pointer;">結束遊戲
+                    </a>
+                </div>
+                
+                <div id="play_vocal6" class="play" style="display:none">
+                    
+                    <div class="total">
+                        <h2>花費時間</h2>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal').style.display='block';document.getElementById('play_vocal6').style.display='none';document.getElementById('timetext4').style.display='none';Reset();"
+                            class="backhome1" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_vocal1').style.display='block';document.getElementById('play_vocal6').style.display='none';Reset();start();"
+                            class="repeat" style="cursor: pointer;">
+                            <img src="img/again1.png" alt="重新遊戲" title="重新遊戲" width="30" height="30"
+                            onmouseover="this.src='img/again2.png'" onmouseout="this.src='img/again1.png'">
+                        </a>
                     </div> 
-                </div>                  
+                    <div class="ranking">
+                        <h2>排行榜</h2>
+                        <ul>
+                            <li>排名</li>
+                            <li>名字</li>
+                            <li>時間</li>
+                        </ul>
+                        <div class="list">
+
+                        </div>
+                    </div>
+                </div> 
             </div>
             <!--懷舊-->
             <div id="tab-item6" class="tab-item">
-                <div class="play">
-                    <button class="finish-game">結束遊戲</button>
+                <input type="text" id="timetext5" value="00分00秒" readonly style="display:none"><br>
+                <div id="play_old" class="play">
                     <h1>猜聲小遊戲</h1>
+                    <div class="rule">
+                        <h3>遊戲規則</h3>
+                        <p>...</p>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_old1').style.display='block';document.getElementById('play_old').style.display='none';document.getElementById('timetext5').style.display='block';start();"                  
+                        class="" style="cursor: pointer;">開始遊戲
+                    </a>
+                </div>
+                <div id="play_old1" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第一題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_old').style.display='block';document.getElementById('play_old1').style.display='none';document.getElementById('timetext5').style.display='none';Reset()"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
                     <div class="playgame">
                         <audio controls>
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.flac"><!--聲音記得換-->
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.wav" type="audio/wav">
-                            <source src="https://s3-ap-northeast-1.amazonaws.com/dazedbear-assets/Bluebird.mp3" type="audio/mpeg">
+                            <source src="music/baseball.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio">
                         <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
                         <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
                         <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
-                        <button class="next">下一題</button>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_old2').style.display='block';document.getElementById('play_old1').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_old2" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第二題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_old').style.display='block';document.getElementById('play_old2').style.display='none';document.getElementById('timetext5').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/clock.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_old3').style.display='block';document.getElementById('play_old2').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_old3" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第三題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_old').style.display='block';document.getElementById('play_old3').style.display='none';document.getElementById('timetext5').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/drill.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                        
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_old4').style.display='block';document.getElementById('play_old3').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <div id="play_old4" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第四題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_old').style.display='block';document.getElementById('play_old4').style.display='none';document.getElementById('timetext5').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/TV.m4a" type="audio/m4a">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                      
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_old5').style.display='block';document.getElementById('play_old4').style.display='none';"
+                            class="" style="cursor: pointer;">下一題
+                        </a>
+                </div>
+                <div id="play_old5" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第五題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_old').style.display='block';document.getElementById('play_old5').style.display='none';document.getElementById('timetext5').style.display='none';Reset();"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls>
+                            <source src="music/window.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio">
+                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play_old6').style.display='block';document.getElementById('play_old5').style.display='none';stop();"
+                            class="" style="cursor: pointer;">結束遊戲
+                    </a>
+                </div>
+                
+                <div id="play_old6" class="play" style="display:none">
+                    
+                    <div class="total">
+                        <h2>花費時間</h2>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_old').style.display='block';document.getElementById('play_old6').style.display='none';document.getElementById('timetext5').style.display='none';Reset();"
+                            class="backhome1" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play_old1').style.display='block';document.getElementById('play_old6').style.display='none';Reset();start();"
+                            class="repeat" style="cursor: pointer;">
+                            <img src="img/again1.png" alt="重新遊戲" title="重新遊戲" width="30" height="30"
+                            onmouseover="this.src='img/again2.png'" onmouseout="this.src='img/again1.png'">
+                        </a>
                     </div> 
-                </div>                  
+                    <div class="ranking">
+                        <h2>排行榜</h2>
+                        <ul>
+                            <li>排名</li>
+                            <li>名字</li>
+                            <li>時間</li>
+                        </ul>
+                        <div class="list">
+
+                        </div>
+                    </div>
+                </div> 
+            </div>                  
             </div>
         </div>
     </div>

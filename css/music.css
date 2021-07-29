@@ -68,8 +68,7 @@
   justify-content: center;
   z-index: 1;
   position: relative;
-  left:48%;
-  bottom: 25%;
+  left:20%;
 }
 
 .action-btn {
@@ -98,10 +97,9 @@
 .music-info {
   border-radius: 15px 15px 0 0;
   position: absolute;
-  top: 60%;
-  left: 20px;
+  top: 30%;
   width: 60%;
-  left: 28%; 
+  left: 37%; 
   padding: 10px 10px 10px 150px;
   /*
   opacity: 0;
