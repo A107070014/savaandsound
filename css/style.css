@@ -919,17 +919,13 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 */
 
 /*小遊戲*/
-#play>h1,
-#play_nature>h1,
-#play_city>h1,
-#play_instrument>h1,
-#play_vocal>h1,
-#play_old>h1{
-    margin-left: 410px;
+#play>h1{
+    text-align: center;
+    margin-right:80px;
 }
 .play{
     flex: none;
-    margin: 5px 70px;
+    margin: 5px 0px 0px 130px;
     border-radius: 5px;
     padding: 0px 15px;
     padding-bottom: 50px;
@@ -940,7 +936,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     background-color: #d9a200;
     padding:10px 40px;
     border-radius: 5px;
-    margin-left:420px ;
+    margin-left:570px ;
     
 }
 .play>a:hover{
@@ -951,10 +947,11 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     border:2px solid #eee;
     border-radius:10px;
     margin-bottom: 40px;
-    padding-left:15px;
+    padding-left:25px;
     width:500px;
-    margin-left: 23%;
+    margin-left: 28.5%;
 }
+
 .game_top>h1{
     white-space: nowrap;
 }
@@ -982,7 +979,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 }
 
 #radio{
-    margin:30px 0px 30px 300px;
+    margin:30px 0px 30px 450px;
 }
 #radio input[type="radio"] {
     display: none;
