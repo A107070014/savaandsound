@@ -62,43 +62,13 @@ main>.right{
     border-left:2px solid #000;
 }
 */
-@media(max-width:1200px){
-    nav>.logo{
-        width:;
-    }
-    nav>.search{
-        width:;
-    }
-    nav>.btn{
-        width:;
-    }
-    main>.left{
-        width:;
-    }
-    main>.right{
-        width:;
-    }
-}
-@media(max-width:500px){
-    nav>.logo{
-        width:;
-    }
-    nav>.search{
-        width:;
-    }
-    nav>.btn{
-        width:;
-    }
-    main>.left{
-        width:;
-    }
-    main>.right{
-        width:;
-    }
-}
+
 .picture{
     white-space: nowrap;
     flex:none;
+}
+.picture>img{
+    display:none;
 }
 .logoname{
     color:#d9a200;
@@ -113,6 +83,7 @@ main>.right{
     height:2.5em;
     border-radius: 10px;
     border:0px solid #3b1e1e;
+    
 }
 .searchbutton{
     width:5em;
@@ -136,6 +107,47 @@ main>.right{
     border-color: #d9a200;
     padding: 5px 5px;
 }
+@media screen and (max-width:1200px){
+
+}
+@media screen and (max-width:640px){
+    .picture{
+        display: flex;
+    }
+    .picture>img{
+        display: block;
+        margin:15px 10px 0px 5px;
+    }
+    nav>.logo{
+    flex:none;/*沒有彈性*/
+    width:180px;/*固定尺寸*/
+    display:flex;
+    margin-left: 5px;
+    }
+    .logoname{
+        font-size:19px;
+        margin-top:5px;
+    }
+    nav>.search{
+        width: 5px;   
+    }
+    .searchbox{
+        width:calc(100% - 80px);
+    }
+    nav>.btn{
+        width: 13px;
+        margin-top:2px;
+    }
+    .signupin{
+        font-size: 18px;
+        margin-left: 15px;
+    }
+    .list-group{
+        display:none;
+    }
+}
+
+
 /*分類*/
 .space{
     margin-bottom:40%;
@@ -188,6 +200,7 @@ main>.right{
 .tab-content-2>ul{
     list-style-type: none;
     display: flex;
+    
     margin: 5px 0px 5px 0px;
     
 }
