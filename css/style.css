@@ -83,14 +83,20 @@ main>.right{
     height:2.5em;
     border-radius: 10px;
     border:0px solid #3b1e1e;
-    
+    padding-left:10px;
 }
 .searchbutton{
-    width:5em;
-    height:2.5em;
-    border-radius: 10px;
     vertical-align: middle;
-    border:0px solid #d9a200;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    right: 35px;
+}
+.searchbutton i{
+    font-size:15px;
+}
+.searchbutton i:hover{
+    color:#d9a200;
 }
 .searchicon{
     margin-top:3.5px;
