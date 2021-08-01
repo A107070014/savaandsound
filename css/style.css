@@ -67,7 +67,7 @@ main>.right{
     white-space: nowrap;
     flex:none;
 }
-.picture>img{
+.picture i{
     display:none;
 }
 .logoname{
@@ -113,6 +113,9 @@ main>.right{
     border-color: #d9a200;
     padding: 5px 5px;
 }
+.btn i{
+    display:none;
+}
 @media screen and (max-width:1200px){
 
 }
@@ -120,33 +123,52 @@ main>.right{
     .picture{
         display: flex;
     }
-    .picture>img{
+    .picture i{
         display: block;
         margin:15px 10px 0px 5px;
+        font-size: 18px;
+        color: #d9a200;
     }
+    .picture img{
+        width:35px;
+        height:35px;
+        margin-top: 5px;
+        }
     nav>.logo{
     flex:none;/*沒有彈性*/
-    width:180px;/*固定尺寸*/
+    width:150px;/*固定尺寸*/
     display:flex;
     margin-left: 5px;
     }
     .logoname{
-        font-size:19px;
-        margin-top:5px;
+        font-size:16px;
+        margin-top: 3px;
     }
     nav>.search{
-        width: 5px;   
+        width: 15px;
+        position: relative;
+        bottom:3px;   
     }
     .searchbox{
-        width:calc(100% - 80px);
+        /*width:calc(100% - 80px);*/
+        width: 150px;
+        
     }
     nav>.btn{
         width: 13px;
-        margin-top:2px;
+    }
+    .btn i{
+        display: block;
+        color: #d9a200;
+        margin:2px 0px 0px 80px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    .btn i:hover{
+        color: #e6ad03;
     }
     .signupin{
-        font-size: 18px;
-        margin-left: 15px;
+        display: none;
     }
     .list-group{
         display:none;
