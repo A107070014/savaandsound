@@ -101,6 +101,9 @@ main>.right{
 .searchicon{
     margin-top:3.5px;
 }
+.btn i{
+    display: none;
+}
 .signupin{
     color:#d9a200;
     font-size:20px;
@@ -113,13 +116,14 @@ main>.right{
     border-color: #d9a200;
     padding: 5px 5px;
 }
-.btn i{
-    display:none;
-}
+
 @media screen and (max-width:1200px){
 
 }
-@media screen and (max-width:640px){
+@media screen and (max-width:800px){
+
+}
+@media screen and (max-width:450px){
     .picture{
         display: flex;
     }
@@ -142,7 +146,7 @@ main>.right{
     margin-left: 5px;
     }
     .logoname{
-        font-size:16px;
+        font-size:18px;
         margin-top: 3px;
     }
     nav>.search{
@@ -152,26 +156,40 @@ main>.right{
     }
     .searchbox{
         /*width:calc(100% - 80px);*/
-        width: calc(110% - 10px);
+        display: none;
+    }
+    
+    .searchbutton i{
+        display: none;
         
     }
     nav>.btn{
-        /*width: 13px;*/
-        width: calc(13% - 40px);
-        
+        width: 10px;
+        display: flex;
+        padding-right:20px;
     }
     .btn i{
         display: block;
+        font-size:15px;
         color: #d9a200;
-        margin:2px 0px 0px 80px;
-        font-size: 18px;
+        margin-right:15px;
+        margin-top: 5px;
         cursor: pointer;
     }
     .btn i:hover{
         color: #e6ad03;
     }
     .signupin{
-        display: none;
+        font-size: 18px;
+        position: relative;
+        bottom: 2px;
+        
+    }
+    .signupin:hover{
+        border-style:solid;
+        border-radius: 5px;
+        border-color: #d9a200;
+        padding: 1.5px 1.5px;
     }
     .list-group{
         display:none;
