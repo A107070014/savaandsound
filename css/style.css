@@ -118,10 +118,162 @@ main>.right{
 }
 
 @media screen and (max-width:1200px){
+    .picture{
+        display: flex;
+    }
+    .picture i{
+        display: block;
+        margin:15px 10px 0px 5px;
+        font-size: 18px;
+        color: #d9a200;
+        cursor: pointer;
+    }
+    .picture img{
+        width:35px;
+        height:35px;
+        margin-top: 5px;
+        }
+    nav>.logo{
+    flex:none;/*沒有彈性*/
+    width:150px;/*固定尺寸*/
+    display:flex;
+    margin-left: 5px;
+    }
+    .logoname{
+        font-size:18px;
+        margin-top: 3px;
+    }
+    nav>.search{
+        width: 15px;
+        position: relative;
+        bottom:3px;   
+    }
+    .searchbox{
+        /*width:calc(100% - 80px);*/
+        display: none;
+    }
+    
+    .searchbutton i{
+        display: none;
+        
+    }
+    nav>.btn{
+        width: 10px;
+        display: flex;
+        padding-right:20px;
+    }
+    .btn i{
+        display: block;
+        font-size:15px;
+        color: #d9a200;
+        margin-right:15px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    .btn i:hover{
+        color: #e6ad03;
+    }
+    .signupin{
+        font-size: 18px;
+        position: relative;
+        bottom: 2px;
+        
+    }
+    .signupin:hover{
+        border-style:solid;
+        border-radius: 5px;
+        border-color: #d9a200;
+        padding: 1.5px 1.5px;
+    }
+    .row{
 
+    }
+    .list-group{
+        display:none;
+    }
+    .my{
+        width: 100%;
+    }
+    #tab{
+        
+    }
 }
 @media screen and (max-width:800px){
+    .picture{
+        display: flex;
+    }
+    .picture i{
+        display: none;
+    }
+    .picture img{
+        width:35px;
+        height:35px;
+        margin-top: 5px;
+        }
+    nav>.logo{
+    flex:none;/*沒有彈性*/
+    width:150px;/*固定尺寸*/
+    display:flex;
+    margin-left: 5px;
+    }
+    .logoname{
+        font-size:18px;
+        margin-top: 3px;
+    }
+    nav>.search{
+        width: 15px;
+        position: relative;
+        bottom:3px;   
+    }
+    .searchbox{
+        /*width:calc(100% - 80px);*/
+        display: none;
+    }
+    
+    .searchbutton i{
+        display: none;
+        
+    }
+    nav>.btn{
+        width: 10px;
+        display: flex;
+        padding-right:20px;
+    }
+    .btn i{
+        display: block;
+        font-size:15px;
+        color: #d9a200;
+        margin-right:15px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    .btn i:hover{
+        color: #e6ad03;
+    }
+    .signupin{
+        font-size: 18px;
+        position: relative;
+        bottom: 2px;
+        
+    }
+    .signupin:hover{
+        border-style:solid;
+        border-radius: 5px;
+        border-color: #d9a200;
+        padding: 1.5px 1.5px;
+    }
+    .row{
 
+    }
+    .list-group{
+        display:none;
+    }
+    .my{
+        width: 100%;
+    }
+    #tab{
+        
+    }
 }
 @media screen and (max-width:450px){
     .picture{
@@ -191,8 +343,17 @@ main>.right{
         border-color: #d9a200;
         padding: 1.5px 1.5px;
     }
+    .row{
+
+    }
     .list-group{
         display:none;
+    }
+    .my{
+        width: 100%;
+    }
+    #tab{
+        
     }
 }
 
@@ -249,9 +410,8 @@ main>.right{
 .tab-content-2>ul{
     list-style-type: none;
     display: flex;
-    
     margin: 5px 0px 5px 0px;
-    
+    width:calc(100% - 150px);
 }
 .tab-content-1>ul>li,
 .tab-content-2>ul>li{
@@ -649,7 +809,7 @@ span ~ #tab > div:first-of-type,
   vertical-align: top;
 }
 
-/*已登入首頁home2*/
+/*已登入首頁home*/
 /* 通知 & 其他 */
 .dropdown-menu {
     position: relative;
