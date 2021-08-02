@@ -21,6 +21,7 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+
 </head>
 <body>
     
@@ -53,7 +54,7 @@
                 </form>
             </div>
         </div>
-        <i class="fas fa-search"></i>
+        
         <div class="tool">
             <div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
@@ -133,7 +134,14 @@
                                 <li>時長</li>
                             </ul> 
                             <div class="hot">
-                                熱門...
+                                <div>1</div>                               
+                                <img src="img/pen.png" alt="" title="" width="30" height="30">
+                                <div>
+                                    <div>老舊電視聲</div>
+                                    <div>李欣玫</div>
+                                </div>
+                                <div>剛剛</div>
+                                <div>00:40</div>
                             </div>                           
                         </div>
                         <div class="tab-content-2">
@@ -357,57 +365,59 @@
 <script src="js/music.js"></script>
 <!--發文-->
 <div id="article" class="article">
-    <div class="close">
+    <h2>發表貼文</h2>
+    <div class="close">    
         <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
-    <h1>發表貼文</h1>
-    <div class="article1">
-        <img src="" title="大頭貼" width="50" height="50" style="border-radius: 5px;">
-        姓名
+    <div class="img">
+        <img src="img/ukulele.jpg" alt="music-cover" id="cover">
+        <h4 id="title">姓名</h4>   
     </div>
+    
     <div class="article1">
-        <form >
-            <select  name="classification" style="cursor: pointer;">
-              <option value="disabled selected hidden" style="display: none;">選擇分類</option>
+            <select name="classification" style="cursor: pointer;">
+              <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
               <option value="nature">自然</option>
             　<option value="city">都市</option>
             　<option value="instrument">器械</option>
             　<option value="vocal">人聲</option>
             　<option value="nostalgia">懷舊</option>
             </select>
-        </form>
     </div>
     <div class="article1">
-        <textarea name="mytext" placeholder="標題" rows="" cols="70"required ></textarea>
-        <textarea name="mytext" placeholder="聲音故事......"rows="10" cols="70"required></textarea>
+        <textarea name="mytext" placeholder="標題" rows="" cols="70" required ></textarea>
+        <div id="textarea" contenteditable>
+            <output id="list"></output>
+            <textarea  name="mytext" placeholder="聲音故事..." rows="8" cols="65" required></textarea>            
+            <img contenteditable="false" style="width:500px" id="myimg" />
+        </div>                  
     </div >
-    <p>輸入 Tags</p>
+    <div class="article1 file">
+        <div style="display:inline;">
+            <label>
+                <input id="files" name="files" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;">
+                <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
+                    onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
+            </label>
+                <label>
+                    <input class="file" type='file' id="imgSel" name=""  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
+                    <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
+                        onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
+                </label>
+        </div>
+    </div>
+    <script src="js/preview_image.js"></script>
+    <script src="js/preview_audio.js"></script>
+
+    <p>Tags</p>
     <div class="simple-tags" id="container" data-simple-tags=""></div>
     <script>
         var el = document.getElementById('container');
         new Tags(el);
     </script>    
-    <div class="article1">
-        <div style="display:inline;">
-            <form action="/somewhere/to/upload" enctype="multipart/form-data"></form>
-                <label>
-                    <input name="progressbarTW_img" type="file" accept="image/gif, image/jpeg, image/png" style="display:none;">
-                    <img src="img/picture1.png" width="50" height="50" style="cursor: pointer;"
-                        onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">
-                </label>
-            </form>
-        </div>
-        <div style="display:inline;">
-            <label>
-                <input type="file" accept="audio/*" style="display:none;">
-                <img src="img/music1.png" width="50" height="50" style="cursor: pointer;"
-                    onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
-            </label>
-        </div>
-    </div>
     <div >
         <form action="">
             <label class="publish">
