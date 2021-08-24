@@ -15,7 +15,7 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/427ec671a2.js" crossorigin="anonymous"></script>
 <script src="js/story.js"></script>
-<script src="game3.js"></script><!--劉-->
+<script src="js/game3.js"></script><!--劉-->
 <title>留聲跡</title>
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
@@ -36,7 +36,7 @@
             </div>
             <div class="logoname">
                 <a title="留聲跡" href="home.html">
-                    <b><span class="logoname">留聲跡</span></b>
+                    <span class="logoname">留聲跡</span>
                 </a>
             </div>   
         </div>
@@ -55,20 +55,20 @@
         <div class="tool">
             <div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
-                id="tool" class="postw" title="發文" style="cursor: pointer;">發文
+                id="tool" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i>
                 </a>
             </div>
             <div>
-                <a id="tool" class="game" title="小遊戲" role="button" href="game.html">小遊戲</a>
+                <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
             <div >
-                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html">我的聲跡</a>
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.jsp"><i class="fas fa-user"></i></a>
             </div>
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="inform-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
                         <a id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
-                        通知</a>
+                            <i class="fas fa-bell"></i></a>
                     </span>
                     <div tabindex="0" onclick="return true"></div>
                         <ul>
@@ -84,7 +84,7 @@
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="another-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
-                        <img  id="tool" src="img/another1.png" title="其他" alt="其他" width="25" height="26" style="cursor: pointer;" 
+                        <img  id="" src="img/another1.png" title="其他" alt="其他" width="25" height="32" style="cursor: pointer;" 
                         onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
                     </span>
                     <div tabindex="0" onclick="return true"></div>
@@ -93,7 +93,9 @@
                         <a href="" title="聯絡我們"><li>聯絡我們</li></a>
                         <a href="" title="募資平台"><li>募資平台</li></a>
                         <a href="" title="設定"><li>設定</li></a>
-                        <a href="" title="登出"><li>登出</li></a>
+                        <form action="logout.jsp"class="logout">
+                            <button>登出<input type="submit" value="登出"></button>
+                        </form>
                     </ul>
                 </div>
             </div>
@@ -290,66 +292,99 @@
     
 <!--發文-->
 <div id="article" class="article">
-    <div class="close">
+    <h2>發表貼文</h2>
+    <div class="close">    
         <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
-    <h1>發表貼文</h1>
-    <div class="article1">
-        <img src="" title="大頭貼" width="50" height="50" style="border-radius: 5px;">
-        姓名
+    <div  class="img">
+        <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
+        <!--<%
+            request.setCharacterEncoding("utf-8");
+            String email = (String)session.getAttribute("EMAIL");
+
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            String url2="jdbc:sqlserver://127.0.0.1:1433;database=saveandsound";
+            Connection con2 = DriverManager.getConnection( url2, "sa","sa");
+
+            PreparedStatement pst2 = con2.prepareStatement("select * from users where email=?");
+            pst2.setString(1,email);
+            
+            ResultSet rs2 = pst2.executeQuery();
+            while(rs2.next()){
+                out.print("<h4>"+rs2.getString("name")+"</h4>");
+            }
+            rs2.close();
+            pst2.close();
+            con2.close();
+        %>-->
+        <!--<h4 id="title" name="name">姓名</h4>-->   
     </div>
-    <div class="article1">
-        <form >
-            <select  name="classification" style="cursor: pointer;">
-              <option value="disabled selected hidden" style="display: none;">選擇分類</option>
-              <option value="nature">自然</option>
-            　<option value="city">都市</option>
-            　<option value="instrument">器械</option>
-            　<option value="vocal">人聲</option>
-            　<option value="nostalgia">懷舊</option>
-            </select>
+        <form name="post" method="post" action="post.jsp" >
+            <div class="article1">
+                <select name="category" style="cursor: pointer;">
+                    <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
+                    <option value="nature">自然</option>
+                    <option value="city">都市</option>
+                    <option value="instrument">器械</option>
+                    <option value="vocal">人聲</option>
+                    <option value="nostalgia">懷舊</option>
+                </select>
+            </div>
+            <div class="article1">
+                <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
+                <div id="textarea" contenteditable>
+                    <output id="list"></output>
+                    <textarea  name="post" placeholder="聲音故事..." rows="8" cols="65" required></textarea>            
+                    <img contenteditable="false" style="width:500px" id="myimg" />
+                </div>                  
+            </div >
+            <div class="article1 file">
+                <div style="display:inline;">
+                    <label>
+                        <input id="files" name="sound" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;" >
+                        <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
+                            onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
+                    </label>
+                    <label>
+                        <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
+                        <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
+                            onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
+                    </label>
+                </div>
+            </div>
+            <script src="js/preview_image.js"></script>
+            <script src="js/preview_audio.js"></script>
+
+            <p>Tags</p>
+            <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
+            <script>
+                var el = document.getElementById('container');
+                new Tags(el);
+            </script>
+                
+            <div>
+                <label class="publish">
+                    <input id="submit" type="submit" value="發佈" style="display:none;">發佈
+                </label>     
+            </div>
         </form>
-    </div>
-    <div class="article1">
-        <textarea name="mytext" placeholder="標題" rows="" cols="70"required ></textarea>
-        <textarea name="mytext" placeholder="聲音故事......"rows="10" cols="70"required></textarea>
-    </div >
-    <p>輸入 Tags</p>
-    <div class="simple-tags" id="container" data-simple-tags=""></div>
-    <script>
-        var el = document.getElementById('container');
-        new Tags(el);
-    </script>    
-    <div class="article1">
-        <div style="display:inline;">
-            <form action="/somewhere/to/upload" enctype="multipart/form-data"></form>
-                <label>
-                    <input name="progressbarTW_img" type="file" accept="image/gif, image/jpeg, image/png" style="display:none;">
-                    <img src="img/picture1.png" width="50" height="50" style="cursor: pointer;"
-                        onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">
-                </label>
-            </form>
-        </div>
-        <div style="display:inline;">
-            <label>
-                <input type="file" accept="audio/*" style="display:none;">
-                <img src="img/music1.png" width="50" height="50" style="cursor: pointer;"
-                    onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
-            </label>
-        </div>
-    </div>
-    <div >
-        <form action="">
-            <label class="publish">
-                <input type="submit" value="發佈" style="display:none;">發佈
-            </label>
-        </form>
-    </div>
+    
+        <script src="js/tags.js"></script>
+        <!--避免tags按enter送出表單-->
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $(window).keydown(function(event){
+                if(event.keyCode == 13) {
+                    event.preventDefault();
+                return false;
+            }
+        });
+        });
+        </script>
 </div>
-<script src="js/tags.js"></script>
 
 </body>
 </html>
