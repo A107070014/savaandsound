@@ -337,7 +337,7 @@
                 </a>
             </div>
             <input type="submit"  value="登入" class="submit" >
-        </form> 
+         
     </div>
     <p class="b25">第一次使用 留聲跡 嗎？
         <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
@@ -367,9 +367,7 @@
                     </svg>
                 </span>
             </span>
-            <span class="use-google-acount-login"><div>
-                <input type="button"  value="Facebook登入" onclick="FBLogin();" />
-            </div></span>
+            <span class="use-google-acount-login">使用 Google 帳號登入</span>
         </button>
     </div>
     <div class="use-facebook-login">
@@ -382,14 +380,17 @@
                     </svg>
                 </span>
             </span>
-            <span class="use-facebook-acount-login">使用 Facebook 帳號登入
+            <span class="use-facebook-acount-login" onclick="FBLogin();">使用 Facebook 帳號登入
             </span>
         </button>
     </div>
+    </form>
 </div>
 <script src="js/pwdeye.js"></script>
 <script src="js/signincheck.js"></script>
-
+<div>
+    Facebook登入：<input type="button"  value="Facebook登入" onclick="FBLogin();" />
+</div>
 <div>
     Google登入：<input type="button"  value="Google登入" onclick="GoogleLogin();" />
 </div>
@@ -431,14 +432,13 @@
                 //抓userID
                 let FB_ID = response["authResponse"]["userID"];
                 console.log("userID:" + FB_ID);
-
+                document.getElementById("form").submit();
                
             } else {
                 // user FB取消授權
                 alert("Facebook帳號無法登入");
             }
         }, { scope: 'public_profile,email' });
-
     }
 </script>
 
