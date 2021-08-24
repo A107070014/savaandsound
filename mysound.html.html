@@ -17,6 +17,29 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+
+<!--日期jquery-->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $( function() {
+        $( "#datepicker" ).datepicker({
+            dateFormat: "yy-mm-dd",
+            dayNamesMin: [ "日", "一", "二", "三", "四", "五", "六" ],
+            monthNamesShort: [ "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" ],
+            yearRange: "1911:2021",
+            changeMonth: true,
+            changeYear: true  
+        });
+        $( "#anim" ).on( "change", function() {
+            $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+        });
+    } );
+    
+</script>
+
 </head>
 <body>
     <!--登入-->
@@ -94,102 +117,106 @@
             </div>
         </div>
     </nav>
+    
     <div class="row">
         <div class="list-group col-md-4 col-xs-4">
-            <h1>關於我們</h1>
-            <a id="tab1" href="#" class="tab list-group-item active">專案背景&目標</a>
-            <a id="tab2" href="#" class="tab list-group-item">Logo設計理念</a>
-            <a id="tab3" href="#" class="tab list-group-item">團隊成員</a>
-            <a id="tab4" href="#" class="tab list-group-item">展覽展演時程</a>
+            <div class="personal">
+                <div class="img-container">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover">
+                    
+                    <!--<h4 id="title">姓名</h4>-->    
+                </div>
+            </div>
+            <div class="list">
+                <a id="tab1" href="#" class="tab list-group-item active">我的個人資料</a>
+                <a id="tab2" href="#" class="tab list-group-item">我的聲音故事</a>
+                <a id="tab3" href="#" class="tab list-group-item">聲音故事收藏</a>
+                <a id="tab4" href="#" class="tab list-group-item">設定</a>
+            </div>
         </div>
         <div class="my col-md-8 col-xs-4">
             <div id="tab-item1" class="tab-item">
-                <img src="img/test.jpg" width="1215" height="300">
                 <div class="i1">
-                    <h2>專案背景&目標</h2>
-                    <h3>專案背景</h3>
-                        <p>每個人都有一些能夠觸發自己過去某段回憶、記憶的特別聲音,也許是穿著某雙鞋發出的腳步聲，也許是窗前風吹過所伴隨的陣陣風鈴聲，又或者是廚房內鍋鏟與鐵鍋所共同奏出的炒菜聲等……在蒐集各種特別聲音的同時，希望也能藉由蒐集聲音來保存下屬於自己珍貴的記憶。</p>
-                        <p>我們發現在這個世代，我們對於聲音是相對敏感的，但相較於視覺似乎較少有團體或機構在關注聲音，我們希望能利用我們過去在資傳所學所獲得的資訊設計能力、知識加值能力以及網路傳播能力，以保存聲音作為出發點，結合其中蘊含的個人故事，讓個人的記憶得以有實體的保存，並探討其中與文化層面的連結，將其組織彙整，透過網路平台分享傳播給大眾。</p>
-                    <h3>專案目標</h3>
-                        <p>現今資訊發達，幾乎每個人人手一機，因專注於電子產品中的內容，近年音訊產品的發展也帶動大家不管在通勤、工作、學習等做許多事情時，都佩戴著耳機，沉浸在自己的小世界，漸漸忽視周遭的人事物，造成人與人間的溫度逐漸下降，甚至出現科技冷漠的現象。希望能透過這次專題，引起人們想去了解身旁的家人、朋友，進而促進與人交談，更希望能促進年輕人能和長輩多交流，減少冷漠造成的隔閡。</p>
-                        <p>或許是因為年代更替、社會變遷的原因，現今社會喜歡追趕流行，而不斷出現各種新的聲音，人們很難在路上聽見過去年代的聲音，造成很多過往記憶中的聲音隨著時間漸漸消逝。希望透過這次專題，人們能透過聲音的故事，回顧過往，並保存屬於自己「記憶中的聲音」。</p>
-                </div>        
+                    <h2>我的個人資料</h2>
+                    <div id="editmyinfo">            
+                        <h3><i class="fas fa-user"></i>修改個人資料</h3>
+                        <form class="myinfo" action="editmyinfo.jsp" method="post">
+                            <p class="photo">頭貼</p>
+                            <img contenteditable="false"  id="myimg" />
+                            <div class="article1 file">                              
+                                <label class="editphoto">
+                                    <input class="file" type='file' id="imgSel" name="image" accept="image/gif, image/jpeg, image/png" style="display:none;"/>
+                                    <i class="fas fa-upload"></i>變更頭貼                    
+                                </label>                               
+                            </div>
+                            <script src="js/preview_image.js"></script>
+                            
+                        
+                        <!--<option value=disabled selected hidden>"+rs.getString("gender")+"</option>
+                            <p>姓名</p><input type="text" name="name" placeholder="輸入姓名"/><br>
+                            <p>性別</p>
+                                        <select name="gender" style="cursor: pointer;">
+                                            <option value="F">女生</option>
+                                            <option value="M">男生</option>
+                                        </select><br>
+                            <p>生日</p><input type="text" name="birth" id="datepicker"placeholder="輸入生日"><br>
+                            <p>手機</p><input type="tel" name="phone" value="" placeholder="輸入手機號碼"><br>
+                            <p>信箱</p><input type="mail" name="email" value="" placeholder="輸入電子郵件"/><br>
+                            <p>帳號</p><input type="text" name="id" value="" placeholder="輸入帳號"/><br>-->
+                            <input class="submitedit" type="reset"  value="取消">
+                            <input class="submitedit" type="submit"  value="儲存">
+                        </form>
+                        
+                    </div>
+                    <div id="editpassword">    
+                        <form action="editpwd.jsp" method="post"  class="myinfo">
+                            <h3><i class="fas fa-key"></i>修改密碼</h3><br>
+                            <p>目前密碼</p><input  id="editpwd" type="password" name="oldpwd" value=""panel placeholder="輸入密碼"/><br>
+                            <p>新密碼</p><input  class="editpwd" type="password" name="newpwd" value=""panel placeholder="輸入新密碼"/><br>
+                            <p>確認密碼</p><input id="editpwd" type="password" name="checknewpwd" value=""panel placeholder="確認密碼"/><br>
+                            <input class="submitedit" type="reset" value="取消">
+                            <input class="submitedit" type="submit" value="儲存">   
+                        </form>
+                    </div>    
+                </div> 
             </div>
             <div id="tab-item2" class="tab-item">
                 <div class="i1">
-                    <h2>Logo設計理念</h2>
-                    <div id="logoidea">
-                        <img src="img/logo.png" alt="留聲跡Logo" title="留聲跡Logo">
-                        <p>右側由線條所勾勒出耳朵形狀，代表以此為媒介所聆聽之貫通本組主題的「聲音」；</p>
-                        <p>左側則以腳印之形式，不但象徵著本組欲追隨聲音的足跡，一步一腳印追尋著每個獨</p>
-                        <p>特「聲音」背後所代表的故事，也呼應主題名稱的『留聲「跡」』；此兩元素合而為</p>
-                        <p>一成心形狀，更體現了這些聲音所帶來，由心而發的懷念與感動。</p>
-                    </div>
+                    <h2>我的聲音故事</h2>
                 </div>
             </div>
             <div id="tab-item3" class="tab-item">
                 <div class="i1">
-                    <h2>團隊成員</h2>
+                    <h2>聲音故事收藏</h2>
                 </div>
-                    <div class="member">
-                        <div  class="img">
-                            <img src="img/pm.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4 class="name">吳瀞予</h4>
-                            <h4 id="title">專案經理</h4>   
-                        </div>
-                        <div  class="img">
-                            <img src="img/xinmei.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4  class="name">李欣玫</h4>
-                            <h4 class="title" >後台程式設計</h4>   
-                        </div>
-                        <div  class="img">
-                            <img src="img/web.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4  class="name">劉佳昇</h4>
-                            <h4 class="title" >前台程式設計</h4>    
-                        </div>
-                        <div  class="img">
-                            <img src="img/carol.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4  class="name">林梓璇</h4>
-                            <h4 id="title">美術設計</h4>    
-                        </div>
-                        <div  class="img">
-                            <img src="img/jasper.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4  class="name">徐溥澤</h4>
-                            <h4 id="title">行銷公關</h4>    
-                        </div>
-                    </div>
-                    <div class="memberinfo">
-                        
-                    </div>
-                
             </div>
             <div id="tab-item4" class="tab-item">
                 <div class="i1">
-                    <h2>展覽展演時程</h2>
-                    <h3>世新大學資訊傳播學系107級畢業展覽 </h3>
-                </div>
-                    <div class="school">
-                        <div>
-                            <h3>校內展</h3>
-                            <p>時間：110/10/19～110/10/21</p>
-                            <p>地點：世新大學管理學院一樓</p>
+                    <h2>設定</h2>
+                    <div class="center">
+                        <div class="info">
+                            <h3>通知</h3>
+                            <div class="switch_demo">
+                                <input type="checkbox" name="switch_demo" class="switch_demo-checkbox" id="switch_demo" checked>
+                                <label class="switch_demo-label" for="switch_demo">
+                                    <span class="switch_demo-inner"></span>
+                                    <span class="switch_demo-switch"></span>
+                                </label>
+                            </div>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.3774635970967!2d121.5457786148409!3d24.987286783994215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346801fd50239bcd%3A0xa65aac763e031255!2z5LiW5paw5aSn5a24566h55CG5a246Zmi!5e0!3m2!1szh-TW!2stw!4v1629605650231!5m2!1szh-TW!2stw" 
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <div class="Terms">
+                            <h3>使用設定與條款</h3>
+                            <a href=""><h4>會員權益條款</h4></a>
+                            <a href=""><h4>個資告知條</h4></a>
+                            <a href=""><h4>音檔版權宣告</h4></a>
+                            <a href=""><h4>圖檔版權聲明</h4></a>
+                            <a href=""><h4>版歸聲明</h4></a>
+                        </div>
                     </div>
-                    <div class="ppp">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.415755244091!2d121.51994131484234!3d25.05389398396309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x140dd0e7247ab13d%3A0x3e9ec83d7e6536e7!2sPPP!5e0!3m2!1szh-TW!2stw!4v1629605776613!5m2!1szh-TW!2stw" 
-                            width="550" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        <div>    
-                            <h3>校外展</h3>
-                            <p>時間：110/12/10～110/12/12</p>
-                            <p>地點：PPP時尚藝文空間</p>
-                        </div>
-                    </div>       
-                        
+                </div>    
             </div>
         </div>
-    </div>
+    </div>   
 <!--發文-->
 <div id="article" class="article">
     <h2>發表貼文</h2>
@@ -229,11 +256,11 @@
                         <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
                             onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
                     </label>
-                        <label>
-                            <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
-                            <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
-                                onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
-                        </label>
+                    <label>
+                        <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
+                        <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
+                            onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
+                    </label>
                 </div>
             </div>
             <script src="js/preview_image.js"></script>
@@ -252,6 +279,7 @@
                 </label>     
             </div>
         </form>
+    
         <script src="js/tags.js"></script>
         <!--避免tags按enter送出表單-->
         <script type="text/javascript">
@@ -264,41 +292,7 @@
         });
         });
         </script>
-</div>
-<!--
-    <div class="row">
-        <div class="my">
-            <h1>關於我們</h1>
-            <h2>專案目標:</h2>
-            <h2>Logo設計理念:</h2>
-            <h2>團隊成員:</h2>
-            <h3>吳瀞予   專案經理</h3>
-            <h3>林梓璇   美術設計</h3>
-            <h3>劉佳昇   前台程式設計</h3>
-            <h3>李欣玫   後台程式設計</h3>
-            <h3>徐溥澤   行銷公關</h3>
-         </div>       
-        <div class="area2">
-            <img src="" alt="">
-            <div class="area2-text">
-                <h3>展覽展演時程</h3>
-                <span class="orangeLine center"></span>
-                <p>世新大學資訊傳播學系107級畢業展覽 <br>
-                   校內展：109/10/19～109/10/21 <br>
-                   地點：世新大學管理學院一樓 <br>
-                   校外展：109/12/10～109/12/12 <br>
-                   地點：PPP時尚藝文空間
-                </p>
-                   <span class="orangeLine "></span>
-                   <ul>
-                       <li>
-                           <a href="https://www.instagram.com/107ics.media_framing/?hl=zh-tw"  target=_blank>
-                               <i class="fa fa-instagram" aria-hidden="true"></i>
-                           </a>
-                       </li>
-                   </ul>
-            </div>
-        </div>
-    </div>
--->
+</div>        
+
+
 </body>

@@ -21,10 +21,9 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-
+<!--<%@ page contentType="text/html;charset=utf-8" import="java.util.Date,java.sql.*" %>-->
 </head>
-<body>
-    
+<body>    
     <!--登入-->
     <div id="fade" class="black_overlay" ></div>
     <!--標題列-->
@@ -32,24 +31,22 @@
         <div class="logo">
             <div class="picture">
                 <i class="fas fa-bars"></i>
-                <a title="留聲跡" href="home.html">
+                <a title="留聲跡" href="home.jsp">
                     <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                 </a>
             </div>
             <div class="logoname">
-                <a title="留聲跡" href="home.html">
-                    <b><span class="logoname">留聲跡</span></b>
+                <a title="留聲跡" href="home.jsp">
+                    <span class="logoname">留聲跡</span>
                 </a>
             </div>   
         </div>
         <div class="search">
             <div class="key">
                 <form action="">
-                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50"/>
+                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50" />
                     <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="searchicon" height="75%">
-                            <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path>
-                        </svg>   
+                        <i class="fas fa-search"></i>  
                     </button>
                 </form>
             </div>
@@ -58,20 +55,20 @@
         <div class="tool">
             <div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
-                id="tool" class="postw" title="發文" style="cursor: pointer;">發文
+                id="tool" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i>
                 </a>
             </div>
             <div>
-                <a id="tool" class="game" title="小遊戲" role="button" href="game.html">小遊戲</a>
+                <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
             <div >
-                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html">我的聲跡</a>
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.jsp"><i class="fas fa-user"></i></a>
             </div>
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="inform-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
                         <a id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
-                        通知</a>
+                            <i class="fas fa-bell"></i></a>
                     </span>
                     <div tabindex="0" onclick="return true"></div>
                         <ul>
@@ -87,7 +84,7 @@
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="another-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
-                        <img  id="tool" src="img/another1.png" title="其他" alt="其他" width="25" height="26" style="cursor: pointer;" 
+                        <img  id="" src="img/another1.png" title="其他" alt="其他" width="25" height="32" style="cursor: pointer;" 
                         onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
                     </span>
                     <div tabindex="0" onclick="return true"></div>
@@ -96,7 +93,9 @@
                         <a href="" title="聯絡我們"><li>聯絡我們</li></a>
                         <a href="" title="募資平台"><li>募資平台</li></a>
                         <a href="" title="設定"><li>設定</li></a>
-                        <a href="" title="登出"><li>登出</li></a>
+                        <form action="logout.jsp"class="logout">
+                            <button>登出<input type="submit" value="登出"></button>
+                        </form>
                     </ul>
                 </div>
             </div>
@@ -127,29 +126,42 @@
                         </ul>
                         <div class="tab-content-1">
                             <ul>
-                                <li>#</li>
-                                <li>標題</li>
                                 <li>發表者</li>
+                                <li>標題</li>
                                 <li>新增日期</li>
                                 <li>時長</li>
-                            </ul> 
-                            <div class="hot">
-                                <div>1</div>                               
-                                <img src="img/pen.png" alt="" title="" width="30" height="30">
-                                <div>
-                                    <div>老舊電視聲</div>
-                                    <div>李欣玫</div>
-                                </div>
-                                <div>剛剛</div>
-                                <div>00:40</div>
-                            </div>                           
+                            </ul>                          
+                            <a href = "javascript:void(0)" onclick = "document.getElementById('story').style.display='block';document.getElementById('fade').style.display='block'"
+                                class="" style="cursor: pointer;">
+                            <table>
+                                <!--<%
+                                    request.setCharacterEncoding("utf-8");
+
+                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                    String url = "jdbc:sqlserver://127.0.0.1:1433;database=saveandsound";
+                                    Connection con = DriverManager.getConnection(url,"sa","sa");
+
+                                    Statement st = con.createStatement();
+                                    ResultSet rs = st.executeQuery("select * from article");
+
+                                    while(rs.next()){
+                                        out.print("<tr><td>"+rs.getObject("name")+"</td>");
+                                        out.print("<td>"+rs.getObject("title")+"</td>");
+                                        out.print("<td>"+rs.getObject("time")+"</td></tr>");
+                                    }
+                                    rs.close();
+                                    st.close();
+                                    con.close();
+                                %>-->
+                            </table>   
+                            </a>                                                                         
                         </div>
                         <div class="tab-content-2">
                             <ul>
                                 <li>#</li>
                                 <li>標題</li>
                                 <li>發表者</li>
-                                <li>新增日期</li>
+                                <li>新增</li>
                                 <li>時長</li>
                             </ul>  
                             <div class="new">
@@ -335,6 +347,48 @@
             </div>
         </div>
     </div>
+<!--查看聲音故事-->
+<div class="story" id="story">
+    <div class="close">    
+        <a href = "javascript:void(0)" onclick = "document.getElementById('story').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
+    </div>
+    <div  class="img">
+        <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
+        <h4 id="title" name="name">姓名</h4>   
+    </div>
+    <h2>標題</h2>
+    <div class="s1">
+        <a href="#" alt="分類">分類</a>
+        <div>時間</div>
+    </div>
+    <audio controls id="s">
+        <source src="music/baseball.mp3" type="audio/mp3">
+        遇到不支援的瀏覽器會出現這行字
+    </audio>
+    <div id="s" class="s2">故事</div>
+    <div id="s">
+        <img src="">圖片
+    </div>
+    <div id="s" class="s3">tags</div>
+    <div id="s" class="s4">
+        <div class="s5">
+            <i class="fas fa-heart"></i>按讚數
+            <i class="fas fa-comment"></i>留言數
+        </div>
+        <div class="s6">
+            <i class="fas fa-heart" ></i>
+            <i class="fas fa-bookmark"></i>
+            <i class="fas fa-comment"></i>
+            <i class="fas fa-exclamation-circle"></i>
+        </div>
+    </div>
+    <div id="s" class="s7">
+        留言區
+    </div>
+</div>
 <!--音樂播放器-->
 <div class="music-container" id="music-container">
     <div class="music-info" id="music-info">
@@ -363,70 +417,101 @@
     </div>
 </div>
 <script src="js/music.js"></script>
-<!--發文-->
-<div id="article" class="article">
-    <h2>發表貼文</h2>
-    <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
-            <img src="img/close1.png" width="15px" height="15px" 
-                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
-        </a>
-    </div>
-    <div class="img">
-        <img src="img/ukulele.jpg" alt="music-cover" id="cover">
-        <h4 id="title">姓名</h4>   
-    </div>
-    
-    <div class="article1">
-            <select name="classification" style="cursor: pointer;">
-              <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
-              <option value="nature">自然</option>
-            　<option value="city">都市</option>
-            　<option value="instrument">器械</option>
-            　<option value="vocal">人聲</option>
-            　<option value="nostalgia">懷舊</option>
-            </select>
-    </div>
-    <div class="article1">
-        <textarea name="mytext" placeholder="標題" rows="" cols="70" required ></textarea>
-        <div id="textarea" contenteditable>
-            <output id="list"></output>
-            <textarea  name="mytext" placeholder="聲音故事..." rows="8" cols="65" required></textarea>            
-            <img contenteditable="false" style="width:500px" id="myimg" />
-        </div>                  
-    </div >
-    <div class="article1 file">
-        <div style="display:inline;">
-            <label>
-                <input id="files" name="files" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;">
-                <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
-                    onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
-            </label>
-                <label>
-                    <input class="file" type='file' id="imgSel" name=""  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
-                    <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
-                        onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
-                </label>
-        </div>
-    </div>
-    <script src="js/preview_image.js"></script>
-    <script src="js/preview_audio.js"></script>
 
-    <p>Tags</p>
-    <div class="simple-tags" id="container" data-simple-tags=""></div>
-    <script>
-        var el = document.getElementById('container');
-        new Tags(el);
-    </script>    
-    <div >
-        <form action="">
-            <label class="publish">
-                <input type="submit" value="發佈" style="display:none;">發佈
-            </label>
-        </form>
+<!--發文-->
+    <div id="article" class="article">
+        <h2>發表貼文</h2>
+        <div class="close">    
+            <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
+                <img src="img/close1.png" width="15px" height="15px" 
+                    onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+            </a>
+        </div>
+        <div  class="img">
+            <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
+            <!--<%
+                request.setCharacterEncoding("utf-8");
+                String email = (String)session.getAttribute("EMAIL");
+
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                String url2="jdbc:sqlserver://127.0.0.1:1433;database=saveandsound";
+                Connection con2 = DriverManager.getConnection( url2, "sa","sa");
+
+                PreparedStatement pst2 = con2.prepareStatement("select * from users where email=?");
+                pst2.setString(1,email);
+                
+                ResultSet rs2 = pst2.executeQuery();
+                while(rs2.next()){
+                    out.print("<h4>"+rs2.getString("name")+"</h4>");
+                }
+                rs2.close();
+                pst2.close();
+                con2.close();
+            %>-->
+            <!--<h4 id="title" name="name">姓名</h4>-->   
+        </div>
+            <form name="post" method="post" action="post.jsp" >
+                <div class="article1">
+                    <select name="category" style="cursor: pointer;">
+                        <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
+                        <option value="nature">自然</option>
+                        <option value="city">都市</option>
+                        <option value="instrument">器械</option>
+                        <option value="vocal">人聲</option>
+                        <option value="nostalgia">懷舊</option>
+                    </select>
+                </div>
+                <div class="article1">
+                    <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
+                    <div id="textarea" contenteditable>
+                        <output id="list"></output>
+                        <textarea  name="post" placeholder="聲音故事..." rows="8" cols="65" required></textarea>            
+                        <img contenteditable="false" style="width:500px" id="myimg" />
+                    </div>                  
+                </div >
+                <div class="article1 file">
+                    <div style="display:inline;">
+                        <label>
+                            <input id="files" name="sound" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;" >
+                            <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
+                                onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
+                        </label>
+                        <label>
+                            <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
+                            <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
+                                onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
+                        </label>
+                    </div>
+                </div>
+                <script src="js/preview_image.js"></script>
+                <script src="js/preview_audio.js"></script>
+
+                <p>Tags</p>
+                <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
+                <script>
+                    var el = document.getElementById('container');
+                    new Tags(el);
+                </script>
+                    
+                <div>
+                    <label class="publish">
+                        <input id="submit" type="submit" value="發佈" style="display:none;">發佈
+                    </label>     
+                </div>
+            </form>
+        
+            <script src="js/tags.js"></script>
+            <!--避免tags按enter送出表單-->
+            <script type="text/javascript">
+                $(document).ready(function() {
+                $(window).keydown(function(event){
+                    if(event.keyCode == 13) {
+                        event.preventDefault();
+                    return false;
+                }
+            });
+            });
+            </script>
     </div>
-</div>
-<script src="js/tags.js"></script>
-     
 </body>
 </html>

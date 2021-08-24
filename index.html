@@ -16,6 +16,8 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<!--<%@ page contentType="text/html;charset=utf-8" import="java.util.*,java.sql.*" %>-->
+  
 </head>
 <body>
     
@@ -31,7 +33,7 @@
             </div>
             <div class="logoname">
                 <a title="留聲跡" href="home.html">
-                    <b><span class="logoname">留聲跡</span></b>
+                    <span class="logoname">留聲跡</span>
                 </a>
             </div>   
         </div>
@@ -73,7 +75,7 @@
                             <li><a href="#tab-1">熱門</a></li>
                             <li><a href="#tab-2">最新</a></li>
                         </ul>
-                        <div class="tab-content-1">
+                        <div class="tab-content-1">                            
                             <ul>
                                 <li>#</li>
                                 <li>標題</li>
@@ -81,16 +83,25 @@
                                 <li>時長</li>
                             </ul> 
                             <div class="hot">
-                                <div>1</div>                               
-                                <img src="img/pen.png" alt="" title="" width="30" height="30">
-                                <div>
-                                    <div>老舊電視聲</div>
-                                    <div>李欣玫</div>
-                                </div>
-                                <div>剛剛</div>
-                                <div>00:40</div>
+                                <a href = "javascript:void(0)" onclick = "document.getElementById('story').style.display='block';document.getElementById('fade').style.display='block'"
+                                    class="" style="cursor: pointer;">
+                                    <div class="m">
+                                        <div class="m4">1</div>
+                                        <div  class="img">
+                                            <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">  
+                                        </div>
+                                        <div class="m0">
+                                            <div>姓名</div>
+                                            <div>分類</div>
+                                        </div>
+                                        <div class="m1">標題</div>
+                                        <div class="m2">新增日期</div>
+                                        <div class="m3">時長</div>
+                                    </div>
+                                </a>
                             </div>                           
                         </div>
+                        
                         <div class="tab-content-2">
                             <ul>
                                 <li>#</li>
@@ -105,6 +116,8 @@
                         </div>
                     </div>                  
             </div>
+            
+
             <!--自然-->
             <div id="tab-item2" class="tab-item">
                 <span id="tab-3">3</span>
@@ -281,123 +294,6 @@
                 </div>                  
             </div>
         </div>
-        
-    <!--
-        <main>
-        </div>
-            <div class="space">
-                <div class="cate">分類</div>
-                <div>
-                    <a href="">
-                        <div>
-                            <div class="catetitle">自然</div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div>
-                            <div class="catetitle">都市</div>
-                        </div>
-                    </a>
-                     <a href="">
-                        <div>
-                            <div class="catetitle">器械</div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div>
-                            <div class="catetitle">人聲</div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div>
-                            <div class="catetitle">懷舊</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-    </div>
-    
-    <div class="right">
-        <div class="space">
-            <div class="choice">
-                <span id="tab-1">1</span>
-                <span id="tab-2">2</span>
-                <div id="tab">
-                    <ul>
-                        <li><a href="#tab-1" >熱門</a></li>
-                        <li><a href="#tab-2">最新</a></li>
-                    </ul>
-                    <div class="tab-content-1">
-                        <p>
-                            <div class="posthead">
-                                <div class="postheaddiv">
-                                    <div class="postnumber">#</div>
-                                </div>
-                                <div class="postheaddiv">
-                                    <div class="posttitle">
-                                        <span>標題</span>
-                                    </div>
-                                </div>
-                                <div class="postheaddiv">
-                                    <div class="publisher">
-                                        <span>發表者</span>
-                                    </div>
-                                </div>
-                                <div class="postheaddiv">
-                                    <div class="postdate">
-                                        <span>新增日期</span>
-                                    </div>
-                                </div>
-                                <div class="postheaddiv">
-                                    <div class="posttime">
-                                        <span>時長</span>
-                                    </div>
-                                </div>
-                            </div> 
-                            <div class="postrow">
-                                熱門...
-                            </div>
-                        </p>
-                    </div>
-                    <div class="tab-content-2">
-                        <p>
-                            <div class="posthead">
-                                <div class="postheaddiv">
-                                    <div class="postnumber">#</div>
-                                </div>
-                                <div class="postheaddiv">
-                                    <div class="posttitle">
-                                        <span>標題</span>
-                                    </div>
-                                </div>
-                                <div class="postheaddiv">
-                                    <div class="publisher">
-                                        <span>發表者</span>
-                                    </div>
-                                </div>
-                                <div class="postheaddiv">
-                                    <div class="postdate">
-                                        <span>新增日期</span>
-                                    </div>
-                                </div>
-                                <div class="postheaddiv">
-                                    <div class="posttime">
-                                        <span>時長</span>
-                                    </div>
-                                </div>
-                            </div> 
-                            <div class="postrow">
-                                最新...
-                            </div>
-                        </p>
-                    </div>
-                </div>
-            </div>    
-        </div>        
-    </div>
-</main>
--->
-
 <div id="dialog" class="dialog">
     <div class="close">
         <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='none'">
@@ -406,7 +302,52 @@
         </a>
     </div> 
     <div class="la">
-    <h1 class="login-acount" id="login" style="font-size: 25px;">登入你的帳號</h1>
+        <h1 class="login-acount" id="login" style="font-size: 25px;">登入</h1>
+    </div>
+    <div class="b1">
+    <!--<%
+        Cookie[] cks =request.getCookies();
+        if(cks!=null){
+            boolean flagCookie = false; //true表示有登入帳號
+            for(int i=0;i<cks.length;i++){
+                if(cks[i].getName().equals("Email")){
+                    flagCookie=true;
+                    session.setAttribute("Email",cks[i].getValue());
+                    break;
+                }
+            }
+        
+            if(flagCookie)//表示已有登入紀錄
+                response.sendRedirect("home.jsp"); 
+        }
+    %>-->
+        <form id="form"  action="home.html" name="login" method="post" class="b2" aria-labelledby="b3">
+            <div class="b4">
+                <i class="far fa-envelope"></i>
+                <input id="email" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
+                <small class="error1">Error message</small>
+            </div>
+            <div class="b4">
+                <i class="fas fa-lock"></i>
+                <input id="password" class="b11" type="password" autocomplete="current-password"  placeholder="••••••••••••" name="password" aria-required="true" value="" >
+                <small class="error2">Error message</small>
+                <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes"></label>
+                <a href = "javascript:void(0)" onclick = "document.getElementById('forgetpassword').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
+                    class="b23" style="cursor: pointer;">忘記密碼？
+                </a>
+            </div>
+            <input type="submit"  value="登入" class="submit" >
+        </form> 
+    </div>
+    <p class="b25">第一次使用 留聲跡 嗎？
+        <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
+            class="b26" style="cursor: pointer;">立即註冊
+        </a>
+    </p>
+    <div class="Separate">
+        <hr class="Divider1">
+        <span class="or">或</span>
+        <hr class="Divider2">
     </div>
     <div class="use-google-login">
         <button class="google-account-login-button" type="button">
@@ -443,58 +384,10 @@
             </span>
         </button>
     </div>
-    <div class="Separate">
-        <hr class="Divider">
-        <span class="or">或</span>
-        <hr class="Divider">
-    </div>
-    <div class="b1">
-        <form action="home.jsp" method="post" class="b2" aria-labelledby="b3">
-            <div class="b4">
-                <label for="b5" id="b6">
-                    <p class="b7" >電子郵件地址/行動裝置號碼</p>
-                </label>
-                <div>
-                    <div class="b8">
-                        <div class="b9">
-                            <div class="b10">
-                                <input id="b5" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email" required="" placeholder="電子郵件地址或行動裝置號碼" name="email" aria-required="true" aria-labelledby="b6" value="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="b12">
-                <label for="b13" id="b14">
-                    <p class="b15">密碼</p>
-                </label>
-                <div class="b16" >
-                    <input id="b13" class="b11" type="password" autocomplete="current-password" required="" placeholder="••••••••••••" name="password" aria-required="true" value="" >
-                    <span id=eye>
-                        
-                    </span>
-                </div>
-            </div>
-            <!--
-                <button class="b21" type="submit">
-                    <b><span class="b22">登入</span></b>
-                </button>
-            -->
-            <input type="submit" value="登入">
-        </form>
-    </div>
-    
-    <a href = "javascript:void(0)" onclick = "document.getElementById('forgetpassword').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
-         class="b23" style="cursor: pointer;">忘記密碼嗎？
-    </a>
-    
-    
-    <p class="b25">第一次使用 留聲跡 嗎？
-        <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
-            class="b26" style="cursor: pointer;">立即註冊
-        </a>
-    </p>
 </div>
+<script src="js/pwdeye.js"></script>
+<script src="js/signincheck.js"></script>
+
 
 <!--忘記密碼-->
 <div id="forgetpassword" class="forgetpassword">
@@ -502,6 +395,11 @@
         <a href = "javascript:void(0)" onclick = "document.getElementById('forgetpassword').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
+    </div>
+    <div class="c21">
+        <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('forgetpassword').style.display='none';document.getElementById('fade').style.display='block'"
+            class="c22" draggable="false" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
         </a>
     </div> 
     <div class="c1">
@@ -512,33 +410,19 @@
                         <div class="c6">
                             <div class="c7">
                                 <div class="c8">
-                                    <h1 class="c9">忘記密碼了？</h1>
-                                </div>
-                                    <h2 class="c10">別擔心，我們會傳送訊息給你，以協助你重設密碼。</h2>
+                                    <h1 class="c9">忘記密碼</h1>
+                                </div>                                  
                             </div>
                         </div>
                         <div class="c11">
-                            <form class="c12" method="post">
-                                <div class="c13">
-                                    <div>
-                                        <div class="c14">
-                                            <div class="c15">
-                                                <div class="c16">
-                                                    <input id="c17" class="c18" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email" required="" placeholder="電子郵件地址或行動裝置號碼" name="email" aria-required="true" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <form  class="c12" action="" method="post">
+                                <div class="c16">
+                                    <i class="far fa-envelope"></i>
+                                    <input id="email" class="c18" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" >
+                                    <small class="error3">Error message</small>
                                 </div>
-                                <button class="c19" type="submit">
-                                    <span class="c20">繼續</span>
-                                </button>
+                                <input type="submit" value="繼續" class="submit">
                             </form>
-                        </div>
-                        <div class="c21">
-                            <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('forgetpassword').style.display='none';document.getElementById('fade').style.display='block'"
-                                class="c22" draggable="false" style="cursor: pointer;">返回登入畫面
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -547,12 +431,51 @@
     </div>
 </div>
 
+
+<!--重設密碼-->
+<div id="reset" class="reset">
+    <div class="close">
+        <a href = "javascript:void(0)" onclick = "document.getElementById('reset').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
+    </div>
+    <div class="c21">
+        <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('reset').style.display='none';document.getElementById('fade').style.display='block'"
+            class="c22" draggable="false" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
+        </a>
+    </div>
+    <h1 class="d10">重設密碼</h1>
+    <div class="b1">
+        <form action="home.jsp" method="post" class="b2" aria-labelledby="b3">
+            <div class="b4">
+                <i class="fas fa-lock"></i>
+                <input id="b14" class="b11" type="password" autocomplete="current-password" required="" placeholder="••••••••••••" name="password" aria-required="true" value="" >
+                <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes1"></label>
+            </div>
+            <div class="b12">
+                <i class="fas fa-lock"></i>
+                <input id="b15" class="b11" type="password" autocomplete="current-password" required="" placeholder="••••••••••••" name="password" aria-required="true" value="" >
+                <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes2"></label>
+                
+            </div>
+            <input type="submit" value="確認" class="submit">
+        </form>
+    </div>
+</div>
+<script src="js/resetpwdeye1.js"></script>
+<script src="js/resetpwdeye2.js"></script>
 <!--註冊-->
 <div id="d1" class="d1">
   <div class="close">
     <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='none'">
         <img src="img/close1.png" width="15px" height="15px" 
             onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+    </a>
+  </div>
+  <div class="c21">
+    <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
+        class="c22" draggable="false" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
     </a>
   </div> 
   <div class="d2">
@@ -562,9 +485,8 @@
           <div class="d6">
             <div class="d7">
               <div class="d9">
-                <h1 class="d10">開始使用 留聲跡</h1>
+                <h1 class="d10">註冊</h1>
               </div>
-              <h2 class="d11">建立免費帳號</h2>
             </div>
             <div class="d12">
               <div class="d13">
@@ -598,11 +520,6 @@
                     <span class="d18">使用 Facebook 帳號註冊</span>
                     </button>
                 </div>
-                <div class="d26">
-                  <button class="d22" type="button">
-                  <span class="d18">使用電子郵件地址註冊</span>
-                  </button>
-                </div>
                 <div class="d23">
                     <p class="d24">已經註冊了嗎？
                     <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
@@ -618,7 +535,47 @@
     </div>
   </div>
 </div>
-
-
+<!--查看聲音故事-->
+<div class="story" id="story">
+    <div class="close">    
+        <a href = "javascript:void(0)" onclick = "document.getElementById('story').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
+    </div>
+    <div  class="img">
+        <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
+        <h4 id="title" name="name">姓名</h4>   
+    </div>
+    <h2>標題</h2>
+    <div class="s1">
+        <a href="#" alt="分類">分類</a>
+        <div>時間</div>
+    </div>
+    <audio controls id="s">
+        <source src="music/baseball.mp3" type="audio/mp3">
+        遇到不支援的瀏覽器會出現這行字
+    </audio>
+    <div id="s" class="s2">故事</div>
+    <div id="s">
+        <img src="">圖片
+    </div>
+    <div id="s" class="s3">tags</div>
+    <div id="s" class="s4">
+        <div class="s5">
+            <i class="fas fa-heart"></i>按讚數
+            <i class="fas fa-comment"></i>留言數
+        </div>
+        <div class="s6">
+            <i class="fas fa-heart" ></i>
+            <i class="fas fa-bookmark"></i>
+            <i class="fas fa-comment"></i>
+            <i class="fas fa-exclamation-circle"></i>
+        </div>
+    </div>
+    <div id="s" class="s7">
+        留言區
+    </div>
+</div>     
 </body>
 </html>

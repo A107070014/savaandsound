@@ -15,6 +15,7 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/427ec671a2.js" crossorigin="anonymous"></script>
 <script src="js/story.js"></script>
+<script src="game3.js"></script><!--劉-->
 <title>留聲跡</title>
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
@@ -130,11 +131,11 @@
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
-                    <div id="radio">
-                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    <div id="radio" >
+                        <label><input type="radio" name="answer1" value="5"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="answer1" value="0"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="answer1" value="0"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="answer1" value="0"><span class="round button">聲音四</span></label>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play1').style.display='none';"
                             class="" style="cursor: pointer;">下一題
@@ -156,11 +157,11 @@
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
-                    <div id="radio">
-                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer2" value="0"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="answer2" value="5"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="answer2" value="0"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="answer2" value="0"><span class="round button">聲音四</span></label>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play2').style.display='none';"
                             class="" style="cursor: pointer;">下一題
@@ -182,11 +183,11 @@
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
-                    <div id="radio">
-                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                        
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer3" value="0"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="answer3" value="0"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="answer3" value="5"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="answer3" value="0"><span class="round button">聲音四</span></label>                        
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play3').style.display='none';"
                             class="" style="cursor: pointer;">下一題
@@ -208,11 +209,11 @@
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
-                    <div id="radio">
-                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>                      
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer4" value="0"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="answer4" value="0"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="answer4" value="0"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="answer4" value="5"><span class="round button">聲音四</span></label>                      
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play4').style.display='none';"
                             class="" style="cursor: pointer;">下一題
@@ -234,15 +235,16 @@
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
-                    <div id="radio">
-                        <label><input type="radio" name="label" value="聲音一"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="label" value="聲音二"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="label" value="聲音三"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="label" value="聲音四"><span class="round button">聲音四</span></label>
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer5" value="5"><span class="round button">聲音一</span></label>
+                        <label><input type="radio" name="answer5" value="0"><span class="round button">聲音二</span></label><br>
+                        <label><input type="radio" name="answer5" value="0"><span class="round button">聲音三</span></label>
+                        <label><input type="radio" name="answer5" value="0"><span class="round button">聲音四</span></label>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play6').style.display='block';document.getElementById('play5').style.display='none';"
                             class="" style="cursor: pointer;">結束遊戲
                     </a>
+                    <button type="button" onclick="coreCount()" >Cores</button>
                 </div>
                 
                 <div id="play6" class="play" style="display:none">
@@ -267,6 +269,16 @@
                             <li>名字</li>
                             <li>時間</li>
                         </ul>
+                        <script type="text/javascript">
+                        
+                            document.write('<p class="p" align=center style="font-size:150px;">'+'恭喜獲得'+'<br>'+cores+'<br>'+'分'+'</p>');	
+                            /*alert("Your score is "+cores);*/
+
+                            /*var args = getArgs(); 
+                               if (args.A) 
+                            document.write('<p class="p" align=center style="font-size:150px;">'+'恭喜獲得'+'<br>'+args.A+'<br>'+'分'+'</p>');*/
+                        </script>
+                        
                         <div class="list">
 
                         </div>
@@ -275,7 +287,7 @@
             </div>
         </div>
     </div>    
-
+    
 <!--發文-->
 <div id="article" class="article">
     <div class="close">
