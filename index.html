@@ -367,7 +367,9 @@
                     </svg>
                 </span>
             </span>
-            <span class="use-google-acount-login">使用 Google 帳號登入</span>
+            <span class="use-google-acount-login"><div>
+                <input type="button"  value="Facebook登入" onclick="FBLogin();" />
+            </div></span>
         </button>
     </div>
     <div class="use-facebook-login">
@@ -388,6 +390,80 @@
 <script src="js/pwdeye.js"></script>
 <script src="js/signincheck.js"></script>
 
+<div>
+    Google登入：<input type="button"  value="Google登入" onclick="GoogleLogin();" />
+</div>
+
+<script type="text/javascript">
+    //應用程式編號，進入 https://developers.facebook.com/apps/ 即可看到
+    let FB_appID = "326669805810910";
+
+    //FB Login 官方文件：https://developers.facebook.com/docs/facebook-login/web
+
+    // Load the Facebook Javascript SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: FB_appID,//FB appID
+            cookie: true,  // enable cookies to allow the server to access the session
+            
+            xfbml: true,  // parse social plugins on this page
+            version: 'v3.0' // use graph api version
+        });
+
+    };
+
+    //使用自己客製化的按鈕來登入
+    function FBLogin() {
+        
+        FB.login(function (response) {
+            //debug用
+            console.log(response);
+            if (response.status === 'connected') {
+                //user已登入FB
+                //抓userID
+                let FB_ID = response["authResponse"]["userID"];
+                console.log("userID:" + FB_ID);
+
+               
+            } else {
+                // user FB取消授權
+                alert("Facebook帳號無法登入");
+            }
+        }, { scope: 'public_profile,email' });
+
+    }
+</script>
+
+<!--
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '{326669805810910}',//15碼數字字串不含大括號
+        cookie     : true,
+        xfbml      : true,
+        version    : '3.1' //筆者目前是v3.1
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>-->
 
 <!--忘記密碼-->
 <div id="forgetpassword" class="forgetpassword">
@@ -581,83 +657,7 @@
 
 
 
-<div>
-    Facebook登入：<input type="button"  value="Facebook登入" onclick="FBLogin();" />
-</div>
-<div>
-    Google登入：<input type="button"  value="Google登入" onclick="GoogleLogin();" />
-</div>
 
-<script type="text/javascript">
-    //應用程式編號，進入 https://developers.facebook.com/apps/ 即可看到
-    let FB_appID = "326669805810910";
-
-    //FB Login 官方文件：https://developers.facebook.com/docs/facebook-login/web
-
-    // Load the Facebook Javascript SDK asynchronously
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: FB_appID,//FB appID
-            cookie: true,  // enable cookies to allow the server to access the session
-            
-            xfbml: true,  // parse social plugins on this page
-            version: 'v3.0' // use graph api version
-        });
-
-    };
-
-    //使用自己客製化的按鈕來登入
-    function FBLogin() {
-        
-        FB.login(function (response) {
-            //debug用
-            console.log(response);
-            if (response.status === 'connected') {
-                //user已登入FB
-                //抓userID
-                let FB_ID = response["authResponse"]["userID"];
-                console.log("userID:" + FB_ID);
-
-               
-            } else {
-                // user FB取消授權
-                alert("Facebook帳號無法登入");
-            }
-        }, { scope: 'public_profile,email' });
-
-    }
-</script>
-
-<!--
-<script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '{326669805810910}',//15碼數字字串不含大括號
-        cookie     : true,
-        xfbml      : true,
-        version    : '3.1' //筆者目前是v3.1
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>-->
 </body>
 
 </html>
