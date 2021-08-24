@@ -90,7 +90,7 @@
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
                         <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們" onclick="Del_FB_App()"><li>聯絡我們</li></a>
+                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
                         <a href="" title="募資平台"><li>募資平台</li></a>
                         <a href="" title="設定"><li>設定</li></a>
                         <form action="index.html"class="logout" id="logout">
@@ -103,28 +103,7 @@
     </nav>
 
 
-    <script>
-        function Del_FB_App() { 
-            FB.getLoginStatus(function (response) {//取得目前user是否登入FB網站
-                //debug用
-                console.log(response);
-                if (response.status === 'connected') {
-                    // Logged into Facebook.
-                    //抓userID
-                    FB.api("/me/permissions", "DELETE", function (response) {
-                        console.log("刪除結果");
-                        console.log(response); //gives true on app delete success 
-                    });
-                    document.getElementById("logout").submit();
-                } else {
-                    // FB取消授權
-                    console.log("無法刪除FB App");
-                }
-            });
-        
-        
-        }
-        </script>
+    
     <!--分類欄-->
     <div class="row">
         <div class="list-group col-md-4 col-xs-4">
