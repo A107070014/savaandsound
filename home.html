@@ -93,7 +93,7 @@
                         <a href="" title="聯絡我們"><li>聯絡我們</li></a>
                         <a href="" title="募資平台"><li>募資平台</li></a>
                         <a href="" title="設定"><li>設定</li></a>
-                        <form action="index.html"class="logout">
+                        <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" onclick="Del_FB_App()"></button>
                         </form>
                     </ul>
@@ -102,7 +102,7 @@
         </div>
     </nav>
 
-    
+
     <script>
         function Del_FB_App() { 
             FB.getLoginStatus(function (response) {//取得目前user是否登入FB網站
@@ -115,6 +115,7 @@
                         console.log("刪除結果");
                         console.log(response); //gives true on app delete success 
                     });
+                    document.getElementById("logout").submit();
                 } else {
                     // FB取消授權
                     console.log("無法刪除FB App");
