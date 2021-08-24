@@ -381,7 +381,7 @@
                 </span>
             </span>
             <span class="use-facebook-acount-login">
-                <input type="button"  value="Facebook登入" onclick="FBLogin();" />
+                <input type="button"  value="Facebook登入" onclick="FBLogin();" onlogin="checkLoginState();" />
             </span>
         </button>
     </div>
@@ -442,6 +442,12 @@
             }
         }, { scope: 'public_profile,email' });
     }
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+    });
+}
 </script>
 
 <!--
