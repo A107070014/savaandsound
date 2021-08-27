@@ -383,12 +383,14 @@ main>.right{
     
     #tool2>.fas{
         position: relative;
-        bottom: 5px;
+        bottom: 1px;
         left: 90px;
         color:#d9a200;
         font-size:22px;
     }
-    
+    #tool2>.fa-bell{
+        bottom: 5px;
+    }
     .another-menu-style{
         display: none;
     }
