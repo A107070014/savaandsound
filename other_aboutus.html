@@ -47,15 +47,15 @@
         </div>
         <div class="tool">
             <div>
+                <a id="tool" class="home" title="首頁" role="button" href="home.html"><i class="fas fa-home"></i></a>
+            </div>
+            <div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
                 id="tool" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i>
                 </a>
             </div>
             <div>
                 <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
-            </div>
-            <div >
-                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="inform-menu-style dropdown-menu">
@@ -74,6 +74,10 @@
                         </ul>
                 </div>
             </div>
+            <div >
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
+            </div>
+            
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="another-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
@@ -120,10 +124,15 @@
                     <h2>Logo設計理念</h2>
                     <div id="logoidea">
                         <img src="img/logo.png" alt="留聲跡Logo" title="留聲跡Logo">
-                        <p>右側由線條所勾勒出耳朵形狀，代表以此為媒介所聆聽之貫通本組主題的「聲音」；</p>
-                        <p>左側則以腳印之形式，不但象徵著本組欲追隨聲音的足跡，一步一腳印追尋著每個獨</p>
-                        <p>特「聲音」背後所代表的故事，也呼應主題名稱的『留聲「跡」』；此兩元素合而為</p>
-                        <p>一成心形狀，更體現了這些聲音所帶來，由心而發的懷念與感動。</p>
+                        <img src="img/right line.png" class="rightline">
+                        <img src="img/left line.png" class="leftline">
+                        <p class="fotter">腳</p><p class="ear">耳朵</p>
+                        <div class="des">
+                            <p>右側由線條所勾勒出耳朵形狀，代表以此為媒介所聆聽之貫通本組主題的「聲音」；</p>
+                            <p>左側則以腳印之形式，不但象徵著本組欲追隨聲音的足跡，一步一腳印追尋著每個獨</p>
+                            <p>特「聲音」背後所代表的故事，也呼應主題名稱的『留聲「跡」』；此兩元素合而為</p>
+                            <p>一成心形狀，更體現了這些聲音所帶來，由心而發的懷念與感動。</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,35 +141,42 @@
                     <h2>團隊成員</h2>
                 </div>
                     <div class="member">
-                        <div  class="img">
-                            <img src="img/pm.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4 class="name">吳瀞予</h4>
-                            <h4 id="title">專案經理</h4>   
+                        <div class="top">
+                            <div  class="img">
+                                <img src="img/pm.jpg" alt="music-cover" id="cover" name="picture">
+                                <h4 class="name">吳瀞予</h4>
+                                <h4 id="title">專案經理</h4>
+                                <h5 class="mail"><i class="far fa-envelope"></i>mandy9502966@gmail.com</h5>   
+                            </div>
+                            <div  class="img">
+                                <img src="img/xinmei.jpg" alt="music-cover" id="cover" name="picture">
+                                <h4  class="name">李欣玫</h4>
+                                <h4 class="title" >後台程式設計</h4>
+                                <h5 class="mail2"><i class="far fa-envelope"></i>fesu308@gmail.com</h5>   
+                            </div>
+                            <div  class="img">
+                                <img src="img/web.jpg" alt="music-cover" id="cover" name="picture">
+                                <h4  class="name">劉佳昇</h4>
+                                <h4 class="title" >前台程式設計</h4>
+                                <h5 class="mail3"><i class="far fa-envelope"></i>liujmas88@gmail.com</h5>    
+                            </div>
                         </div>
-                        <div  class="img">
-                            <img src="img/xinmei.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4  class="name">李欣玫</h4>
-                            <h4 class="title" >後台程式設計</h4>   
-                        </div>
-                        <div  class="img">
-                            <img src="img/web.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4  class="name">劉佳昇</h4>
-                            <h4 class="title" >前台程式設計</h4>    
-                        </div>
-                        <div  class="img">
-                            <img src="img/carol.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4  class="name">林梓璇</h4>
-                            <h4 id="title">美術設計</h4>    
-                        </div>
-                        <div  class="img">
-                            <img src="img/jasper.jpg" alt="music-cover" id="cover" name="picture">
-                            <h4  class="name">徐溥澤</h4>
-                            <h4 id="title">行銷公關</h4>    
+                        <div class="bot">
+                            <div  class="img" >
+                                <img src="img/carol.jpg" alt="music-cover" id="cover" name="picture">
+                                <h4  class="name">林梓璇</h4>
+                                <h4 id="title">美術設計</h4>
+                                <h5 class="mail4"><i class="far fa-envelope"></i>carollin890525@gmail.com</h5>    
+                            </div>
+                            <div  class="img">
+                                <img src="img/jasper.jpg" alt="music-cover" id="cover" name="picture">
+                                <h4  class="name">徐溥澤</h4>
+                                <h4 id="title">行銷公關</h4>
+                                <h5 class="mail5" ><i class="far fa-envelope"></i>a29334101@gmail.com</h5>    
+                            </div>
                         </div>
                     </div>
-                    <div class="memberinfo">
-                        
-                    </div>
+                    
                 
             </div>
             <div id="tab-item4" class="tab-item">
