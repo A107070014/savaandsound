@@ -42,9 +42,10 @@ nav>.tool{
     padding-top: 12px;
     justify-content: space-evenly;
 }
-.home{
+nav>.tool2{
     display: none;
 }
+
 /*
 main{
     display:flex;
@@ -360,7 +361,12 @@ main>.right{
         
     }
     
-    nav>.tool{
+    nav>.tool,
+    nav>.tool>#tool{
+        display: none;
+    }
+    nav>.tool2{
+        
         flex:none;
         width:550px;
         display: flex;
@@ -372,13 +378,15 @@ main>.right{
         z-index: 1002;
         background-color: #3b1e1e;
     }
-    .home{
-        display: block;
-    }
-    #tool>.fas{
+    
+    #tool2>.fas{
         position: relative;
         bottom: 5px;
         left: 90px;
+        color:#d9a200;
+        font-size:22px;
+    }
+    
     }
     .another-menu-style{
         display: none;
