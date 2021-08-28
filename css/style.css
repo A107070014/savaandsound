@@ -12,6 +12,7 @@ body {
 a{
     text-decoration:none;
 }
+
 nav{
     background:#3b1e1e;
     border:2px solid #000;
@@ -45,7 +46,9 @@ nav>.tool{
 nav>.tool2{
     display: none;
 }
-
+.offcanvas{
+    display: none;
+}
 /*
 main{
     display:flex;
@@ -355,6 +358,7 @@ main>.right{
     }
     .list-group{
         display:none;
+        
     }
     .my{
         width: 100%;
@@ -394,7 +398,141 @@ main>.right{
     .another-menu-style{
         display: none;
     }
+    .offcanvas{
+        display: block;
+        
+    }
+    /*發文*/
+    .article2{
+        width:calc(100% - 0px);
+    }
+    
+    .article2>h2{
+        text-align: center;
+    }
+    .article2>.img{
+        position: relative;
+        width: 60px;
+        margin: 70px 0px 0px 30px;
+        
+    }
+    .article2>.img h4 {
+        margin: 0px 0px 0px 80px;
+        white-space: nowrap;
+        position: relative;
+        bottom:10px;
+    }
+    .article2>.img img {
+        border-radius: 50%;
+        object-fit: cover;
+        height:60px;
+        width: inherit;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        bottom: 45%;
+        border: 2px solid #d9a200;
+    }
 
+    .article2 form>.article1{
+        margin:10px 0px 5px 30px;
+    }
+    .article2 form>.article1>select{
+        border-radius: 5px;
+        border: 1.5px solid #eee;
+        padding: 10px 5px;
+        outline-color:#d9a200;
+        width:150px;
+    }
+    .article2 form>.article1>select:hover{
+        border:1.5px solid #d9a200;
+        border-radius: 5px;
+    }
+    .article2 form>.article1>select {
+        /*移除箭頭樣式*/
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        /*改變右邊箭頭樣式*/
+        background: url("../img/another1.png") no-repeat 90%;
+        background-size: 10%;
+    }
+
+    /*IE隱藏箭頭樣式*/
+    .article2 form>.article1>select::-ms-expand { 
+        display: none; 
+    }
+    /*  
+    .article1>select:focus{
+        box-shadow: 0 0 5px 2px #467BF4;    
+    }
+    */
+    .article2 form>.article1>textarea{
+        width: 375px;
+    }
+    .article2 form>.article1>textarea:hover{
+        border:1.5px solid #d9a200;
+        border-radius: 5px;
+    }
+    .article2 form>.article1>#textarea {
+        -moz-appearance: textfield-multiline;
+        -webkit-appearance: textarea;
+        font: medium -moz-fixed;
+        font: -webkit-small-control;
+        height: 200px;
+        overflow: auto;
+        resize: both;
+        width:375px;
+        border-radius: 5px;
+        border:1.5px solid #eee;
+        padding-left: 10px;
+        padding-top: 15px;
+        outline-color:#d9a200;
+        
+    }
+    .article2 form>.article1>#textarea:hover{
+        border:1.5px solid #d9a200;
+        border-radius: 5px;
+    }
+
+
+    .article2 form>.article1>#textarea>textarea{
+        border: none;
+        outline: white;
+        
+    }
+    .article2 form>.article1>#textarea>img{
+        border-radius: 10px;
+    }
+    .article2 form>.file{
+        text-align: right;
+        position: relative;
+        bottom: 50px;
+        right: 40px;
+        margin-bottom: -50px;
+    }
+    .article2 form>p{
+        margin:10px 0px 10px 30px;
+    }
+    .article2 form>.simple-tags{
+        margin-bottom: 20px;
+        margin-left: 30px;
+        width: 375px;
+    }
+    .article2 form>#publish>.publish{
+        border-radius: 5px;
+        background: #ceb195;
+        color:#3b1e1e;
+        padding:10px 172px;
+        font-weight:bold;
+        cursor: pointer;
+        white-space: nowrap;
+        margin-left: 30px;
+    }
+    .article2 form>.publish:hover{
+        background: #ceb195dc;
+    }
+    
 
      /*小遊戲*/
      #play>h1{
