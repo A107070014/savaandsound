@@ -372,14 +372,13 @@ main>.right{
         display: none;
     }
     nav>.tool2{
-        
         flex:none;
-        width:550px;
+        width:500px;
         display: flex;
         padding-top: 12px;
         justify-content: space-evenly;
         position: fixed;
-        top: 622px;
+        top: 630px;
         right: 1px;
         z-index: 1002;
         background-color: #3b1e1e;
@@ -387,7 +386,7 @@ main>.right{
     
     #tool2>.fas{
         position: relative;
-        bottom: 1px;
+        bottom: 4px;
         left: 90px;
         color:#d9a200;
         font-size:22px;
@@ -468,7 +467,7 @@ main>.right{
     }
     */
     .article2 form>.article1>textarea{
-        width: 375px;
+        width: 315px;
     }
     .article2 form>.article1>textarea:hover{
         border:1.5px solid #d9a200;
@@ -482,7 +481,7 @@ main>.right{
         height: 200px;
         overflow: auto;
         resize: both;
-        width:375px;
+        width:315px;
         border-radius: 5px;
         border:1.5px solid #eee;
         padding-left: 10px;
@@ -517,13 +516,13 @@ main>.right{
     .article2 form>.simple-tags{
         margin-bottom: 20px;
         margin-left: 30px;
-        width: 375px;
+        width: 315px;
     }
     .article2 form>#publish>.publish{
         border-radius: 5px;
         background: #ceb195;
         color:#3b1e1e;
-        padding:10px 172px;
+        padding:10px 142px;
         font-weight:bold;
         cursor: pointer;
         white-space: nowrap;
