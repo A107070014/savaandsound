@@ -638,6 +638,22 @@ main>.right{
         width: 100px;
     }
 
+    /*通知*/
+    main>ul{
+        list-style-type: none;
+    }
+    main>ul>li>a{
+        color: #d9a200;
+    }
+    main>ul>.hr{    
+        width:110%;
+        border: 0.1px solid rgba(238, 238, 238, 0.664);
+        height: 0px;
+        background-color: #eee;
+        position: relative;
+        right: 11%;
+    }
+
     /*我的聲跡*/
     .i1{
         display: none;

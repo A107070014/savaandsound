@@ -116,8 +116,22 @@
             <div>
                 <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
-            <div >
-                <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
+            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+                <div class="inform-menu-style dropdown-menu">
+                    <span tabindex="0" onclick="return true">
+                        <a id="tool2" class="inform" title="通知" role="button" style="cursor: pointer;">
+                            <i class="fas fa-bell"></i></a>
+                    </span>
+                    <div tabindex="0" onclick="return true"></div>
+                        <ul>
+                            <li><a href="#" onclick="sampleMenu(this)">本週</a></li>
+                                <p>本週訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">本月</a></li>
+                                <p>本月訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">更早之前</a></li>
+                                <p>更早之前訊息</p>
+                        </ul>
+                </div>
             </div>
             <div >
                 <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
@@ -143,94 +157,18 @@
             </div>
         </div>
     </nav>
-    <div id="article2" class="article2">
-        <h2>發表貼文</h2>
-        
-        <div  class="img">
-            <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
-            <!--<%
-                request.setCharacterEncoding("utf-8");
-                String email = (String)session.getAttribute("EMAIL");
-    
-                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                String url2="jdbc:sqlserver://127.0.0.1:1433;database=saveandsound";
-                Connection con2 = DriverManager.getConnection( url2, "sa","sa");
-    
-                PreparedStatement pst2 = con2.prepareStatement("select * from users where email=?");
-                pst2.setString(1,email);
-                
-                ResultSet rs2 = pst2.executeQuery();
-                while(rs2.next()){
-                    out.print("<h4>"+rs2.getString("name")+"</h4>");
-                }
-                rs2.close();
-                pst2.close();
-                con2.close();
-            %>-->
-            <!--<h4 id="title" name="name">姓名</h4>-->   
-        </div>
-            <form name="post" method="post" action="post.jsp" >
-                <div class="article1">
-                    <select name="category" style="cursor: pointer;">
-                        <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
-                        <option value="nature">自然</option>
-                        <option value="city">都市</option>
-                        <option value="instrument">器械</option>
-                        <option value="vocal">人聲</option>
-                        <option value="nostalgia">懷舊</option>
-                    </select>
-                </div>
-                <div class="article1">
-                    <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
-                    <div id="textarea" contenteditable>
-                        <output id="list"></output>
-                        <textarea  name="post" placeholder="聲音故事..." rows="8" cols="37" required></textarea>            
-                        <img contenteditable="false" style="width:300px" id="myimg" />
-                    </div>                  
-                </div >
-                <div class="article1 file">
-                    <div style="display:inline;">
-                        <label>
-                            <input id="files" name="sound" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;" >
-                            <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
-                                onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
-                        </label>
-                        <label>
-                            <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
-                            <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
-                                onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
-                        </label>
-                    </div>
-                </div>
-                <script src="js/preview_image.js"></script>
-                <script src="js/preview_audio.js"></script>
-    
-                <p>Tags</p>
-                <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
-                <script>
-                    var el = document.getElementById('container');
-                    new Tags(el);
-                </script>
-                    
-                <div id="publish">
-                    <label class="publish">
-                        <input id="submit" type="submit" value="發佈" style="display:none;">發佈
-                    </label>     
-                </div>
-            </form>
-        
-            <script src="js/tags.js"></script>
-            <!--避免tags按enter送出表單-->
-            <script type="text/javascript">
-                $(document).ready(function() {
-                $(window).keydown(function(event){
-                    if(event.keyCode == 13) {
-                        event.preventDefault();
-                    return false;
-                }
-            });
-            });
-            </script>
-    </div>
+    <main>
+        <ul>
+            <li><a href="#" onclick="sampleMenu(this)">本週</a></li>
+                <p>本週訊息</p>
+            <hr class="hr">
+            <li><a href="#" onclick="sampleMenu(this)">本月</a></li>
+                <p>本月訊息</p>
+            <hr class="hr">
+            <li><a href="#" onclick="sampleMenu(this)">更早之前</a></li>
+                <p>更早之前訊息</p>
+
+        </ul>
+    </main>
 </body>
 </html>
