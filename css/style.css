@@ -435,6 +435,7 @@ main>.right{
 
     .article2 form>.article1{
         margin:10px 0px 5px 30px;
+        
     }
     .article2 form>.article1>select{
         border-radius: 5px;
@@ -502,6 +503,12 @@ main>.right{
     }
     .article2 form>.article1>#textarea>img{
         border-radius: 10px;
+        position: relative;
+        right: 5px;
+    }
+    .article2 form>.article1>#textarea>#list{
+        position: relative;
+        right: 5px;
     }
     .article2 form>.file{
         text-align: right;
@@ -510,6 +517,7 @@ main>.right{
         right: 40px;
         margin-bottom: -50px;
     }
+    
     .article2 form>p{
         margin:10px 0px 10px 30px;
     }
