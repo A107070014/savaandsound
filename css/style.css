@@ -646,12 +646,13 @@ main>.right{
         display: block;
         background-color: white;
         position: relative;
-        left: 60px;
+        left: 36px;
     }
 
     .logout>.list-group-item{
-        margin-left: 114px;
-        
+        text-align: center;
+        position: relative;
+        right: 5px;
     }
     .my>.tab-item1{
         display: none;
