@@ -539,140 +539,7 @@ main>.right{
     .article2 form>.publish:hover{
         background: #ceb195dc;
     }
-    
 
-     /*小遊戲*/
-     #play>h1{
-        font-size: 26px;
-        position: relative;
-        right: 35%;
-        white-space: nowrap;
-    }
-    
-    .play>a{  
-        
-    }
-    
-    .rule{
-        position: relative;
-        right: 65%;
-        
-    }
-    .rule>h3{
-        color: #572a2a;
-    }
-    .game_top>h1{
-        white-space: nowrap;
-        position: relative;
-        right: 140px;
-    }
-    .playgame{
-        position: relative;
-        right: 70px;
-    }
-    .game_top{
-        display: flex;
-        
-    }
-    
-    .backhome{
-        position: relative;
-        right: 70%;
-    }
-    .backhome img{
-        width: 25px;
-        height: 25px;
-        margin-top: 25px;
-    }
-    #radio{
-        position: relative;
-        right: 500px;
-        bottom: 20px;
-    }
-    
-    #radio .button { 
-        margin: 0 5px 15px 0;  
-        white-space: nowrap;
-        
-    }
-    #radio .round {
-        line-height: 100px;
-    }
-    #play6{
-        white-space: nowrap;
-        position: relative;
-        right: 40%;
-    }
-    .total>h2,
-    .ranking>h2{
-        position: relative;
-        bottom: -30px;
-        font-size: 20px;
-    }
-    
-    .backhome1{
-        position: relative;
-        left: 15%;
-    }
-    .backhome1 img{
-        width: 25px;
-        height: 25px;
-    }
-    .repeat{
-        position: relative;
-        left: 15%;
-    }
-    .repeat img{
-        width: 25px;
-        height: 25px;
-    }
-    
-    .ranking ul{
-        width:40%;
-        display: flex;
-        position: relative;
-        right: 160%;
-        margin-top: 50px;
-    }
-    .ranking ul li{
-        width: 100px;
-    }
-
-    /*通知*/
-    main>ul{
-        list-style-type: none;
-    }
-    main>ul>li>a{
-        color: #d9a200;
-    }
-    main>ul>.hr{    
-        width:110%;
-        border: 0.1px solid rgba(238, 238, 238, 0.664);
-        height: 0px;
-        background-color: #eee;
-        position: relative;
-        right: 11%;
-    }
-
-    /*我的聲跡*/
-    .i1{
-        display: none;
-    }
-    .phone>.list-group{
-        display: block;
-        background-color: white;
-        position: relative;
-        left: 36px;
-    }
-
-    .logout>.list-group-item{
-        text-align: center;
-        position: relative;
-        right: 5px;
-    }
-    .my>.tab-item1{
-        display: none;
-    }
 }
 
 /*分類*/
@@ -1939,146 +1806,6 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 .panel-group .panel-heading+.panel-collapse>.list-group,.panel-group .panel-heading+.panel-collapse>.panel-body{border-top:1px solid #ddd}
 */
 
-/*小遊戲*/
-#play>h1{
-    text-align: center;
-    margin-right:80px;
-    color: #572a2a;
-}
-.play{
-    flex: none;
-    margin: 5px 0px 0px 200px;
-    border-radius: 5px;
-    padding: 0px 15px;
-    padding-bottom: 50px;
-}
-.play>a{
-    color:#fff;
-    background-color: #d9a200;
-    padding:10px 40px;
-    border-radius: 5px;
-    white-space: nowrap;
-    position: relative;
-    left: 42%;
-}
-.play>a:hover{
-    background-color: #e6ad03;
-}
-
-.rule{
-    border:2px solid #eee;
-    border-radius:10px;
-    margin-bottom: 40px;
-    padding-left:25px;
-    width:35%;
-    margin-left: 28.5%;
-}
-.rule>h3{
-    color: #572a2a;
-    white-space: nowrap;
-}
-.game_top>h1{
-    white-space: nowrap;
-}
-.playgame{
-    text-align: center;
-    margin: 20px 0px 20px -80px;
-}
-.game_top{
-    display: flex;
-    
-}
-#timetext{
-    height: 50px;
-    text-align: center;
-    margin:50px 0px 0px 400px;
-    border:none;
-    background-color: transparent;
-    position: absolute;
-    font-size: 28px;
-}
-
-.backhome{
-    margin-left: 83%;
-    margin-top: 3%;
-}
-
-#radio{
-    margin:30px 0px 30px 450px;
-}
-#radio input[type="radio"] {
-    display: none;
-}
-#radio input:checked + .button {
-    background: #d9a200; 
-    color: #fff; 
-    cursor: default; 
-}
-#radio .button { 
-    margin: 0 5px 15px 0; 
-    padding: 10px 10px; 
-    background: #f7f7f7; 
-    color: #333; 
-    cursor: pointer; 
-}
-#radio .round {
-    border-radius: 5px;
-    width:200px;
-    text-align:center;
-    display: inline;
-    margin:10px 100px 0px 0px;
-    line-height: 80px;
-    padding: 10px 40px
-}
-#radio .round:hover{
-    background: #d9a200;
-    color:#fff 
-}
-#radio>.next{
-    width:80px;
-    margin-left: 45%;
-    margin-top:5px;
-    border:none;
-    background-color: #d9a200;
-    border-radius: 5px;
-    padding:10px;
-    color: #fff;
-    cursor: pointer;
-}
-#radio>.next:hover{   
-    background-color: #e6ad03;    
-}
-
-#play6{
-    margin-top: 25px;
-}
-.total{
-    display: flex;
-}
-
-.backhome1{
-    margin-left: 83%;
-    margin-top: 1%;
-}
-.repeat{
-    margin-left: 15px;
-    margin-top: 1%;
-}
-
-.ranking ul{
-    border: 2px solid #eee;
-    border-radius: 10px;
-    width:40%;
-    display: flex;
-    margin-left: 260px;
-}
-.ranking ul li{
-    list-style-type: none;
-    display: inline;
-    flex:none;
-    width:150px;
-}
-
 /*關於我們*/
 #logoidea{
     text-align: center;
@@ -2089,15 +1816,12 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     margin:auto;
 }
 #logoidea>.rightline{
-    width: 150px;
-    height: 150px;
+    
     position: relative;
     left: 190px;
     bottom: 250px;
 }
 #logoidea>.leftline{
-    width: 150px;
-    height: 150px;
     position: relative;
     right: 170px;
     bottom: 350px;
@@ -2125,8 +1849,14 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 #logoidea>.des{
     margin-top: -400px;
 }
-.i1>h2,
-.i1>h3{
+.i2{
+    border: none;
+    border-radius: 5px;
+    padding: 0px 15px;
+    margin: 20px 200px 88px 80px;
+}
+.i2>h2,
+.i2>h3{
     white-space: nowrap;
     color: #572a2a;
     letter-spacing: 5px;
@@ -2270,3 +2000,469 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     color: #572a2a;
     margin:0px 0px 0px 80px;
 }
+
+@media screen and (max-width:450px){
+    
+    /*我的聲跡*/
+    .i1{
+        display: none;
+    }
+    .phone>.list-group{
+        display: block;
+        background-color: white;
+        position: relative;
+        left: 36px;
+    }
+
+    .logout>.list-group-item{
+        text-align: center;
+        position: relative;
+        right: 5px;
+        background-color: #d9a200;
+        border-radius: 5px;
+        color: #fff;
+    }
+    .logout>.list-group-item:hover{
+        background-color: #e6ad03;
+    }
+    .my>.tab-item1{
+        display: none;
+    }
+
+
+    /*關於我們*/
+    .my>#tab-item1 img{
+        width:100%;
+        height:100px
+    }
+    .i2{
+        position: relative;
+        right: 50px;
+        width:85%;
+    }
+    .i2>h2,
+    .i2>h3{
+        white-space: nowrap;
+        color: #572a2a;
+        letter-spacing: 5px;
+    }
+    
+    #logoidea img{
+        display:block;
+        margin:auto;
+        width: 150px;
+        height: 150px;
+    }
+    #logoidea>.rightline{
+        margin: 130px 80px 0px 10px;
+        width: 70px;
+        height: 70px;
+    }
+    #logoidea>.leftline{
+        margin: 50px 0px 0px 190px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    #logoidea>.fotter{
+        font-size: 22px;
+        position: relative;
+        left: -150px;
+        margin-top: 65px;
+    }
+    #logoidea>.ear{
+        font-size: 20px;
+        position: relative;
+        left: 150px;
+        margin-top: 65px;
+    }
+    #logoidea>.des{
+        margin-top: -500px;
+        margin-left: -15px;
+        width: 110%;
+    }
+    
+    .member{
+        margin-top: 100px;
+        margin-bottom: 650px;
+    }
+    .member>.top>.img,
+    .member>.bot>.img{
+        position: relative;
+        right: 90px;
+        width: 150px;
+        margin: 50px 100px 0px 0px;
+        
+    }
+    .member>.top{ 
+        display: flex;
+        position: absolute;
+        left: 550px;
+    }
+    .member>.bot{
+        display: flex;
+        position: absolute;
+        top: 500px;
+        left:670px
+    }
+    .member>.top>.img img,
+    .member>.bot>.img img{
+        margin:0px 0px -20px 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        height:150px;
+        width: inherit;
+        position: absolute;
+        left: 50%;
+        bottom: 80%;   
+    }
+    
+    .member>.top>.img>.name,
+    .member>.bot>.img>.name{
+        position: relative;
+        top: 50px;
+        left: 115px;
+        color: #d9a200;
+        letter-spacing: 5px;
+        line-height: 35px;
+    }
+    
+    .member>.bot>.img>#title,
+    .member>.top>.img>#title{
+        position: relative;
+        top: 50px;
+        left: 103px;
+        color: #572a2a;
+        letter-spacing: 5px;
+    }
+    .member>.top>.img>.title{
+        position: relative;
+        top: 50px;
+        left: 85px;
+        color: #572a2a;
+        letter-spacing: 5px;
+    }
+    .member>.top>.img>h5,
+    .member>.bot>.img>h5{
+        color: #ceb195;
+        display: flex;
+        position: relative;
+        top:40px;
+    }
+    .member>.top>.img>.mail{
+        left:125px;
+    }
+    .member>.top>.img>.mail2{
+        left:150px;
+    }
+    .member>.top>.img>.mail3{
+        left:140px;
+    }
+    .member>.bot>.img>.mail4{
+        left:125px;
+    }
+    .member>.bot>.img>.mail5{
+        left:150px;
+    }
+    .member>.top>.img>h5>.fa-envelope,
+    .member>.bot>.img>h5>.fa-envelope{
+        position: relative;
+        top:-2px;
+        left:-10px;
+    }
+    .school{
+        width: 90%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: rgba(238, 238, 238, 0.411);
+        display: flex;
+        margin: -60px 0px 0px 60px;
+    
+    }
+    .school div,
+    .ppp div{
+        margin: 50px 0px 0px 0px;
+        white-space: nowrap;
+    }
+    .school iframe{
+        margin-left: 330px;
+        border-radius: 10px;
+    }
+    .school div{
+        position: relative;
+        left: 15%;
+        margin-top: 80px;
+        line-height: 80px;
+    }
+    .school div>h3{
+        white-space: nowrap;
+        color: #572a2a;
+        margin:0px 0px 0px 80px;
+    }
+    .ppp{
+        width: 90%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: rgba(238, 238, 238, 0.411);
+        display: flex;
+        margin: 0px 0px 30px 60px;
+    }
+    .ppp iframe{
+        border-radius: 10px;
+    }
+    .ppp div{
+        position: relative;
+        left: 15%;
+        margin-top: 80px;
+        line-height: 80px;
+    }
+    .ppp div>h3{
+        white-space: nowrap;
+        color: #572a2a;
+        margin:0px 0px 0px 80px;
+    }
+}
+
+
+
+/*小遊戲*/
+#play>h1{
+    text-align: center;
+    margin-right:80px;
+    color: #572a2a;
+}
+.play{
+    flex: none;
+    margin: 5px 0px 0px 200px;
+    border-radius: 5px;
+    padding: 0px 15px;
+    padding-bottom: 50px;
+}
+.play>a{
+    color:#fff;
+    background-color: #d9a200;
+    padding:10px 40px;
+    border-radius: 5px;
+    white-space: nowrap;
+    position: relative;
+    left: 42%;
+}
+.play>a:hover{
+    background-color: #e6ad03;
+}
+
+.rule{
+    border:2px solid #eee;
+    border-radius:10px;
+    margin-bottom: 40px;
+    padding-left:25px;
+    width:35%;
+    margin-left: 28.5%;
+}
+.rule>h3{
+    color: #572a2a;
+    white-space: nowrap;
+}
+.game_top>h1{
+    white-space: nowrap;
+}
+.playgame{
+    text-align: center;
+    margin: 20px 0px 20px -80px;
+}
+.game_top{
+    display: flex;
+    
+}
+#timetext{
+    height: 50px;
+    text-align: center;
+    margin:50px 0px 0px 400px;
+    border:none;
+    background-color: transparent;
+    position: absolute;
+    font-size: 28px;
+}
+
+.backhome{
+    margin-left: 83%;
+    margin-top: 3%;
+}
+
+#radio{
+    margin:30px 0px 30px 450px;
+}
+#radio input[type="radio"] {
+    display: none;
+}
+#radio input:checked + .button {
+    background: #d9a200; 
+    color: #fff; 
+    cursor: default; 
+}
+#radio .button { 
+    margin: 0 5px 15px 0; 
+    padding: 10px 10px; 
+    background: #f7f7f7; 
+    color: #333; 
+    cursor: pointer; 
+}
+#radio .round {
+    border-radius: 5px;
+    width:200px;
+    text-align:center;
+    display: inline;
+    margin:10px 100px 0px 0px;
+    line-height: 80px;
+    padding: 10px 40px
+}
+#radio .round:hover{
+    background: #d9a200;
+    color:#fff 
+}
+#radio>.next{
+    width:80px;
+    margin-left: 45%;
+    margin-top:5px;
+    border:none;
+    background-color: #d9a200;
+    border-radius: 5px;
+    padding:10px;
+    color: #fff;
+    cursor: pointer;
+}
+#radio>.next:hover{   
+    background-color: #e6ad03;    
+}
+
+#play6{
+    margin-top: 25px;
+}
+.total{
+    display: flex;
+}
+
+.backhome1{
+    margin-left: 83%;
+    margin-top: 1%;
+}
+.repeat{
+    margin-left: 15px;
+    margin-top: 1%;
+}
+
+.ranking ul{
+    border: 2px solid #eee;
+    border-radius: 10px;
+    width:40%;
+    display: flex;
+    margin-left: 260px;
+}
+.ranking ul li{
+    list-style-type: none;
+    display: inline;
+    flex:none;
+    width:150px;
+}
+
+@media screen and (max-width:450px){
+    
+     /*小遊戲*/
+     #play>h1{
+        font-size: 26px;
+        position: relative;
+        right: 35%;
+        white-space: nowrap;
+    }
+    
+    .play>a{  
+        
+    }
+    
+    .rule{
+        position: relative;
+        right: 65%;
+        
+    }
+    .rule>h3{
+        color: #572a2a;
+    }
+    .game_top>h1{
+        white-space: nowrap;
+        position: relative;
+        right: 140px;
+    }
+    .playgame{
+        position: relative;
+        right: 70px;
+    }
+    .game_top{
+        display: flex;
+        
+    }
+    
+    .backhome{
+        position: relative;
+        right: 70%;
+    }
+    .backhome img{
+        width: 25px;
+        height: 25px;
+        margin-top: 25px;
+    }
+    #radio{
+        position: relative;
+        right: 500px;
+        bottom: 20px;
+    }
+    
+    #radio .button { 
+        margin: 0 5px 15px 0;  
+        white-space: nowrap;
+        
+    }
+    #radio .round {
+        line-height: 100px;
+    }
+    #play6{
+        white-space: nowrap;
+        position: relative;
+        right: 40%;
+    }
+    .total>h2,
+    .ranking>h2{
+        position: relative;
+        bottom: -30px;
+        font-size: 20px;
+    }
+    
+    .backhome1{
+        position: relative;
+        left: 15%;
+    }
+    .backhome1 img{
+        width: 25px;
+        height: 25px;
+    }
+    .repeat{
+        position: relative;
+        left: 15%;
+    }
+    .repeat img{
+        width: 25px;
+        height: 25px;
+    }
+    
+    .ranking ul{
+        width:40%;
+        display: flex;
+        position: relative;
+        right: 160%;
+        margin-top: 50px;
+    }
+    .ranking ul li{
+        width: 100px;
+    }
+
+}
+
