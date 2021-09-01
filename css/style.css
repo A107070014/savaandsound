@@ -1950,12 +1950,19 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 #logoidea>.ear{
     font-size: 26px;
     color: #572a2a;
-    position: relative;
-    left: 320px;
-    bottom: 585px;
+    position: absolute;
+    top: 255px;
+    left: 1150px;
 }
 #logoidea>.des{
-    margin-top: -400px;
+    margin-top: -350px;
+    border: 2px solid #ceb195;
+    border-radius: 10px;
+    padding: 5px;
+}
+#logoidea>.des p{
+    line-height: 35px;
+    letter-spacing: 2px;
 }
 .i2{
     border: none;
@@ -2064,7 +2071,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     background-color: rgba(238, 238, 238, 0.411);
     display: flex;
     margin: -60px 0px 0px 60px;
-
+    /*border-bottom: 2px solid #d9a200;*/
 }
 .school div,
 .ppp div{
