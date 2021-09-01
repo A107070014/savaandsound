@@ -1325,7 +1325,569 @@ span ~ #tab > div:first-of-type,
     color:#e6ad03;
     
 }
+@media screen and (max-width:450px){
+    /* 註冊/登入 */
+    .black_overlay{ 
+        display: none; 
+        position: absolute; 
+        top: 0%; 
+        left: 0%;
+        width: 100%; 
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        z-index:1001; 
+        -moz-opacity: 0.8; 
+        opacity:.80; 
+        filter: alpha(opacity=88);
+    }
+    .dialog{
+        position:fixed;
+        top:55px;
+        left:35%;
+        transform:translate(-120px,0px);
+        width:350px;
+        height: 35em;
+        border:1px solid #000;
+        border-radius: 10px;
+        background-color: #fff;
+        display:none;
+        padding:30px;
+        z-index:1002; 
+    }
+    .dialog>.close{
+        position: absolute;
+        top:10px;
+        right:10px;
+        cursor: pointer;
+    }
+    .login-acount{
+        text-align: center;
+        margin-top: -2px;
+    }
+    .use-google-login{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    .google-account-login-button{
+        height:40px;
+        width: 100%;
+        border:none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding:10px;
+    }
+    .google-account-login-button:hover{
+        background: rgb(211, 210, 210);
+    }
+    .use-google-acount-login{
+        text-align:center;
+        display: block;
+        padding-top: 3px;
+        white-space: nowrap;
+    }
+    .facebook-account-login-button{
+        height:40px;
+        width: 100%;
+        border:none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding:10px;
+    }
+    .facebook-account-login-button:hover{
+        background: rgb(211, 210, 210);
+    }
+    .use-facebook-acount-login{
+        text-align:center;
+        display: block;
+        padding-top: 3px;
+        white-space: nowrap;
+    }
+    .Separate{
+        display:flex;
+        margin:20px 0px;
+        color:rgba(238, 238, 238, 0.664);
+    }
+    .Divider1{
+        width:50%;
+        border: 0.1px solid rgba(238, 238, 238, 0.664);
+        height: 0px;
+        background-color: #eee;
+        margin-top: 10px;
+        margin-right:15px;
+    }
+    .Divider2{
+        width:50%;
+        border: 0.1px solid rgba(238, 238, 238, 0.664);
+        height: 0px;
+        background-color: #eee;
+        margin-top: 10px;
+        margin-left:15px;
+    }
+    .fa-envelope{
+        font-size: 25px;
+        position: relative;
+        top: 33.5px;
+        left: 10px;
+    }
+    .b11{
+        width:100%;
+        height:40px;
+        border-radius: 5px;
+        border:1.5px solid #eee;
+        padding-left: 50px;
+        outline-color:#d9a200;
+    }
+    .b11:hover{
+        border:1.5px solid #d9a200;
+        border-radius: 5px;
+    }
 
+    #eyes{
+        width: 18px;
+        position: absolute;
+        top: 205px;
+        right: 45px;
+    }
+
+    .fa-lock{
+        font-size: 25px;
+        position: relative;
+        top: 30px;
+        left: 10px;
+    }
+    .b21{
+        width:100%;
+        height:40px;
+        border-radius: 5px;
+        border:none;
+        background: #d9a200;
+        cursor: pointer;
+        color:#fff;
+        margin-bottom: 10px;
+        
+    }
+    .b21:hover{
+        background: #e6ad03;
+    }
+    .b22{
+        cursor: pointer;
+        font-size: 16px;
+        font-weight:bold;
+    }
+    .b1{
+        margin-bottom: 10px;
+    }
+    .b23{
+        font-size: 12px;
+        color: #d9a200;
+        margin-top: 3px;
+        position: fixed;
+        left: 260px;
+        white-space: nowrap;
+    }
+    .submit{
+        margin-bottom: 15px;
+        margin-top: 25px;
+    }
+    .b25{
+        font-size: 12px;
+        text-align: center;
+    }
+    .b26{
+        font-size: 12px;
+        vertical-align: top;
+        color: #d9a200;
+    }
+    .b1 input[type="submit"]{
+        height:40px;
+        width: 100%;
+        border:none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #d9a200;
+        color:#fff;
+        font-weight: bold;
+        font-size:18px;
+    }
+    .b1 input[type="submit"]:hover{
+        background-color: #e6ad03;
+    }
+
+
+    /*帳號密碼錯誤提示語*/
+    .b4>#password{
+        margin-top: -5px;
+    }
+
+    .b4.success input,
+    .c16.success input {
+        border-color: #2ecc71;
+    }
+
+    .b4.error input,
+    .c16.error input {
+        border-color: #e74c3c;
+    }
+    /*
+    .form-control i {
+        visibility: hidden;
+        position: absolute;
+        top: 40px;
+        right: 10px;
+    }
+
+    .b4.success i.fa-check-circle {
+        color: #2ecc71;
+        visibility: visible;
+    }
+
+    .b4.error i.fa-exclamation-circle {
+        color: #e74c3c;
+        visibility: visible;
+    }
+    */
+    .b4>.error1{
+        color: #e74c3c;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        visibility: hidden;
+    }
+
+    .b4>.error2 {
+        color: #e74c3c;
+        position: relative;
+        bottom: 0;
+        left: 10;
+        visibility: hidden;
+    }
+    .c16>.error3{
+        color: #e74c3c;
+        position: relative;
+        bottom: 0;
+        left: 10;
+        visibility: hidden;
+    }
+    .b4.error small,
+    .c16.error small {
+        visibility: visible;
+    }
+
+
+    /*忘記密碼*/
+    .close{
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+    .close img{
+        position: absolute;
+        right:8px;
+        top:8px;
+    }
+    .forgetpassword{
+        position: fixed;
+        top:55px;
+        left:35%;
+        transform:translate(-120px,0px);
+        width:350px;
+        height: 35em;
+        padding:10px;
+        border:1px solid #000;
+        border-radius: 10px;
+        background-color: #fff;
+        display:none;
+        padding:30px;
+        z-index:1002;  
+    }
+    .fa-chevron-left{
+        color: #d9a200;
+        font-size: 26px;
+        position: relative;
+        bottom: 10px;
+    }
+    .fa-chevron-left:hover{
+        color:#e6ad03
+    }
+    .c9{
+        font-size: 25px;
+        text-align: center;
+        margin-top: -2px;
+    }
+    .c12 input[type="submit"]{
+        height:40px;
+        width: 100%;
+        border:none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #d9a200;
+        color:#fff;
+        font-weight: bold;
+        font-size:18px;
+        margin-top: -50px;
+    }
+    .c12 input[type="submit"]:hover{
+        background-color: #e6ad03;
+    }
+    .c18{
+        width: 100%;
+        height:40px;
+        border-radius: 5px;
+        border:1.5px solid #eee;
+        padding-left: 50px;
+        outline-color:#d9a200;
+        margin-bottom:20px;
+    }
+    .c18:hover{
+        border:1.5px solid #d9a200;
+        border-radius: 5px;
+    }
+    .c19{
+        width:100%;
+        height:40px;
+        border-radius: 5px;
+        border:none;
+        background: #d9a200;
+        cursor: pointer;
+        color:#fff;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight:bold;
+    }
+    .c19:hover{
+        background: #e6ad03;
+    }
+    .c23{
+        font-size: 12px;
+        vertical-align: top;
+    }
+    .c22{
+        font-size: 12px;
+    }
+    /*重設密碼*/
+    .reset{
+    position: fixed;
+    top:55px;
+    left:35%;
+    transform:translate(-120px,0px);
+    width:350px;
+    height: 35em;
+    padding:10px;
+    border:1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display:none;
+    padding:30px;
+    z-index:1002;
+    }
+    #eyes1{
+        width: 18px;
+        position: absolute;
+        top: 146px;
+        right: 45px;
+    }
+    #eyes2{
+        width: 18px;
+        position: absolute;
+        top: 213px;
+        right: 45px;
+    }
+
+    /*註冊*/
+    .close{
+        position: absolute;
+        top:10px;
+        right:10px;
+        cursor: pointer;
+    }
+    .d1{
+        position: fixed;
+        top:55px;
+        left:35%;
+        transform:translate(-120px,0px);
+        width:350px;
+        height: 35em;
+        padding:10px;
+        border:1px solid #000;
+        border-radius: 10px;
+        background-color: #fff;
+        display:none;
+        padding:30px;
+        z-index:1002;
+    }
+    .d10{
+        font-size: 25px;
+        text-align: center;
+        margin-top: -2px;
+    }
+    .d14{
+    margin-top:20px;
+    margin-bottom:20px;
+    }
+    .d15{
+    height:40px;
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding:10px;
+    }
+    .d15:hover{
+    background: rgb(211, 210, 210);
+    }
+    .d18{
+    text-align:center;
+    display: block;
+    padding-top: 3px;
+    white-space: nowrap;
+    }
+    .d19{
+    margin-bottom: 20px;
+    }
+    .d20{
+    height:40px;
+        width: 100%;
+        border:none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding:10px;
+    }
+    .d20:hover{
+    background: rgb(211, 210, 210);
+    }
+    .d22{
+    height:40px;
+        width: 100%;
+        border:none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding:10px;
+    }
+    .d22:hover{
+    background: rgb(211, 210, 210);
+    }
+    .d23{
+        text-align: center;
+        margin-top:10px;
+    }
+    .d24{
+        font-size: 12px;
+    }
+    .d25{
+    font-size: 12px;
+    vertical-align: top;
+    color: #d9a200;
+    }
+
+    /*已登入首頁home*/
+    /* 通知 & 其他 */
+    .dropdown-menu {
+        position: relative;
+    } 
+    .dropdown-menu > ul {
+        position: absolute;
+        z-index: 1;
+        visibility: hidden;
+        transition: visibility 0.5s;
+        opacity: 0;
+    } 
+    .dropdown-menu > span:focus ~ ul {
+        visibility: visible;
+        opacity: 1;
+    }
+    .inform-menu-style > ul {
+        width:2000%;
+        border:none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0px 0px -350px;
+        background-color: #3b1e1ee8;   
+    }
+    .another-menu-style > ul{
+        width:900%;
+        border:none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0px 0px -140px;
+        background-color: #3b1e1ee8; 
+        text-align: center;
+    }
+    .inform-menu-style li,
+    .another-menu-style li {   
+        padding: 0.2em 0.4em 0;
+        height: 1.5em;
+        white-space: nowrap;
+        list-style-type:none;
+    }
+    .another-menu-style li{
+        margin: 15px 0px;
+        padding:6px 0px 0px 0px;
+        height: 40px;
+    }
+    .another-menu-style li:hover{
+        background: #3b1e1e;
+        border-radius: 5px;
+    }
+    .inform-menu-style p{
+        color: #fff;
+        padding: 0.2em 0.4em 0;
+        height: 1.5em;
+        white-space: nowrap;
+        list-style-type:none;
+        margin:5px 0px; 
+    } 
+    .inform-menu-style li:not(:first-child),
+    .another-menu-style li:not(:first-child){
+        border-top: none;
+    }
+    .inform-menu-style a{
+        text-decoration: none;
+        color: #d9a200;
+        font-size: 20px;
+        
+        cursor: default;
+    }
+    .another-menu-style a{
+        text-decoration: none;
+        color: #d9a200;
+        font-size: 20px;
+    }
+    .another-menu-style a:hover{
+    color:#e6ad03;   
+    }
+    .logout input[type="submit"]{
+        display:none;
+    }
+    .logout button{
+        color: #d9a200;
+        background-color: transparent;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        height: 40px;
+    }
+    .logout button:hover{
+        background: #3b1e1e;
+        border-radius: 5px;
+    }
+    .icon{
+        position: relative;
+    }
+    #tool{
+        color:#d9a200;
+        font-size:22px;
+        position: relative;
+        
+    }
+    #tool:hover{
+        color:#e6ad03;
+        
+    }
+}
 
 
 /*查看貼文*/
