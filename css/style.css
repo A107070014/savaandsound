@@ -2088,6 +2088,27 @@ button.list-group-item{
 
 @media screen and (max-width:450px){
     /*分類*/
+    nav>.logo{
+        flex:none;/*沒有彈性*/
+        width:110px;/*固定尺寸*/
+        display:flex;
+        margin-left: 5px;
+    }
+    .logoname{
+        font-size:18px;
+        margin-top: 2px;
+    }
+    nav>.search{
+        width: 15px;
+        position: relative;
+        bottom:3px;  
+    }
+    .signupin{
+        font-size: 18px;
+        position: relative;
+        bottom: 2px;   
+    }
+    
     .navbar-expand-lg{
         flex-wrap:nowrap;
         justify-content:flex-start;
@@ -2119,13 +2140,7 @@ button.list-group-item{
         background-repeat:no-repeat;
         background-position:center;
         background-size:100%;
-        
-    }
-    .navbar-toggler-icon{
-        background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-    .navbar-toggler-icon{
-        background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+       
     }
     
     .navbar-toggler{
@@ -2133,9 +2148,10 @@ button.list-group-item{
         font-size:1.25rem;
         line-height:1;
         background-color:transparent;
-        border:1px solid transparent;
+        border:none;
         border-radius:.25rem;
-        transition:box-shadow .15s ease-in-out}
+        transition:box-shadow .15s ease-in-out;
+    }
     @media (prefers-reduced-motion:reduce){
         .navbar-toggler{
             transition:none;
