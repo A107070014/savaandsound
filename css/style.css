@@ -124,162 +124,10 @@ main>.right{
 }
 
 @media screen and (max-width:1200px){
-    .picture{
-        display: flex;
-    }
-    .picture i{
-        display: block;
-        margin:15px 10px 0px 5px;
-        font-size: 18px;
-        color: #d9a200;
-        cursor: pointer;
-    }
-    .picture img{
-        width:35px;
-        height:35px;
-        margin-top: 5px;
-        }
-    nav>.logo{
-    flex:none;/*沒有彈性*/
-    width:150px;/*固定尺寸*/
-    display:flex;
-    margin-left: 5px;
-    }
-    .logoname{
-        font-size:18px;
-        margin-top: 3px;
-    }
-    nav>.search{
-        width: 15px;
-        position: relative;
-        bottom:3px;   
-    }
-    .searchbox{
-        /*width:calc(100% - 80px);*/
-        display: none;
-    }
     
-    .searchbutton i{
-        display: none;
-        
-    }
-    nav>.btn{
-        width: 10px;
-        display: flex;
-        padding-right:20px;
-    }
-    .btn i{
-        display: block;
-        font-size:15px;
-        color: #d9a200;
-        margin-right:15px;
-        margin-top: 5px;
-        cursor: pointer;
-    }
-    .btn i:hover{
-        color: #e6ad03;
-    }
-    .signupin{
-        font-size: 18px;
-        position: relative;
-        bottom: 2px;
-        
-    }
-    .signupin:hover{
-        border-style:solid;
-        border-radius: 5px;
-        border-color: #d9a200;
-        padding: 1.5px 1.5px;
-    }
-    .row{
-
-    }
-    .list-group{
-        
-    }
-    .my{
-        width: 100%;
-    }
-    #tab{
-        
-    }
 }
 @media screen and (max-width:800px){
-    .picture{
-        display: flex;
-    }
-    .picture i{
-        display: none;
-    }
-    .picture img{
-        width:35px;
-        height:35px;
-        margin-top: 5px;
-        }
-    nav>.logo{
-    flex:none;/*沒有彈性*/
-    width:150px;/*固定尺寸*/
-    display:flex;
-    margin-left: 5px;
-    }
-    .logoname{
-        font-size:18px;
-        margin-top: 3px;
-    }
-    nav>.search{
-        width: 15px;
-        position: relative;
-        bottom:3px;   
-    }
-    .searchbox{
-        /*width:calc(100% - 80px);*/
-        display: none;
-    }
     
-    .searchbutton i{
-        display: none;
-        
-    }
-    nav>.btn{
-        width: 10px;
-        display: flex;
-        padding-right:20px;
-    }
-    .btn i{
-        display: block;
-        font-size:15px;
-        color: #d9a200;
-        margin-right:15px;
-        margin-top: 5px;
-        cursor: pointer;
-    }
-    .btn i:hover{
-        color: #e6ad03;
-    }
-    .signupin{
-        font-size: 18px;
-        position: relative;
-        bottom: 2px;
-        
-    }
-    .signupin:hover{
-        border-style:solid;
-        border-radius: 5px;
-        border-color: #d9a200;
-        padding: 1.5px 1.5px;
-    }
-    .row{
-
-    }
-    .list-group{
-        
-    }
-    .my{
-        width: 100%;
-    }
-    #tab{
-        
-    }
 }
 
 
@@ -1862,6 +1710,7 @@ textarea:hover{
 .row{
     display:flex;
     justify-content:center;
+    
 }
 .list-group{
     flex:none;
@@ -2011,7 +1860,8 @@ button.list-group-item{
     background-color:transparent;
     border:1px solid transparent;
     border-radius:.25rem;
-    transition:box-shadow .15s ease-in-out}
+    transition:box-shadow .15s ease-in-out;
+}
 @media (prefers-reduced-motion:reduce){
     .navbar-toggler{
         transition:none;
@@ -2040,7 +1890,7 @@ button.list-group-item{
 .offcanvas{
     position:fixed;
     bottom:0;
-    z-index:999;
+    z-index:1;
     display:flex;
     flex-direction:column;
     max-width:100%;
@@ -2200,7 +2050,7 @@ button.list-group-item{
         top:0;
         left:0;
         width:400px;
-        border-right:1px solid rgba(0,0,0,.2);
+        border-right:none;
         transform:translateX(-100%);
     }
     .offcanvas.show{
@@ -2223,7 +2073,19 @@ button.list-group-item{
         left:0;
         z-index:1000;
     }
-    .bg-dark{background-color:#ceb195!important}
+    .bg-dark{
+        background-color:#ceb195!important;
+    }
+    .my{
+        flex:auto;
+        width:100%;
+        position: fixed;
+        left: 0%;
+        top: 5%;
+    }
+    .my>.tab-item>#tab>ul>li>a{
+        font-size: 20px;
+    }
 }
 /*
 .list-group-item-success{color:#3c763d;background-color:#dff0d8}
