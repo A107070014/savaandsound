@@ -1717,6 +1717,10 @@ textarea:hover{
     width:300px;
     background-color: #ceb195;
 }
+.content{
+    flex:auto;
+    width:300px;
+}
 .my{
     flex:auto;
     width:1280px;
@@ -1910,7 +1914,7 @@ button.list-group-item{
     top:0;
     left:0;
     width:400px;
-    border-right:1px solid rgba(0,0,0,.2);
+    border-right:none;
     transform:translateX(-100%);
 }
 .offcanvas.show{
