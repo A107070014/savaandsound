@@ -759,7 +759,7 @@ span ~ #tab > div:first-of-type,
 #eyes{
     width: 18px;
     position: absolute;
-    top: 205px;
+    top: 196px;
     right: 45px;
 }
 
@@ -1224,22 +1224,37 @@ span ~ #tab > div:first-of-type,
         left: 260px;
         white-space: nowrap;
     }
-    
+    /*忘記密碼*/
+    .forgetpassword{
+        position: fixed;
+        top:55px;
+        left:35%;
+        transform:translate(-120px,0px);
+        width:350px;
+        height: 35em;
+        padding:10px;
+        border:1px solid #000;
+        border-radius: 10px;
+        background-color: #fff;
+        display:none;
+        padding:30px;
+        z-index:1002;
+    }
     /*重設密碼*/
     .reset{
-    position: fixed;
-    top:55px;
-    left:35%;
-    transform:translate(-120px,0px);
-    width:350px;
-    height: 35em;
-    padding:10px;
-    border:1px solid #000;
-    border-radius: 10px;
-    background-color: #fff;
-    display:none;
-    padding:30px;
-    z-index:1002;
+        position: fixed;
+        top:55px;
+        left:35%;
+        transform:translate(-120px,0px);
+        width:350px;
+        height: 35em;
+        padding:10px;
+        border:1px solid #000;
+        border-radius: 10px;
+        background-color: #fff;
+        display:none;
+        padding:30px;
+        z-index:1002;
     }
     
     /*註冊*/
@@ -2397,7 +2412,13 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 
 
     /*關於我們*/
-    .my>#tab-item1 img{
+    .aboutus-content{
+        flex:auto;
+        width:100%;
+        margin-right: 270px;
+        margin-bottom: 60px;
+    }
+    .aboutus-content>#tab-item1 img{
         width:100%;
         height:100px
     }
@@ -2412,7 +2433,6 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
         color: #572a2a;
         letter-spacing: 5px;
     }
-    
     #logoidea img{
         display:block;
         margin:auto;
@@ -2438,12 +2458,13 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     }
     #logoidea>.ear{
         font-size: 20px;
-        position: relative;
-        left: 150px;
-        margin-top: 65px;
+        position: absolute;
+        margin-left: -855px;
+        margin-top: -125px;
+        white-space: nowrap;
     }
     #logoidea>.des{
-        margin-top: -500px;
+        margin-top: -400px;
         margin-left: -15px;
         width: 110%;
     }
@@ -2557,7 +2578,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
         background-color: rgba(238, 238, 238, 0.411);
         display: block;
         margin: -60px 0px 0px 10px;
-    
+        
     }
     
     .school div,
@@ -2569,12 +2590,14 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
         position: relative;
         right: 329px;
         width: 100%;
+        
     }
     .school div{
         position: relative;
         left: 20%;
         top: 15px;
         line-height: 30px;
+        
     }
     .school div>h3{
         white-space: nowrap;
@@ -2590,6 +2613,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
         background-color: rgba(238, 238, 238, 0.411);
         display: block;
         margin: 10px 0px 50px 10px;
+        
     }
     .ppp2 iframe{
         position: relative;
@@ -2602,11 +2626,13 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
         left: 20%;
         top: 15px;
         line-height: 30px;
+        
     }
     .ppp2 div>h3{
         white-space: nowrap;
         color: #572a2a;
         margin:0px 0px 0px 80px;
+        
     }
 }
 
