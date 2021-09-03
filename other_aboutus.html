@@ -17,15 +17,29 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<!--RWD手機導覽列-->
+<!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="css/rwdstyle.css" />
+<script src="js/bootstrap.bundle.min.js"></script> 
 </head>
 <body>
     <!--登入-->
     <div id="fade" class="black_overlay" ></div>
     <!--標題列-->
-    <nav>
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        <div class="container-fluid">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#sidebar"
+                aria-controls="offcanvasExample"
+            >
+                <span ><i class="fas fa-bars"  data-bs-target="#sidebar"></i></span>
+            </button>
+        </div> 
         <div class="logo">
             <div class="picture">
-                <i class="fas fa-bars"></i>
                 <a title="留聲跡" href="home.html">
                     <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                 </a>
@@ -132,15 +146,17 @@
             </div>
         </div>
     </nav>
+    
     <div class="row">
-        <div class="list-group col-md-4 col-xs-4">
+        <div class="list-group col-md-4 col-xs-4 
+        offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
             <h1>關於我們</h1>
             <a id="tab1" href="#" class="tab list-group-item active">專案背景&目標</a>
             <a id="tab2" href="#" class="tab list-group-item">Logo設計理念</a>
             <a id="tab3" href="#" class="tab list-group-item">團隊成員</a>
             <a id="tab4" href="#" class="tab list-group-item">展覽展演時程</a>
         </div>
-        <div class="my col-md-8 col-xs-4">
+        <div class="aboutus-content col-md-8 col-xs-4">
             <div id="tab-item1" class="tab-item">
                 <img src="img/test.jpg" width="1215" height="300">
                 <div class="i2">

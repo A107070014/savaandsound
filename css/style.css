@@ -104,12 +104,13 @@ main>.right{
 .searchbutton i:hover{
     color:#d9a200;
 }
-.searchicon{
-    margin-top:3.5px;
-}
-.btn i{
+
+.search-rwd{
     display: none;
 }
+/*.btn i{
+    display: none;
+}*/
 .signupin{
     color:#d9a200;
     font-size:20px;
@@ -166,17 +167,47 @@ main>.right{
         /*width:calc(100% - 80px);*/
         display: none;
     }
-    
-    .searchbutton i{
+    .searchbutton{
         display: none;
-        
+    }
+    .search-rwd{
+        display: block;
+        background-color:transparent;
+        position: relative;
+        top: 50px;
+        z-index: 1;
+    }
+    .searchbox-rwd{
+        height:2.5em;
+        border-radius: 10px;
+        border:2px solid #3b1e1e;
+        padding-left:10px;
+        margin:5px 0px 0px 5px;
+    }
+    
+    .searchbutton-rwd{
+        vertical-align: middle;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        right: 0px;
+    }
+    .searchbutton-rwd i{
+        color: #000;
+        font-size: 17px;
+        position: relative;
+        bottom: 27px;
+        left: 330px;
+    }
+    .searchbutton-rwd i:hover{
+        color:#d9a200;
     }
     nav>.btn{
         width: 10px;
         display: flex;
-        padding-right:20px;
+        padding-right:5px;
     }
-    .btn i{
+    /*.btn i{
         display: block;
         font-size:15px;
         color: #d9a200;
@@ -186,7 +217,7 @@ main>.right{
     }
     .btn i:hover{
         color: #e6ad03;
-    }
+    }*/
     .signupin{
         font-size: 18px;
         position: relative;
@@ -1720,6 +1751,12 @@ textarea:hover{
 .content{
     flex:auto;
     width:300px;
+}
+.aboutus-content{
+    flex:auto;
+    width:300px;
+    margin-left: 270px;
+    margin-top: 60px;
 }
 .my{
     flex:auto;
