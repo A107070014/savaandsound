@@ -1791,6 +1791,10 @@ textarea:hover{
     width:300px;
     
 }
+.game-content{
+    flex:auto;
+    width:300px;
+}
 .aboutus-content{
     flex:auto;
     width:300px;
