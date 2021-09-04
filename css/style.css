@@ -302,10 +302,12 @@ main>.right{
     /*發文*/
     .article2{
         width:calc(100% - 0px);
+        margin-top: -13px;
     }
     
     .article2>h2{
         text-align: center;
+        color: #572a2a;
     }
     .article2>.img{
         position: relative;
@@ -1200,11 +1202,14 @@ span ~ #tab > div:first-of-type,
     color: #d9a200;
     background-color: transparent;
     font-size: 20px;
-    font-weight: bold;
     cursor: pointer;
     border: none;
     width: 100%;
     height: 40px;
+}
+.logout button span{
+    position: relative;
+    bottom: 3px;
 }
 .logout button:hover{
     background: #3b1e1e;
@@ -1575,7 +1580,7 @@ textarea:hover{
 }
 .personal>.img-container {
     width: 100px;
-    margin:10px 0px 0px 70px;
+    margin:10px 0px 0px 55px;
 }
 .personal>.img-container h4 {
     margin: 10px 0px 10px 25px;
@@ -1598,6 +1603,9 @@ textarea:hover{
     border-radius: 5px;
     padding: 0px 15px;
     margin: 20px 200px 88px 80px;
+}
+.i1>h2{
+    color:#572a2a;
 }
 #editmyinfo,
 #editpassword,
@@ -1789,11 +1797,13 @@ textarea:hover{
 .content{
     flex:auto;
     width:300px;
-    
+    margin-left: 220px;
+    margin-top: 60px;
 }
 .game-content{
     flex:auto;
     width:300px;
+    margin-top: 60px;
 }
 .aboutus-content{
     flex:auto;
@@ -1803,10 +1813,10 @@ textarea:hover{
 }
 .my{
     flex:auto;
-    width:1280px;
-    position: fixed;
-    left: 17%;
-    top: 8%;
+    width:300px;
+    margin-left: 270px;
+    margin-top: 50px;
+    
 }
 
 .row:after,.row:before{
@@ -2163,10 +2173,9 @@ button.list-group-item{
     }
     .my{
         flex:auto;
-        width:100%;
-        position: fixed;
-        left: 0%;
-        top: 5%;
+        width:300px;
+        margin-left: 0px;
+        margin-top: 40px;
     }
     .my>.tab-item>#tab>ul>li>a{
         font-size: 20px;
@@ -2413,14 +2422,19 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     /*我的聲跡*/
     .phone{
         display: block;
+
     }
     .phone>.list-group{
         display: block;
         background-color: white;
         position: relative;
         left: 36px;
+        top: 55px;
     }
-
+    .personal>.img-container {
+        width: 100px;
+        margin:10px 0px 0px 70px;
+    }
     .logout>.list-group-item{
         text-align: center;
         position: relative;

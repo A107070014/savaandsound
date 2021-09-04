@@ -17,7 +17,10 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-
+<!--RWD手機導覽列-->
+<!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="css/rwdstyle.css" />
+<script src="js/bootstrap.bundle.min.js"></script> 
 <!--日期jquery-->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -45,7 +48,8 @@
     <!--登入-->
     <div id="fade" class="black_overlay" ></div>
     <!--標題列-->
-    <nav>
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        
         <div class="logo">
             <div class="picture">
                 <a title="留聲跡" href="home.html">
@@ -130,7 +134,7 @@
             <div >
                 <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
             </div>
-            <div >
+            <div>
                 <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
             
@@ -156,12 +160,12 @@
     </nav>
     
     <div class="row">
-        <div class="list-group col-md-4 col-xs-4">
+        <div class="list-group col-md-4 col-xs-4 
+        offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
             <div class="personal">
                 <div class="img-container">
                     <img src="img/ukulele.jpg" alt="music-cover" id="cover">
-                    
-                    <!--<h4 id="title">姓名</h4>-->    
+                    <h4 id="title">姓名</h4> 
                 </div>
             </div>
             <div class="list">
@@ -257,8 +261,8 @@
     
     
     <!--RWD手機板-->
-    <div class="phone">
-        <div class="list-group col-md-4 col-xs-4">
+    <div class="phone ">
+        <div class="list-group col-md-4 col-xs-4 ">
             <div class="personal">
                 <div class="img-container">
                     <img src="img/ukulele.jpg" alt="music-cover" id="cover">
@@ -276,9 +280,9 @@
                 <a href="other_aboutus.html" title="關於我們" class="tab list-group-item">關於我們</a>
                 <a href="" title="聯絡我們" class="tab list-group-item">聯絡我們</a>
                 <a href="" title="募資平台" class="tab list-group-item">募資平台</a>
-                <a id="tab4" href="#" class="tab list-group-item">設定</a>
-                <form action="index.html"class="logout">
-                    <button class="tab list-group-item">登出<input type="submit" value="登出"></button>
+                <a id="tab4" href="set.html" class="tab list-group-item">設定</a>
+                <form action="index.html" class="logout">
+                    <button class="tab list-group-item"><span>登出</span><input type="submit" value="登出"></button>
                 </form>
             </div>
         </div>

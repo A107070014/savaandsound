@@ -20,14 +20,18 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-
+<!--RWD手機導覽列-->
+<!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="css/rwdstyle.css" />
+<script src="js/bootstrap.bundle.min.js"></script> 
 </head>
 <body>
     
     <!--登入-->
     <div id="fade" class="black_overlay" ></div>
     <!--標題列-->
-    <nav>
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        
         <div class="logo">
             <div class="picture">
                 <a title="留聲跡" href="home.html">
@@ -112,7 +116,7 @@
             <div >
                 <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
             </div>
-            <div >
+            <div>
                 <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
             
@@ -135,8 +139,6 @@
                 </div>
             </div>
         </div>
-        
-        
     </nav>
 
     <!--遊戲-->
