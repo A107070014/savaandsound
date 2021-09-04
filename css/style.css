@@ -101,6 +101,9 @@ main>.right{
 .searchbutton2{
     display: none;
 }
+.searchbutton3{
+    display: none;
+}
 .searchbutton i{
     font-size:15px;
 }
