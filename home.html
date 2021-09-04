@@ -63,9 +63,11 @@
                         <i class="fas fa-search"></i>  
                     </button>
                 </form>
+                <a href = "javascript:void(0)" onclick = "document.getElementById('search-rwd').style.display='block';document.getElementById('fade').style.display='block'"
+                class="searchbutton3" style="cursor: pointer;"><i class="fas fa-search"></i>
+                </a>
             </div>
         </div> 
-        
         <div class="tool">    
             <div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
@@ -171,7 +173,7 @@
             </div>
         </div>
     </nav>
-    <div class="search-rwd">
+    <div class="search-rwd" id="search-rwd">
         <div class="key">
             <form action="">
                 <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox-rwd" size="50" />
@@ -180,6 +182,9 @@
                 </button>
             </form>
         </div>
+        <a href = "javascript:void(0)" onclick = "document.getElementById('search-rwd').style.display='none';document.getElementById('fade').style.display='none'"
+            class="c22" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
+        </a>
     </div>
     
     <!--分類欄-->
