@@ -2407,9 +2407,6 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     .phone{
         display: block;
     }
-    .i1{
-        display: none;
-    }
     .phone>.list-group{
         display: block;
         background-color: white;
@@ -2430,15 +2427,22 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     }
 
     /*我的個人資料*/
-    
-    .my h2{
-        margin: 10px 0px 30px 0px;
+    .content{
+        display: none;
+    }
+    .content2{
+        flex:auto;
+        width:100%;
+        left: 0%;
+        top: 5%;
+        
+        white-space: nowrap; 
     }
     .i1{
         border: none;
         border-radius: 5px;
         padding: 0px 15px;
-        margin: 20px 200px 88px 80px;
+        margin: 20px 200px 88px 0px;
     }
     #editmyinfo,
     #editpassword,
@@ -2447,6 +2451,7 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
         border-radius: 10px;
         padding: 0px 0px 0px 10px;
         margin-top: 20px;
+        width: 340px;
     }
     #editmyinfo h3,
     #editpassword h3,
@@ -2461,8 +2466,8 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     }
     .myinfo>select{
         height:40px;
-        width: 35%;
-        margin-left: 100px;
+        width: 75%;
+        margin-left: 37px;
         border-radius: 5px;
         border:1.5px solid #dad8d8;
         padding-left: 10px;
@@ -2512,24 +2517,25 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     .myinfo>#myimg{
         border:2px solid #d9a200;
         border-radius: 50%;
-        width: 130px;
-        height:130px;
-        margin: 20px 0px 10px 120px;
+        width: 100px;
+        height:100px;
+        margin: 20px 0px 10px 40px;
     }
 
     .myinfo .editphoto{
         background-color: #fff;
         border: 1.5px solid #dad8d8;
         border-radius: 5px;
-        padding: 10px;
+        padding: 5px;
         cursor: pointer;
         position: relative;
-        top: -43px;
-        right:444px;
+        top: -40px;
+        left:2px;
         white-space: nowrap;
+
     }
     .myinfo .editphoto>.fa-upload{
-        font-size: 20px;
+        font-size: 18px;
         margin-right: 10px;
     }
     .myinfo input[type="text"],
@@ -2538,21 +2544,17 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     .myinfo input[type="mail"],
     .myinfo input[type="password"]{
         height:40px;
-        width: 35%;
-        margin-left: 100px;
+        width: 75%;
+        margin-left: 40px;
         border-radius: 5px;
         border:1.5px solid #dad8d8;
         padding-left: 10px;
         outline-color:#d9a200;   
     }
-
-
-
-
     .myinfo input[type="submit"],
     .myinfo input[type="reset"]{
         height:40px;
-        width: 10%;
+        width: 30%;
         position: relative;
         left:26%;
         margin:20px 10px;
