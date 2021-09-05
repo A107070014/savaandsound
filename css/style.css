@@ -629,8 +629,8 @@ main>.right{
         display: flex;
         padding-top: 12px;
         justify-content: space-evenly;
-        position: relative;
-        top: 585px;
+        position: fixed;
+        top: 630px;
         right: 1px;
         z-index: 1002;
         background-color: #3b1e1e;
@@ -639,7 +639,7 @@ main>.right{
     #tool2>.fas{
         position: relative;
         bottom: 4px;
-        left: -35px;
+        left: 90px;
         color:#d9a200;
         font-size:22px;
     }
