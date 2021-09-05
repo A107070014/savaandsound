@@ -192,9 +192,7 @@ main>.right{
     .picture{
         display: flex;
     }
-    .picture img{
-        
-    }
+    
     nav>.logo{
         flex:none;/*沒有彈性*/
         width:150px;/*固定尺寸*/
@@ -630,7 +628,7 @@ main>.right{
         padding-top: 12px;
         justify-content: space-evenly;
         position: fixed;
-        top: 630px;
+        top: 552px;
         right: 1px;
         z-index: 1002;
         background-color: #3b1e1e;
@@ -825,7 +823,7 @@ main>.right{
 .tab-item span{
     display:none;
 }
-
+/*
 #tab-1:target ~ #tab > ul li a[href$="#tab-1"],
 #tab-2:target ~ #tab > ul li a[href$="#tab-2"],
 #tab-3:target ~ #tab > ul li a[href$="#tab-3"],
@@ -839,7 +837,7 @@ main>.right{
 #tab-11:target ~ #tab > ul li a[href$="#tab-11"],
 #tab-12:target ~ #tab > ul li a[href$="#tab-12"]{
     
-}
+}*/
 /*頁籤內容顯示*/
 .tab-content-1>ul,
 .tab-content-2>ul{
@@ -979,7 +977,7 @@ span:target ~ #tab > div:first-of-type {
     padding: 0px;
 }
     
-/*頁籤變換&第一筆*/
+/*頁籤變換&第一筆
 span ~ #tab > ul li:first-child a,
 #tab-1:target ~ #tab > ul li a[href$="#tab-1"],
 #tab-2:target ~ #tab > ul li a[href$="#tab-2"],
@@ -994,7 +992,7 @@ span ~ #tab > ul li:first-child a,
 #tab-11:target ~ #tab > ul li a[href$="#tab-11"],
 #tab-12:target ~ #tab > ul li a[href$="#tab-12"]{
     
-}
+}*/
     
 /*頁籤內容顯示&第一筆*/
 span ~ #tab > div:first-of-type,
@@ -1847,7 +1845,7 @@ span ~ #tab > div:first-of-type,
         color: #cecdcd;
         cursor: pointer;
     }
-    .
+    
 }
 
 /*發文*/
