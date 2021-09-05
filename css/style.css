@@ -101,6 +101,9 @@ main>.right{
 .searchbutton3{
     display: none;
 }
+.searchbutton4{
+    display: none;
+}
 .searchbutton i{
     font-size:15px;
 }
@@ -126,15 +129,70 @@ main>.right{
     border-color: #d9a200;
     padding: 5px 5px;
 }
-
+@media screen and (max-width:1343px){
+    nav>.logo{
+        flex:none;/*沒有彈性*/
+        width:180px;/*固定尺寸*/
+        display:flex;
+        margin-left: 0px;
+    }
+    .picture{
+        white-space: nowrap;
+        flex:none;
+    }
+    .picture img{
+        width:45px;
+        height:45px;
+        margin-top: 5px;
+    }
+    .logoname{
+        color:#d9a200;
+        font-size:25px;
+        letter-spacing: 5px;
+        margin-left: 5px;
+        margin-right: 10px;
+        white-space: nowrap;
+        padding-top: 10px;
+    }
+    nav>.search{
+        width: 15px;
+        position: relative;
+        bottom:3px;
+        top: 1px;   
+    }
+    .searchbox{
+        height:2.5em;
+        width: 300px;
+        border-radius: 10px;
+        border:0px solid #3b1e1e;
+        padding-left:10px;  
+    }
+    nav>.btn{
+        width: 100px;
+        display: flex;
+        padding-right:20px;
+    }
+    .signupin{
+        font-size: 20px;
+        position: relative;
+        bottom: 0px;
+        
+    }
+    nav>.tool{
+        flex:none;
+        width:450px;
+        display: flex;
+        padding-top: 12px;
+        justify-content: space-evenly;
+    }
+    
+}
 @media screen and (max-width:1200px){
     .picture{
         display: flex;
     }
     .picture img{
-        width:35px;
-        height:35px;
-        margin-top: 5px;
+        
     }
     nav>.logo{
         flex:none;/*沒有彈性*/
@@ -193,123 +251,113 @@ main>.right{
         bottom: 2px;
         
     }
-    .signupin:hover{
-        border-style:solid;
-        border-radius: 5px;
-        border-color: #d9a200;
-        padding: 1.5px 1.5px;
-    }
-    
 }
-@media screen and (max-width:1343px){
-    .picture{
-        display: flex;
-    }
-    .picture i{
-        display: none;
-    }
-    .picture img{
-        width:35px;
-        height:35px;
-        margin-top: 5px;
-        }
+@media screen and (max-width:991px){
     nav>.logo{
         flex:none;/*沒有彈性*/
-        width:150px;/*固定尺寸*/
+        width:180px;/*固定尺寸*/
         display:flex;
-        margin-left: 5px;
+        margin-left: 0px;
     }
-    .logoname{
-        font-size:18px;
-        margin-top: 3px;
-    }
-    nav>.search{
-        width: 15px;
-        position: relative;
-        bottom:3px;   
-    }
-    .searchbox{
-        /*width:calc(100% - 80px);*/
-        display: none;
-    }
-    
-    .searchbutton i{
-        display: none;
-        
-    }
-    nav>.btn{
-        width: 10px;
-        display: flex;
-        padding-right:20px;
-    }
-    .btn i{
-        display: block;
-        font-size:15px;
-        color: #d9a200;
-        margin-right:15px;
-        margin-top: 5px;
-        cursor: pointer;
-    }
-    .btn i:hover{
-        color: #e6ad03;
-    }
-    .signupin{
-        font-size: 18px;
-        position: relative;
-        bottom: 2px;
-        
-    }
-    .signupin:hover{
-        border-style:solid;
-        border-radius: 5px;
-        border-color: #d9a200;
-        padding: 1.5px 1.5px;
-    }
-    nav>.tool{
+    .picture{
+        white-space: nowrap;
         flex:none;
-        width:450px;
-        display: flex;
-        padding-top: 12px;
-        justify-content: space-evenly;
-    }
-    
-}
-@media screen and (max-width:800px){
-    .picture{
-        display: flex;
-    }
-    .picture i{
-        display: none;
     }
     .picture img{
-        width:35px;
-        height:35px;
+        width:45px;
+        height:45px;
         margin-top: 5px;
-        }
-    nav>.logo{
-        flex:none;/*沒有彈性*/
-        width:150px;/*固定尺寸*/
-        display:flex;
-        margin-left: 5px;
     }
     .logoname{
-        font-size:18px;
-        margin-top: 3px;
+        color:#d9a200;
+        font-size:25px;
+        letter-spacing: 5px;
+        margin-left: 5px;
+        margin-right: 10px;
+        white-space: nowrap;
+        padding-top: 10px;
     }
     nav>.search{
         width: 15px;
         position: relative;
-        bottom:3px;   
+        bottom:3px;
+        top: 1px;   
     }
     .searchbox{
         /*width:calc(100% - 80px);*/
         display: none;
     }
-    
-    .searchbutton i{
+    .searchbutton{
         display: none;
+    }
+    .searchbutton2{
+        display:block;
+        color: #d9a200;
+        position: relative;
+        left: 50px;
+        top: 6px;
+    }
+    .searchbutton3{
+        display:block;
+        position: relative;
+        left: -30px;
+        top: 3px;
+        background-color: #fff;
+        border-radius: 50px;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #d9a200;
+    }
+    .searchbutton3 i{
+        color: #000;
+        margin: 7px 0px 0px 6px;
+    }
+    .search-rwd{
+        position: relative;
+        top: 50px;
+        z-index: 1002;
+    }
+    .searchbox-rwd{
+        height:4.2em;
+        border:none;
+        border-bottom: 1px solid #eee;
+        padding-left:40px;
+        padding-top:5px;
+        margin:5px 0px 0px 0px;
+        width: 100%;
+        position: relative;
+        bottom: 55px;
+        background-color:#f5f5f5;
+    }
+    
+    .searchbutton-rwd{
+        vertical-align: middle;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        bottom: 92px;
+        left: 900px;
+    }
+    .searchbutton-rwd i{
+        color: #000;
+        font-size: 17px;
+    }
+    .searchbutton-rwd i:hover{
+        color:#d9a200;
+    }
+    .search-rwd>.c22{
+        position: relative;
+        bottom: 103px;
+        left: 10px;
         
     }
+    .search-rwd>.c22 i{
+        color: #000;
+        font-size: 20px;
+    }
+    .search-rwd>.c22 i:hover{
+        color: #d9a200;
+    }    
     nav>.btn{
         width: 10px;
         display: flex;
@@ -326,17 +374,15 @@ main>.right{
     .btn i:hover{
         color: #e6ad03;
     }
-    .signupin{
-        font-size: 18px;
-        position: relative;
-        bottom: 2px;
-        
+    nav>.btn{
+        width: 100px;
+        display: flex;
+        padding-right:20px;
     }
-    .signupin:hover{
-        border-style:solid;
-        border-radius: 5px;
-        border-color: #d9a200;
-        padding: 1.5px 1.5px;
+    .signupin{
+        font-size: 20px;
+        position: relative;
+        bottom: 0px;
     }
     nav>.tool{
         flex:none;
@@ -346,7 +392,96 @@ main>.right{
         justify-content: space-evenly;
     }
 }
-
+@media screen and (max-width:564px){
+    nav>.logo{
+        flex:none;/*沒有彈性*/
+        width:150px;/*固定尺寸*/
+        display:flex;
+        margin-left: 0px;
+    }
+    nav>.tool{
+        flex:none;
+        width:250px;
+        display: flex;
+        padding-top: 12px;
+        justify-content: space-evenly;
+    }
+    .searchbox{
+        /*width:calc(100% - 80px);*/
+        display: none;
+    }
+    .searchbutton{
+        display: none;
+    }
+    .searchbutton2{
+        display:block;
+        color: #d9a200;
+        position: relative;
+        left: 50px;
+        top: 6px;
+    }
+    .searchbutton3{
+        display:block;
+        position: relative;
+        left: -0px;
+        top: 3px;
+        background-color: #fff;
+        border-radius: 50px;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #d9a200;
+    }
+    .searchbutton3 i{
+        color: #000;
+        margin: 7px 0px 0px 6px;
+    }
+    .search-rwd{
+        position: relative;
+        top: 50px;
+        z-index: 1002;
+    }
+    .searchbox-rwd{
+        height:4.2em;
+        border:none;
+        border-bottom: 1px solid #eee;
+        padding-left:40px;
+        padding-top:5px;
+        margin:5px 0px 0px 0px;
+        width: 100%;
+        position: relative;
+        bottom: 55px;
+        background-color:#f5f5f5;
+    }
+    
+    .searchbutton-rwd{
+        vertical-align: middle;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        bottom: 92px;
+        left: 400px;
+    }
+    .searchbutton-rwd i{
+        color: #000;
+        font-size: 17px;
+    }
+    .searchbutton-rwd i:hover{
+        color:#d9a200;
+    }
+    .search-rwd>.c22{
+        position: relative;
+        bottom: 103px;
+        left: 10px;
+        
+    }
+    .search-rwd>.c22 i{
+        color: #000;
+        font-size: 20px;
+    }
+    .search-rwd>.c22 i:hover{
+        color: #d9a200;
+    }
+}
 @media screen and (max-width:450px){
     .picture{
         display: flex;
@@ -393,10 +528,16 @@ main>.right{
         top: 6px;
     }
     .searchbutton3{
-        display:block;
+        display:none;
         color: #d9a200;
         position: relative;
         left: 150px;
+        top: 6px;
+    }
+    .searchbutton4{
+        color: #d9a200;
+        position: relative;
+        left: 200px;
         top: 6px;
     }
     .search-rwd{
@@ -872,21 +1013,35 @@ span ~ #tab > div:first-of-type,
     height:100%;
     padding: 0px;
 }
+@media screen and (max-width:1343px){
 
+}
+@media screen and (max-width:1200px){
 
+}
+
+@media screen and (max-width:991px){
+    
+}
+@media screen and (max-width:564px){
+
+}
+@media screen and (max-width:450px){
+}
 /* 註冊/登入 */
 .black_overlay{ 
     display: none; 
-    position: absolute; 
+    position: absolute;
     top: 0%; 
     left: 0%;
     width: 100%; 
     height: 100%;
     background-color: rgb(0, 0, 0);
-    z-index:1001; 
+    z-index:1002; 
     -moz-opacity: 0.8; 
     opacity:.80; 
     filter: alpha(opacity=88);
+    
 }
 .dialog{
     position:fixed;
@@ -1437,11 +1592,59 @@ span ~ #tab > div:first-of-type,
     color:#e6ad03;
     
 }
+
+@media screen and (max-width:1343px){
+    /*已登入首頁home*/
+    /* 通知 & 其他 */
+    .another-menu-style > ul{
+        width:900%;
+        border:none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0px 0px -150px;
+        background-color: #3b1e1ee8; 
+        text-align: center;
+    }
+}
 @media screen and (max-width:1200px){
+    /*已登入首頁home*/
+    /* 通知 & 其他 */
+    .another-menu-style > ul{
+        width:900%;
+        border:none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0px 0px -150px;
+        background-color: #3b1e1ee8; 
+        text-align: center;
+    }
     
 }
-@media screen and (max-width:800px){
-    
+@media screen and (max-width:991px){
+    /*已登入首頁home*/
+    /* 通知 & 其他 */
+    .another-menu-style > ul{
+        width:900%;
+        border:none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0px 0px -175px;
+        background-color: #3b1e1ee8; 
+        text-align: center;
+    }
+}
+@media screen and (max-width:564px){
+    /*已登入首頁home*/
+    /* 通知 & 其他 */
+    .another-menu-style > ul{
+        width:900%;
+        border:none;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0px 0px -180px;
+        background-color: #3b1e1ee8; 
+        text-align: center;
+    }
 }
 @media screen and (max-width:450px){
     /* 註冊/登入 */
@@ -1943,7 +2146,7 @@ textarea:hover{
     width: 10%;
     position: relative;
     left:26%;
-    margin:20px 10px;
+    margin:20px 7px;
     background-color: #fff;
     border:1.5px solid #dad8d8;
     border-radius: 5px;
@@ -2250,7 +2453,55 @@ button.list-group-item{
     z-index:1000;
 }
 .bg-dark{background-color:#ceb195!important}
+@media screen and (max-width:1343px){
+    /*我的個人資料*/
+    .offcanvas{
+        margin-top:2px;
+    }
+    .myinfo>select{
+        height:40px;
+        width: 40%;
+        margin-left: 95px;
+        border-radius: 5px;
+        border:1.5px solid #dad8d8;
+        padding-left: 10px;
+        outline-color:#d9a200;
 
+        /*移除箭頭樣式*/
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        /*改變右邊箭頭樣式*/
+        background: url("../img/another1.png") no-repeat 95%;
+        background-size: 6%;
+    }
+    .myinfo .editphoto{
+        background-color: #fff;
+        border: 1.5px solid #dad8d8;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        top: -43px;
+        right:220px;
+        white-space: nowrap;
+    }
+    .myinfo input[type="text"],
+    .myinfo input[type="date"],
+    .myinfo input[type="tel"],
+    .myinfo input[type="mail"],
+    .myinfo input[type="password"]{
+        height:40px;
+        width: 40%;
+        margin-left: 100px;
+        border-radius: 5px;
+        border:1.5px solid #dad8d8;
+        padding-left: 10px;
+        outline-color:#d9a200;   
+    }
+    
+    
+}
 @media screen and (max-width:1200px){
     .navbar-expand-lg{
         flex-wrap:nowrap;
@@ -2316,17 +2567,26 @@ button.list-group-item{
     .bg-dark{
         background-color:#ceb195!important;
     }
+    .myinfo .editphoto{
+        background-color: #fff;
+        border: 1.5px solid #dad8d8;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        top: -43px;
+        right:10px;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width:991px){
     .my{
         flex:auto;
         width:300px;
-        margin-left: 260px;
-        margin-top: 40px;
+        margin-left: 0px;
+        margin-top: 50px;
     }
-    .my>.tab-item>#tab>ul>li>a{
-        font-size: 20px;
-    }
-}
-@media screen and (max-width:991px){
     .navbar-expand-lg{
         flex-wrap:nowrap;
         justify-content:flex-start;
@@ -2406,8 +2666,8 @@ button.list-group-item{
         background-clip:padding-box;
         outline:0;
         transition:transform .3s ease-in-out;
-        margin-top: 35px;
-        z-index: 1;
+        margin-top: 58px;
+        z-index: 1001;
     }
     .offcanvas-body{
         flex-grow:1;
@@ -2445,18 +2705,128 @@ button.list-group-item{
     .bg-dark{
         background-color:#ceb195!important;
     }
-    .my{
+    /*我的個人資料*/
+    .content{
         flex:auto;
         width:300px;
         margin-left: 0px;
-        margin-top: 40px;
+        margin-top: 60px;
     }
-    .my>.tab-item>#tab>ul>li>a{
+    .myinfo>select{
+        height:40px;
+        width: 50.2%;
+        margin-left: 95px;
+        border-radius: 5px;
+        border:1.5px solid #dad8d8;
+        padding-left: 10px;
+        outline-color:#d9a200;
+        /*移除箭頭樣式*/
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        /*改變右邊箭頭樣式*/
+        background: url("../img/another1.png") no-repeat 95%;
+        background-size: 6%;
+    }
+    .myinfo img{
+        margin-left: 160px;
+    }
+    .photo{
+        position: relative;
+        top: -40px;
+    }
+    .myinfo>#myimg{
+        border:2px solid #d9a200;
+        border-radius: 50%;
+        width: 110px;
+        height:110px;
+        margin: 20px 0px 10px 100px;
+    }
+
+    .myinfo .editphoto{
+        background-color: #fff;
+        border: 1.5px solid #dad8d8;
+        border-radius: 5px;
+        padding: 8px;
+        cursor: pointer;
+        margin-right: 120px;
+        white-space: nowrap;
+        
+    }
+    .myinfo .editphoto>.fa-upload{
         font-size: 20px;
+        margin-right: 10px;
+    }
+    .myinfo input[type="text"],
+    .myinfo input[type="date"],
+    .myinfo input[type="tel"],
+    .myinfo input[type="mail"],
+    .myinfo input[type="password"]{
+        height:40px;
+        width: 50%;
+        margin-left: 100px;
+        border-radius: 5px;
+        border:1.5px solid #dad8d8;
+        padding-left: 10px;
+        outline-color:#d9a200;   
+    }
+    .myinfo input[type="submit"],
+    .myinfo input[type="reset"]{
+        height:40px;
+        width: 20%;
+        position: relative;
+        left:26%;
+        margin:20px 9px;
+        background-color: #fff;
+        border:1.5px solid #dad8d8;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+}
+@media screen and (max-width:840px){
+    /*我的個人資料*/
+    .content{
+        flex:auto;
+        width:300px;
+        margin-right: -130px;
+        margin-top: 60px;
     }
 }
-@media screen and (max-width:739px){
-    
+@media screen and (max-width:710px){
+    /*我的個人資料*/
+    .content{
+        flex:auto;
+        width:300px;
+        margin-left: -80px;
+        margin-right: -200px;
+        margin-top: 60px;
+    }
+}
+@media screen and (max-width:555px){
+    /*我的個人資料*/
+    .content{
+        flex:auto;
+        width:300px;
+        margin-left: -80px;
+        margin-right: -200px;
+        margin-top: 60px;
+    }
+    .myinfo .editphoto{
+        background-color: #fff;
+        border: 1.5px solid #dad8d8;
+        border-radius: 5px;
+        padding: 8px;
+        cursor: pointer;
+        margin-right: 0px;
+        white-space: nowrap;
+        
+    }
+    .myinfo .editphoto>.fa-upload{
+        font-size: 20px;
+        margin-right: 10px;
+    }
 }
 @media screen and (max-width:450px){
     /*分類*/
@@ -2843,11 +3213,204 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
 .ppp2{
     display: none;
 }
-@media screen and (max-width:1200px){
-    
+.ppp3{
+    display: none;
 }
-@media screen and (max-width:800px){
-    
+@media screen and (max-width:1343px){
+    .member>.top{ 
+        display: flex;
+        position: absolute;
+        left: 430px;
+    }
+    .member>.bot{
+        display: flex;
+        position: absolute;
+        top: 500px;
+        left:550px
+    }
+    .school iframe{
+        margin-left: 250px;
+        border-radius: 10px;
+    }
+    .ppp div{
+        position: relative;
+        left: 15%;
+        margin-top: 80px;
+        margin-right: 280px;
+        line-height: 80px;
+    }
+}
+@media screen and (max-width:1200px){
+    .member>.top{ 
+        display: flex;
+        position: absolute;
+        left: 355px;
+    }
+    .member>.bot{
+        display: flex;
+        position: absolute;
+        top: 500px;
+        left:480px
+    }
+    .school iframe{
+        margin-left: 200px;
+        border-radius: 10px;
+    }
+    .ppp div{
+        position: relative;
+        left: 15%;
+        margin-top: 80px;
+        margin-right: 210px;
+        line-height: 80px;
+    }
+}
+@media screen and (max-width:1105px){
+    .member>.top{ 
+        display: flex;
+        position: absolute;
+        left: 300px;
+    }
+    .member>.bot{
+        display: flex;
+        position: absolute;
+        top: 500px;
+        left:400px
+    }
+}
+@media screen and (max-width:991px){
+    .aboutus-content{
+        flex:auto;
+        width:300px;
+        margin-left:0px;
+        margin-top: 50px;
+        position: relative;
+    }
+    .i2{
+        border: none;
+        border-radius: 5px;
+        padding: 0px 15px;
+        margin: 20px 200px 88px 80px;
+        
+    }
+    #logoidea>.ear{
+        font-size: 26px;
+        position: absolute;
+        margin-left: -500px;
+        margin-top: -35px;
+        white-space: nowrap;
+    }
+    .member>.top{ 
+        display: flex;
+        position: absolute;
+        left: 155px;
+    }
+    .member>.bot{
+        display: flex;
+        position: absolute;
+        top: 500px;
+        left:300px
+    }
+    .school{
+        width: 90%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: rgba(238, 238, 238, 0.411);
+        display: flex;
+        margin: -60px 0px 0px 60px;
+        /*border-bottom: 2px solid #d9a200;*/
+    }
+    .school div,
+    .ppp div{
+        margin: 50px 0px 0px 0px;
+        white-space: nowrap;
+    }
+    .school iframe{
+        margin-left: 200px;
+        border-radius: 10px;
+    }
+    .school div{
+        position: relative;
+        left: 15%;
+        margin-top: 80px;
+        line-height: 80px;
+    }
+    .school div>h3{
+        white-space: nowrap;
+        color: #572a2a;
+        margin:0px 0px 0px 80px;
+    }
+    .ppp{
+        width: 90%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: rgba(238, 238, 238, 0.411);
+        display: flex;
+        margin: 0px 0px 30px 60px;
+        display: none;
+    }
+    .ppp iframe{
+        border-radius: 10px;
+    }
+    .ppp div{
+        position: relative;
+        left: 15%;
+        margin-top: 80px;
+        line-height: 80px;
+    }
+    .ppp div>h3{
+        white-space: nowrap;
+        color: #572a2a;
+        margin:0px 0px 0px 80px;
+    }
+    .ppp2{
+        display: none;
+    }
+    .ppp3{
+        width: 90%;
+        border-radius: 10px;
+        background-color: rgba(238, 238, 238, 0.411);
+        display: flex;
+        margin: 10px 0px 30px 60px;
+        white-space: nowrap;
+    }
+    .ppp3 iframe{
+        border-radius: 10px;
+        margin-left: 200px;
+    }
+    .ppp3 div{
+        position: relative;
+        left: 15%;
+        margin-top: 80px;
+        line-height: 80px;
+    }
+    .ppp3 div>h3{
+        white-space: nowrap;
+        color: #572a2a;
+        margin:0px 0px 0px 80px;
+    }
+}
+@media screen and (max-width:885px){
+    .member>.top{ 
+        display: flex;
+        position: absolute;
+        left: 60px;
+    }
+    .member>.bot{
+        display: flex;
+        position: absolute;
+        top: 500px;
+        left:180px
+    }
+}
+@media screen and (max-width:564px){
+    .i2{
+        border: none;
+        border-radius: 5px;
+        padding: 0px 15px;
+        margin: 20px 200px 88px 80px;
+        width: 400px;
+    }
 }
 @media screen and (max-width:450px){
     
@@ -3437,11 +4000,580 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     flex:none;
     width:150px;
 }
-@media screen and (max-width:1200px){
-    
+@media screen and (max-width:1343px){
+    /*小遊戲*/
+    #play>h1{
+        text-align: center;
+        margin-right:80px;
+        color: #572a2a;
+    }
+    .play{
+        flex: none;
+        margin: 5px 0px 0px 100px;
+        border-radius: 5px;
+        padding: 0px 15px;
+        padding-bottom: 50px;
+    }
+    .play>a{
+        color:#fff;
+        background-color: #d9a200;
+        padding:10px 40px;
+        border-radius: 5px;
+        white-space: nowrap;
+        position: relative;
+        left: 41%;
+    }
+    .play>a:hover{
+        background-color: #e6ad03;
+    }
+    .game_top>.backhome>.fa-home{
+        display: none;
+    }
+    .rule{
+        border:2px solid #eee;
+        border-radius:10px;
+        margin-bottom: 40px;
+        padding-left:25px;
+        width:35%;
+        margin-left: 28.5%;
+    }
+    .rule>h3{
+        color: #572a2a;
+        white-space: nowrap;
+    }
+    .game_top>h1{
+        white-space: nowrap;
+    }
+    .playgame{
+        text-align: center;
+        margin: 20px 0px 20px -80px;
+    }
+    .game_top{
+        display: flex;
+        
+    }
+    #timetext{
+        height: 50px;
+        text-align: center;
+        margin:50px 0px 0px 400px;
+        border:none;
+        background-color: transparent;
+        position: absolute;
+        font-size: 28px;
+    }
+
+    .backhome{
+        margin-left: 83%;
+        margin-top: 3%;
+    }
+    .backhome img{
+        width:30px;
+        height:30px;
+    }
+    #radio{
+        margin:30px 0px 30px 375px;
+    }
+    #radio input[type="radio"] {
+        display: none;
+    }
+    #radio input:checked + .button {
+        background: #d9a200; 
+        color: #fff; 
+        cursor: default; 
+    }
+    #radio .button { 
+        margin: 0 5px 15px 0; 
+        padding: 10px 10px; 
+        background: #f7f7f7; 
+        color: #333; 
+        cursor: pointer; 
+    }
+    #radio .round {
+        border-radius: 5px;
+        width:200px;
+        text-align:center;
+        display: inline;
+        margin:10px 100px 0px 0px;
+        line-height: 80px;
+        padding: 10px 40px
+    }
+    #radio .round:hover{
+        background: #d9a200;
+        color:#fff 
+    }
+    #radio>.next{
+        display: none;
+    }
+
+
+    #play6{
+        margin-top: 25px;
+    }
+    .total{
+        display: flex;
+    }
+
+    .backhome1{
+        margin-left: 83%;
+        margin-top: 1%;
+    }
+    .repeat{
+        margin-left: 15px;
+        margin-top: 1%;
+    }
+    .total a>.fa-home{
+        display: none;
+    }
+    .total a>.fa-redo-alt{
+        display: none;
+        
+    }
+    .ranking ul{
+        border: 2px solid #eee;
+        border-radius: 10px;
+        width:40%;
+        display: flex;
+        margin-left: 260px;
+    }
+    .ranking ul li{
+        list-style-type: none;
+        display: inline;
+        flex:none;
+        width:150px;
+    }
 }
-@media screen and (max-width:800px){
-    
+@media screen and (max-width:1200px){
+    /*小遊戲*/
+    #play>h1{
+        text-align: center;
+        margin-right:80px;
+        color: #572a2a;
+    }
+    .play{
+        flex: none;
+        margin: 5px 0px 0px 100px;
+        border-radius: 5px;
+        padding: 0px 15px;
+        padding-bottom: 50px;
+    }
+    .play>a{
+        color:#fff;
+        background-color: #d9a200;
+        padding:10px 40px;
+        border-radius: 5px;
+        white-space: nowrap;
+        position: relative;
+        left: 38%;
+    }
+    .play>a:hover{
+        background-color: #e6ad03;
+    }
+    .game_top>.backhome>.fa-home{
+        display: none;
+    }
+    .rule{
+        border:2px solid #eee;
+        border-radius:10px;
+        margin-bottom: 40px;
+        padding-left:25px;
+        width:45%;
+        margin-left: 23.5%;
+    }
+    .rule>h3{
+        color: #572a2a;
+        white-space: nowrap;
+    }
+    .game_top>h1{
+        white-space: nowrap;
+    }
+    .playgame{
+        text-align: center;
+        margin: 20px 0px 20px -80px;
+    }
+    .game_top{
+        display: flex;
+        
+    }
+    #timetext{
+        height: 50px;
+        text-align: center;
+        margin:50px 0px 0px 400px;
+        border:none;
+        background-color: transparent;
+        position: absolute;
+        font-size: 28px;
+    }
+
+    .backhome{
+        margin-left: 83%;
+        margin-top: 3%;
+    }
+    .backhome img{
+        width:30px;
+        height:30px;
+    }
+    #radio{
+        margin:30px 0px 30px 225px;
+    }
+    #radio input[type="radio"] {
+        display: none;
+    }
+    #radio input:checked + .button {
+        background: #d9a200; 
+        color: #fff; 
+        cursor: default; 
+    }
+    #radio .button { 
+        margin: 0 5px 15px 0; 
+        padding: 10px 10px; 
+        background: #f7f7f7; 
+        color: #333; 
+        cursor: pointer; 
+    }
+    #radio .round {
+        border-radius: 5px;
+        width:200px;
+        text-align:center;
+        display: inline;
+        margin:10px 100px 0px 0px;
+        line-height: 80px;
+        padding: 10px 40px
+    }
+    #radio .round:hover{
+        background: #d9a200;
+        color:#fff 
+    }
+    #radio>.next{
+        display: none;
+    }
+
+
+    #play6{
+        margin-top: 25px;
+        margin-right: 40px;
+        white-space: nowrap;
+        
+    }
+    .total{
+        display: flex;
+    }
+
+    .backhome1{
+        margin-left: 83%;
+        margin-top: 1%;
+    }
+    .repeat{
+        margin-left: 15px;
+        margin-top: 1%;
+    }
+    .total a>.fa-home{
+        display: none;
+    }
+    .total a>.fa-redo-alt{
+        display: none;
+        
+    }
+    .ranking ul{
+        border: 2px solid #eee;
+        border-radius: 10px;
+        width:50%;
+        display: flex;
+        margin-left: 240px;
+    }
+    .ranking ul li{
+        list-style-type: none;
+        display: inline;
+        flex:none;
+        width:150px;
+    }
+}
+@media screen and (max-width:991px){
+    /*小遊戲*/
+    #play>h1{
+        text-align: center;
+        margin-right:80px;
+        color: #572a2a;
+    }
+    .play{
+        flex: none;
+        margin: 5px 0px 0px 100px;
+        border-radius: 5px;
+        padding: 0px 15px;
+        padding-bottom: 50px;
+    }
+    .play>a{
+        color:#fff;
+        background-color: #d9a200;
+        padding:10px 40px;
+        border-radius: 5px;
+        white-space: nowrap;
+        position: relative;
+        left: 37%;
+
+    }
+    .play>a:hover{
+        background-color: #e6ad03;
+    }
+    .game_top>.backhome>.fa-home{
+        display: none;
+    }
+    .rule{
+        border:2px solid #eee;
+        border-radius:10px;
+        margin-bottom: 40px;
+        padding-left:25px;
+        width:50%;
+        margin-left: 21.5%;
+    }
+    .rule>h3{
+        color: #572a2a;
+        white-space: nowrap;
+    }
+    .game_top>h1{
+        white-space: nowrap;
+    }
+    .playgame{
+        text-align: center;
+        margin: 20px 0px 20px -80px;
+    }
+    .game_top{
+        display: flex;
+        
+    }
+    #timetext{
+        height: 50px;
+        text-align: center;
+        margin:50px 0px 0px 400px;
+        border:none;
+        background-color: transparent;
+        position: absolute;
+        font-size: 28px;
+    }
+
+    .backhome{
+        margin-left: 83%;
+        margin-top: 3%;
+    }
+    .backhome img{
+        width:30px;
+        height:30px;
+    }
+    #radio{
+        margin:30px 0px 30px 200px;
+    }
+    #radio input[type="radio"] {
+        display: none;
+    }
+    #radio input:checked + .button {
+        background: #d9a200; 
+        color: #fff; 
+        cursor: default; 
+    }
+    #radio .button { 
+        margin: 0 5px 15px 0; 
+        padding: 10px 10px; 
+        background: #f7f7f7; 
+        color: #333; 
+        cursor: pointer; 
+    }
+    #radio .round {
+        border-radius: 5px;
+        width:200px;
+        text-align:center;
+        display: inline;
+        margin:10px 100px 0px 0px;
+        line-height: 80px;
+        padding: 10px 40px
+    }
+    #radio .round:hover{
+        background: #d9a200;
+        color:#fff 
+    }
+    #radio>.next{
+        display: none;
+    }
+
+
+    #play6{
+        margin-top: 25px;
+        margin-right: 60px;
+    }
+    .total{
+        display: flex;
+    }
+
+    .backhome1{
+        margin-left: 83%;
+        margin-top: 1%;
+    }
+    .repeat{
+        margin-left: 15px;
+        margin-top: 1%;
+    }
+    .total a>.fa-home{
+        display: none;
+    }
+    .total a>.fa-redo-alt{
+        display: none;
+        
+    }
+    .ranking ul{
+        border: 2px solid #eee;
+        border-radius: 10px;
+        width:60%;
+        display: flex;
+        margin-left: 200px;
+    }
+    .ranking ul li{
+        list-style-type: none;
+        display: inline;
+        flex:none;
+        width:150px;
+    }
+}
+@media screen and (max-width:564px){
+    /*小遊戲*/
+    #play>h1{
+        text-align: center;
+        margin-right:80px;
+        color: #572a2a;
+    }
+    .play{
+        flex: none;
+        margin: 5px 0px 0px 100px;
+        border-radius: 5px;
+        padding: 0px 15px;
+        padding-bottom: 50px;
+    }
+    .play>a{
+        color:#fff;
+        background-color: #d9a200;
+        padding:10px 40px;
+        border-radius: 5px;
+        white-space: nowrap;
+        position: relative;
+        left: 26%;
+    }
+    .play>a:hover{
+        background-color: #e6ad03;
+    }
+    .game_top>.backhome>.fa-home{
+        display: none;
+    }
+    .rule{
+        border:2px solid #eee;
+        border-radius:10px;
+        margin-bottom: 40px;
+        padding-left:25px;
+        width:80%;
+        margin-left: 01%;
+    }
+    .rule>h3{
+        color: #572a2a;
+        white-space: nowrap;
+    }
+    .game_top>h1{
+        white-space: nowrap;
+    }
+    .playgame{
+        text-align: center;
+        margin: 20px 0px 20px -80px;
+    }
+    .game_top{
+        display: flex;
+        
+    }
+    #timetext{
+        height: 50px;
+        text-align: center;
+        margin:50px 0px 0px 400px;
+        border:none;
+        background-color: transparent;
+        position: absolute;
+        font-size: 28px;
+    }
+
+    .backhome{
+        margin-left: 70%;
+        margin-top: 3%;
+    }
+    .backhome img{
+        width:30px;
+        height:30px;
+    }
+    #radio{
+        white-space: nowrap;
+        margin:30px 0px 30px -5px;
+    }
+    #radio input[type="radio"] {
+        display: none;
+    }
+    #radio input:checked + .button {
+        background: #d9a200; 
+        color: #fff; 
+        cursor: default; 
+    }
+    #radio .button { 
+        margin: 0 5px 15px 0; 
+        padding: 10px 10px; 
+        background: #f7f7f7; 
+        color: #333; 
+        cursor: pointer; 
+    }
+    #radio .round {
+        border-radius: 5px;
+        width:200px;
+        text-align:center;
+        display: inline;
+        margin:10px 100px 0px 0px;
+        line-height: 80px;
+        padding: 10px 40px
+    }
+    #radio .round:hover{
+        background: #d9a200;
+        color:#fff 
+    }
+    #radio>.next{
+        display: none;
+    }
+
+
+    #play6{
+        margin-top: 25px;
+        margin-right: 150px;
+    }
+    .total{
+        display: flex;
+    }
+
+    .backhome1{
+        margin-left: 83%;
+        margin-top: 1%;
+    }
+    .repeat{
+        margin-left: 15px;
+        margin-top: 1%;
+    }
+    .total a>.fa-home{
+        display: none;
+    }
+    .total a>.fa-redo-alt{
+        display: none;
+        
+    }
+    .ranking ul{
+        border: 2px solid #eee;
+        border-radius: 10px;
+        width:150%;
+        display: flex;
+        margin-left: 0px;
+    }
+    .ranking ul li{
+        list-style-type: none;
+        display: inline;
+        flex:none;
+        width:150px;
+    }
 }
 @media screen and (max-width:450px){
     
