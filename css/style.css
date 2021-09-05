@@ -628,7 +628,7 @@ main>.right{
         padding-top: 12px;
         justify-content: space-evenly;
         position: fixed;
-        top: 552px;
+        top: 630px;
         right: 1px;
         z-index: 1002;
         background-color: #3b1e1e;
@@ -2972,6 +2972,7 @@ button.list-group-item{
         width:300px;
         margin-left: 0px;
         margin-top: 40px;
+        margin-bottom: 600px;
     }
     .my>.tab-item>#tab>ul>li>a{
         font-size: 20px;
