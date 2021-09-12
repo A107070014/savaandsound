@@ -189,6 +189,7 @@
         function logout(){
             FB.logout(function(response){
               setElements(false);
+              document.getElementById("logout").submit();
             });
           }
         </script>
