@@ -448,7 +448,7 @@
       // The ID token you need to pass to your backend:
       var id_token = googleUser.getAuthResponse().id_token;
       console.log("ID Token: " + id_token);
-      document.getElementById("form").submit();
+      /*document.getElementById("form").submit(); 無法跟FB同時一起寫*/
     }
 </script>
 
@@ -490,7 +490,7 @@
                 //抓userID
                 let FB_ID = response["authResponse"]["userID"];
                 console.log("userID:" + FB_ID);
-                /*document.getElementById("form").submit();*/
+                document.getElementById("form").submit();
                
             } else {
                 // user FB取消授權
