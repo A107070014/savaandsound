@@ -432,7 +432,7 @@
 </div>
 <script src="js/pwdeye.js"></script>
 <script src="js/signincheck.js"></script>
-<!--
+
 <script>
     function onSignIn(googleUser) {
       // Useful data for your client-side scripts:
@@ -447,9 +447,10 @@
       // The ID token you need to pass to your backend:
       var id_token = googleUser.getAuthResponse().id_token;
       console.log("ID Token: " + id_token);
+      document.getElementById("form").submit();
     }
 </script>
-
+<!--
 <div>
     Facebook登入：<input type="button"  value="Facebook登入" onclick="FBLogin();" />
 </div>
