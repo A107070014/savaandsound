@@ -330,7 +330,7 @@
                 </div>                  
             </div>   
         </div>
-        
+    </div>    
         
         
         
@@ -448,12 +448,12 @@
       // The ID token you need to pass to your backend:
       var id_token = googleUser.getAuthResponse().id_token;
       console.log("ID Token: " + id_token);
-      /*document.getElementById("form").submit();*/
     }
 </script>
 
-<!--FB帳號登入-->
-<script>
+
+
+  <script>
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '326669805810910',
@@ -480,7 +480,6 @@
          console.log('Logged in and authenticated');
          setElements(true);
          testAPI();
-         document.getElementById("form").submit();
        } else {
          console.log('Not authenticated');
          setElements(false);
@@ -554,12 +553,12 @@
       }
     }
 
-    function logout(){
+    /*function logout(){
       FB.logout(function(response){
         setElements(false);
       });
-    }
-</script>
+    }*+/
+  </script>
 
   <nav class="navbar navbar-default">
     <div class="container">
@@ -782,11 +781,5 @@
         留言區
     </div>
 </div>
-
-
-
-
-
 </body>
-
 </html>
