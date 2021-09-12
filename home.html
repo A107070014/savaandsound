@@ -125,7 +125,7 @@
                 <a id="tool2" class="home" title="首頁" role="button" href="home.html"><i class="fas fa-home"></i></a>
             </div>
             <div>
-                <a href ="post.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
+                <a href ="post_rwd.jsp" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
             </div>
             <div>
                 <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
@@ -169,13 +169,27 @@
                         <a href="" title="募資平台"><li>募資平台</li></a>
                         <a href="" title="設定"><li>設定</li></a>
                         <form action="index.html"class="logout" id="logout">
-                            <button>登出<input type="submit" value="登出" ></button>
+                            <button >登出<input type="submit" value="登出" ></button>
                         </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a id="logout" href="#" onclick="logout()">Logout</a></li>
+                            <fb:login-button
+                              id="fb-btn"
+                              scope="public_profile,email,user_birthday,user_location"
+                              onlogin="checkLoginState();">
+                            </fb:login-button>
+                          </ul>
                     </ul>
                 </div>
             </div>
         </div>
-        
+        <script>
+        function logout(){
+            FB.logout(function(response){
+              setElements(false);
+            });
+          }
+        </script>
     </nav>
     <div class="search-rwd" id="search-rwd">
         <div class="key">
