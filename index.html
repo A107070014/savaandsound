@@ -541,7 +541,7 @@
     }
 
     function testAPI(){
-      FB.api('/me?fields=name,email,birthday,location,picture', function(response){
+      FB.api('/me?fields=name,email,picture', function(response){
         if(response && !response.error){
           //console.log(response);
           buildProfile(response);
@@ -562,8 +562,6 @@
           <li class="list-group-item">Name: ${user.name}</li>
           <li class="list-group-item">User ID: ${user.id}</li>
           <li class="list-group-item">Email: ${user.email}</li>
-          <li class="list-group-item">Birthday: ${user.birthday}</li>
-          <li class="list-group-item">Location: ${user.location.name}</li>
           大頭貼<img src="https://graph.facebook.com/v2.11/${user.id}/picture"></img>
         </ul>
       `;
@@ -628,7 +626,7 @@
           <li><a id="logout" href="#" onclick="logout()">Logout</a></li>
           <fb:login-button
             id="fb-btn"
-            scope="public_profile,email,user_birthday,user_location"
+            scope="public_profile,email"
             onlogin="checkLoginState();">
           </fb:login-button>
         </ul>
