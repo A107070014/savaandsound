@@ -545,7 +545,28 @@
       });
     }
 
-</script>
+    function testAPI(){
+      FB.api('/me?fields=name,email,picture', function(response){
+        if(response && !response.error){
+          //console.log(response);
+          buildProfile(response);
+        }
+
+        FB.api('/me/feed', function(response){
+          if(response && !response.error){
+            buildFeed(response);
+          }
+        });
+      })
+    }
+
+    
+    function logout(){
+      FB.logout(function(response){
+        setElements(false);
+      });
+    }
+  </script>
 
   <nav class="navbar navbar-default">
     <div class="container">
