@@ -393,7 +393,7 @@
         <span class="or">或</span>
         <hr class="Divider2">
     </div>
-    <div class="use-google-login">
+    <!--<div class="use-google-login">
         <button class="google-account-login-button" type="button">
             <span class="TcNIhA">
                 <span aria-hidden="true" class="NA_Img dkWypw">
@@ -424,15 +424,16 @@
                     </svg>
                 </span>
             </span>
-            <span class="use-facebook-acount-login">
-                <fb:login-button
-                    id="fb-btn"
-                    scope="public_profile,email"
-                    onlogin="checkLoginState();">
-            </fb:login-button>
-            </span>
+            <span class="use-facebook-acount-login">使用Facebook登入</span>
         </button>
-    </div>
+    </div>-->
+    <fb:login-button
+        id="fb-btn"
+        scope="public_profile,email"
+        onlogin="checkLoginState();"
+        size="xlarge">
+        使用Facebook登入
+    </fb:login-button>
     <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     </form>
 </div>

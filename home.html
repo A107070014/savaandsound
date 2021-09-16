@@ -171,6 +171,7 @@
                         <form action="index.html"class="logout" id="logout">
                             <button >登出<input type="submit" value="登出" ></button>
                         </form>
+                        <a id="logout" href="rwd/index.html" onclick="logout()">Logout</a>
                     </ul>
                 </div>
             </div>
@@ -191,6 +192,110 @@
     </div>
   </nav>
 
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '326669805810910',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+
+      FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+     function statusChangeCallback(response){
+       if(response.status === 'connected'){
+         console.log('Logged in and authenticated');
+         setElements(true);
+         testAPI();
+         document.getElementById("form").submit();
+       } else {
+         console.log('Not authenticated');
+         setElements(false);
+       }
+     }
+
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
+
+    function testAPI(){
+      FB.api('/me?fields=name,email,picture', function(response){
+        if(response && !response.error){
+          //console.log(response);
+          buildProfile(response);
+        }
+
+        FB.api('/me/feed', function(response){
+          if(response && !response.error){
+            buildFeed(response);
+          }
+        });
+      })
+    }
+
+    function buildProfile(user){
+      let profile = `
+        <h3>${user.name}</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Name: ${user.name}</li>
+          <li class="list-group-item">User ID: ${user.id}</li>
+          <li class="list-group-item">Email: ${user.email}</li>
+          大頭貼<img src="https://graph.facebook.com/v2.11/${user.id}/picture"></img>
+        </ul>
+      `;
+
+      document.getElementById('profile').innerHTML = profile;
+    }
+
+    function buildFeed(feed){
+      let output = '<h3>Latest Posts</h3>';
+      for(let i in feed.data){
+        if(feed.data[i].message){
+          output += `
+            <div class="well">
+              ${feed.data[i].message} <span>${feed.data[i].created_time}</span>
+            </div>
+          `;
+        }
+      }
+
+      document.getElementById('feed').innerHTML = output;
+    }
+
+    function setElements(isLoggedIn){
+      if(isLoggedIn){
+        document.getElementById('logout').style.display = 'block';
+        document.getElementById('profile').style.display = 'block';
+        document.getElementById('feed').style.display = 'block';
+        document.getElementById('fb-btn').style.display = 'none';
+      } else {
+        document.getElementById('logout').style.display = 'none';
+        document.getElementById('profile').style.display = 'none';
+        document.getElementById('feed').style.display = 'none';
+        document.getElementById('fb-btn').style.display = 'block';
+      }
+    }
+
+    function logout(){
+      FB.logout(function(response){
+        setElements(false);
+      });
+    }
+  </script>
     <!--分類欄-->
     <div class="row">
         <div class="list-group col-md-4 col-xs-4 
