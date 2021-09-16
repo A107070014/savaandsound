@@ -1108,7 +1108,7 @@ span ~ #tab > div:first-of-type,
     margin:15px;
 }
 #profile, #logout, #feed{
-    display:none;
+   
 }
 .Separate{
     display:flex;
