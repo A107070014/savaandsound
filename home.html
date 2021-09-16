@@ -115,8 +115,9 @@
                         <a href="" title="設定"><li>設定</li></a>
                         <form action="index.html" class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
-                            <a id="logout" href="rwd/index.html" onclick="logout()">Logout</a>
+                            
                         </form>
+                        <a id="logout" href="rwd/index.html" onclick="logout()">Logout</a>
                     </ul>
                 </div>
             </div>
@@ -294,7 +295,7 @@
     function logout(){
       FB.logout(function(response){
         setElements(false);
-        document.getElementById("logout").submit();
+        
       });
     }
   </script>
