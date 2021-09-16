@@ -423,9 +423,11 @@
                 </span>
             </span>
             <span class="use-facebook-acount-login">
-                <input type="button"  value="Facebook登入" id="fb-btn"
-                scope="public_profile,email"
-                onlogin="checkLoginState();"> />
+                <fb:login-button
+            id="fb-btn"
+            scope="public_profile,email"
+            onlogin="checkLoginState();">
+          </fb:login-button>
             </span>
         </button>
     </div>
