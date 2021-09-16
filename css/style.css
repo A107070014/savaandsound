@@ -1107,8 +1107,8 @@ span ~ #tab > div:first-of-type,
 #fb-btn{
     margin:15px;
 }
-#profile, #logout, #feed{
-   
+.container{
+    display: none;
 }
 .Separate{
     display:flex;
