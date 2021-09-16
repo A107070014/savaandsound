@@ -560,7 +560,49 @@
       })
     }
 
-    
+    function buildProfile(user){
+      let profile = `
+        <h3>${user.name}</h3>
+        <ul class="list-group">
+          <li class="list-group-item">Name: ${user.name}</li>
+          <li class="list-group-item">User ID: ${user.id}</li>
+          <li class="list-group-item">Email: ${user.email}</li>
+          大頭貼<img src="https://graph.facebook.com/v2.11/${user.id}/picture"></img>
+        </ul>
+      `;
+
+      document.getElementById('profile').innerHTML = profile;
+    }
+
+    function buildFeed(feed){
+      let output = '<h3>Latest Posts</h3>';
+      for(let i in feed.data){
+        if(feed.data[i].message){
+          output += `
+            <div class="well">
+              ${feed.data[i].message} <span>${feed.data[i].created_time}</span>
+            </div>
+          `;
+        }
+      }
+
+      document.getElementById('feed').innerHTML = output;
+    }
+
+    function setElements(isLoggedIn){
+      if(isLoggedIn){
+        document.getElementById('logout').style.display = 'block';
+        document.getElementById('profile').style.display = 'block';
+        document.getElementById('feed').style.display = 'block';
+        document.getElementById('fb-btn').style.display = 'none';
+      } else {
+        document.getElementById('logout').style.display = 'none';
+        document.getElementById('profile').style.display = 'none';
+        document.getElementById('feed').style.display = 'none';
+        document.getElementById('fb-btn').style.display = 'block';
+      }
+    }
+
     function logout(){
       FB.logout(function(response){
         setElements(false);
