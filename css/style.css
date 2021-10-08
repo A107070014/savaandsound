@@ -902,8 +902,11 @@ main>.right{
     padding-top: 10px;
     white-space: nowrap;
 }
+.look{
+    color:#000;
+}
 .tab-content-1 table {
-    width: 70%;
+    width: 100%;
     border-spacing: 0px;
     text-align: left;
 }
@@ -913,9 +916,28 @@ main>.right{
 .tab-content-1 table td{
     width: 50px;
     padding: 5px 0px 5px 30px ;
-}    
-.tab-content-1 table tr:hover{
-    background-color: #eee;
+}
+.look1{
+    position: relative;
+    right: 7px;
+}
+.look2{
+    position: relative;
+    left: 90px;
+}
+.look3{
+    position: relative;
+    left: 210px;
+}
+.look4{
+    position: relative;
+    left: 105px;
+}             
+.tab-content-1 #look:hover{
+    background-color: rgba(238, 238, 238, 0.445);
+    color: #572a2a;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 
@@ -1156,7 +1178,18 @@ span ~ #tab > div:first-of-type,
     top: 196px;
     right: 45px;
 }
-
+#eyes3{
+    width: 18px;
+    position: absolute;
+    top: 226px;
+    right: 45px;
+}
+#eyes4{
+    width: 18px;
+    position: absolute;
+    top: 310px;
+    right: 45px;
+}
 .fa-lock{
     font-size: 25px;
     position: relative;
@@ -1221,7 +1254,7 @@ span ~ #tab > div:first-of-type,
 }
 
 
-/*帳號密碼錯誤提示語*/
+/*登入帳號密碼錯誤提示語*/
 .b4>#password{
     margin-top: -5px;
 }
@@ -1280,6 +1313,59 @@ span ~ #tab > div:first-of-type,
 	visibility: visible;
 }
 
+/*註冊帳號密碼錯誤提示語*/
+
+.b5.success input{
+	border-color: #2ecc71;
+}
+
+.b5.error input{
+	border-color: #e74c3c;
+}
+/*
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.b4.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.b4.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+*/
+.b5>.error1{
+    color: #e74c3c;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.b5>.error2 {
+	color: #e74c3c;
+	position: relative;
+	bottom: 0;
+	left: 10;
+	visibility: hidden;
+}
+.b5>.error3{
+    color: #e74c3c;
+	position: relative;
+	bottom: 0;
+	left: 10;
+	visibility: hidden;
+}
+.b5.error small{
+	visibility: visible;
+}
+
 
 /*忘記密碼*/
 .close{
@@ -1333,10 +1419,13 @@ span ~ #tab > div:first-of-type,
     color:#fff;
     font-weight: bold;
     font-size:18px;
-    margin-top: -50px;
+    margin-top: 20px;
 }
 .c12 input[type="submit"]:hover{
     background-color: #e6ad03;
+}
+.c16{
+    margin-bottom: 5px;
 }
 .c18{
     width: 100%;
@@ -1345,7 +1434,6 @@ span ~ #tab > div:first-of-type,
     border:1.5px solid #eee;
     padding-left: 50px;
     outline-color:#d9a200;
-    margin-bottom:20px;
 }
 .c18:hover{
     border:1.5px solid #d9a200;
@@ -1373,32 +1461,16 @@ span ~ #tab > div:first-of-type,
 .c22{
     font-size: 12px;
 }
-/*重設密碼*/
-.reset{
-  position: fixed;
-  top:80px;
-  left:45%;
-  transform:translate(-120px,0px);
-  width:400px;
-  height: 35em;
-  padding:10px;
-  border:1px solid #000;
-  border-radius: 10px;
-  background-color: #fff;
-  display:none;
-  padding:30px;
-  z-index:1002;
-}
 #eyes1{
     width: 18px;
     position: absolute;
-    top: 146px;
+    top: 232px;
     right: 45px;
 }
 #eyes2{
     width: 18px;
     position: absolute;
-    top: 213px;
+    top: 323px;
     right: 45px;
 }
 
@@ -1737,7 +1809,7 @@ span ~ #tab > div:first-of-type,
     width:600px;
     padding:30px;
     height:100%;
-    background-color: rgb(243, 237, 237);
+    background-color: rgb(255, 255, 255);
     display:none;
     z-index:1002;
     overflow-y: auto;
@@ -1755,19 +1827,27 @@ span ~ #tab > div:first-of-type,
 .story>.s1>div{
     margin-left:15px;
 }
-#s{
+#s,#s2{
     margin-top:20px ;
 }
+
 .s1>a{
     color: #d9a200;
 }
+.s3{
+    z-index: 1002;
+}
+#s3{
+    border: 1px solid #ceb195;
+    width: 50px;
+    padding: 7px;
+    border-radius: 5px;
+}
 .s4{
     display:flex;
-    position: fixed;
-    top: 90%;
-    border-top: 1px solid #000;
-    width: 538px;
-    padding: 10px 0px 0px 0px;
+    width: 525px;
+    padding: 0px 0px 10px 0px;
+    margin-bottom: 5px;
 }
 .s4>div{
     margin-right:230px;
@@ -1800,6 +1880,110 @@ span ~ #tab > div:first-of-type,
 }
 .s6>.fa-exclamation-circle:hover{
     color: #3b1e1e;
+}
+.ss{
+    margin-bottom: 5px;
+    margin-top: 40px;
+}
+.sss{
+    background-color: rgba(238, 238, 238, 0.356);
+    border-radius: 5px;
+    padding: 0px  10px 1px 10px;
+}
+.s7{
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+.s8{
+    display: flex;
+    margin-top: 10px;
+}
+.s8>.img{
+    position: relative;
+    width: 45px;
+    margin: 20px 0px 0px 0px;
+    
+}
+.s8>ul>li>.s11{
+    white-space: nowrap;
+    font-weight: bold;
+    position: relative;
+    top: 17px;
+    left: 8px;
+}
+.s8>.img img {
+    border-radius: 50%;
+    object-fit: cover;
+    height:45px;
+    width: inherit;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    bottom: 45%;
+    border: 2px solid #d9a200;
+}
+.s8>ul{
+    margin-right: 0px;
+    position: relative;
+    right: 35px;
+}
+.s8>ul>li{
+    list-style-type: none;
+}
+.s9{
+    font-size: 8px;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+.s10{
+    display: block;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.say{
+    padding: 10px 10px;
+    border: 1px solid #ceb195;
+    border-radius: 5px;
+    outline-color:#ceb195;
+    width: 100%;
+    height: 3.5em;
+}
+#s2>button{
+    background-color: transparent;
+    border: none;
+}
+#s2>button>input[type="submit"]{
+    display: none;
+}
+#s2>button>i{
+    font-size: 35px;
+    color: #ceb195;
+    position: relative;
+    left: 490px;
+    bottom: 42px;
+    cursor: pointer;
+}
+#sendMessage{
+    margin-bottom: -35px;
+}
+#btn{
+    width: 20%;
+    height: 3.5em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+#sendMessage>button>i{
+    font-size: 35px;
+    color: #ceb195;
+    position: relative;
+    left: 450px;
+    bottom: 46px;
+}
+.p{
+    border-top: 1px solid #eee;
+    margin-top: 5px;
 }
 @media screen and (max-width:1200px){
     
@@ -1981,8 +2165,8 @@ textarea:hover{
 .file{
     text-align: right;
     position: relative;
-    bottom: 50px;
-    right: 15px;
+    bottom: 30px;
+    right: 278px;
     margin-bottom: -50px;
 }
 .article>p{
@@ -1995,14 +2179,49 @@ textarea:hover{
     border-radius: 5px;
     background: #ceb195;
     color:#3b1e1e;
-    padding:5px 251px;
+    padding:6px 246px;
     font-weight:bold;
     cursor: pointer;
+    white-space: nowrap;
 }
 .publish:hover{
     background: #ceb195dc;
 }
 
+.file2{
+    margin-top: 150px;
+    margin-bottom: 50px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 0px 0px 30px 30px;
+}
+.file2>h2{
+    text-align: center;
+    margin-bottom: 65px;
+}
+#file>.article1>#list{
+    margin-right: 255px;
+}
+#file>.article1>img{
+    display: block;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.file2>#file>.article1>.file2{
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    
+}
+.file2>#file>.article1>.file2>label{
+    margin-right: 15px;
+}
+.file2>#file>.article1>div>.publish{
+    margin-right: 55px;
+    padding:6px 235px;
+
+}
 /*我的聲跡*/
 .phone{
     display: none;
@@ -2114,8 +2333,6 @@ textarea:hover{
 }
 
 .myinfo .editphoto{
-    background-color: #fff;
-    border: 1.5px solid #dad8d8;
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
@@ -2124,6 +2341,7 @@ textarea:hover{
     right:444px;
     white-space: nowrap;
 }
+
 .myinfo .editphoto>.fa-upload{
     font-size: 20px;
     margin-right: 10px;
@@ -2180,10 +2398,12 @@ textarea:hover{
 .myinfo .gender{
     margin-left: 15px;
 }
-.myinfo span:hover,
-.myinfo .editphoto:hover{
+.myinfo span:hover{
     background-color: #d9a200;
     color: #fff;  
+}
+.myinfo .editphoto:hover{
+    color:#d9a200;
 }
 .editpwd{
     position: relative;
@@ -2192,6 +2412,15 @@ textarea:hover{
 #editpwd{
     position: relative;
     right:32px;
+}
+#i2{
+    border: 2px solid #eee;
+    border-radius: 10px;
+    width: 60%;
+    padding-left: 50px;
+}
+#i2>div{
+    display: flex;
 }
 .center{
     margin-bottom: 10px; 
@@ -2245,7 +2474,6 @@ textarea:hover{
     width:300px;
     margin-left: 270px;
     margin-top: 50px;
-    
 }
 
 .row:after,.row:before{

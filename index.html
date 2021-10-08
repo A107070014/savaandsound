@@ -703,64 +703,64 @@
 <script src="js/resetpwdeye2.js"></script>
 <!--註冊-->
 <div id="d1" class="d1">
-  <div class="close">
-    <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='none'">
-        <img src="img/close1.png" width="15px" height="15px" 
-            onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
-    </a>
-  </div>
-  <div class="c21">
-    <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
-        class="c22" draggable="false" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
-    </a>
-  </div> 
-  <div class="d2">
-    <div class="d3">
-      <div class="d4" aria-live="polite" role="region">
-        <div class="d5" aria-hidden="false">
-          <div class="d6">
-            <div class="d7">
-              <div class="d9">
-                <h1 class="d10">註冊</h1>
+    <div class="close">
+      <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='none'">
+          <img src="img/close1.png" width="15px" height="15px" 
+              onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+      </a>
+    </div>
+    <div class="c21">
+      <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
+          class="c22" draggable="false" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
+      </a>
+    </div> 
+    <div class="d2">
+      <div class="d3">
+        <div class="d4" aria-live="polite" role="region">
+          <div class="d5" aria-hidden="false">
+            <div class="d6">
+              <div class="d7">
+                <div class="d9">
+                  <h1 class="d10">註冊</h1>
+                </div>
               </div>
-            </div>
-            <div class="b1">
-                <form id="form2"  name="login" method="post" class="b2" aria-labelledby="b3">
-                    <div class="b5">
-                        <i class="far fa-envelope"></i>
-                        <input id="email2" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
-                        <small class="error1">Error message</small>
-                    </div>
-                    <div class="b5">
-                        <i class="fas fa-lock"></i>
-                        <input id="password2" class="b11" type="password" autocomplete="current-password"  placeholder="請輸入密碼" name="password" aria-required="true" value="" >
-                        <small class="error2">Error message</small>
-                        <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes3"></label>
-                    </div>
-                    <div class="b5">
-                        <i class="fas fa-lock"></i>
-                        <input id="password3" class="b11" type="password" autocomplete="current-password"  placeholder="請再次輸入密碼" name="password" aria-required="true" value="" >
-                        <small class="error2">Error message</small>
-                        <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes4"></label>
-                    </div>
-                    <script src="js/signuppwdeye1.js"></script>
-                    <script src="js/signuppwdeye2.js"></script>
-                    <input type="submit"  value="註冊" class="submit" >
-                    <div class="d23">
-                        <p class="d24">已經註冊了嗎？
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
-                            class="d25" draggable="false" style="cursor: pointer;">立即登入
-                        </a>
-                    </p>
-                    </div>
-                </form>
-                <script src="js/signupcheck.js"></script>
-            </div>       
+              <div class="b1">
+                  <form id="form2" action="signup.jsp" name="login" method="post" class="b2" aria-labelledby="b3">
+                      <div class="b5">
+                          <i class="far fa-envelope"></i>
+                          <input id="email2" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
+                          <small class="error1">Error message</small>
+                      </div>
+                      <div class="b5">
+                          <i class="fas fa-lock"></i>
+                          <input id="password2" class="b11" type="password" autocomplete="current-password"  placeholder="請輸入密碼" name="password" aria-required="true" value="" >
+                          <small class="error2">Error message</small>
+                          <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes3"></label>
+                      </div>
+                      <div class="b5">
+                          <i class="fas fa-lock"></i>
+                          <input id="password3" class="b11" type="password" autocomplete="current-password"  placeholder="請再次輸入密碼" name="password2" aria-required="true" value="" >
+                          <small class="error2">Error message</small>
+                          <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes4"></label>
+                      </div>
+                      <script src="js/signuppwdeye1.js"></script>
+                      <script src="js/signuppwdeye2.js"></script>
+                      <input type="submit"  value="註冊" class="submit" >
+                      <div class="d23">
+                          <p class="d24">已經註冊了嗎？
+                          <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
+                              class="d25" draggable="false" style="cursor: pointer;">立即登入
+                          </a>
+                      </p>
+                      </div>
+                  </form>
+                  <script src="js/signupcheck.js"></script>
+              </div>       
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 <!--查看聲音故事-->
 <div class="story" id="story">
     <div class="close">    

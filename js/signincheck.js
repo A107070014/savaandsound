@@ -1,12 +1,13 @@
         
         
-        const form = document.getElementById('form');
-		const email = document.getElementById('email');
-		const password = document.getElementById('password');
+        const form2 = document.getElementById('form2');
+		const email2 = document.getElementById('email2');
+		const password2 = document.getElementById('password2');
+		const password3 = document.getElementById('password3');
 		
 		
 		
-		form.addEventListener('submit', e => {
+		form2.addEventListener('submit', e => {
 			e.preventDefault();
 			
 			checkInputs();
@@ -15,25 +16,26 @@
 		function checkInputs() {
 			// trim to remove the whitespaces
 			
-			const emailValue = email.value.trim();
-			const passwordValue = password.value.trim();
+			const emailValue = email2.value.trim();
+			const passwordValue = password2.value.trim();
+			const password = password3.value.trim();
 			
 			if(emailValue === '') {
-				setErrorFor(email, '請輸入電子信箱');
+				setErrorFor(email2, '請輸入電子信箱');
 			} else if (!isEmail(emailValue)) {
-				setErrorFor(email, '請輸入含有 @ 的電子信箱格式');
+				setErrorFor(email2, '請輸入含有 @ 的電子信箱格式');
 			} else {
-				setSuccessFor(email);
+				setSuccessFor(email2);
 			}
 			
 			if(passwordValue === '') {
-				setErrorFor(password, '請輸入密碼');
+				setErrorFor(password2, '請輸入密碼');
 			} else {
-				setSuccessFor(password);
+				setSuccessFor(password2);
 			}
 			
 			if(passwordValue != '' && emailValue != '') {
-               document.getElementById("form").submit();
+               document.getElementById("form2").submit();
 			}
 		}
 		
