@@ -38,4 +38,22 @@
             $("#tab6").addClass("active");
             $("#tab-item6").show();
         });
+        $("#tab7").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab7").addClass("active");
+            $("#tab-item7").show();
+        });
+        $("#tab8").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab8").addClass("active");
+            $("#tab-item8").show();
+        });
+        $("#tab9").click(function () {
+            $(".tab-item").hide();
+            $(".tab").removeClass("active");
+            $("#tab9").addClass("active");
+            $("#tab-item9").show();
+        });
     });

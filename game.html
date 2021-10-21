@@ -15,7 +15,6 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/427ec671a2.js" crossorigin="anonymous"></script>
 <script src="js/story.js"></script>
-<script src="js/game3.js"></script><!--劉-->
 <title>留聲跡</title>
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
@@ -31,15 +30,25 @@
     <div id="fade" class="black_overlay" ></div>
     <!--標題列-->
     <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
-        
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+            aria-controls="offcanvasExample"
+          >
+            <span ><i class="fas fa-bars"  data-bs-target="#sidebar"></i></span>
+          </button>
+        </div> 
         <div class="logo">
             <div class="picture">
-                <a title="留聲跡" href="home.html">
+                <a title="留聲跡" href="home.jsp">
                     <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                 </a>
             </div>
             <div class="logoname">
-                <a title="留聲跡" href="home.html">
+                <a title="留聲跡" href="home.jsp">
                     <span class="logoname">留聲跡</span>
                 </a>
             </div>   
@@ -59,7 +68,7 @@
                 class="searchbutton4" style="cursor: pointer;"><i class="fas fa-search"></i>
                 </a>
             </div>
-        </div>
+        </div> 
         <div class="tool">    
             <div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
@@ -67,9 +76,9 @@
                 </a>
             </div>
             <div>
-                <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
+                <a id="tool" class="game" title="小遊戲" role="button" href="game.jsp"><i class="fas fa-gamepad"></i></a>
             </div>
-            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+            <!--<div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="inform-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
                         <a id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
@@ -85,9 +94,9 @@
                                 <p>更早之前訊息</p>
                         </ul>
                 </div>
-            </div>
+            </div>-->
             <div >
-                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.jsp"><i class="fas fa-user"></i></a>
             </div>
             
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
@@ -98,11 +107,11 @@
                     </span>
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
-                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                        <a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>
-                        <form action="index.html"class="logout" id="logout">
+                        <a href="other_aboutus.jsp" title="關於我們"><li>關於我們</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="" title="設定" ><li>設定</li></a>-->
+                        <form action="index.jsp"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
                     </ul>
@@ -111,19 +120,38 @@
         </div>
         <div class="tool2">
             <div>
-                <a id="tool2" class="home" title="首頁" role="button" href="home.html"><i class="fas fa-home"></i></a>
+                <a id="tool2" class="home" title="首頁" role="button" href="home.jsp"><i class="fas fa-home"></i></a>
             </div>
             <div>
-                <a href ="post.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
+                <a href ="post_rwd.jsp" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
             </div>
             <div>
-                <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
+                <a id="tool2" class="game" title="小遊戲" role="button" href="game.jsp"><i class="fas fa-gamepad"></i></a>
             </div>
+            <!--
+            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+                <div class="inform-menu-style dropdown-menu">
+                    <span tabindex="0" onclick="return true">
+                        <a id="tool2" class="inform" title="通知" role="button" style="cursor: pointer;">
+                            <i class="fas fa-bell"></i></a>
+                    </span>
+                    <div tabindex="0" onclick="return true"></div>
+                        <ul>
+                            <li><a href="#" onclick="sampleMenu(this)">本週</a></li>
+                                <p>本週訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">本月</a></li>
+                                <p>本月訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">更早之前</a></li>
+                                <p>更早之前訊息</p>
+                        </ul>
+                </div>
+            </div>
+            -->
+            <!--<div >
+                <a href ="inform.jsp" id="tool2" class="inform" title="通知" role="button"><i class="fas fa-bell"></i></a>
+            </div>-->
             <div >
-                <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
-            </div>
-            <div>
-                <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
+                <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.jsp"><i class="fas fa-user"></i></a>
             </div>
             
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
@@ -134,17 +162,17 @@
                     </span>
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
-                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                        <a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>
-                        <form action="index.html"class="logout" id="logout">
+                        <a href="other_aboutus.jsp" title="關於我們"><li>關於我們</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="set.jsp" title="設定"><li>設定</li></a>-->
+                        <form action="index.jsp"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>   
     </nav>
 
     <!--遊戲-->
@@ -156,10 +184,12 @@
                     <h1>猜聲小遊戲</h1>
                     <div class="rule">
                         <h3>遊戲規則</h3>
-                        <p>...</p>
+                        <p>這是一款屬於聲音聯想的辨聲遊戲，考驗玩家的聲音聯想反應能力。</p>
+                        <p>猜聲小遊戲共五題，每題5分，遊戲內容為玩家藉由聽取播放的聲音，猜該聲音為何，
+                            並在四個選項中選出正確答案。</p>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play1').style.display='block';document.getElementById('play').style.display='none';"                  
-                        class="start" style="cursor: pointer;">開始遊戲
+                     class="start" style="cursor: pointer;">開始遊戲
                     </a>
                     
                 </div>
@@ -175,23 +205,24 @@
                                 class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
                     </div>
                     <div class="playgame">
-                        <audio controls>
-                            <source src="music/baseball.mp3" type="audio/mp3">
+                        <audio controls id="Music">
+                            <source src="music/陶笛.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
-                    <div id="radio" >
-                        <label><input type="radio" name="answer1" value="5"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="answer1" value="0"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="answer1" value="0"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="answer1" value="0"><span class="round button">聲音四</span></label>
+                    <div id="radio">
+                        <label><input type="radio" name="answer1" value="5"><span class="round button">陶笛</span></label>
+                        <label><input type="radio" name="answer1" value="0"><span class="round button">直笛</span></label><br>
+                        <label><input type="radio" name="answer1" value="0"><span class="round button">排笛</span></label>
+                        <label><input type="radio" name="answer1" value="0"><span class="round2 button">中音笛</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play1').style.display='none';"
-                            class="next" style="cursor: pointer;">下一題
+                        id="rwdstop" class="next" style="cursor: pointer;">
                         </a>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play1').style.display='none';"
-                            class="" style="cursor: pointer;">下一題
+                         id="stop" class="" style="cursor: pointer;">下一題 
                     </a>
+                   
                 </div>
                 <div id="play2" class="play" style="display:none">
                     <div class="game_top">
@@ -206,22 +237,22 @@
                     </div>
                     
                     <div class="playgame">
-                        <audio controls>
-                            <source src="music/clock.m4a" type="audio/m4a">
+                        <audio controls id="Music2">
+                            <source src="music/抽油煙機.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio" class ="question">
-                        <label><input type="radio" name="answer2" value="0"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="answer2" value="5"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="answer2" value="0"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="answer2" value="0"><span class="round button">聲音四</span></label>
+                        <label><input type="radio" name="answer2" value="0"><span class="round3 button">吹風機</span></label>
+                        <label><input type="radio" name="answer2" value="5"><span class="round3 button">抽油煙機</span></label><br>
+                        <label><input type="radio" name="answer2" value="0"><span class="round3 button">電風扇</span></label>
+                        <label><input type="radio" name="answer2" value="0"><span class="round3 button">扇子搧風</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play2').style.display='none';"
-                            class="next" style="cursor: pointer;">下一題
+                        id="rwdstop2" class="next" style="cursor: pointer;">下一題
                         </a>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play2').style.display='none';"
-                            class="" style="cursor: pointer;">下一題
+                         id="stop2" class="" style="cursor: pointer;">下一題
                     </a>
                 </div>
                 <div id="play3" class="play" style="display:none">
@@ -237,22 +268,24 @@
                     </div>
                     
                     <div class="playgame">
-                        <audio controls>
-                            <source src="music/drill.mp3" type="audio/mp3">
+                        <audio controls id="Music3">
+                            <source src="music/綠線捷運聲.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio" class ="question">
-                        <label><input type="radio" name="answer3" value="0"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="answer3" value="0"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="answer3" value="5"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="answer3" value="0"><span class="round button">聲音四</span></label>
+                        <label><input type="radio" name="answer3" value="0"><span class="round4 button">淡水信義線</span></label>
+                        <label><input type="radio" name="answer3" value="0"><span class="round4 button">中和新蘆線</span>
+                        </label><br>
+                        <label><input type="radio" name="answer3" value="5"><span class="round4 button"> 松山新店線</span>
+                        </label>
+                        <label><input type="radio" name="answer3" value="0"><span class="round5 button">板南線</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play3').style.display='none';"
-                            class="next" style="cursor: pointer;">下一題
+                        id="rwdstop3"   class="next" style="cursor: pointer;">下一題
                         </a>                        
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play3').style.display='none';"
-                            class="" style="cursor: pointer;">下一題
+                    id="stop3" class="" style="cursor: pointer;">下一題
                     </a>
                 </div>
                 <div id="play4" class="play" style="display:none">
@@ -268,23 +301,23 @@
                     </div>
                     
                     <div class="playgame">
-                        <audio controls>
-                            <source src="music/TV.m4a" type="audio/m4a">
+                        <audio controls id="Music4">
+                            <source src="music/XP開機.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio" class ="question">
-                        <label><input type="radio" name="answer4" value="0"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="answer4" value="0"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="answer4" value="0"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="answer4" value="5"><span class="round button">聲音四</span></label>
+                        <label><input type="radio" name="answer4" value="0"><span class="round6 button">Windows 10開機聲</span></label>
+                        <label><input type="radio" name="answer4" value="0"><span class="round7 button">MAC開機聲</span></label><br>
+                        <label><input type="radio" name="answer4" value="0"><span class="round8 button">Windows 7開機聲</span></label>
+                        <label><input type="radio" name="answer4" value="5"><span class="round9 button">Windows XP 開機聲</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play4').style.display='none';"
-                            class="next" style="cursor: pointer;">下一題
+                        id="rwdstop4" class="next" style="cursor: pointer;">下一題
                         </a>                      
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play4').style.display='none';"
-                            class="" style="cursor: pointer;">下一題
-                        </a>
+                        id="stop4" class="" style="cursor: pointer;">下一題
+                    </a>
                 </div>
                 <div id="play5" class="play" style="display:none">
                     <div class="game_top">
@@ -297,32 +330,29 @@
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play5').style.display='none';"
                                 class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
                     </div>
-                    
                     <div class="playgame">
-                        <audio controls>
-                            <source src="music/window.mp3" type="audio/mp3">
+                        <audio controls id="Music5">
+                            <source src="music/iPhone預設鈴聲.mp3" type="audio/mp3">
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
                     <div id="radio" class ="question">
-                        <label><input type="radio" name="answer5" value="5"><span class="round button">聲音一</span></label>
-                        <label><input type="radio" name="answer5" value="0"><span class="round button">聲音二</span></label><br>
-                        <label><input type="radio" name="answer5" value="0"><span class="round button">聲音三</span></label>
-                        <label><input type="radio" name="answer5" value="0"><span class="round button">聲音四</span></label>
+                        <label><input type="radio" name="answer5" value="5"><span class="round10 button">APPLE 預設鈴聲</span></label>
+                        <label><input type="radio" name="answer5" value="0"><span class="round11 button">SAMSUNG 預設鈴聲</span></label><br>
+                        <label><input type="radio" name="answer5" value="0"><span class="round12 button">HTC 預設鈴聲</span></label>
+                        <label><input type="radio" name="answer5" value="0"><span class="round13 button">OPPO 預設鈴聲</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play6').style.display='block';document.getElementById('play5').style.display='none';"
-                            class="next" style="cursor: pointer;">下一題
+                        id="rwdstop5" class="next" style="cursor: pointer;">下一題
                         </a>
                     </div>
-                    <a href = "javascript:void(0)" onclick = "document.getElementById('play6').style.display='block';document.getElementById('play5').style.display='none';"
-                            class="" style="cursor: pointer;">結束遊戲
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play6').style.display='block';document.getElementById('play5').style.display='none';coreCount();"
+                        id="stop5"  class="" style="cursor: pointer;">結束遊戲
                     </a>
-                    <button type="button" onclick="coreCount()" >Cores</button>
+                    <!--<button type="button" onclick="coreCount()">Cores</button>-->
                 </div>
                 
                 <div id="play6" class="play" style="display:none">
-                    
                     <div class="total">
-                        <h2>花費時間</h2>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play6').style.display='none';"
                             class="backhome1" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
@@ -338,8 +368,12 @@
                                 class="" style="cursor: pointer;"><i class="fas fa-home"></i></a>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play1').style.display='block';document.getElementById('play6').style.display='none';"
                                 class="" style="cursor: pointer;"><i class="fas fa-redo-alt"></i></a>
+                    </div>
+                    <div class="score">
+                        <h1>恭喜獲得</h1>
+                        <p id="score"></p> 
                     </div> 
-                    <div class="ranking">
+                    <!-- <div class="ranking">
                         <h2>排行榜</h2>
                         <ul>
                             <li>排名</li>
@@ -359,12 +393,17 @@
                         <div class="list">
 
                         </div>
-                    </div>
+                    </div>-->
+                   
                 </div> 
             </div>
         </div>
     </div>    
-    
+    <script src="js/game.js"></script>
+    <script src="game3.js"></script>
+    <script src="js/game4.js"></script>
+    <script src="js/game5.js"></script>
+    <script src="js/gamescore.js"></script><!--劉-->
 
     
 <!--發文-->
