@@ -1,4 +1,15 @@
 //關閉貼文即關閉聲音
+
+//Story20
+let playClose20 = document.getElementById('close20')
+//let playRwdStop17 = document.getElementById('rwdstop17')
+let music20 = document.getElementById('audio20')
+
+playClose20.addEventListener('click',()=>{
+    music20.pause()
+    music20.currentTime = 0
+})
+
 //Story17
 let playClose17 = document.getElementById('close17')
 //let playRwdStop17 = document.getElementById('rwdstop17')
