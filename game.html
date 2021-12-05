@@ -15,6 +15,7 @@
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/427ec671a2.js" crossorigin="anonymous"></script>
 <script src="js/story.js"></script>
+<script src="js/gamescore.js"></script><!--劉-->
 <title>留聲跡</title>
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
@@ -22,7 +23,17 @@
 <!--RWD手機導覽列-->
 <!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
 <link rel="stylesheet" href="css/rwdstyle.css" />
-<script src="js/bootstrap.bundle.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script>
+<%@ page contentType="text/html;charset=utf-8" import="java.util.*,java.sql.*" %> 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1SM9783S7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F1SM9783S7');
+</script>
 </head>
 <body>
     
@@ -210,23 +221,72 @@
                             遇到不支援的瀏覽器會出現這行字
                         </audio>
                     </div>
-                    <div id="radio">
+                    <div id="radio" class ="question">
                         <label><input type="radio" name="answer1" value="5"><span class="round button">陶笛</span></label>
                         <label><input type="radio" name="answer1" value="0"><span class="round button">直笛</span></label><br>
                         <label><input type="radio" name="answer1" value="0"><span class="round button">排笛</span></label>
                         <label><input type="radio" name="answer1" value="0"><span class="round2 button">中音笛</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play1').style.display='none';"
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play7').style.display='block';document.getElementById('play1').style.display='none';"
                         id="rwdstop" class="next" style="cursor: pointer;">
                         </a>
                     </div>
-                    <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play1').style.display='none';"
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play7').style.display='block';document.getElementById('play1').style.display='none';"
                          id="stop" class="" style="cursor: pointer;">下一題 
                     </a>
                    
                 </div>
+                <div id="play7" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第二題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play7').style.display='none';"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" 
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play7').style.display='none';"
+                                class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
+                    </div>
+                    <div class="playgame">
+                        <audio controls id="Music7">
+                            <source src="music/捷運行駛聲.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer7" value="0"><span class="round button" style="padding:10px 30px">電動公車行駛聲</span></label>
+                        <label><input type="radio" name="answer7" value="0"><span class="round button" style="padding:10px 50px">火車行駛聲</span></label><br>
+                        <label><input type="radio" name="answer7" value="5"><span class="round button" style="padding:10px 46px">捷運行駛聲</span></label>
+                        <label><input type="radio" name="answer7" value="0"><span class="round button" style="padding:10px 50px">高鐵行駛聲</span></label>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play7').style.display='none';"
+                        id="rwdstop7" class="next" style="cursor: pointer;">
+                        </a>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play7').style.display='none';"
+                         id="stop7" class="" style="cursor: pointer;">下一題 
+                    </a>
+                </div>
+                <script>
+                    //第二題
+                    let playStop7 = document.getElementById('stop7')
+                    let playRwdStop7 = document.getElementById('rwdstop7')
+                    let playStart7= document.getElementById('playyyyy')
+                    let audio7 = document.getElementById('Music7')
+
+                    playStop7.addEventListener('click',()=>{
+                    audio7.pause()
+                    audio7.currentTime = 0
+                    })
+                    playRwdStop7.addEventListener('click',()=>{
+                    audio7.pause()
+                    audio7.currentTime = 0
+                    })
+                    playStart7.addEventListener('click',()=>{
+                    audio7.play()
+                    })
+                </script>
                 <div id="play2" class="play" style="display:none">
                     <div class="game_top">
-                        <h1>第二題</h1>
+                        <h1>第三題</h1>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play2').style.display='none';"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
@@ -247,17 +307,67 @@
                         <label><input type="radio" name="answer2" value="5"><span class="round3 button">抽油煙機</span></label><br>
                         <label><input type="radio" name="answer2" value="0"><span class="round3 button">電風扇</span></label>
                         <label><input type="radio" name="answer2" value="0"><span class="round3 button">扇子搧風</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play2').style.display='none';"
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play8').style.display='block';document.getElementById('play2').style.display='none';"
                         id="rwdstop2" class="next" style="cursor: pointer;">下一題
                         </a>
                     </div>
-                    <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play2').style.display='none';"
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play8').style.display='block';document.getElementById('play2').style.display='none';"
                          id="stop2" class="" style="cursor: pointer;">下一題
                     </a>
                 </div>
+                <div id="play8" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第四題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play8').style.display='none';"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" 
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play8').style.display='none';"
+                                class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
+                    </div>
+                    <div class="playgame">
+                        <audio controls id="Music8">
+                            <source src="music/電話按鍵聲.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer8" value="0"><span class="round button" style="padding:10px 40px">0922502918</span></label>
+                        <label><input type="radio" name="answer8" value="5"><span class="round button" style="padding:10px 30px">0977502918</span></label><br>
+                        <label><input type="radio" name="answer8" value="0"><span class="round button" style="padding:10px 40px">0977702918</span></label>
+                        <label><input type="radio" name="answer8" value="0"><span class="round2 button" style="padding:10px 30px">0944402918</span></label>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play8').style.display='none';"
+                        id="rwdstop8" class="next" style="cursor: pointer;">
+                        </a>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play8').style.display='none';"
+                         id="stop8" class="" style="cursor: pointer;">下一題 
+                    </a>
+                   
+                </div>
+                <script>
+                    //第四題
+                    let playStop8 = document.getElementById('stop8')
+                    let playRwdStop8 = document.getElementById('rwdstop8')
+                    let playStart8= document.getElementById('playyyyyyyy')
+                    let audio8 = document.getElementById('Music8')
+
+                    playStop8.addEventListener('click',()=>{
+                    audio8.pause()
+                    audio8.currentTime = 0
+                    })
+                    playRwdStop8.addEventListener('click',()=>{
+                    audio8.pause()
+                    audio8.currentTime = 0
+                    })
+                    playStart8.addEventListener('click',()=>{
+                    audio8.play()
+                    })
+                </script>
                 <div id="play3" class="play" style="display:none">
                     <div class="game_top">
-                        <h1>第三題</h1>
+                        <h1>第五題</h1>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play3').style.display='none';"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
@@ -280,17 +390,67 @@
                         <label><input type="radio" name="answer3" value="5"><span class="round4 button"> 松山新店線</span>
                         </label>
                         <label><input type="radio" name="answer3" value="0"><span class="round5 button">板南線</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play3').style.display='none';"
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play9').style.display='block';document.getElementById('play3').style.display='none';"
                         id="rwdstop3"   class="next" style="cursor: pointer;">下一題
                         </a>                        
                     </div>
-                    <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play3').style.display='none';"
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play9').style.display='block';document.getElementById('play3').style.display='none';"
                     id="stop3" class="" style="cursor: pointer;">下一題
                     </a>
                 </div>
+                <div id="play9" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第六題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play9').style.display='none';"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" 
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play9').style.display='none';"
+                                class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
+                    </div>
+                    <div class="playgame">
+                        <audio controls id="Music9">
+                            <source src="music/斷訊聲音.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer9" value="0"><span class="round button" style="padding:10px 35px">Line通話斷訊聲</span></label>
+                        <label><input type="radio" name="answer9" value="5"><span class="round button" style="padding:10px 10px;">Microsoft Teams通話斷訊聲</span></label><br>
+                        <label><input type="radio" name="answer9" value="0"><span class="round button" style="padding:10px 10px">Messenger通話斷訊聲</span></label>
+                        <label><input type="radio" name="answer9" value="0"><span class="round2 button" style="padding:10px 10px">Instagram通話斷訊聲</span></label>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play9').style.display='none';"
+                        id="rwdstop9" class="next" style="cursor: pointer;">
+                        </a>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play9').style.display='none';"
+                         id="stop9" class="" style="cursor: pointer;">下一題 
+                    </a>
+                   
+                </div>
+                <script>
+                    //第四題
+                    let playStop9 = document.getElementById('stop9')
+                    let playRwdStop9 = document.getElementById('rwdstop9')
+                    let playStart9= document.getElementById('playyyyyyyyy')
+                    let audio9 = document.getElementById('Music9')
+
+                    playStop9.addEventListener('click',()=>{
+                    audio9.pause()
+                    audio9.currentTime = 0
+                    })
+                    playRwdStop9.addEventListener('click',()=>{
+                    audio9.pause()
+                    audio9.currentTime = 0
+                    })
+                    playStart9.addEventListener('click',()=>{
+                    audio9.play()
+                    })
+                </script>
                 <div id="play4" class="play" style="display:none">
                     <div class="game_top">
-                        <h1>第四題</h1>
+                        <h1>第七題</h1>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play4').style.display='none';"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
@@ -311,17 +471,117 @@
                         <label><input type="radio" name="answer4" value="0"><span class="round7 button">MAC開機聲</span></label><br>
                         <label><input type="radio" name="answer4" value="0"><span class="round8 button">Windows 7開機聲</span></label>
                         <label><input type="radio" name="answer4" value="5"><span class="round9 button">Windows XP 開機聲</span></label>
-                        <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play4').style.display='none';"
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play10').style.display='block';document.getElementById('play4').style.display='none';"
                         id="rwdstop4" class="next" style="cursor: pointer;">下一題
                         </a>                      
                     </div>
-                    <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play4').style.display='none';"
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play10').style.display='block';document.getElementById('play4').style.display='none';"
                         id="stop4" class="" style="cursor: pointer;">下一題
                     </a>
                 </div>
+                <div id="play10" class="play" style="display:none" >
+                    <div class="game_top">
+                        <h1>第八題</h1>                       
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play10').style.display='none';"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" 
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play10').style.display='none';"
+                                class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
+                    </div>
+                    <div class="playgame">
+                        <audio controls id="Music10">
+                            <source src="music/燒開水的聲音.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer10" value="0"><span class="round button" style="padding:10px 21px">蒸汽火車行駛聲</span></label>
+                        <label><input type="radio" name="answer10" value="0"><span class="round button" style="padding:10px 43px">霧警報響聲</span></label><br>
+                        <label><input type="radio" name="answer10" value="5"><span class="round button" style="padding:10px 30px">水燒開沸騰聲</span></label>
+                        <label><input type="radio" name="answer10" value="0"><span class="round2 button" style="padding:10px 10px">直升機螺旋槳轉動聲</span></label>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play11').style.display='block';document.getElementById('play10').style.display='none';"
+                        id="rwdstop10" class="next" style="cursor: pointer;">
+                        </a>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play11').style.display='block';document.getElementById('play10').style.display='none';"
+                         id="stop10" class="" style="cursor: pointer;">下一題 
+                    </a>
+                   
+                </div>
+                <script>
+                    //第四題
+                    let playStop10 = document.getElementById('stop10')
+                    let playRwdStop10 = document.getElementById('rwdstop10')
+                    let playStart10= document.getElementById('playyyyyyyyyy')
+                    let audio10 = document.getElementById('Music10')
+
+                    playStop10.addEventListener('click',()=>{
+                    audio10.pause()
+                    audio10.currentTime = 0
+                    })
+                    playRwdStop10.addEventListener('click',()=>{
+                    audio10.pause()
+                    audio10.currentTime = 0
+                    })
+                    playStart10.addEventListener('click',()=>{
+                    audio10.play()
+                    })
+                </script>
+                <div id="play11" class="play" style="display:none">
+                    <div class="game_top">
+                        <h1>第九題</h1>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play11').style.display='none';"
+                                class="backhome" style="cursor: pointer;">
+                            <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
+                            onmouseover="this.src='img/home2.png'" onmouseout="this.src='img/home1.png'">
+                        </a>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play11').style.display='none';"
+                                class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
+                    </div>
+                    
+                    <div class="playgame">
+                        <audio controls id="Music11">
+                            <source src="music/板南線.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                    </div>
+                    <div id="radio" class ="question">
+                        <label><input type="radio" name="answer11" value="0"><span class="round3 button" style="padding:10px 45px">淡水信義線</span></label>
+                        <label><input type="radio" name="answer11" value="5"><span class="round3 button" style="padding:10px 60px">板南線</span></label><br>
+                        <label><input type="radio" name="answer11" value="0"><span class="round3 button" style="padding:10px 60px">文湖線</span></label>
+                        <label><input type="radio" name="answer11" value="0"><span class="round3 button" style="padding:10px 45px">基隆捷運線</span></label>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play11').style.display='none';"
+                        id="rwdstop11" class="next" style="cursor: pointer;">下一題
+                        </a>
+                    </div>
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('play5').style.display='block';document.getElementById('play11').style.display='none';"
+                         id="stop11" class="" style="cursor: pointer;">下一題
+                    </a>
+                </div>
+                <script>
+                    //第四題
+                    let playStop11 = document.getElementById('stop11')
+                    let playRwdStop11 = document.getElementById('rwdstop11')
+                    let playStart11= document.getElementById('playyyyyyyyyyy')
+                    let audio11 = document.getElementById('Music11')
+
+                    playStop11.addEventListener('click',()=>{
+                    audio11.pause()
+                    audio11.currentTime = 0
+                    })
+                    playRwdStop11.addEventListener('click',()=>{
+                    audio11.pause()
+                    audio11.currentTime = 0
+                    })
+                    playStart11.addEventListener('click',()=>{
+                    audio11.play()
+                    })
+                </script>
                 <div id="play5" class="play" style="display:none">
                     <div class="game_top">
-                        <h1>第五題</h1>
+                        <h1>第十題</h1>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play5').style.display='none';"
                                 class="backhome" style="cursor: pointer;">
                             <img src="img/home1.png" alt="回遊戲首頁" title="回遊戲首頁" width="30" height="30"
@@ -330,6 +590,7 @@
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play5').style.display='none';"
                                 class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
                     </div>
+                    
                     <div class="playgame">
                         <audio controls id="Music5">
                             <source src="music/iPhone預設鈴聲.mp3" type="audio/mp3">
@@ -402,105 +663,91 @@
     <script src="js/game.js"></script>
     <script src="game3.js"></script>
     <script src="js/game4.js"></script>
-    <script src="js/game5.js"></script>
-    <script src="js/gamescore.js"></script><!--劉-->
+    <script src="js/game5.js"></script> 
+     
 
     
 <!--發文-->
-<div id="article" class="article">
-    <h2>發表貼文</h2>
-    <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
-            <img src="img/close1.png" width="15px" height="15px" 
-                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
-        </a>
-    </div>
-    <div  class="img">
-        <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
-        <!--<%
-            request.setCharacterEncoding("utf-8");
-            String email = (String)session.getAttribute("EMAIL");
+    <div id="article" class="article">
+        <h2>發表貼文</h2>
+        <div class="close">    
+            <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
+                <img src="img/close1.png" width="15px" height="15px" 
+                    onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+            </a>
+        </div>
+        <div  class="img">
+            <%
+                request.setCharacterEncoding("utf-8");
+                String email2 = (String)session.getAttribute("EMAIL");
 
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String url2="jdbc:sqlserver://127.0.0.1:1433;database=saveandsound";
-            Connection con2 = DriverManager.getConnection( url2, "sa","sa");
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                String url2 = "jdbc:sqlserver://saveandsound.database.windows.net:1433;database=saveandsound";
+                Connection con2 = DriverManager.getConnection(url2,"saveandsound@saveandsound","SHU$ics$107");
 
-            PreparedStatement pst2 = con2.prepareStatement("select * from users where email=?");
-            pst2.setString(1,email);
-            
-            ResultSet rs2 = pst2.executeQuery();
-            while(rs2.next()){
-                out.print("<h4>"+rs2.getString("name")+"</h4>");
-            }
-            rs2.close();
-            pst2.close();
-            con2.close();
-        %>-->
-        <!--<h4 id="title" name="name">姓名</h4>-->   
-    </div>
-        <form name="post" method="post" action="post.jsp" >
-            <div class="article1">
-                <select name="category" style="cursor: pointer;">
-                    <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
-                    <option value="nature">自然</option>
-                    <option value="city">都市</option>
-                    <option value="instrument">器械</option>
-                    <option value="vocal">人聲</option>
-                    <option value="nostalgia">懷舊</option>
-                </select>
-            </div>
-            <div class="article1">
-                <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
-                <div id="textarea" contenteditable>
-                    <output id="list"></output>
-                    <textarea  name="post" placeholder="聲音故事..." rows="8" cols="65" required></textarea>            
-                    <img contenteditable="false" style="width:500px" id="myimg" />
-                </div>                  
-            </div >
-            <div class="article1 file">
-                <div style="display:inline;">
-                    <label>
-                        <input id="files" name="sound" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;" >
-                        <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
-                            onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
-                    </label>
-                    <label>
-                        <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
-                        <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
-                            onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
-                    </label>
+                PreparedStatement pst2 = con2.prepareStatement("select * from users where email=?");
+                pst2.setString(1,email2);
+                        
+                ResultSet rs2 = pst2.executeQuery();
+                while(rs2.next()){
+                    out.print("<img id=cover src='"+rs2.getString("photo_path").substring(34)+"'/>");
+                    out.print("<h4>"+rs2.getString("name")+"</h4>");
+                }
+                rs2.close();
+                pst2.close();
+                con2.close();
+            %>
+            <!--<h4 id="title" name="name">姓名</h4>-->   
+        </div>
+            <form name="post" method="post" action="post.jsp" >
+                <div class="article1">
+                    <label><input list="browsers" name="category" placeholder="聲音故事分類" style="cursor: pointer;"></label>
+                    <datalist id="browsers" name="category" style="cursor: pointer;">
+                        <option value="自然">自然</option>
+                        <option value="都市">都市</option>
+                        <option value="器械">器械</option>
+                        <option value="動物">動物</option>
+                        <option value="運動">運動</option>
+                        <option value="交通">交通</option>
+                        <option value="昆蟲">昆蟲</option>
+                        <option value="其他">其他</option>
+                    </datalist>
                 </div>
-            </div>
-            <script src="js/preview_image.js"></script>
-            <script src="js/preview_audio.js"></script>
-
-            <p>Tags</p>
-            <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
-            <script>
-                var el = document.getElementById('container');
-                new Tags(el);
+                <div class="article1">
+                    <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
+                    <textarea  id="textarea" name="post" placeholder="聲音故事..." rows="8" cols="65" required></textarea>
+                    <!--<div  id="textarea" contenteditable></div>-->                  
+                </div >
+                <!--<p>Tags</p>
+                <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
+                <script>
+                    var el = document.getElementById('container');
+                    new Tags(el);
+                </script>-->
+                <div>
+                    <!--<a href = "javascript:void(0)" onclick = "document.getElementById('file').style.display='block';document.getElementById('upload').style.display='none'"
+                        style="cursor: pointer;">-->
+                        <label class="publish" >
+                            <input id="submit" type="submit" value="下一步" style="display:none;">下一步
+                        </label>
+                    </a>     
+                </div>
+            </form>
+            
+            <script src="js/tags.js"></script>
+            <!--避免tags按enter送出表單-->
+            <script type="text/javascript">
+                $(document).ready(function() {
+                $(window).keydown(function(event){
+                    if(event.keyCode == 13) {
+                        event.preventDefault();
+                    return false;
+                }
+            });
+            });
             </script>
                 
-            <div>
-                <label class="publish">
-                    <input id="submit" type="submit" value="發佈" style="display:none;">發佈
-                </label>     
-            </div>
-        </form>
-    
-        <script src="js/tags.js"></script>
-        <!--避免tags按enter送出表單-->
-        <script type="text/javascript">
-            $(document).ready(function() {
-            $(window).keydown(function(event){
-                if(event.keyCode == 13) {
-                    event.preventDefault();
-                return false;
-            }
-        });
-        });
-        </script>
-</div>
+    </div>
 
 </body>
 </html>
