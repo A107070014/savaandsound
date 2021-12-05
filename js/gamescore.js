@@ -26,5 +26,5 @@ function coreCount()
 			cores+=count;
 	}	
 
-	document.getElementById("score").innerHTML = cores+"/25";
+	document.getElementById("score").innerHTML = cores+"/50";
 }
