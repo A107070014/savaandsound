@@ -2159,6 +2159,9 @@ span ~ #tab > div:first-of-type,
     }
 }
 @media screen and (max-width:450px){
+    .saveandsound{
+        border: none;
+    }
     .saveandsound>img{
         position: relative;
         right: 13px;
