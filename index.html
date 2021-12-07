@@ -19,15 +19,20 @@
 <!--RWD手機導覽列-->
 <!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
 <link rel="stylesheet" href="css/rwdstyle.css" />
-<script src="js/bootstrap.bundle.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script>
 <!--Google帳號登入-->
 <meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id" content="990711357171-moqo2ctbv3paoh2qm5bsi534kge9okqo.apps.googleusercontent.com">
+<meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script> 
-<!--Facebook帳號登入-->
-<link rel="stylesheet" href="http://bootswatch.com/darkly/bootstrap.min.css">
-<!--<%@ page contentType="text/html;charset=utf-8" import="java.util.*,java.sql.*" %>-->
-
+<%@ page contentType="text/html;charset=utf-8" import="java.util.*,java.sql.*" %>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1SM9783S7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F1SM9783S7');
+</script>
 </head>
 <body>
     <div id="fade" class="black_overlay"></div> 
@@ -59,8 +64,8 @@
         </div>
         <div class="search">
             <div class="key">
-                <form action="">
-                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50" />
+                <form action="" class="search_story">
+                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="term" value="" class="searchbox" size="50" />
                     <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
                         <i class="fas fa-search"></i>  
                     </button>
@@ -118,17 +123,12 @@
                             <ul>
                                 <li>發表者</li>
                                 <li>標題</li>
-                                <li>新增日期</li>
-                                <li>時長</li>
+                                <li  class="data">新增日期</li>
+                                <li class="time">時長</li>
                             </ul>
                             <div class="new">
-
-                                <div class="blogs">
-                                     inject blogs here from js 
-                                </div>
-                                <script src="js/index.js"></script>
-
-
+                                <!--<div class="blogs"></div> 
+                                <script src="js/all.js"></script>-->
                                 <a href = "javascript:void(0)" onclick = "document.getElementById('story20').style.display='block';document.getElementById('fade').style.display='block'"
                                     class="" style="cursor: pointer;">
                                     <div class="m">
@@ -140,7 +140,7 @@
                                             <div>動物</div>
                                         </div>
                                         <div class="m1">貓咪吃肉泥聲</div>
-                                        <div class="m2">2021/10/22 01:18</div>
+                                        <div class="m2">2021/10/21 01:18</div>
                                         <div class="m3">00：08</div>
                                     </div>
                                 </a>
@@ -155,7 +155,7 @@
                                             <div>器械</div>
                                         </div>
                                         <div class="m1">撥盤電話聲</div>
-                                        <div class="m2" style="margin-left:22%">2021/10/20 17:53</div>
+                                        <div class="m2" id="m2" style="margin-left:22%">2021/10/20 17:53</div>
                                         <div class="m3" style="margin-left:22.7%">00：09</div>
                                     </div>
                                 </a>
@@ -185,7 +185,7 @@
                                             <div>動物</div>
                                         </div>
                                         <div class="m1">貓咪睡覺呼嚕聲</div>
-                                        <div class="m16">2021/10/19 13:22</div>
+                                        <div class="m16" id="m16">2021/10/19 13:22</div>
                                         <div class="m24">00：33</div>
                                     </div>
                                 </a>
@@ -200,7 +200,7 @@
                                             <div>器械</div>
                                         </div>
                                         <div class="m1">老舊傳統電視聲</div>
-                                        <div class="m16">2021/10/19 13:22</div>
+                                        <div class="m16" id="m16">2021/10/19 13:22</div>
                                         <div class="m25">00：19</div>
                                     </div>
                                 </a>
@@ -290,7 +290,7 @@
                                             <div>器械</div>
                                         </div>
                                         <div class="m1">電腦開機聲</div>
-                                        <div class="m5">2021/10/17 16:22</div>
+                                        <div class="m5" id="m5">2021/10/17 16:22</div>
                                         <div class="m6">00：00</div>
                                     </div>
                                 </a>
@@ -305,7 +305,7 @@
                                             <div>交通</div>
                                         </div>
                                         <div class="m1">爭分奪秒</div>
-                                        <div class="m8">2021/10/17 16:22</div>
+                                        <div class="m8" id="m8">2021/10/17 16:22</div>
                                         <div class="m9">00：07</div>
                                     </div>
                                 </a>
@@ -414,38 +414,12 @@
                                         <div class="m23">00：34</div>
                                     </div>
                                 </a>
-                            </div> 
-                            <!--<%
-                                response.setCharacterEncoding("utf-8");
-                                request.setCharacterEncoding("utf-8");
-                                String censor ="pass";
-
-                                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                String url = "jdbc:sqlserver://saveandsound.database.windows.net:1433;database=saveandsound";
-                                Connection con = DriverManager.getConnection(url,"saveandsound@saveandsound","SHU$ics$107");
-
-                                PreparedStatement pst = con.prepareStatement("select * from article where censor=?");
-                                pst.setString(1,censor);
-                                        
-                                ResultSet rs = pst.executeQuery();
-
-                                while(rs.next()){
-                                    out.print("<a class=look href = javascript:void(0) onclick = document.getElementById('story').style.display='block';document.getElementById('fade').style.display='block'><div id=look><table><tr><td class=look1>"+rs.getString("no")+"</td>");
-                                    /*out.print("<tr><td>"+rs.getString("name")+"</td>");*/
-                                    out.print("<td class=look2>"+rs.getString("title")+"</td>");
-                                    out.print("<td class=look3>"+rs.getString("time")+"</td>");
-                                    out.print("<td class=look4>"+rs.getString("duration")+"</td></tr></table></div></a>");
-                                }
-                                rs.close();
-                                pst.close();
-                                con.close();
-                            %>-->                          
+                            </div>                           
                         </div>
                         <div class="tab-content-2">
                             <ul>
                                 <li>發表者</li>
                                 <li>標題</li>
-                                <li>發表者</li>
                                 <li>新增日期</li>
                                 <li>時長</li>
                             </ul>  
@@ -453,7 +427,7 @@
                                 最新...
                             </div>
                         </div>
-                    </div>                  
+                    </div>                
             </div>
             
 
@@ -470,9 +444,8 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
-                            <li>新增日期</li>
-                            <li>時長</li>
+                            <li  class="data">新增日期</li>
+                            <li class="time">時長</li>
                         </ul> 
                         <div class="new"> 
                             <a href = "javascript:void(0)" onclick = "document.getElementById('story8').style.display='block';document.getElementById('fade').style.display='block'"
@@ -485,7 +458,7 @@
                                             <div>Kevin</div>
                                             <div>自然</div>
                                         </div>
-                                        <div class="m1" style="margin-left:24%">海</div>
+                                        <div class="m1" id="m1" style="margin-left:24%">海</div>
                                         <div class="m20" style="margin-left:24%">2021/10/17 16:22</div>
                                         <div class="m21" style="margin-left:23.5%">00：27</div>
                                     </div>
@@ -519,9 +492,8 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
-                            <li>新增日期</li>
-                            <li>時長</li>
+                            <li  class="data">新增日期</li>
+                            <li class="time">時長</li>
                         </ul> 
                         <div class="new">
                             <a href = "javascript:void(0)" onclick = "document.getElementById('story17').style.display='block';document.getElementById('fade').style.display='block'"
@@ -534,8 +506,8 @@
                                             <div>pomelo</div>
                                             <div>器械</div>
                                         </div>
-                                        <div class="m1">撥盤電話聲</div>
-                                        <div class="m2">2021/10/20 17:53</div>
+                                        <div class="m1" >撥盤電話聲</div>
+                                        <div class="m2" id="m3">2021/10/20 17:53</div>
                                         <div class="m3" style="margin-left:23.5%">00：09</div>
                                     </div>
                             </a>
@@ -550,7 +522,7 @@
                                             <div>器械</div>
                                         </div>
                                         <div class="m1">老舊傳統電視聲</div>
-                                        <div class="m16" style="margin-left:19.3%">2021/10/19 13:22</div>
+                                        <div class="m16" id="m25" style="margin-left:19.3%">2021/10/19 13:22</div>
                                         <div class="m25" style="margin-left:23.5%">00：19</div>
                                     </div>
                                 </a>
@@ -595,7 +567,7 @@
                                             <div>器械</div>
                                         </div>
                                         <div class="m1">電腦開機聲</div>
-                                        <div class="m5">2021/10/17 16:22</div>
+                                        <div class="m5" id="m6">2021/10/17 16:22</div>
                                         <div class="m6" style="margin-left:23.5%">00：00</div>
                                     </div>
                                 </a>
@@ -605,7 +577,6 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
                             <li>新增日期</li>
                             <li>時長</li>
                         </ul>  
@@ -628,9 +599,8 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
-                            <li>新增日期</li>
-                            <li>時長</li>
+                            <li  class="data">新增日期</li>
+                            <li class="time">時長</li>
                         </ul> 
                         <div class="new">
                             <a href = "javascript:void(0)" onclick = "document.getElementById('story20').style.display='block';document.getElementById('fade').style.display='block'"
@@ -644,7 +614,7 @@
                                             <div>動物</div>
                                         </div>
                                         <div class="m1">貓咪吃肉泥聲</div>
-                                        <div class="m2">2021/10/22 01:18</div>
+                                        <div class="m2">2021/10/21 01:18</div>
                                         <div class="m3">00：08</div>
                                     </div>
                                 </a>
@@ -674,7 +644,7 @@
                                             <div>動物</div>
                                         </div>
                                         <div class="m1">貓咪睡覺呼嚕聲</div>
-                                        <div class="m16">2021/10/19 13:22</div>
+                                        <div class="m16" id="m24">2021/10/19 13:22</div>
                                         <div class="m24">00：33</div>
                                     </div>
                                 </a>
@@ -685,7 +655,6 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
                             <li>新增日期</li>
                             <li>時長</li>
                         </ul>  
@@ -708,9 +677,8 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
-                            <li>新增日期</li>
-                            <li>時長</li>
+                            <li  class="data">新增日期</li>
+                            <li class="time">時長</li>
                         </ul> 
                         <div class="new">
                             <a href = "javascript:void(0)" onclick = "document.getElementById('story14').style.display='block';document.getElementById('fade').style.display='block'"
@@ -735,7 +703,6 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
                             <li>新增日期</li>
                             <li>時長</li>
                         </ul>  
@@ -758,9 +725,8 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
-                            <li>新增日期</li>
-                            <li>時長</li>
+                            <li  class="data">新增日期</li>
+                            <li class="time">時長</li>
                         </ul> 
                         <div class="new">
                             <a href = "javascript:void(0)" onclick = "document.getElementById('story16').style.display='block';document.getElementById('fade').style.display='block'"
@@ -789,7 +755,7 @@
                                             <div>交通</div>
                                         </div>
                                         <div class="m1" style="margin-left:20%">平交道警示聲</div>
-                                        <div class="m2">2021/10/17 16:22</div>
+                                        <div class="m2" id="mm2">2021/10/17 16:22</div>
                                         <div class="m3" style="margin-left:22.3%">00：07</div>
                                     </div>
                                 </a>
@@ -797,14 +763,14 @@
                                     class="" style="cursor: pointer;">
                                     <div class="m">
                                         <div  class="img">
-                                            <img src="upload/myphoto/logo.png">  
+                                            <img src="upload/myphoto/Amei.jpg">  
                                         </div>
                                         <div class="m0">
                                             <div>Amei</div>
                                             <div>交通</div>
                                         </div>
                                         <div class="m1">爭分奪秒</div>
-                                        <div class="m8">2021/10/17 16:22</div>
+                                        <div class="m8" id="m9">2021/10/17 16:22</div>
                                         <div class="m9" style="margin-left:22.3%">00：07</div>
                                     </div>
                                 </a>
@@ -844,7 +810,6 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
                             <li>新增日期</li>
                             <li>時長</li>
                         </ul>  
@@ -867,9 +832,8 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
-                            <li>新增日期</li>
-                            <li>時長</li>
+                            <li  class="data">新增日期</li>
+                            <li class="time">時長</li>
                         </ul> 
                         <div class="new">
                             <a href = "javascript:void(0)" onclick = "document.getElementById('story4').style.display='block';document.getElementById('fade').style.display='block'"
@@ -882,7 +846,7 @@
                                             <div>Amei</div>
                                             <div>昆蟲</div>
                                         </div>
-                                        <div class="m1">蛙鳴</div>
+                                        <div class="m1" id="m13">蛙鳴</div>
                                         <div class="m12">2021/10/17 16:22</div>
                                         <div class="m13">00：14</div>
                                     </div>
@@ -897,7 +861,7 @@
                                             <div>Kevin</div>
                                             <div>昆蟲</div>
                                         </div>
-                                        <div class="m1">蟲</div>
+                                        <div class="m1" id="m13">蟲</div>
                                         <div class="m22">2021/10/17 16:22</div>
                                         <div class="m23">00：34</div>
                                     </div>
@@ -908,7 +872,6 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
                             <li>新增日期</li>
                             <li>時長</li>
                         </ul>  
@@ -931,9 +894,8 @@
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
-                            <li>新增日期</li>
-                            <li>時長</li>
+                            <li  class="data">新增日期</li>
+                            <li class="time">時長</li>
                         </ul> 
                         <div class="new">
                             <a href = "javascript:void(0)" onclick = "document.getElementById('story5').style.display='block';document.getElementById('fade').style.display='block'"
@@ -950,8 +912,8 @@
                                         <div class="m14">2021/10/17 16:22</div>
                                         <div class="m15">00：30</div>
                                     </div>
-                                </a>
-                                <a href = "javascript:void(0)" onclick = "document.getElementById('story7').style.display='block';document.getElementById('fade').style.display='block'"
+                            </a>
+                            <a href = "javascript:void(0)" onclick = "document.getElementById('story7').style.display='block';document.getElementById('fade').style.display='block'"
                                     class="" style="cursor: pointer;">
                                     <div class="m">
                                         <div  class="img">
@@ -965,14 +927,13 @@
                                         <div class="m18">2021/10/17 16:22</div>
                                         <div class="m19">00：01</div>
                                     </div>
-                                </a>
+                            </a>
                         </div>                           
                     </div>
                     <div class="tab-content-2">
                         <ul>
                             <li>發表者</li>
                             <li>標題</li>
-                            <li>發表者</li>
                             <li>新增日期</li>
                             <li>時長</li>
                         </ul>  
@@ -984,60 +945,139 @@
             </div>   
         </div>
     </div>
+    <script src="js/lookstory.js"></script>
 <!--查看聲音故事-->
-<div class="story" id="story10">
+<div class="story" id="story20">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story10').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close20" href = "javascript:void(0)" onclick = "document.getElementById('story20').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/user.png">
+        <h4>Jasper</h4>   
+    </div>
+    <h2>貓咪吃肉泥聲</h2>
+    <div class="s1">
+        <div>2021/10/22 01:18</div>
+        <div>動物</div>
+    </div>
+    <audio controls controlsList="nodownload" id="audio20">
+        <source src="upload/貓咪吃肉泥聲音.mp3" type="audio/mp3">
+        遇到不支援的瀏覽器會出現這行字
+    </audio>
+    <div id="s" class="s2">
+        看著自己心愛的貓咪，快樂得吃著食物，心中總是會覺得十分滿足，能照顧好這小傢伙就心滿意足了。找了機會錄下了家裡貓咪吃肉泥條的聲音，聽見那些聽到快樂的咀嚼聲，就可以想到貓咪吃飯時滿足的心情，自己的內心也滿足了。
+    </div>
+    <div id="s2" class="s4">
+        <div class="s5">
+            <div class="s6" id="details4">    
+                <button  id ="heart2"><i class="fas fa-heart" ></i></button>
+                <!--<i class="fas fa-bookmark"></i>
+                <i class="fas fa-exclamation-circle"></i>-->
+            </div>
+        </div>
+        <!--按讚數--> 
+        <span id="numb">1</span>
+    </div>
+    <script src="js/like.js"></script>
+    <button id="sendMessage" class="say" style="margin-bottom:50px;">立即<a href="javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('story20').style.display='none'">登入</a>留言</button>
+    <div class="sss">
+        <div id="s" class="s7">
+            <p>留言</p>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
+                    <li><p class=s9>時間</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="story" id="story17">
+    <div class="close">    
+        <a id="close17" href = "javascript:void(0)" onclick = "document.getElementById('story17').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
+    </div>
+    <div  class="img">
+        <img src="upload/myphoto/pomelo.jpg">
+        <h4>pomelo</h4>   
+    </div>
+    <h2>撥盤電話聲</h2>
+    <div class="s1">
+        <div>2021/10/20 17:53</div>
+        <div>器械</div>
+    </div>
+    <audio controls controlsList="nodownload" id="audio17">
+        <source src="upload/撥盤電話聲.mp3" type="audio/mp3">
+        遇到不支援的瀏覽器會出現這行字
+    </audio>
+    <div id="s" class="s2">
+        小時候外婆家的角落放著一台撥盤電話，常常會偷偷去玩電話，把手指放進撥盤的號碼孔滑一圈，看著他自己答答答的又轉回來真的很好玩，但不知道原來它真的能撥出去，一直被罵為甚麼要亂打電話，好幾次被家人發現後，最後索性直接拔掉電話線，換成了按鍵電話，我又多了台玩具!
+    </div>
+    
+    <div class="sss">
+        <div id="s" class="s7">
+            <p>留言</p>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
+                    <li><p class=s9>時間</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="story" id="story10">
+    <div class="close">    
+        <a id="close10" href = "javascript:void(0)" onclick = "document.getElementById('story10').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
+    </div>
+    <div  class="img">
+        <img src="upload/myphoto/user.png">
+        <h4>Jasper</h4>   
     </div>
     <h2>貓咪吃飯的聲音</h2>
     <div class="s1">
         <div>2021/10/19 13:22</div>
         <div>動物</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio10">
         <source src="upload/貓咪吃飼料聲音.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         看著自己心愛的貓咪，快樂得吃著食物，心中總是會覺得十分滿足，能照顧好這小傢伙就心滿意足了。找了機會錄下了家裡貓咪吃飼料的聲音，聽見那些聽到清脆響亮的咀嚼聲，就可以想到貓咪吃飯時滿足的心情，自己的內心也滿足了。
     </div>
-    <div id="s2" class="s4">
-        <div class="s5">
-            <div class="s6">
-                <i class="fas fa-heart" id ="heart" onclick="heart()"></i>
-                <i class="fas fa-heart" id ="heart2" onclick="heart2()"></i>
-                <!--<i class="fas fa-bookmark"></i>
-                <i class="fas fa-exclamation-circle"></i>-->
-            </div>
-        </div>
-        <span id=numb>9</span>
-    </div>
-    <script src="js/like.js"></script>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
-    <div class="s5">
-        <i class="fas fa-comment"></i><div id=numb2>8</div>
-    </div>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1045,42 +1085,40 @@
 </div>
 <div class="story" id="story11">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story11').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close11" href = "javascript:void(0)" onclick = "document.getElementById('story11').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/user.png">
+        <h4>Jasper</h4>   
     </div>
     <h2>貓咪睡覺呼嚕聲</h2>
     <div class="s1">
         <div>2021/10/19 13:22</div>
         <div>動物</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio11">
         <source src="upload/貓咪睡覺呼嚕聲.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         貓咪是一種很神奇的生物，想主動接近牠時，牠總是會躲得遠遠的，而我們沒特別找牠的時候，牠又總是會主動黏過來。我的貓咪總是每晚會跑到我枕頭旁邊，撒嬌、睡覺。直到我出國遊學一個多月，睡覺時總覺得少了什麼聲音，一直沒能放鬆入睡。直到我上網查到了貓咪發出呼嚕聲的聲音，才頓時覺得安心跟放鬆。所以我覺得想將這個聲音保存在這裡。
     </div>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1088,7 +1126,7 @@
 </div>
 <div class="story" id="story12">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story12').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close12" href = "javascript:void(0)" onclick = "document.getElementById('story12').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
@@ -1102,28 +1140,26 @@
         <div>2021/10/19 13:22</div>
         <div>器械</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio12">
         <source src="upload/老舊傳統電視聲(伴隨獨特沙沙聲).mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         由於我們家族的祖先牌擺放在我們家，所以每年過年的時候，都會有很多親戚到我們家祭拜祖先，每年這時候，我們家就會大掃除一番，通常都是當天早上7點多被我媽挖起來幫忙打掃，大掃除完後，緊接著，親戚們就會陸續到我們家來，開始準備一些祭拜祖先的東西，通常祭拜祖先都是從早上11點到下午2點，等於說我從早上7點到下午2點就完全沒休息，所以等祭拜祖先完後，我就會躺在客廳的木椅上睡覺，但因為才剛祭拜結束，所以還是會有一些人的交談聲，我就會有點難入睡，等到親戚走得差不多之後，我就伴隨著電視聲漸漸睡著了，雖然電視還是有人聲，但我就覺得聽起來特別安心，很像催眠曲，這可能跟我小時候超喜歡看電視有關係，所以我對電視聲特別有感覺。
     </div>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1131,7 +1167,7 @@
 </div>
 <div class="story" id="story13">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story13').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close13" href = "javascript:void(0)" onclick = "document.getElementById('story13').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
@@ -1145,28 +1181,26 @@
         <div>2021/10/19 13:22</div>
         <div>器械</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio13">
         <source src="upload/時鐘的聲音.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         在我兒時記憶中，每當我聽到這個聲音就知道起床到餐桌吃早餐的時間到了，透過它悅耳的聲音開啟每個上學日的早晨。這是擺在我家壁上至少十年的時鐘，它很特別，不像當時的鐘大多只能發出普通的鈴聲，還可以依循播出六首不同的曲目，其中我最喜歡的就是這首。因為有這個時鐘，才得以比較甘願一點的下床，而不用被急促且刺耳的鈴聲給喚醒，破壞一整天的好心情。
     </div>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1174,7 +1208,7 @@
 </div>
 <div class="story" id="story14">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story14').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close14" href = "javascript:void(0)" onclick = "document.getElementById('story14').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
@@ -1188,28 +1222,26 @@
         <div>2021/10/19 13:22</div>
         <div>運動</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio14">
         <source src="upload/棒球加油聲.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         因為媽媽很喜歡看中華職棒，從小我也就跟著媽媽喜歡看棒球到現在，我們從以前到現在都是死忠的象迷，平常一有球賽就會看著電視機中播報的球賽。直到了國中我才有了第一次去現場看棒球的機會，還記得那次是我們全家一起去新莊棒球場看棒球，那時候是兄弟象對上哪一隊有點忘了。那時候我們在內野看球，家人為了要讓我看的更清楚就幫我從上面辛苦的抱下一層層的階梯。在看球時球場內都會充滿著球迷的加油聲，那時候記憶非常深刻，因為是第一次看棒球所以也特別的感動。
     </div>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1217,7 +1249,7 @@
 </div>
 <div class="story" id="story15">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story15').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close15" href = "javascript:void(0)" onclick = "document.getElementById('story15').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
@@ -1231,28 +1263,26 @@
         <div>2021/10/19 13:22</div>
         <div>器械</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio15">
         <source src="upload/電鑽的聲音.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         相信對很多人而言，聽見電鑽的聲音時，聯想到的應該幾乎都是施工、修理物件的場景，但對我而言卻是充斥在童年裡，養育我長大的一種聲音。我們家經營著一間小公司，專門維修科學園區裡的機台，把車庫作為維修工作室來使用，從小只要放學回家，快走到家時聽見電鑽發出的聲音，便知道是爸爸在車庫工作，總會忍不住好奇的搬張小凳子坐在旁邊看著，看著爸爸如何使用各種工具就像一位醫生將每台生病的機台治好，車庫沒有安裝冷氣，到了夏天便變得十分炎熱，但不管環境如何電鑽聲卻依然存在，不管過了多少個四季都支撐著這個家直到現在，不同的是當年那雙握著電鑽健壯的手，不知從什麼時候開始變得粗糙佈滿皺褶。
     </div>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1260,7 +1290,7 @@
 </div>
 <div class="story" id="story16">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story16').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close16" href = "javascript:void(0)" onclick = "document.getElementById('story16').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
@@ -1274,28 +1304,26 @@
         <div>2021/10/19 13:22</div>
         <div>交通</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio16">
         <source src="upload/廣播車聲(修理紗窗、沙門、換玻璃).mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         「修理紗窗、修理玻璃～」我相信這是不少人都聽過的聲音。然而這看似日常的聲音，卻對我來說是想要珍藏的回憶。我國小是讀一間相當嚴格的雙語學校，每天到學校都有近乎滿堂的考試，每天最放鬆的時刻便是放學回到家，直接躺到沙發上的時刻。而每天此時躺在沙發上看著天花板的時，床外總是會響起「修理紗窗、修理玻璃～」的聲音，總是伴隨著最放鬆的我入眠。現在想到時就會有一種安心、放鬆的感覺，會將我帶回小學時最安心、放鬆的下午。
     </div>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1309,36 +1337,34 @@
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/pomelo.jpg">
+        <h4>pomelo</h4>   
     </div>
     <h2>平交道警示聲</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>交通</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio">
         <source src="upload/平交道聲音.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         對於他人而言，平交道的聲音應該就只是火車即將經過，但對我來說卻有著特別的意義。奶奶的老家就坐落在平交道口，每一次回奶奶家一天中至少會聽到20次以上的叮噹叮噹聲，曾經有朋友一起來造訪，他問我你們住在這邊不會覺得每天這樣很吵嗎，聽到這個才讓我發現，原來我已經下意識的習慣這巨大的聲音，它充斥在童年的時光中伴隨著我長大，現在雖然奶奶家已經搬離，但當開著車經過平交道停下，聽著叮噹聲等待火車經過時，腦海中出現的依舊是位在鐵道旁的奶奶家，被一旁的田圍繞著，以及坐在門口塑膠椅上執勤的鐵路警察。
     </div>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1346,42 +1372,40 @@
 </div>
 <div class="story" id="story1">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story1').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close1" href = "javascript:void(0)" onclick = "document.getElementById('story1').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/pomelo.jpg">
+        <h4>pomelo</h4>   
     </div>
     <h2>電腦開機聲</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>器械</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio1">
         <source src="upload/XP開機.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         還記得小時候家裡買了第一台電腦，剛上小學的我覺得非常新奇，當時還不懂電腦是什麼，所以也不懂該怎麼開機，直到爸爸第一次要使用時，我窩在牆角偷看，看著爸爸按下了旁邊黑色盒子的按鈕後，前面的螢幕就亮了起來，伴隨著開機音樂，慢慢開始出現很多畫面，看得正入神時，被一旁的爸爸發現了，便叫我過去，開始告訴我電腦是什麼，可以找到什麼資訊；玩什麼遊戲；幫忙人做什麼樣的歸納整理，就這樣開啟了我和電腦的第一次接觸，從那之後每天放學馬上拿著書包衝回家，第一件事就是瞞著媽媽偷偷打開電腦玩小遊戲，當每次聽到開機聲時總會覺得很緊張，怕被媽媽發現，現在長大了電腦的版本日新月異，以前的XP電腦漸漸的消失再我們的生活，但當又聽見這個開機聲，童年的記憶也隨著浮現眼前。
     </div>
-    <form action="comment.jsp" method="post">
-        <label id="s2">
-            <input type="text" placeholder="我要留言..." name="comment" value="" class="say" required/>
-            <button><input type="submit" value="留言" /><i class="fas fa-caret-right"></i></button>
-        </label>
-    </form>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1389,36 +1413,40 @@
 </div>
 <div class="story" id="story2">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story2').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close2" href = "javascript:void(0)" onclick = "document.getElementById('story2').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/Amei.jpg">
+        <h4>Amei</h4>   
     </div>
     <h2>爭分奪秒</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>交通</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio2">
         <source src="upload/救護車聲音.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         聽著救護車「伊歐伊歐———」的聲音，讓我想起了奶奶以前生病住院時，只要到醫院就會聽到這個聲音，在我的心中它代表著病痛的意思，對於我來說是一個不太好的回憶，心中一直想著這一定是惡魔的聲音，因為它一出現就要帶走我最愛的奶奶。後來漸漸長大的我知道了，它其實是在為每一個需要搶救的人所發出的求救聲，並且所有的救援都是需要爭分奪秒的，而那尖銳的鳴笛聲就是，在街上對什麼都不知道的人們催促道：「這裡有病人需要搶救，大家快讓路...」之類的話語，「伊歐伊歐———」那尖銳的聲音告訴我，它是在為需要幫助的人們所發出的聲音。當現在的我再一次面對它時，我對於它的心態已轉變，我由衷的感謝當年它對奶奶對所有生病受傷的人的幫助。
     </div>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    <img src="upload/myphoto/logo.png">
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                   
                 </ul>
             </div>
         </div>
@@ -1426,61 +1454,62 @@
 </div>
 <div class="story" id="story3">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story3').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close3" href = "javascript:void(0)" onclick = "document.getElementById('story3').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/Amei.jpg">
+        <h4>Amei</h4>   
     </div>
     <h2>飛機聲</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>交通</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio3">
         <source src="upload/飛機聲.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         自己是住在桃園機場附近 家裡及學校是飛機航行路徑 國中坐在窗邊的我都會數著飛機看著眼前這班飛機往哪裡飛 是飛去哪邊呢 能不能也帶我去 天氣好時會去家裡頂樓閉著眼睛躺著聽漸行漸遠的引擎聲 非常的舒服、享受那個感覺 小時候本身有個夢想很想當空姐 但因為身高有所受限而打退堂鼓 那現在的夢想則是環遊世界 所以看到飛機總是會有種興奮感！
     </div>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    <img src="upload/myphoto/logo.png">
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
     </div>
 </div>
 <div class="story" id="story4">
-    <a href="https://www.blogger.com/blogger.g?blogID=2031514508322140995#" id="gotop4">
-        <i class="fa fa-angle-up"></i>
-    </a>
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story4').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close4" href = "javascript:void(0)" onclick = "document.getElementById('story4').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/Amei.jpg">
+        <h4>Amei</h4>   
     </div>
     <h2>蛙鳴</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>昆蟲</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio4">
         <source src="upload/蛙鳴.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
@@ -1495,45 +1524,60 @@
         
         即便我獨身一人在他地<br> 也能睡得安好<br> 但心中所缺失、尋覓的<br> 是那消逝於城市中的蛙鳴<br> 也是那不再存於身旁 家的氣息
     </div>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
+                    <li><p class=s9>時間</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 <div class="story" id="story5">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story5').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close5" href = "javascript:void(0)" onclick = "document.getElementById('story5').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/user.png">
+        <h4>Carol</h4>   
     </div>
     <h2>施工＋鳥叫的聲音</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>其他</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio5">
         <source src="upload/施工鳥叫的聲音.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         小時候我的住家位於低樓層，且陽台上種植著大量的植栽，因此時常有鳥兒前來造訪，甚至築巢，每天早上沐浴在悅耳的鳥叫聲中慢慢清醒，如此怡然自得的早晨對我來說已是家常便飯，後來住家旁開始興建大樓，自此施工工地的敲打聲便成天起起落落，每天早上雖鳥叫聲依舊，卻轉而被這些吵雜聲所吵醒，仔細聆聽，施工現場的鋼筋碰撞聲與鳥叫聲此起彼落、交相呼應，彷彿一場現代都市發展與原始自然的衝突現場，也許這斷斷續續的鳥叫聲，也是在抗議著這擾人清夢的噪音吧。
     </div>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    <img src="upload/myphoto/logo.png">
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1541,36 +1585,40 @@
 </div>
 <div class="story" id="story6">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story6').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close6" href = "javascript:void(0)" onclick = "document.getElementById('story6').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/user.png">
+        <h4>Carol</h4>   
     </div>
     <h2>搭乘捷運的聲音</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>交通</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio6">
         <source src="upload/搭乘捷運的聲音.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         還記得在我還沒開始上學前，閒暇的平日午後我都會吵著媽媽帶我搭捷運出去走走，因為我家在大直站，前一站是松山機場，所以無論是出門或是回家都可以從窗外清楚的看到飛機，對那時候的我來說非常的新奇，不過也因為經過飛機場所以這段捷運特別久，而且還會放慢速度再加快，所以捷運吵雜的聲音也特別明顯令我印象深刻，直到進入地下道，聽到到站的廣播聲，我才甘願離開窗外的視線下車。
     </div>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    <img src="upload/myphoto/logo.png">
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1578,36 +1626,40 @@
 </div>  
 <div class="story" id="story7">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story7').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close7"  href = "javascript:void(0)" onclick = "document.getElementById('story7').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/佳昇.png">
+        <h4>Kevin</h4>   
     </div>
     <h2>咻蛋幾咧</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>其他</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio7">
         <source src="upload/咻蛋幾咧.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         這是一個告訴我們分組需慎選組員的故事，笑中帶淚，真心不騙。 當陌生的前座同學轉頭問你：「我剛好一個人，要不要同一組時？」 千萬別被華麗的系級、自信的口吻抑或上課用力點頭的次數所蒙蔽， 請在在心中用力的吶喊：「咻蛋幾咧！」
     </div>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    <img src="upload/myphoto/logo.png">
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1615,36 +1667,40 @@
 </div>
 <div class="story" id="story8">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story8').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close8" href = "javascript:void(0)" onclick = "document.getElementById('story8').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/佳昇.png">
+        <h4>Kevin</h4>   
     </div>
     <h2>海</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>自然</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio8">
         <source src="upload/海.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
     <div id="s" class="s2">
         高二時參與社團微電影拍攝，酷熱夏季遇上期末考，所有的不合時宜在此刻聚集，  一夥人鬧哄哄的漫步在自帶慵懶氛圍的台南，架構著劇本走向、揣測著角色心境，  剎那間，想把一切呈現得盡善盡美的衝勁在我心中慢慢萌芽。  漁光島並沒有觀光客想像的浪漫，殘留著烈陽餘溫的沙灘，海面上喧鬧嘻笑的人們，  濕黏的海風滲入每一寸肌膚，海浪拍打淅淅刷刷聲，對映支支吾吾唸不出臺詞的我，  彷彿是場完美的悲劇，所幸同伴們的耐心與鼓勵，歷經無數顆鏡頭後，一行人興高采烈殺青了，  然而陽春的收音技術以致於成品裡重複迴盪的浪聲蓋過角色對白，  浪花摩擦沙灘的沙沙聲有意無意諷刺著傻呼呼而徒勞的我們，這場戲始於青澀慌亂，  終於匆忙遺憾，如同我們紛擾嘈雜的青春，倏忽沒入無盡浪花。  事過多年回放曾令人彆扭的片段，神奇的是，海浪聲不再刺耳難堪，  轉變而平靜安穩的節奏，「唰～唰～」規律的聲響逐漸與自己的心跳聲合而為一，  內心深知海浪的聲音亙古不變，然而心境歷經時間磨練而轉變，開始學習與挫折共處，  稜角受海浪沖蝕變得圓滑，看待世界的角度隨之豁達，海浪聲對我來說是釋然， 更是包裹著難以忘懷的青春回憶，讓我知道—人們擁有共同目標並拚盡全力實行，  是件多美好的事。  感謝在某處聽見的海浪聲，帶我回到十七歲那年的漁光島，緬懷並和解。
     </div>
+    
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    <img src="upload/myphoto/logo.png">
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -1652,21 +1708,21 @@
 </div>
 <div class="story" id="story9">
     <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('story9').style.display='none';document.getElementById('fade').style.display='none'">
+        <a id="close9" href = "javascript:void(0)" onclick = "document.getElementById('story9').style.display='none';document.getElementById('fade').style.display='none'">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
     <div  class="img">
-        <img src="upload/myphoto/logo.png">
-        <h4>留聲跡</h4>   
+        <img src="upload/myphoto/佳昇.png">
+        <h4>Kevin</h4>   
     </div>
     <h2>蟲</h2>
     <div class="s1">
         <div>2021/10/17 16:22</div>
         <div>自然</div>
     </div>
-    <audio controls id="s">
+    <audio controls controlsList="nodownload" id="audio9">
         <source src="upload/蟲.mp3" type="audio/mp3">
         遇到不支援的瀏覽器會出現這行字
     </audio>
@@ -1676,17 +1732,23 @@
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
-            <div class="s8">
-                <ul>
-                    <img src="upload/myphoto/logo.png">
-                    <li><p class=s11>名字</p></li>
+            <div class="s8">             
+                <!--<div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">   
+                </div>-->
+                <ul> 
+                    <!--<li><p class=s11>名字</p></li>
                     <li><p class=s9>時間</p></li>
-                    <li><p class=s10>留言</p></li>
+                    <li><p class=s10>留言</p></li>-->
+                    
                 </ul>
             </div>
         </div>
     </div>
+</div> 
 </div>
+<script src="js/closepost.js"></script>
+
 <!--置頂-->
 <a href="https://www.blogger.com/blogger.g?blogID=2031514508322140995#" id="gotop">
     <i class="fa fa-angle-up"></i>
@@ -1729,32 +1791,16 @@
         #gotop :hover{
             background:#d9a200;
         }
-    </style>          
- 
+    </style>
 <!--網站導覽-->
 <div id="saveandsound" class="saveandsound">
     <div class="close" id="close">
             <img src="img/close1.png" width="15px" height="15px" 
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
     </div> 
-    <div class="la">
-        <h1 class="login-acount" id="login" style="font-size: 25px;">歡迎來到留聲跡</h1>
-    </div>
-    <div class="b1">
-        <p>哈囉大家好，我們是 留 聲 跡！</br>
-
-        你是否也有勾起你回憶的聲音呢？</br>
-
-        我們將提供一個平台</br>
-        讓你可以保存和分享聲音以及背後的故事</br>
-
-        如果你也有想要留下的聲音故事，</br>
-        留聲跡  一同與你留下</br>
-        屬於自己的聲音足跡！</br>
-        來打造一個自己的聲音回憶寶盒吧！</br></p>        
-    </div>
+    <img src="img/網站導覽.png" >               
 </div>               
-<script src="js/fadeout.js"></script>    
+<script src="js/fadeout.js"></script>       
 <!--註冊/登入-->
 <div id="dialog" class="dialog">
     <div class="close">
@@ -1767,23 +1813,8 @@
         <h1 class="login-acount" id="login" style="font-size: 25px;">登入</h1>
     </div>
     <div class="b1">
-    <!--<%
-        Cookie[] cks =request.getCookies();
-        if(cks!=null){
-            boolean flagCookie = false; //true表示有登入帳號
-            for(int i=0;i<cks.length;i++){
-                if(cks[i].getName().equals("Email")){
-                    flagCookie=true;
-                    session.setAttribute("Email",cks[i].getValue());
-                    break;
-                }
-            }
-        
-            if(flagCookie)//表示已有登入紀錄
-                response.sendRedirect("home.jsp"); 
-        }
-    %>-->
-        <form id="form"  action="home.html" name="login" method="" class="b2" aria-labelledby="b3">
+    
+        <form id="form"  action="home.html" name="login" method="post" class="b2" aria-labelledby="b3">
             <div class="b4">
                 <i class="far fa-envelope"></i>
                 <input id="email" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
@@ -1794,11 +1825,12 @@
                 <input id="password" class="b11" type="password" autocomplete="current-password"  placeholder="••••••••••••" name="password" aria-required="true" value="" >
                 <small class="error2">Error message</small>
                 <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes"></label>
-                <a href = "javascript:void(0)" onclick = "document.getElementById('forgetpassword').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
+                <!--<a href = "javascript:void(0)" onclick = "document.getElementById('forgetpassword').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
                     class="b23" style="cursor: pointer;">忘記密碼？
-                </a>
+                </a>-->
             </div>
-            <input type="submit"  value="登入" class="submit">
+            <input type="submit"  value="登入" class="submit" >
+         
     </div>
     <p class="b25">第一次使用 留聲跡 嗎？
         <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='block';document.getElementById('dialog').style.display='none';document.getElementById('fade').style.display='block'"
@@ -1858,73 +1890,23 @@
 <script src="js/signincheck.js"></script>
 
 <!--Google帳號登入-->
-<script>
-    function onSignIn(googleUser) {
-      // Useful data for your client-side scripts:
-      var profile = googleUser.getBasicProfile();
-      console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-      console.log('Full Name: ' + profile.getName());
-      console.log('Given Name: ' + profile.getGivenName());
-      console.log('Family Name: ' + profile.getFamilyName());
-      console.log("Image URL: " + profile.getImageUrl());
-      console.log("Email: " + profile.getEmail());
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
 
-      // The ID token you need to pass to your backend:
-      var id_token = googleUser.getAuthResponse().id_token;
-      console.log("ID Token: " + id_token);
-      /*document.getElementById("form").submit(); 無法跟FB同時一起寫*/
-    }
-</script>
-
-<!--FB帳號登入-->
-<!--方法一
-<script type="text/javascript">
-    //應用程式編號，進入 https://developers.facebook.com/apps/ 即可看到
-    let FB_appID = "326669805810910";
-
-    //FB Login 官方文件：https://developers.facebook.com/docs/facebook-login/web
-
-    // Load the Facebook Javascript SDK asynchronously
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: FB_appID,//FB appID
-            cookie: true,  // enable cookies to allow the server to access the session
-            
-            xfbml: true,  // parse social plugins on this page
-            version: 'v3.0' // use graph api version
-        });
-
-    };
-
-    //使用自己客製化的按鈕來登入
-    function FBLogin() {
-        
-        FB.login(function (response) {
-            //debug用
-            console.log(response);
-            if (response.status === 'connected') {
-                //user已登入FB
-                //抓userID
-                let FB_ID = response["authResponse"]["userID"];
-                console.log("userID:" + FB_ID);
-                document.getElementById("form").submit();
-               
-            } else {
-                // user FB取消授權
-                alert("Facebook帳號無法登入");
-            }
-        }, { scope: 'public_profile,email' });
-    }
-</script>-->
-<!--方法二-->
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+    </script>
+<!--Facebook帳號登入-->   
 <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -1952,7 +1934,6 @@
          console.log('Logged in and authenticated');
          setElements(true);
          testAPI();
-         /*document.location.href="home.html";*/
          document.getElementById("form").submit();
        } else {
          console.log('Not authenticated');
@@ -1991,7 +1972,6 @@
           大頭貼<img src="https://graph.facebook.com/v2.11/${user.id}/picture"></img>
         </ul>
       `;
-
       document.getElementById('profile').innerHTML = profile;
     }
 
@@ -2031,7 +2011,7 @@
     }
   </script>
 
-  <nav class="container">
+  <!--<nav class="navbar container">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -2048,11 +2028,6 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a id="logout" href="#" onclick="logout()">Logout</a></li>
-          <fb:login-button
-            id="fb-btn"
-            scope="public_profile,email"
-            onlogin="checkLoginState();">
-          </fb:login-button>
         </ul>
       </div>
     </div>
@@ -2062,9 +2037,9 @@
     <h3 id="heading">Log in to view your profile</h3>
     <div id="profile"></div>
     <div id="feed"></div>
-  </div>
-  
-  
+  </div>-->
+
+
 <!--忘記密碼-->
 <div id="forgetpassword" class="forgetpassword">
     <div class="close">
@@ -2091,13 +2066,13 @@
                             </div>
                         </div>
                         <div class="c11">
-                            <form  class="c12" action="" method="post">
+                            <form  class="c12" action="forgetpwd.jsp" method="post">
                                 <div class="c16">
                                     <i class="far fa-envelope"></i>
                                     <input id="email3" class="c18" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" >
                                     <small class="error3">Error message</small>
                                 </div>
-                                <div class="c16">
+                                <!--<div class="c16">
                                     <i class="fas fa-lock"></i>
                                     <input id="b14" class="b11" type="password" autocomplete="current-password" required="" placeholder="請輸入舊密碼" name="password" aria-required="true" value="" >
                                     <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes1"></label>
@@ -2109,7 +2084,9 @@
                                     <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes2"></label>
                                     <small class="error3">Error message</small>
                                 </div>
-                                <input type="submit" value="確認" class="submit">
+                                <script src="js/resetpwdeye1.js"></script>
+                                <script src="js/resetpwdeye2.js"></script>-->
+                                <input type="submit" value="確認" class="submit"><!--寄密碼到email-->
                             </form>
                         </div>
                     </div>
@@ -2118,67 +2095,65 @@
         </div>
     </div>
 </div>
-<script src="js/resetpwdeye1.js"></script>
-<script src="js/resetpwdeye2.js"></script>
 <!--註冊-->
 <div id="d1" class="d1">
-    <div class="close">
-      <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='none'">
-          <img src="img/close1.png" width="15px" height="15px" 
-              onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
-      </a>
-    </div>
-    <div class="c21">
-      <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
-          class="c22" draggable="false" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
-      </a>
-    </div> 
-    <div class="d2">
-      <div class="d3">
-        <div class="d4" aria-live="polite" role="region">
-          <div class="d5" aria-hidden="false">
-            <div class="d6">
-              <div class="d7">
-                <div class="d9">
-                  <h1 class="d10">註冊</h1>
-                </div>
+  <div class="close">
+    <a href = "javascript:void(0)" onclick = "document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='none'">
+        <img src="img/close1.png" width="15px" height="15px" 
+            onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+    </a>
+  </div>
+  <div class="c21">
+    <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
+        class="c22" draggable="false" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
+    </a>
+  </div> 
+  <div class="d2">
+    <div class="d3">
+      <div class="d4" aria-live="polite" role="region">
+        <div class="d5" aria-hidden="false">
+          <div class="d6">
+            <div class="d7">
+              <div class="d9">
+                <h1 class="d10">註冊</h1>
               </div>
-              <div class="b1">
-                  <form id="form2" action="signup.jsp" name="login" method="post" class="b2" aria-labelledby="b3">
-                      <div class="b5">
-                          <i class="far fa-envelope"></i>
-                          <input id="email2" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
-                          <small class="error1">Error message</small>
-                      </div>
-                      <div class="b5">
-                          <i class="fas fa-lock"></i>
-                          <input id="password2" class="b11" type="password" autocomplete="current-password"  placeholder="請輸入密碼" name="password" aria-required="true" value="" >
-                          <small class="error2">Error message</small>
-                          <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes3"></label>
-                      </div>
-                      <div class="b5">
-                          <i class="fas fa-lock"></i>
-                          <input id="password3" class="b11" type="password" autocomplete="current-password"  placeholder="請再次輸入密碼" name="password2" aria-required="true" value="" >
-                          <small class="error2">Error message</small>
-                          <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes4"></label>
-                      </div>
-                      <script src="js/signuppwdeye1.js"></script>
-                      <script src="js/signuppwdeye2.js"></script>
-                      <input type="submit"  value="註冊" class="submit" >
-                      <div class="d23">
-                          <p class="d24">已經註冊了嗎？
-                          <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
-                              class="d25" draggable="false" style="cursor: pointer;">立即登入
-                          </a>
-                      </p>
-                      </div>
-                  </form>
-                  <script src="js/signupcheck.js"></script>
-              </div>       
-          </div>
+            </div>
+            <div class="b1">
+                <form id="form2" action="signup.jsp" name="login" method="post" class="b2" aria-labelledby="b3">
+                    <div class="b5">
+                        <i class="far fa-envelope"></i>
+                        <input id="email2" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
+                        <small class="error1">Error message</small>
+                    </div>
+                    <div class="b5">
+                        <i class="fas fa-lock"></i>
+                        <input id="password2" class="b11" type="password" autocomplete="current-password"  placeholder="請輸入密碼" name="password" aria-required="true" value="" >
+                        <small class="error2">Error message</small>
+                        <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes3"></label>
+                    </div>
+                    <div class="b5">
+                        <i class="fas fa-lock"></i>
+                        <input id="password3" class="b11" type="password" autocomplete="current-password"  placeholder="請再次輸入密碼" name="password2" aria-required="true" value="" >
+                        <small class="error2">Error message</small>
+                        <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes4"></label>
+                    </div>
+                    <script src="js/signuppwdeye1.js"></script>
+                    <script src="js/signuppwdeye2.js"></script>
+                    <input type="submit"  value="註冊" class="submit" >
+                    <div class="d23">
+                        <p class="d24">已經註冊了嗎？
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
+                            class="d25" draggable="false" style="cursor: pointer;">立即登入
+                        </a>
+                    </p>
+                    </div>
+                </form>
+                <!--<script src="js/signupcheck.js"></script>-->
+            </div>       
         </div>
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>
