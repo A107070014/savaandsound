@@ -16,7 +16,7 @@ playRwdStop.addEventListener('click',()=>{
   audio.play()
 })*/
 
-//第二題
+//第三題
 let playStop2 = document.getElementById('stop2')
 let playRwdStop2 = document.getElementById('rwdstop2')
 let playStart2 = document.getElementById('playy')

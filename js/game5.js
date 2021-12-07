@@ -1,4 +1,4 @@
-//第五題
+//第十題
 let playStop5 = document.getElementById('stop5')
 let playRwdStop5 = document.getElementById('rwdstop5')
 let playStart5= document.getElementById('playyyyy')
@@ -15,3 +15,4 @@ playRwdStop5.addEventListener('click',()=>{
 playStart5.addEventListener('click',()=>{
   audio5.play()
 })
+

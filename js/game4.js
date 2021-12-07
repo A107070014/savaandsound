@@ -1,4 +1,4 @@
-//第四題
+//第七題
 let playStop4 = document.getElementById('stop4')
 let playRwdStop4 = document.getElementById('rwdstop4')
 let playStart4= document.getElementById('playyyy')
