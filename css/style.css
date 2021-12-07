@@ -88,7 +88,12 @@ main>.right{
     border:0px solid #3b1e1e;
     padding-left:10px;  
 }
-
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
 .searchbutton{
     vertical-align: middle;
     background-color: transparent;
@@ -593,7 +598,7 @@ main>.right{
     }
     .search-rwd{
         position: relative;
-        top: 50px;
+        top: 11px;
         z-index: 1002;
     }
     .searchbox-rwd{
@@ -952,6 +957,7 @@ main>.right{
     margin-left:21%;
     white-space: nowrap;
     padding-top: 10px;
+    
 }
 .m>.m3{
     margin-left:21.7%;
@@ -1220,6 +1226,210 @@ span ~ #tab > div:first-of-type,
 
 }
 @media screen and (max-width:450px){
+    .tab-content-1>ul,
+    .tab-content-2>ul{
+        list-style-type: none;
+        display: flex;
+        margin: 5px 5px 5px 0px;
+        width:calc(100% - 110px);
+        position: relative;   
+    }
+    .tab-content-1>ul>.time{
+        display: none;
+    }
+    .tab-content-1>ul>.data{
+        margin-left: 25px;
+    }
+    .m{
+        width:calc(100% - 0px);
+        display: flex;
+        margin-bottom: 15px;
+        padding:10px 20px;
+        border-bottom: 1px solid #eee;
+    }
+    .m>.img{
+        position: relative;
+        width: 35px;
+        right: 80px;
+    }
+    .m>.img img{
+            margin:0px 0px 0px 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            height:35px;
+            width: inherit;
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            bottom: 45%;
+    }
+    .m>.m0{
+        position: relative;
+        left: 33px;
+        top: -5px;
+        white-space: nowrap;
+    } 
+    .m>.m1{
+        margin-left:28%;
+        white-space: nowrap;
+        padding-top: 10px;
+        position: relative;
+        right:35px;
+    }
+    .m>.m2{
+        margin-left:-1%;
+        white-space: nowrap;
+        padding-top: 10px;
+    }
+    .m>#m2{
+        position: relative;
+        right:68px;
+    }
+    .m>#m16{
+        position: relative;
+        right: 12px;
+    }
+    .m>#m8{
+        position: relative;
+        left: 13px;
+    }
+    .m>#m5{
+        position: relative;
+        right: 7px;
+    }
+    .m>#m1{
+        position: relative;
+        left: 15px;
+    }
+    .m>#m25{
+        position: relative;
+        right: 82px;
+    }
+    .m>#m3{
+        position: relative;
+        left: 10px;
+    }
+    .m>#m6{
+        position: relative;
+        right: 5px;
+    }
+    .m>#m24{
+        position: relative;
+        right: 15px;
+    }
+    .m>#mm2{
+        position: relative;
+        left: 20px;
+    }
+    .m>#m9{
+        position: relative;
+        left: 10px;
+    }
+    .m>#m13{
+        position: relative;
+        left: 5px;
+    }
+    .m>.m3{
+        display: none;
+    }
+    .m>.m4{
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m5{
+        margin-left:5%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m6{
+        margin-left:21.9%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m8{
+        margin-left:9.5%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m9{
+        display: none;
+    }
+    .m>.m10{
+        position: relative;
+        right:7.5%;
+    }
+    .m>.m11{
+        display: none;
+    }
+    .m>.m12{
+        position: relative;
+        right:4.5%;
+    }
+    .m>.m13{
+        display: none;
+    }
+    .m>.m14{
+        position: relative;
+        right:23.9%;
+    }
+    .m>.m15{
+        margin-left:22.3%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m14{
+        margin-left:18.5%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m15{
+        margin-left:22.3%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m16{
+        margin-left:-1%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m17{
+        margin-left:22.3%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m18{
+        margin-left:12%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m19{
+        display: none;
+    }
+    .m>.m20{
+        position: relative;
+        left:15px;
+    }
+    .m>.m21{
+        display: none;
+    }
+    .m>.m22{
+        margin-left:25.5%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m23{
+        display: none;
+    }
+    .m>.m24{
+        margin-left:21.5%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
+    .m>.m25{
+        margin-left:21.5%;
+        padding-top: 10px;
+        white-space: nowrap;
+    }
 }
 /* 註冊/登入 */
 .black_overlay{ 
@@ -1875,9 +2085,9 @@ span ~ #tab > div:first-of-type,
     height: 600px;
     border:1px solid #000;
     border-radius: 10px;
-    background-color: #ceb195;
+    /*background-color: #ceb195;
     color: #572a2a;
-    /*display:none;*/
+    display:none;*/
     padding:30px;
     z-index:1002;
     animation: fadein 1s ease-in-out;
@@ -1889,9 +2099,9 @@ span ~ #tab > div:first-of-type,
     right:10px;
     cursor: pointer;
 }
-.saveandsound>.b1>p{
-    line-height: 55px;
-    text-align: center;
+.saveandsound>img{
+    border-radius: 10px;
+    margin: -30px 0px 0px -30px ;
 }
 
 
@@ -1949,6 +2159,19 @@ span ~ #tab > div:first-of-type,
     }
 }
 @media screen and (max-width:450px){
+    .saveandsound>img{
+        position: relative;
+        right: 13px;
+        top:50px;
+        width: 340px;
+        height: 340px;
+    }
+    .saveandsound>.close{
+        position: absolute;
+        top:60px;
+        right:280px;
+        z-index: 2;
+    }
     /* 註冊/登入 */
     .dialog{
         position:fixed;
@@ -2105,7 +2328,10 @@ span ~ #tab > div:first-of-type,
     color: #cecdcd;
     cursor: pointer;
 }
-.s6>.fa-heart:hover{
+.s6>#heart2>.fa-heart{
+    color: rgb(226, 100, 100);
+}
+.s6>#heart>.fa-heart:hover{
     color: rgb(226, 100, 100);
 }
 .s6>.fa-bookmark:hover{
@@ -2117,6 +2343,12 @@ span ~ #tab > div:first-of-type,
 .s6>.fa-exclamation-circle:hover{
     color: #c59797;
 }
+.s6>#heart,
+.s6>#heart2{
+    border: none;
+    background: transparent;
+}
+
 #numb{
     position: relative;
     right: 228px;
@@ -2146,17 +2378,24 @@ span ~ #tab > div:first-of-type,
     display: flex;
     margin-top: 10px;
 }
-.s8>ul>.img{
+.messageBox{
+    display: flex;
+    margin-top: 50px;
+}
+.s8>ul>.img,
+.messageBox>ul>.img{
     margin: 50px 0px 0px 0px;
 }
-.s8>ul>li>.s11{
+.s8>ul>li>.s11,
+.messageBox>ul>li>.s11{
     white-space: nowrap;
     font-weight: bold;
     position: relative;
     top: 17px;
     left: 8px;
 }
-.s8>.img img {
+.s8>.img img,
+.messageBox>.img img {
     border-radius: 50%;
     object-fit: cover;
     height:55px;
@@ -2167,22 +2406,25 @@ span ~ #tab > div:first-of-type,
     bottom: 45%;
     border: 2px solid #d9a200;
 }
-.s8>ul{
+.s8>ul,
+.messageBox>ul{
     margin-right: 0px;
     position: relative;
     right: 35px;
     top: 10px;
 }
-.s8>ul>li{
+.s8>ul>li,
+.messageBox>ul>li{
     list-style-type: none;
     position: relative;
     left: 70px;
     top: -70px;
     
 }
-.s8>ul>hr{
+.s8>ul>hr,
+.messageBox>ul>hr{
     position: relative;
-    bottom:55px;
+    bottom:25px;
     width: 425%;
     border: 0.1px solid rgba(238, 238, 238, 0.664);
     height: 0px;
@@ -2224,6 +2466,14 @@ span ~ #tab > div:first-of-type,
     position: relative;
     left: 490px;
     bottom: 47.8px;
+    cursor: pointer;
+}
+#s2>i{
+    font-size: 50px;
+    color: #ceb195;
+    position: relative;
+    left: 490px;
+    bottom: 32.3px;
     cursor: pointer;
 }
 #sendMessage{
@@ -2294,6 +2544,7 @@ span ~ #tab > div:first-of-type,
     .s6 i{
         font-size: 20px;
         margin-right: 10px;
+        margin-bottom: 5px;
         color: #cecdcd;
         cursor: pointer;
     }
@@ -2304,6 +2555,13 @@ span ~ #tab > div:first-of-type,
         left: 250px;
         bottom: 29px;
         cursor: pointer;
+    }
+    .s6>#heart2>.fa-heart{
+        position: relative;
+        bottom: 170px;
+    }
+    .say{
+        margin-top: 55px;
     }
 }
 
@@ -2498,6 +2756,34 @@ textarea:hover{
     left: 430px;
     bottom: 10px;
 }
+
+/*上傳音檔*/
+.upload{
+    position: fixed;
+    top:35px;
+    left:45%;
+    transform:translate(-185px,0px);
+    width:600px;
+    padding:30px;
+    border:1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    display:none;
+    z-index:1002;
+}
+.upload>.close{
+    display: flex;
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+}
+.upload>h2{
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+}
+
 /*我的聲跡*/
 .phone{
     display: none;
@@ -2547,6 +2833,9 @@ textarea:hover{
 .Terms h3{
     color: #572a2a;
     letter-spacing: 5px;
+}
+.Terms2:hover{
+    color: #d9a200;
 }
 #editmyinfo h3>.fa-user,
 .fa-key{
@@ -3392,7 +3681,9 @@ button.list-group-item{
         flex:none;/*沒有彈性*/
         width:110px;/*固定尺寸*/
         display:flex;
-        margin-left: 5px;
+        margin-left: 55px;
+        position: relative;
+        bottom: 27px;
     }
     .logoname{
         font-size:18px;
@@ -3401,14 +3692,14 @@ button.list-group-item{
     nav>.search{
         width: 15px;
         position: relative;
-        bottom:3px;  
+        top:-75px;
+        left: 230px;  
     }
     .signupin{
         font-size: 18px;
         position: relative;
-        bottom: 2px;   
-    }
-    
+        top:-75px;   
+    } 
     .navbar-expand-lg{
         flex-wrap:nowrap;
         justify-content:flex-start;
@@ -3417,6 +3708,7 @@ button.list-group-item{
         position:relative;
         display:flex;
         flex-wrap:wrap;
+        height: 50px;
     }
     .container-fluid{
         padding-right:var(--bs-gutter-x,.75rem);
@@ -3453,6 +3745,9 @@ button.list-group-item{
         border:none;
         border-radius:.25rem;
         transition:box-shadow .15s ease-in-out;
+        position: relative;
+        right: 185px;
+        top: 10px;
     }
     @media (prefers-reduced-motion:reduce){
         .navbar-toggler{
@@ -3531,8 +3826,8 @@ button.list-group-item{
     .my{
         flex:auto;
         width:300px;
-        margin-left: 0px;
-        margin-top: 40px;
+        margin-left: -10px;
+        margin-top: 0px;
         margin-bottom: 600px;
     }
     .my>.tab-item>#tab>ul>li>a{
@@ -5483,6 +5778,35 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
         right: 30px;
     }
 }
+
+/*另起一頁 查看聲音故事*/
+#blogs>a{
+    color: #000;
+}
+.article-content{
+    flex:auto;
+    width:300px;
+    height: 671px;
+    margin-top: 50px;
+    background-color: #ceb1959f;
+}
+.details{
+    position: fixed;
+    top:8.1%;
+    left:45%;
+    transform:translate(-185px,0px);
+    width:600px;
+    padding:30px;
+    height:91.7%;
+    background-color: #fff;/*之後改這個rgba(255, 255, 255, 0.747)*/  
+    z-index:1;
+    overflow-y: auto;
+    padding-top: 50px;
+}
+.delete{
+    display: none;
+}
+
 
 
 
