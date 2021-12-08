@@ -30,6 +30,11 @@ nav>.search{
     white-space: nowrap;
     margin-top: 10px;
 }
+nav>.search2{
+    flex:auto;/*盡量把容器的空間張滿*/
+    white-space: nowrap;
+    margin-top: 10px;
+}
 nav>.btn{
     flex:none;
     width:100px;
@@ -580,15 +585,18 @@ input[type="search"]::-webkit-search-results-decoration {
         display:block;
         color: #d9a200;
         position: relative;
-        left: 50px;
-        top: 6px;
+        
     }
     .searchbutton3{
-        display:none;
-        color: #d9a200;
+        display:block;
+        border: none;
+        background: transparent;
         position: relative;
-        left: 150px;
-        top: 6px;
+        left: 140px;
+        top: 3px;
+    }
+    .searchbutton3>i{
+        color: #d9a200;
     }
     .searchbutton4{
         color: #d9a200;
@@ -680,12 +688,13 @@ input[type="search"]::-webkit-search-results-decoration {
     }
     nav>.tool2{
         flex:none;
-        width:500px;
+        width:520px;
+        height: 60px;
         display: flex;
         padding-top: 12px;
         justify-content: space-evenly;
         position: fixed;
-        top: 630px;
+        top: 685px;
         right: 1px;
         z-index: 1002;
         background-color: #3b1e1e;
@@ -693,10 +702,10 @@ input[type="search"]::-webkit-search-results-decoration {
     
     #tool2>.fas{
         position: relative;
-        bottom: 4px;
+        bottom: 2px;
         left: 90px;
         color:#d9a200;
-        font-size:22px;
+        font-size:25px;
     }
     #tool2>.fa-bell{
         bottom: 5px;
@@ -3101,6 +3110,18 @@ span ~ #tab > div:first-of-type,
     right:10px;
     cursor: pointer;
 }
+.article>.teach{
+    display: flex;
+    margin-left: 140px;
+    margin-top: -50px;
+    margin-bottom: 60px;
+}
+.article>.teach>a{
+  color: #ceb195;  
+}
+.article>.teach>a:hover{
+    color: #d9a200;  
+}
 .article>h2{
     text-align: center;
     position: relative;
@@ -3299,6 +3320,28 @@ textarea:hover{
     bottom: 40px;
 }
 
+/*教學影片*/
+.video{
+    position: fixed;
+    top:35px;
+    left:25%;
+    transform:translate(-185px,0px);
+    width:600px;
+    padding:30px;
+    border-radius: 10px;
+    /*display:none;*/
+    z-index:1002;
+}
+.video>.close{
+    display: flex;
+    position: absolute;
+    top:-20px;
+    left:1110px;
+    cursor: pointer;
+}
+.video>video{
+   margin-top: -250px;
+}
 /*我的聲跡*/
 .phone{
     display: none;
@@ -4196,7 +4239,7 @@ button.list-group-item{
         flex:none;/*沒有彈性*/
         width:110px;/*固定尺寸*/
         display:flex;
-        margin-left: 55px;
+        margin-left: 60px;
         position: relative;
         bottom: 27px;
     }
@@ -4261,7 +4304,7 @@ button.list-group-item{
         border-radius:.25rem;
         transition:box-shadow .15s ease-in-out;
         position: relative;
-        right: 185px;
+        right: 175px;
         top: 10px;
     }
     @media (prefers-reduced-motion:reduce){
@@ -4343,7 +4386,7 @@ button.list-group-item{
         width:300px;
         margin-left: -10px;
         margin-top: 35px;
-        margin-bottom: 600px;
+        
     }
     .my>.tab-item>#tab>ul>li>a{
         font-size: 20px;
@@ -4367,14 +4410,14 @@ button.list-group-item{
         top:-75px;   
     } 
     .navbar-toggler{
-        right: 170px;
+        right: 160px;
     }
     .my{
         flex:auto;
         width:300px;
         margin-left: -10px;
         margin-top: 35px;
-        margin-bottom: 600px;
+        
     }
 }
 /*
@@ -6350,6 +6393,38 @@ a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-gro
     display: none;
 }
 
+/*置頂*/
+#gotop {
+    position:fixed;
+    z-index:90;
+    right:30px;
+    bottom:31px;
+    display:none;
+    width:50px;
+    height:50px;
+    color:#fff;
+    background:#d9a200;
+    line-height:50px;
+    border-radius:50%;
+    transition:all 0.5s;
+    text-align: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+#gotop :hover{
+    background:#d9a200;
+}
+@media screen and (max-width:450px){
+    /*置頂*/
+    #gotop {
+        bottom:80px;
+    }
+}
+@media screen and (max-width:400px){
+    /*置頂*/
+    #gotop {
+        bottom:80px;
+    }
+}
 
 
 
