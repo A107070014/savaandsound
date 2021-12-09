@@ -4,7 +4,7 @@ function coreCount()
 {
 	var cores=0;
 	var qestions=document.getElementsByClassName("question")
-	for(var i=0;i<qestions.length;i++)
+	for(var i=0;i<=qestions.length;i++)
 	{
 		var count=0;
 		var flag=1;
