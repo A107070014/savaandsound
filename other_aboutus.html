@@ -20,7 +20,17 @@
 <!--RWD手機導覽列-->
 <!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
 <link rel="stylesheet" href="css/rwdstyle.css" />
-<script src="js/bootstrap.bundle.min.js"></script> 
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- <%@ page contentType="text/html;charset=utf-8" import="java.util.*,java.sql.*" %> -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1SM9783S7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F1SM9783S7');
+</script> 
 </head>
 <body>
     <!--登入-->
@@ -50,7 +60,7 @@
                 </a>
             </div>   
         </div>
-        <div class="search">
+        <!--<div class="search">
             <div class="key">
                 <form action="">
                     <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50"/>
@@ -59,7 +69,7 @@
                     </button>
                 </form>
             </div>
-        </div>
+        </div>-->
         <div class="tool">    
             <div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
@@ -69,7 +79,7 @@
             <div>
                 <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
-            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+            <!--<div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="inform-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
                         <a id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
@@ -85,7 +95,7 @@
                                 <p>更早之前訊息</p>
                         </ul>
                 </div>
-            </div>
+            </div>-->
             <div >
                 <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
@@ -99,9 +109,9 @@
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
                         <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                        <a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="" title="設定"><li>設定</li></a>-->
                         <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
@@ -114,14 +124,14 @@
                 <a id="tool2" class="home" title="首頁" role="button" href="home.html"><i class="fas fa-home"></i></a>
             </div>
             <div>
-                <a href ="post.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
+                <a href ="post_rwd.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
             </div>
             <div>
                 <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
-            <div >
-                <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
-            </div>
+            <!--<div >
+                <a href ="inform.jsp" id="tool2" class="inform" title="通知" role="button"><i class="fas fa-bell"></i></a>
+            </div>-->
             <div>
                 <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
@@ -135,9 +145,9 @@
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
                         <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                        <a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="" title="設定"><li>設定</li></a>-->
                         <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
@@ -156,9 +166,9 @@
             <a id="tab3" href="#" class="tab list-group-item">團隊成員</a>
             <a id="tab4" href="#" class="tab list-group-item">展覽展演時程</a>
         </div>
-        <div class="aboutus-content col-md-8 col-xs-4">
+        <div class="aboutus-content col-md-8 col-xs-4" >
             <div id="tab-item1" class="tab-item">
-                <img src="img/test.jpg" width="1215" height="300">
+                <img src="img/關於我們圖片2.png" width="1250" height="300" style="margin-left:0px;">
                 <div class="i2">
                     <h2>專案背景&目標</h2>
                     <h3>專案背景</h3>
@@ -192,19 +202,19 @@
                     <div class="member">
                         <div class="top">
                             <div  class="img">
-                                <img src="img/pm.jpg" alt="music-cover" id="cover" name="picture">
+                                <img src="img/瀞予.png" alt="music-cover" id="cover" name="picture">
                                 <h4 class="name">吳瀞予</h4>
                                 <h4 id="title">專案經理</h4>
                                 <h5 class="mail"><i class="far fa-envelope"></i>mandy9502966@gmail.com</h5>   
                             </div>
                             <div  class="img">
-                                <img src="img/xinmei.jpg" alt="music-cover" id="cover" name="picture">
+                                <img src="img/欣玫.png" alt="music-cover" id="cover" name="picture">
                                 <h4  class="name">李欣玫</h4>
                                 <h4 class="title" >後台程式設計</h4>
                                 <h5 class="mail2"><i class="far fa-envelope"></i>fesu308@gmail.com</h5>   
                             </div>
                             <div  class="img">
-                                <img src="img/web.jpg" alt="music-cover" id="cover" name="picture">
+                                <img src="img/佳昇.png" alt="music-cover" id="cover" name="picture">
                                 <h4  class="name">劉佳昇</h4>
                                 <h4 class="title" >前台程式設計</h4>
                                 <h5 class="mail3"><i class="far fa-envelope"></i>liujmas88@gmail.com</h5>    
@@ -212,13 +222,13 @@
                         </div>
                         <div class="bot">
                             <div  class="img" >
-                                <img src="img/carol.jpg" alt="music-cover" id="cover" name="picture">
+                                <img src="img/梓璇.png" alt="music-cover" id="cover" name="picture">
                                 <h4  class="name">林梓璇</h4>
                                 <h4 id="title">美術設計</h4>
                                 <h5 class="mail4"><i class="far fa-envelope"></i>carollin890525@gmail.com</h5>    
                             </div>
                             <div  class="img">
-                                <img src="img/jasper.jpg" alt="music-cover" id="cover" name="picture">
+                                <img src="img/溥澤.png" alt="music-cover" id="cover" name="picture">
                                 <h4  class="name">徐溥澤</h4>
                                 <h4 id="title">行銷公關</h4>
                                 <h5 class="mail5" ><i class="far fa-envelope"></i>a29334101@gmail.com</h5>    
@@ -236,11 +246,10 @@
                     <div class="school">
                         <div>
                             <h3>校內展</h3>
-                            <p>時間：110/10/19～110/10/21</p>
-                            <p>地點：世新大學管理學院一樓</p>
+                            <p>時間：110/10/22～110/10/24</p>
+                            <p>地點：Gather Town 線上展</p>
                         </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.3774635970967!2d121.5457786148409!3d24.987286783994215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346801fd50239bcd%3A0xa65aac763e031255!2z5LiW5paw5aSn5a24566h55CG5a246Zmi!5e0!3m2!1szh-TW!2stw!4v1629605650231!5m2!1szh-TW!2stw" 
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <a href="https://gather.town/app/C4XlopKBPBxsSOlQ/2021%20SHU%20Media%20Framing" title="Gather Town 線上展" target="_blank"><img src="img/Gather Town.jpg" width="600" height="450" style="border:0;"></a>
                     </div>
                     <div class="ppp">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.415755244091!2d121.51994131484234!3d25.05389398396309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x140dd0e7247ab13d%3A0x3e9ec83d7e6536e7!2sPPP!5e0!3m2!1szh-TW!2stw!4v1629605776613!5m2!1szh-TW!2stw" 
@@ -281,59 +290,49 @@
                 onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
         </a>
     </div>
+    <div class="teach">
+        第一次上傳聲音故事？
+        <a href = "https://m.youtube.com/watch?v=umxs_WyBb6g&ab_channel=%E7%95%99%E8%81%B2%E8%B7%A1SaveAndSound" target="_blank">觀看教學影片</a>
+    </div>
     <div  class="img">
-        <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
-        <h4 id="title" name="name">姓名</h4>   
+        <img src="upload/myphoto/佳昇.png">
+        <h4 id="title" name="name">Kevin</h4>  
     </div>
         <form name="post" method="post" action="post.jsp" >
             <div class="article1">
-                <select name="category" style="cursor: pointer;">
-                    <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
-                    <option value="nature">自然</option>
-                    <option value="city">都市</option>
-                    <option value="instrument">器械</option>
-                    <option value="vocal">人聲</option>
-                    <option value="nostalgia">懷舊</option>
-                </select>
+                <label><input list="browsers" name="category" placeholder="聲音故事分類" style="cursor: pointer;"></label>
+                <datalist id="browsers" name="category" style="cursor: pointer;">
+                    <option value="自然">自然</option>
+                    <option value="都市">都市</option>
+                    <option value="器械">器械</option>
+                    <option value="動物">動物</option>
+                    <option value="運動">運動</option>
+                    <option value="交通">交通</option>
+                    <option value="昆蟲">昆蟲</option>
+                    <option value="其他">其他</option>
+                </datalist>
             </div>
             <div class="article1">
-                <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
-                <div id="textarea" contenteditable>
-                    <output id="list"></output>
-                    <textarea  name="post" placeholder="聲音故事..." rows="8" cols="65" required></textarea>            
-                    <img contenteditable="false" style="width:500px" id="myimg" />
-                </div>                  
+                <textarea name="title" placeholder="標題" rows="" cols="69" required></textarea>
+                <textarea  id="textarea" name="post" placeholder="聲音故事..." rows="8" cols="68" required></textarea>
+                <!--<div  id="textarea" contenteditable></div>-->                  
             </div >
-            <div class="article1 file">
-                <div style="display:inline;">
-                    <label>
-                        <input id="files" name="sound" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;" >
-                        <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
-                            onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
-                    </label>
-                        <label>
-                            <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
-                            <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
-                                onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
-                        </label>
-                </div>
-            </div>
-            <script src="js/preview_image.js"></script>
-            <script src="js/preview_audio.js"></script>
-
-            <p>Tags</p>
+            <!--<p>Tags</p>
             <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
             <script>
                 var el = document.getElementById('container');
                 new Tags(el);
-            </script>
-                
-            <div>
-                <label class="publish">
-                    <input id="submit" type="submit" value="發佈" style="display:none;">發佈
-                </label>     
+            </script>-->
+            <div class="article1">
+                <!--<a href = "javascript:void(0)" onclick = "document.getElementById('file').style.display='block';document.getElementById('upload').style.display='none'"
+                    style="cursor: pointer;">-->
+                    <label class="publish" >
+                        <input id="submit" type="submit" value="下一步" style="display:none;">下一步
+                    </label>
+                </a>     
             </div>
         </form>
+        
         <script src="js/tags.js"></script>
         <!--避免tags按enter送出表單-->
         <script type="text/javascript">
@@ -345,42 +344,6 @@
             }
         });
         });
-        </script>
+        </script>       
 </div>
-<!--
-    <div class="row">
-        <div class="my">
-            <h1>關於我們</h1>
-            <h2>專案目標:</h2>
-            <h2>Logo設計理念:</h2>
-            <h2>團隊成員:</h2>
-            <h3>吳瀞予   專案經理</h3>
-            <h3>林梓璇   美術設計</h3>
-            <h3>劉佳昇   前台程式設計</h3>
-            <h3>李欣玫   後台程式設計</h3>
-            <h3>徐溥澤   行銷公關</h3>
-         </div>       
-        <div class="area2">
-            <img src="" alt="">
-            <div class="area2-text">
-                <h3>展覽展演時程</h3>
-                <span class="orangeLine center"></span>
-                <p>世新大學資訊傳播學系107級畢業展覽 <br>
-                   校內展：109/10/19～109/10/21 <br>
-                   地點：世新大學管理學院一樓 <br>
-                   校外展：109/12/10～109/12/12 <br>
-                   地點：PPP時尚藝文空間
-                </p>
-                   <span class="orangeLine "></span>
-                   <ul>
-                       <li>
-                           <a href="https://www.instagram.com/107ics.media_framing/?hl=zh-tw"  target=_blank>
-                               <i class="fa fa-instagram" aria-hidden="true"></i>
-                           </a>
-                       </li>
-                   </ul>
-            </div>
-        </div>
-    </div>
--->
 </body>

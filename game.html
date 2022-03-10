@@ -24,7 +24,7 @@
 <!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
 <link rel="stylesheet" href="css/rwdstyle.css" />
 <script src="js/bootstrap.bundle.min.js"></script>
-<%@ page contentType="text/html;charset=utf-8" import="java.util.*,java.sql.*" %> 
+<!-- <%@ page contentType="text/html;charset=utf-8" import="java.util.*,java.sql.*" %>  -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1SM9783S7"></script>
 <script>
@@ -54,17 +54,17 @@
         </div> 
         <div class="logo">
             <div class="picture">
-                <a title="留聲跡" href="home.jsp">
+                <a title="留聲跡" href="home.html">
                     <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                 </a>
             </div>
             <div class="logoname">
-                <a title="留聲跡" href="home.jsp">
+                <a title="留聲跡" href="home.html">
                     <span class="logoname">留聲跡</span>
                 </a>
             </div>   
         </div>
-        <div class="search">
+        <!--<div class="search">
             <div class="key">
                 <form action="">
                     <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50" />
@@ -79,7 +79,7 @@
                 class="searchbutton4" style="cursor: pointer;"><i class="fas fa-search"></i>
                 </a>
             </div>
-        </div> 
+        </div> -->
         <div class="tool">    
             <div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
@@ -87,7 +87,7 @@
                 </a>
             </div>
             <div>
-                <a id="tool" class="game" title="小遊戲" role="button" href="game.jsp"><i class="fas fa-gamepad"></i></a>
+                <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
             <!--<div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="inform-menu-style dropdown-menu">
@@ -107,7 +107,7 @@
                 </div>
             </div>-->
             <div >
-                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.jsp"><i class="fas fa-user"></i></a>
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
             
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
@@ -118,11 +118,11 @@
                     </span>
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
-                        <a href="other_aboutus.jsp" title="關於我們"><li>關於我們</li></a>
+                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
                         <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
                         <!--<a href="" title="募資平台"><li>募資平台</li></a>
                         <a href="" title="設定" ><li>設定</li></a>-->
-                        <form action="index.jsp"class="logout" id="logout">
+                        <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
                     </ul>
@@ -131,13 +131,13 @@
         </div>
         <div class="tool2">
             <div>
-                <a id="tool2" class="home" title="首頁" role="button" href="home.jsp"><i class="fas fa-home"></i></a>
+                <a id="tool2" class="home" title="首頁" role="button" href="home.html"><i class="fas fa-home"></i></a>
             </div>
             <div>
-                <a href ="post_rwd.jsp" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
+                <a href ="post_rwd.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
             </div>
             <div>
-                <a id="tool2" class="game" title="小遊戲" role="button" href="game.jsp"><i class="fas fa-gamepad"></i></a>
+                <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
             <!--
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
@@ -162,7 +162,7 @@
                 <a href ="inform.jsp" id="tool2" class="inform" title="通知" role="button"><i class="fas fa-bell"></i></a>
             </div>-->
             <div >
-                <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.jsp"><i class="fas fa-user"></i></a>
+                <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
             
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
@@ -173,11 +173,11 @@
                     </span>
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
-                        <a href="other_aboutus.jsp" title="關於我們"><li>關於我們</li></a>
+                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
                         <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
                         <!--<a href="" title="募資平台"><li>募資平台</li></a>
                         <a href="set.jsp" title="設定"><li>設定</li></a>-->
-                        <form action="index.jsp"class="logout" id="logout">
+                        <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
                     </ul>
@@ -186,7 +186,7 @@
         </div>   
     </nav>
 
-    <!--遊戲-->
+     <!--遊戲-->
     <div class="row">
         <div class="game-content col-md-8 col-xs-4">
             <!--全部-->
@@ -227,7 +227,7 @@
                         <label><input type="radio" name="answer1" value="0"><span class="round button">排笛</span></label>
                         <label><input type="radio" name="answer1" value="0"><span class="round2 button">中音笛</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play7').style.display='block';document.getElementById('play1').style.display='none';"
-                        id="rwdstop" class="next" style="cursor: pointer;">
+                        id="rwdstop" class="next" style="cursor: pointer;">下一題
                         </a>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play7').style.display='block';document.getElementById('play1').style.display='none';"
@@ -258,7 +258,7 @@
                         <label><input type="radio" name="answer7" value="5"><span class="round button" style="padding:10px 46px">捷運行駛聲</span></label>
                         <label><input type="radio" name="answer7" value="0"><span class="round button" style="padding:10px 50px">高鐵行駛聲</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play7').style.display='none';"
-                        id="rwdstop7" class="next" style="cursor: pointer;">
+                        id="rwdstop7" class="next" style="cursor: pointer;">下一題 
                         </a>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play2').style.display='block';document.getElementById('play7').style.display='none';"
@@ -338,7 +338,7 @@
                         <label><input type="radio" name="answer8" value="0"><span class="round button" style="padding:10px 40px">0977702918</span></label>
                         <label><input type="radio" name="answer8" value="0"><span class="round2 button" style="padding:10px 30px">0944402918</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play8').style.display='none';"
-                        id="rwdstop8" class="next" style="cursor: pointer;">
+                        id="rwdstop8" class="next" style="cursor: pointer;">下一題
                         </a>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play3').style.display='block';document.getElementById('play8').style.display='none';"
@@ -421,7 +421,7 @@
                         <label><input type="radio" name="answer9" value="0"><span class="round button" style="padding:10px 10px">Messenger通話斷訊聲</span></label>
                         <label><input type="radio" name="answer9" value="0"><span class="round2 button" style="padding:10px 10px">Instagram通話斷訊聲</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play9').style.display='none';"
-                        id="rwdstop9" class="next" style="cursor: pointer;">
+                        id="rwdstop9" class="next" style="cursor: pointer;">下一題 
                         </a>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play4').style.display='block';document.getElementById('play9').style.display='none';"
@@ -502,7 +502,7 @@
                         <label><input type="radio" name="answer10" value="5"><span class="round button" style="padding:10px 30px">水燒開沸騰聲</span></label>
                         <label><input type="radio" name="answer10" value="0"><span class="round2 button" style="padding:10px 10px">直升機螺旋槳轉動聲</span></label>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play11').style.display='block';document.getElementById('play10').style.display='none';"
-                        id="rwdstop10" class="next" style="cursor: pointer;">
+                        id="rwdstop10" class="next" style="cursor: pointer;">下一題 
                         </a>
                     </div>
                     <a href = "javascript:void(0)" onclick = "document.getElementById('play11').style.display='block';document.getElementById('play10').style.display='none';"
@@ -589,8 +589,7 @@
                         </a>
                         <a href = "javascript:void(0)" onclick = "document.getElementById('play').style.display='block';document.getElementById('play5').style.display='none';"
                                 class="backhome" style="cursor: pointer;"><i class="fas fa-home"></i></a>
-                    </div>
-                    
+                    </div>                   
                     <div class="playgame">
                         <audio controls id="Music5">
                             <source src="music/iPhone預設鈴聲.mp3" type="audio/mp3">
@@ -632,7 +631,28 @@
                     </div>
                     <div class="score">
                         <h1>恭喜獲得</h1>
-                        <p id="score"></p> 
+                        <p id="score"></p>
+                        <a href = "javascript:void(0)" onclick = "document.getElementById('anser').style.display='block';document.getElementById('fade').style.display='block';"
+                                class="answer" style="cursor: pointer;">猜聲小遊戲答案</a> 
+                    </div>
+                    <div class="final anser" id="anser">
+                        <div class="close">    
+                            <a id="close20" href = "javascript:void(0)" onclick = "document.getElementById('anser').style.display='none';document.getElementById('fade').style.display='none'">
+                                <img src="img/close1.png" width="15px" height="15px" 
+                                    onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+                            </a>
+                        </div>
+                        <h2>公布答案</h2>
+                        <p>第一題 陶笛</p>
+                        <p>第二題 捷運行駛聲</p>
+                        <p>第三題 抽油煙機</p>
+                        <p>第四題 0977502918</p>
+                        <p>第五題 松山新店線</p>
+                        <p>第六題 Microsoft Teams 通話斷訊聲</p>
+                        <p>第七題 Winsows XP 開機聲</p>
+                        <p>第八題 水燒開沸騰聲</p>
+                        <p>第九題 板南線</p>
+                        <p>第十題 APPLE 預設鈴聲</p>
                     </div> 
                     <!-- <div class="ranking">
                         <h2>排行榜</h2>
@@ -664,90 +684,74 @@
     <script src="game3.js"></script>
     <script src="js/game4.js"></script>
     <script src="js/game5.js"></script> 
-     
+    
 
     
 <!--發文-->
-    <div id="article" class="article">
-        <h2>發表貼文</h2>
-        <div class="close">    
-            <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
-                <img src="img/close1.png" width="15px" height="15px" 
-                    onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
-            </a>
-        </div>
-        <div  class="img">
-            <%
-                request.setCharacterEncoding("utf-8");
-                String email2 = (String)session.getAttribute("EMAIL");
-
-                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                String url2 = "jdbc:sqlserver://saveandsound.database.windows.net:1433;database=saveandsound";
-                Connection con2 = DriverManager.getConnection(url2,"saveandsound@saveandsound","SHU$ics$107");
-
-                PreparedStatement pst2 = con2.prepareStatement("select * from users where email=?");
-                pst2.setString(1,email2);
-                        
-                ResultSet rs2 = pst2.executeQuery();
-                while(rs2.next()){
-                    out.print("<img id=cover src='"+rs2.getString("photo_path").substring(34)+"'/>");
-                    out.print("<h4>"+rs2.getString("name")+"</h4>");
-                }
-                rs2.close();
-                pst2.close();
-                con2.close();
-            %>
-            <!--<h4 id="title" name="name">姓名</h4>-->   
-        </div>
-            <form name="post" method="post" action="post.jsp" >
-                <div class="article1">
-                    <label><input list="browsers" name="category" placeholder="聲音故事分類" style="cursor: pointer;"></label>
-                    <datalist id="browsers" name="category" style="cursor: pointer;">
-                        <option value="自然">自然</option>
-                        <option value="都市">都市</option>
-                        <option value="器械">器械</option>
-                        <option value="動物">動物</option>
-                        <option value="運動">運動</option>
-                        <option value="交通">交通</option>
-                        <option value="昆蟲">昆蟲</option>
-                        <option value="其他">其他</option>
-                    </datalist>
-                </div>
-                <div class="article1">
-                    <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
-                    <textarea  id="textarea" name="post" placeholder="聲音故事..." rows="8" cols="65" required></textarea>
-                    <!--<div  id="textarea" contenteditable></div>-->                  
-                </div >
-                <!--<p>Tags</p>
-                <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
-                <script>
-                    var el = document.getElementById('container');
-                    new Tags(el);
-                </script>-->
-                <div>
-                    <!--<a href = "javascript:void(0)" onclick = "document.getElementById('file').style.display='block';document.getElementById('upload').style.display='none'"
-                        style="cursor: pointer;">-->
-                        <label class="publish" >
-                            <input id="submit" type="submit" value="下一步" style="display:none;">下一步
-                        </label>
-                    </a>     
-                </div>
-            </form>
-            
-            <script src="js/tags.js"></script>
-            <!--避免tags按enter送出表單-->
-            <script type="text/javascript">
-                $(document).ready(function() {
-                $(window).keydown(function(event){
-                    if(event.keyCode == 13) {
-                        event.preventDefault();
-                    return false;
-                }
-            });
-            });
-            </script>
-                
+<div id="article" class="article">
+    <h2>發表貼文</h2>
+    <div class="close">    
+        <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
+            <img src="img/close1.png" width="15px" height="15px" 
+                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+        </a>
     </div>
+    <div class="teach">
+        第一次上傳聲音故事？
+        <a href = "https://m.youtube.com/watch?v=umxs_WyBb6g&ab_channel=%E7%95%99%E8%81%B2%E8%B7%A1SaveAndSound" target="_blank">觀看教學影片</a>
+    </div>
+    <div  class="img">
+        <img src="upload/myphoto/佳昇.png">
+        <h4 id="title" name="name">Kevin</h4>    
+    </div>
+        <form name="post" method="post" action="post.jsp" >
+            <div class="article1">
+                <label><input list="browsers" name="category" placeholder="聲音故事分類" style="cursor: pointer;"></label>
+                <datalist id="browsers" name="category" style="cursor: pointer;">
+                    <option value="自然">自然</option>
+                    <option value="都市">都市</option>
+                    <option value="器械">器械</option>
+                    <option value="動物">動物</option>
+                    <option value="運動">運動</option>
+                    <option value="交通">交通</option>
+                    <option value="昆蟲">昆蟲</option>
+                    <option value="其他">其他</option>
+                </datalist>
+            </div>
+            <div class="article1">
+                <textarea name="title" placeholder="標題" rows="" cols="69" required></textarea>
+                <textarea  id="textarea" name="post" placeholder="聲音故事..." rows="8" cols="68" required></textarea>
+                <!--<div  id="textarea" contenteditable></div>-->                  
+            </div >
+            <!--<p>Tags</p>
+            <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
+            <script>
+                var el = document.getElementById('container');
+                new Tags(el);
+            </script>-->
+            <div class="article1">
+                <!--<a href = "javascript:void(0)" onclick = "document.getElementById('file').style.display='block';document.getElementById('upload').style.display='none'"
+                    style="cursor: pointer;">-->
+                    <label class="publish" >
+                        <input id="submit" type="submit" value="下一步" style="display:none;">下一步
+                    </label>
+                </a>     
+            </div>
+        </form>
+        
+        <script src="js/tags.js"></script>
+        <!--避免tags按enter送出表單-->
+        <script type="text/javascript">
+            $(document).ready(function() {
+            $(window).keydown(function(event){
+                if(event.keyCode == 13) {
+                    event.preventDefault();
+                return false;
+            }
+        });
+        });
+        </script>       
+</div> 
 
 </body>
 </html>

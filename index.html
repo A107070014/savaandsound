@@ -49,7 +49,7 @@
             <span ><i class="fas fa-bars"  data-bs-target="#sidebar"></i></span>
           </button>
         </div> 
-        <div class="logo">
+        <div class="logo3">
             <div class="picture">              
                 <a title="留聲跡" href="home.jsp">
                     <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
@@ -61,7 +61,7 @@
                 </a>
             </div>   
         </div>
-        <div class="search">
+        <!--<div class="search">
             <div class="key">
                 <form action="" class="search_story">
                     <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="term" value="" class="searchbox" size="50" />
@@ -73,7 +73,7 @@
                 class="searchbutton2" style="cursor: pointer;"><i class="fas fa-search"></i>
                 </a>
             </div>
-        </div>
+        </div>-->
         <div class="btn">
             <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('fade').style.display='block'"
                 class="signupin" style="cursor: pointer;">註冊/登入
@@ -1022,7 +1022,19 @@
     <div id="s" class="s2">
         小時候外婆家的角落放著一台撥盤電話，常常會偷偷去玩電話，把手指放進撥盤的號碼孔滑一圈，看著他自己答答答的又轉回來真的很好玩，但不知道原來它真的能撥出去，一直被罵為甚麼要亂打電話，好幾次被家人發現後，最後索性直接拔掉電話線，換成了按鍵電話，我又多了台玩具!
     </div>
-    
+    <div id="s2" class="s4">
+        <div class="s5">
+            <div class="s6" id="details4">    
+                <button  id ="heart2"><i class="fas fa-heart" ></i></button>
+                <!--<i class="fas fa-bookmark"></i>
+                <i class="fas fa-exclamation-circle"></i>-->
+            </div>
+        </div>
+        <!--按讚數--> 
+        <span id="numb">1</span>
+    </div>
+    <script src="js/like.js"></script>
+    <button id="sendMessage" class="say" style="margin-bottom:50px;">立即<a href="javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('story20').style.display='none'">登入</a>留言</button>
     <div class="sss">
         <div id="s" class="s7">
             <p>留言</p>
@@ -1770,27 +1782,7 @@
         });
     });
     </script> 
-    <style>
-        #gotop {
-            position:fixed;
-            z-index:90;
-            right:30px;
-            bottom:31px;
-            display:none;
-            width:50px;
-            height:50px;
-            color:#fff;
-            background:#d9a200;
-            line-height:50px;
-            border-radius:50%;
-            transition:all 0.5s;
-            text-align: center;
-            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-        }
-        #gotop :hover{
-            background:#d9a200;
-        }
-    </style>
+    
 <!--網站導覽-->
 <div id="saveandsound" class="saveandsound">
     <div class="close" id="close">
@@ -1813,7 +1805,7 @@
     </div>
     <div class="b1">
     
-        <form id="form"  action="home.html" name="login" method="post" class="b2" aria-labelledby="b3">
+        <form id="form"   name="login" method="post" class="b2" aria-labelledby="b3" >
             <div class="b4">
                 <i class="far fa-envelope"></i>
                 <input id="email" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
@@ -1828,7 +1820,8 @@
                     class="b23" style="cursor: pointer;">忘記密碼？
                 </a>-->
             </div>
-            <input type="submit"  value="登入" class="submit" >
+            
+            <input type="submit"  value="登入" class="submit" onclick="location.href='home.html'">
          
     </div>
     <p class="b25">第一次使用 留聲跡 嗎？
@@ -1887,7 +1880,10 @@
 </div>
 <script src="js/pwdeye.js"></script>
 <script src="js/signincheck.js"></script>
+<script>
+    var submit = document.getElementsByName("submit");
 
+</script>
 <!--Google帳號登入-->
     <script>
       function onSignIn(googleUser) {
@@ -2118,27 +2114,28 @@
               </div>
             </div>
             <div class="b1">
-                <form id="form2" action="signup.jsp" name="login" method="post" class="b2" aria-labelledby="b3">
+                <form id="form2" action="signup.jsp" name="login" method="post" class="b2" aria-labelledby="b3" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('請表明您已閱讀並同意版權聲明及隱私政策' ); 返回假; };">
                     <div class="b5">
                         <i class="far fa-envelope"></i>
-                        <input id="email2" class="b11" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
+                        <input id="email2" class="b11 aa" type="text" inputmode="email" autocapitalize="none" autocorrect="off" autocomplete="email"  placeholder="請輸入Email" name="email" aria-required="true" aria-labelledby="b6" > 
                         <small class="error1">Error message</small>
                     </div>
                     <div class="b5">
                         <i class="fas fa-lock"></i>
-                        <input id="password2" class="b11" type="password" autocomplete="current-password"  placeholder="請輸入密碼" name="password" aria-required="true" value="" >
+                        <input id="password2" class="b11 aa" type="password" autocomplete="current-password"  placeholder="請輸入密碼" name="password" aria-required="true" value="" >
                         <small class="error2">Error message</small>
                         <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes3"></label>
                     </div>
                     <div class="b5">
                         <i class="fas fa-lock"></i>
-                        <input id="password3" class="b11" type="password" autocomplete="current-password"  placeholder="請再次輸入密碼" name="password2" aria-required="true" value="" >
+                        <input id="password3" class="b11 aa" type="password" autocomplete="current-password"  placeholder="請再次輸入密碼" name="password2" aria-required="true" value="" >
                         <small class="error2">Error message</small>
                         <label><img src="img/closeeye.png" alt="JS實現表單中點選小眼睛顯示隱藏密碼框中的密碼" id="eyes4"></label>
                     </div>
+                    <input type="checkbox" name="checkbox" value="check" id="agree" />我已閱讀並同意<a href="同意條款.html" target="_blank" class="agree">版權聲明及隱私政策</a>
                     <script src="js/signuppwdeye1.js"></script>
                     <script src="js/signuppwdeye2.js"></script>
-                    <input type="submit"  value="註冊" class="submit" >
+                    <input type="submit"  value="註冊" class="submit">
                     <div class="d23">
                         <p class="d24">已經註冊了嗎？
                         <a href = "javascript:void(0)" onclick = "document.getElementById('dialog').style.display='block';document.getElementById('d1').style.display='none';document.getElementById('fade').style.display='block'"
@@ -2154,5 +2151,6 @@
     </div>
   </div>
 </div>
+
 </body>
 </html>
