@@ -35,6 +35,8 @@
 			if(passwordValue != '' && emailValue != '') {
                document.getElementById("form").submit();
 			}
+
+			
 		}
 		
 		

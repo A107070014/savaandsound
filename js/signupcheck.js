@@ -1,56 +1,57 @@
-        const form = document.getElementById('form2');
-		const email = document.getElementById('email2');
-		const password = document.getElementById('password2');
+        const form2 = document.getElementById('form2');
+		const email2 = document.getElementById('email2');
+		const password3 = document.getElementById('password2');
 		const password2 = document.getElementById('password3');
 		
-		form.addEventListener('submit', e => {
+		form2.addEventListener('submit2', e => {
 			e.preventDefault();
 			
-			checkInputs();
+			checkInputs2();
 		});
 		
-		function checkInputs() {
+		function checkInputs2() {
 			// trim to remove the whitespaces
-			const usernameValue = username.value.trim();
-			const emailValue = email.value.trim();
-			const passwordValue = password.value.trim();
+			const emailValue = email2.value.trim();
+			const passwordValue = password3.value.trim();
 			const password2Value = password2.value.trim();
 			
 			if(emailValue === '') {
-				setErrorFor(email, 'Email cannot be blank');
+				setErrorFor(email2, '請輸入電子信箱');
 			} else if (!isEmail(emailValue)) {
-				setErrorFor(email, 'Not a valid email');
+				setErrorFor(email2, '請輸入含有 @ 的電子信箱格式');
 			} else {
-				setSuccessFor(email);
+				setSuccessFor(email2);
 			}
 			
 			if(passwordValue === '') {
-				setErrorFor(password, 'Password cannot be blank');
+				setErrorFor(password3, '請輸入密碼');
 			} else {
-				setSuccessFor(password);
+				setSuccessFor(password3);
 			}
 			
 			if(password2Value === '') {
-				setErrorFor(password2, 'Password2 cannot be blank');
+				setErrorFor(password2, '請再次輸入密碼');
 			} else if(passwordValue !== password2Value) {
-				setErrorFor(password2, 'Passwords does not match');
+				setErrorFor(password2, '與密碼不符');
 			} else{
 				setSuccessFor(password2);
 			}
+
+			if(document.getElementById('agree').checked) { return true; } else { alert('請表明您已閱讀並同意版權聲明及隱私政策' ); 返回假; };
 		}
 		
 		function setErrorFor(input, message) {
-			const formControl = input.parentElement;
-			const small = formControl.querySelector('small');
-			formControl.className = 'form-control error';
-			small.innerText = message;
+			const formControl2 = input.parentElement;
+			const small2 = formControl2.querySelector('.aa');
+			formControl2.className = 'b5 error';
+			small2.innerText = message;
 		}
 		
 		function setSuccessFor(input) {
-			const formControl = input.parentElement;
-			formControl.className = 'form-control success';
+			const formControl2 = input.parentElement;
+			formControl2.className = 'b5 success';
 		}
 			
-		function isEmail(email) {
+		function isEmail(email2) {
 			return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 		}
