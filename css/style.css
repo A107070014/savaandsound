@@ -578,7 +578,7 @@ input[type="search"]::-webkit-search-results-decoration {
         display:flex;
         margin-right: 100px;
         position: relative;
-        right: 190px;
+        right: 150px;
     }
     nav>.logo3{
         flex:none;/*沒有彈性*/
@@ -3156,15 +3156,17 @@ span ~ #tab > div:first-of-type,
         border-radius: 10px;
     }
     .s4{
-        display:flex;
-        position: fixed;
-        top: 70%;
         width: 300px;
         padding: 10px 0px 0px 0px;
     }
     .s4>div{
-        margin-right:35px;
+        margin-right:45px;
         white-space: nowrap;
+    }
+    .s5{
+        /* margin-top: 58%; */
+        position: relative;
+        top: 175px;
     }
     .s5 i{
         margin-right: 5px;
@@ -4603,6 +4605,9 @@ button.list-group-item{
     }
     .navbar>.container-fluid2{
         display:none;
+    }
+    .hiddenRwd{
+        visibility:hidden;
     }
     .navbar-toggler-icon{
         display:inline-block;
