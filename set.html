@@ -37,7 +37,6 @@
             $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
         });
     } );
-    
 </script>
 
 </head>
@@ -45,9 +44,10 @@
     <!--登入-->
     <div id="fade" class="black_overlay" ></div>
     <!--標題列-->
-    <nav>
-        <div class="logo">
+    <nav> 
+        <div class="logo2">
             <div class="picture">
+                
                 <a title="留聲跡" href="home.html">
                     <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                 </a>
@@ -61,7 +61,7 @@
         <div class="search">
             <div class="key">
                 <form action="">
-                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50"/>
+                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50" />
                     <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
                         <i class="fas fa-search"></i>  
                     </button>
@@ -77,7 +77,7 @@
             <div>
                 <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
-            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+            <!--<div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="inform-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
                         <a id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
@@ -93,7 +93,7 @@
                                 <p>更早之前訊息</p>
                         </ul>
                 </div>
-            </div>
+            </div>-->
             <div >
                 <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
@@ -107,9 +107,9 @@
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
                         <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                        <a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>-->
+                        <a href="set.html" title="設定"><li>設定</li></a>
                         <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
@@ -122,14 +122,14 @@
                 <a id="tool2" class="home" title="首頁" role="button" href="home.html"><i class="fas fa-home"></i></a>
             </div>
             <div>
-                <a href ="post.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
+                <a href ="post_rwd.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
             </div>
             <div>
                 <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
-            <div >
+            <!--<div >
                 <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
-            </div>
+            </div>-->
             <div >
                 <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
             </div>
@@ -143,9 +143,9 @@
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
                         <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                        <a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="" title="設定"><li>設定</li></a>-->
                         <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
@@ -157,7 +157,7 @@
                 <div class="i1">
                     <h2>設定</h2>
                     <div class="center">
-                        <div class="info">
+                        <!--<div class="info">
                             <h3>通知</h3>
                             <div class="switch_demo">
                                 <input type="checkbox" name="switch_demo" class="switch_demo-checkbox" id="switch_demo" checked>
@@ -166,19 +166,93 @@
                                     <span class="switch_demo-switch"></span>
                                 </label>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="Terms">
                             <h3>使用設定與條款</h3>
-                            <a href=""><h4>會員權益條款</h4></a>
-                            <a href=""><h4>個資告知條</h4></a>
-                            <a href=""><h4>音檔版權宣告</h4></a>
-                            <a href=""><h4>圖檔版權聲明</h4></a>
-                            <a href=""><h4>版歸聲明</h4></a>
+                            <a href = "javascript:void(0)" onclick = "document.getElementById('anno1').style.display='block';document.getElementById('fade').style.display='block'"
+                                style="cursor: pointer;"><h4 class="Terms2">用戶使用協議</h4></a>
+                            <a href = "javascript:void(0)" onclick = "document.getElementById('anno2').style.display='block';document.getElementById('fade').style.display='block'"
+                                style="cursor: pointer;"><h4 class="Terms2">版權聲明</h4></a> 
+                            <a href = "javascript:void(0)" onclick = "document.getElementById('anno3').style.display='block';document.getElementById('fade').style.display='block'"
+                                style="cursor: pointer;"><h4 class="Terms2">個資隱私宣告</h4></a>       
                         </div>
                     </div>
                 </div>    
             
-    
+    <div id="anno1" class="anno">
+        <h2>用戶使用協議</h2>
+        <div class="close">    
+            <a href = "javascript:void(0)" onclick = "document.getElementById('anno1').style.display='none';document.getElementById('fade').style.display='none'">
+                <img src="img/close1.png" width="15px" height="15px" 
+                    onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+            </a>
+        </div>
+        <div>
+            <h3>一、發文</h3>
+                <p>1.	發文內容與請勿涉及腥羶色、攻擊他人、廣告等性質之內容，違者經過審核屬實，將刪文並私訊通知。</p>
+                <p>2.	聲音故事若有侵權，管理者將提出警告，爭議文章數日後不通知刪除。</p>
+                <p>3.	版規累犯、違法、惡意發言、人身攻擊者公告後將封鎖使用帳號請出網站。</p>
+            <h3>二、聲音故事審核</h3>
+                <p>1.	審核方式採人工審核制，用戶發文成功送出後，聲音故事將交由網站審核人員進行審核，聲音故事將在24小時內審核完畢。</p>
+            <h3>三、聲音故事著作版權</h3>
+                <p>1.	本網站「聲音故事」徵集整理之主題展覽文字及圖檔資料，為世新大學資訊傳播學系留聲跡專題小組規劃辦理成果，並為世新大學資訊傳播學系2021年畢業專題小組留聲跡著作權所有。</p>
+                <p>2.	相關聲音故事資料由音檔創作者本人及取得音檔版權擁有者之授權，及說明文字由聲音故事創作者提供，並為世新大學資訊傳播學系2021年畢業專題小組留聲跡著作權所有。</p>
+                <p>3.	如要在影片中使用受版權保護的素材，您必須先取得相關授權。留聲跡無法授予相關權利，也無法協助創作者尋找及聯絡可提供授權的對象。如果您對受版權保護素材的使用方式有任何問題，建議諮詢合格的專業律師。</p>  
+        </div>
+    </div>
+    <div id="anno2" class="anno">
+        <h2>版權聲明</h2>
+        <div class="close">    
+            <a href = "javascript:void(0)" onclick = "document.getElementById('anno2').style.display='none';document.getElementById('fade').style.display='none'">
+                <img src="img/close1.png" width="15px" height="15px" 
+                    onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+            </a>
+        </div>
+        <div>
+            <p>世新大學資訊傳播學系2021年畢業專題之「留聲跡」於民國一一○年十月二十日星期三正式上線。</p>
+            <p>以「保存屬於自己記憶中的聲音故事」為宗旨，」留聲跡希望能藉由此平台引起人們想去了解身旁的家人、朋友，進而促進與人交談，希望此目標能藉由此專案之內容功能將其達成，讓人人都能夠透留聲跡網站，來獲得一個能保存個人聲音記憶且能與人分享內心感受、觸及感動的平台。</p>
+            <p>本網站「聲音故事」徵集整理之主題展覽文字及圖檔資料，為世新大學資訊傳播學系留聲跡專題小組規劃辦理成果。相關音聲資料由音檔創作者本人及取得音檔版權擁有者之授權，說明文字由聲音故事創作者提供，並為世新大學資訊傳播學系2021年畢業專題小組留聲跡著作權所有。</p>
+        </div>
+    </div>
+    <div id="anno3" class="anno">
+        <h2>個資隱私宣告</h2>
+        <div class="close">    
+            <a href = "javascript:void(0)" onclick = "document.getElementById('anno3').style.display='none';document.getElementById('fade').style.display='none'">
+                <img src="img/close1.png" width="15px" height="15px" 
+                    onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
+            </a>
+        </div>
+        <div>
+            <p>非常歡迎您光臨「留聲跡網站」（以下簡稱本網站），為了讓您能夠安心使用本網站的各項服務與資訊，特此向您說明本網站的隱私權保護政策，以保障您的權益，請您詳閱下列內容：</p>
+            <h3>一、隱私權保護政策的適用範圍</h3>
+                <p>隱私權保護政策內容，包括本網站如何處理在您使用網站服務時收集到的個人識別資料。隱私權保護政策不適用於本網站以外的相關連結網站，也不適用於非本網站所委託或參與管理的人員。</p>
+            <h3>二、個人資料的蒐集、處理及利用方式</h3>
+                <p>當您造訪本網站或使用本網站所提供之功能服務時，我們將視該服務功能性質，請您提供必要的個人資料，並在該特定目的範圍內處理及利用您的個人資料；非經您書面同意，本網站不會將個人資料用於其他用途。</p>
+                <p>本網站在您使用服務信箱、問卷調查等互動性功能時，會保留您所提供的姓名、大頭照、性別、出生年月日、電子郵件地址、聯絡方式及使用時間等。</p>
+                <p>於一般瀏覽時，伺服器會自行記錄相關行徑，包括您使用連線設備的IP位址、使用時間、使用的瀏覽器、瀏覽及點選資料記錄等，做為我們增進網站服務的參考依據，此記錄為內部應用，決不對外公佈。</p>
+                <p>為提供精確的服務，我們會將收集的問卷調查內容進行統計與分析，分析結果之統計數據或說明文字呈現，除供內部研究外，我們會視需要公佈統計數據及說明文字，但不涉及特定個人之資料。</p>
+                <p>您可以隨時向我們提出請求，以更正或刪除本網站所蒐集您錯誤或不完整的個人資料。</p>
+            <h3>三、資料之保護</h3>
+                <p>本網站主機均設有防火牆、防毒系統等相關的各項資訊安全設備及必要的安全防護措施，加以保護網站及您的個人資料採用嚴格的保護措施，只由經過授權的人員才能接觸您的個人資料，相關處理人員皆簽有保密合約，如有違反保密義務者，將會受到相關的法律處分。</p>
+                <p>如因業務需要有必要委託其他單位提供服務時，本網站亦會嚴格要求其遵守保密義務，並且採取必要檢查程序以確定其將確實遵守。</p>
+            <h3>四、網站對外的相關連結</h3>
+                <p>本網站的網頁提供其他網站的網路連結，您也可經由本網站所提供的連結，點選進入其他網站。但該連結網站不適用本網站的隱私權保護政策，您必須參考該連結網站中的隱私權保護政策。</p>
+            <h3>五、與第三人共用個人資料之政策</h3>
+                <p>本網站絕不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關，但有法律依據或合約義務者，不在此限。
+                前項但書之情形包括不限於：</p>
+                <p>1.經由您書面同意。</p>
+                <p>2.法律明文規定。</p>
+                <p>3.為免除您生命、身體、自由或財產上之危險。</p>
+                <p>4.與公務機關或學術研究機構合作，基於公共利益為統計或學術研究而有必要，且資料經過提供者處理或蒐集著依其揭露方式無從識別特定之當事人。</p>
+                <p>5.當您在網站的行為，違反服務條款或可能損害或妨礙網站與其他使用者權益或導致任何人遭受損害時，經網站管理單位研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。</p>
+                <p>6.有利於您的權益。</p>
+                <p>7.本網站委託廠商協助蒐集、處理或利用您的個人資料時，將對委外廠商或個人善盡監督管理之責。</p>
+            <h3>六、Cookie之使用</h3>
+                <p>為了提供您最佳的服務，本網站會在您的電腦中放置並取用我們的Cookie，若您不願接受Cookie的寫入，您可在您使用的瀏覽器功能項中設定隱私權等級為高，即可拒絕Cookie的寫入，但可能會導至網站某些功能無法正常執行。</p>
+            <h3>七、隱私權保護政策之修正</h3>
+                <p>本網站隱私權保護政策將因應需求隨時進行修正，修正後的條款將刊登於網站上。</p>
+        </div>
+    </div>
     
     
 
@@ -197,48 +271,31 @@
         <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
         <h4 id="title" name="name">姓名</h4>   
     </div>
-        <form name="post" method="post" action="post.jsp" >
+        <form name="post" method="post" action="post.html" >
             <div class="article1">
-                <select name="category" style="cursor: pointer;">
-                    <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
-                    <option value="nature">自然</option>
-                    <option value="city">都市</option>
-                    <option value="instrument">器械</option>
-                    <option value="vocal">人聲</option>
-                    <option value="nostalgia">懷舊</option>
-                </select>
+                    <div class="article1">
+                    <label><input list="browsers" name="category" placeholder="聲音故事分類" style="cursor: pointer;"></label>
+                    <datalist id="browsers" name="category" style="cursor: pointer;">
+                        <option value="自然">自然</option>
+                        <option value="都市">都市</option>
+                        <option value="器械">器械</option>
+                        <option value="動物">動物</option>
+                        <option value="運動">運動</option>
+                        <option value="交通">交通</option>
+                        <option value="昆蟲">昆蟲</option>
+                        <option value="其他">其他</option>
+                    </datalist>
             </div>
             <div class="article1">
                 <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
-                <div id="textarea" contenteditable>
-                    <output id="list"></output>
-                    <textarea  name="post" placeholder="聲音故事..." rows="8" cols="65" required></textarea>            
-                    <img contenteditable="false" style="width:500px" id="myimg" />
-                </div>                  
-            </div >
-            <div class="article1 file">
-                <div style="display:inline;">
-                    <label>
-                        <input id="files" name="sound" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;" >
-                        <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
-                            onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
-                    </label>
-                    <label>
-                        <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
-                        <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
-                            onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
-                    </label>
-                </div>
+                <textarea  id="textarea" name="post" placeholder="聲音故事..." rows="8" cols="37" required></textarea>                              
             </div>
-            <script src="js/preview_image.js"></script>
-            <script src="js/preview_audio.js"></script>
-
-            <p>Tags</p>
-            <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
-            <script>
-                var el = document.getElementById('container');
-                new Tags(el);
-            </script>
+                <!--<p>Tags</p>
+                <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
+                <script>
+                    var el = document.getElementById('container');
+                    new Tags(el);
+                </script>-->
                 
             <div>
                 <label class="publish">

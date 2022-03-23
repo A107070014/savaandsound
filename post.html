@@ -23,39 +23,105 @@
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 <!--RWD手機導覽列-->
 <!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-/>
-<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css" />
 <link rel="stylesheet" href="css/rwdstyle.css" />
-<!--<%@ page contentType="text/html;charset=utf-8" import="java.util.Date,java.sql.*" %>-->
+<script src="js/bootstrap.bundle.min.js"></script> 
+<!--<%@page import="java.util.Enumeration"%>
+<%@page import="java.io.FileInputStream,java.io.File"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@ page import="org.bug.smart.*"%>
+<%@ page import="cn.com.bug.util.*"%>
+<%@page import="com.jspsmart.upload.*"%>-->
 </head>
 <body>
-    <nav> 
+<!--
+<%
+    request.setCharacterEncoding("utf-8");
+    SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+    Date dt = new Date();
+
+    /*SmartUpload smart = new SmartUpload() ;
+    smart.initialize(pageContext) ;  // 初始化上傳操作
+    smart.upload() ;      // 上傳準備
+    String category = smart.getRequest().getParameter("category") ;
+    String title = smart.getRequest().getParameter("title");
+    String post = smart.getRequest().getParameter("post");
+    String tags = smart.getRequest().getParameter("data-simple-tags");
+    String time = date.toString();
+    smart.save("/saveandsound/upload");*/
+
+    String email2 = (String)session.getAttribute("EMAIL");
+    String category = request.getParameter("category");
+    String title = request.getParameter("title");
+    String post = request.getParameter("post");
+    String tags = request.getParameter("data-simple-tags");
+    String time = df.format(dt);
+    
+    /*out.print(id+"<br>"+category+"<br>"+title+"<br>"+post
+    +"<br>"+sound+"<br>"+image+"<br>"+tags);*/
+
+    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+    String url = "jdbc:sqlserver://saveandsound.database.windows.net:1433;database=saveandsound";
+    Connection con = DriverManager.getConnection(url,"saveandsound@saveandsound","SHU$ics$107");
+    String url3 = "jdbc:sqlserver://saveandsound.database.windows.net:1433;database=saveandsound";
+    Connection con3 = DriverManager.getConnection(url3,"saveandsound@saveandsound","SHU$ics$107");
+
+
+    PreparedStatement pst = con.prepareStatement("insert into article (title,time,category,story,tags,email) values(?,?,?,?,?,?)");
+	pst.setString(1,title);
+    pst.setString(2,time);
+	pst.setString(3,category);
+    pst.setString(4,post);
+    pst.setString(5,tags);
+    pst.setString(6,email2);
+	pst.executeUpdate();
+	
+	pst.close();
+	con.close();
+
+%>-->
+
+<!--登入-->
+    <!--登入-->
+    <div id="fade" class="black_overlay" ></div>
+    <!--標題列-->
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+            aria-controls="offcanvasExample"
+          >
+            <span ><i class="fas fa-bars"  data-bs-target="#sidebar"></i></span>
+          </button>
+        </div> 
         <div class="logo">
             <div class="picture">
-                
-                <a title="留聲跡" href="home.html">
+                <a title="留聲跡" href="home.jsp">
                     <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
                 </a>
             </div>
             <div class="logoname">
-                <a title="留聲跡" href="home.html">
+                <a title="留聲跡" href="home.jsp">
                     <span class="logoname">留聲跡</span>
                 </a>
             </div>   
         </div>
         <div class="search">
             <div class="key">
-                <form action="">
-                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50" />
+                <form action="" class="search_story2">
+                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="term" value="" class="searchbox" size="50" />
                     <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
                         <i class="fas fa-search"></i>  
                     </button>
                 </form>
+                <a href = "javascript:void(0)" onclick = "document.getElementById('search-rwd').style.display='block';document.getElementById('fade').style.display='block'"
+                class="searchbutton3" style="cursor: pointer;"><i class="fas fa-search"></i>
+                </a>
             </div>
         </div>
+
         
         <div class="tool">    
             <div>
@@ -64,9 +130,9 @@
                 </a>
             </div>
             <div>
-                <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
+                <a id="tool" class="game" title="小遊戲" role="button" href="game.jsp"><i class="fas fa-gamepad"></i></a>
             </div>
-            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+            <!--<div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
                 <div class="inform-menu-style dropdown-menu">
                     <span tabindex="0" onclick="return true">
                         <a id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
@@ -82,9 +148,9 @@
                                 <p>更早之前訊息</p>
                         </ul>
                 </div>
-            </div>
-            <div >
-                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
+            </div>-->
+            <div>
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.jsp"><i class="fas fa-user"></i></a>
             </div>
             
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
@@ -95,11 +161,11 @@
                     </span>
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
-                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                        <a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>
-                        <form action="index.html"class="logout" id="logout">
+                        <a href="other_aboutus.jsp" title="關於我們"><li>關於我們</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="" title="設定"><li>設定</li></a>-->
+                        <form action="index.jsp"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
                     </ul>
@@ -108,19 +174,38 @@
         </div>
         <div class="tool2">
             <div>
-                <a id="tool2" class="home" title="首頁" role="button" href="home.html"><i class="fas fa-home"></i></a>
+                <a id="tool2" class="home" title="首頁" role="button" href="home.jsp"><i class="fas fa-home"></i></a>
             </div>
             <div>
-                <a href ="post.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
+                <a href ="post_rwd.jsp" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
             </div>
             <div>
-                <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
+                <a id="tool2" class="game" title="小遊戲" role="button" href="game.jsp"><i class="fas fa-gamepad"></i></a>
             </div>
-            <div >
-                <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
+            <!--
+            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+                <div class="inform-menu-style dropdown-menu">
+                    <span tabindex="0" onclick="return true">
+                        <a id="tool2" class="inform" title="通知" role="button" style="cursor: pointer;">
+                            <i class="fas fa-bell"></i></a>
+                    </span>
+                    <div tabindex="0" onclick="return true"></div>
+                        <ul>
+                            <li><a href="#" onclick="sampleMenu(this)">本週</a></li>
+                                <p>本週訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">本月</a></li>
+                                <p>本月訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">更早之前</a></li>
+                                <p>更早之前訊息</p>
+                        </ul>
+                </div>
             </div>
+            -->
+            <!--<div >
+                <a href ="inform.jsp" id="tool2" class="inform" title="通知" role="button"><i class="fas fa-bell"></i></a>
+            </div>-->
             <div >
-                <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
+                <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.jsp"><i class="fas fa-user"></i></a>
             </div>
             
             <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
@@ -131,106 +216,85 @@
                     </span>
                     <div tabindex="0" onclick="return true"></div>
                     <ul>
-                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
-                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
-                        <a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>
-                        <form action="index.html"class="logout" id="logout">
+                        <a href="other_aboutus.jsp" title="關於我們"><li>關於我們</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="set.jsp" title="設定"><li>設定</li></a>-->
+                        <form action="index.jsp"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> 
     </nav>
-    <div id="article2" class="article2">
-        <h2>發表貼文</h2>
-        
-        <div  class="img">
-            <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
-            <!--<%
-                request.setCharacterEncoding("utf-8");
-                String email = (String)session.getAttribute("EMAIL");
-    
-                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                String url2="jdbc:sqlserver://127.0.0.1:1433;database=saveandsound";
-                Connection con2 = DriverManager.getConnection( url2, "sa","sa");
-    
-                PreparedStatement pst2 = con2.prepareStatement("select * from users where email=?");
-                pst2.setString(1,email);
-                
-                ResultSet rs2 = pst2.executeQuery();
-                while(rs2.next()){
-                    out.print("<h4>"+rs2.getString("name")+"</h4>");
-                }
-                rs2.close();
-                pst2.close();
-                con2.close();
-            %>-->
-            <h4 id="title" name="name">姓名</h4>  
+    <div class="search-rwd" id="search-rwd">
+        <div class="key">
+            <form action="">
+                <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox-rwd" size="50" />
+                <button type="submit" title="搜尋" class="searchbutton-rwd" style="cursor:pointer">
+                    <i class="fas fa-search"></i>  
+                </button>
+            </form>
         </div>
-            <form name="post" method="post" action="post.jsp" >
+        <a href = "javascript:void(0)" onclick = "document.getElementById('search-rwd').style.display='none';document.getElementById('fade').style.display='none'"
+            class="c22" style="cursor: pointer;"><i class="fas fa-chevron-left"></i>
+        </a>
+    </div>
+    
+<div class="row">
+        <div class="file2">
+            <h2>上傳檔案</h2>
+            <div  class="img">
+                    <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
+                    <!--<%
+                        request.setCharacterEncoding("utf-8");
+                        String email = (String)session.getAttribute("EMAIL");
+
+                        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                        String url2="jdbc:sqlserver://127.0.0.1:1433;database=saveandsound";
+                        Connection con2 = DriverManager.getConnection( url2, "sa","sa");
+
+                        PreparedStatement pst2 = con2.prepareStatement("select * from users where email=?");
+                        pst2.setString(1,email);
+                        
+                        ResultSet rs2 = pst2.executeQuery();
+                        while(rs2.next()){
+                            out.print("<h4>"+rs2.getString("name")+"</h4>");
+                        }
+                        rs2.close();
+                        pst2.close();
+                        con2.close();
+                    %>-->  
+                    <h4 id="title" name="name">姓名</h4> 
+            </div>
+            <form id="file" name="post" method="post" action="uploadfile.jsp" enctype="multipart/form-data">
                 <div class="article1">
-                    <select name="category" style="cursor: pointer;">
-                        <option value="disabled selected hidden" style="display: none;">聲音故事分類</option>
-                        <option value="nature">自然</option>
-                        <option value="city">都市</option>
-                        <option value="instrument">器械</option>
-                        <option value="vocal">人聲</option>
-                        <option value="nostalgia">懷舊</option>
-                    </select>
-                </div>
-                <div class="article1">
-                    <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
-                    <div id="textarea" contenteditable>
-                        <output id="list"></output>
-                        <textarea  name="post" placeholder="聲音故事..." rows="8" cols="37" required></textarea>            
-                        <img contenteditable="false" style="width:300px" id="myimg" />
-                    </div>                  
-                </div >
-                <div class="article1 file">
-                    <div style="display:inline;">
+                    <output id="list"></output>
+                    <img contenteditable="false" style="width:500px" id="myimg" />
+                    <div class="file3" style="display:inline;">
                         <label>
-                            <input id="files" name="sound" multiple onchange="previewAudio(this);" type="file"  accept="audio/*" style="display:none;" >
+                            <input id="files" name="sound" multiple onchange="previewAudio(this);" type="file"  accept="audio/mp3" style="display:none;" required>
                             <img src="img/music1.png" width="30" height="30" style="cursor: pointer;"
                                 onmouseover="this.src='img/music2.png'" onmouseout="this.src='img/music1.png'">
                         </label>
-                        <label>
-                            <input class="file" type='file' id="imgSel" name="image"  accept="image/gif, image/jpeg, image/png" style="display:none;"/>
+                        <!--<label>
+                            <input class="file" type='file' id="imgSel" name="image"  accept="image/jpeg, image/png" style="display:none;"/>
                             <img src="img/picture1.png" width="30" height="30" style="cursor: pointer;"
                                 onmouseover="this.src='img/picture2.png'" onmouseout="this.src='img/picture1.png'">                    
-                        </label>
+                        </label>-->
+                    </div>
+                    <div>
+                        <label class="publish">
+                            <input id="submit" type="submit" value="發佈" style="display:none;">發佈
+                        </label>     
                     </div>
                 </div>
                 <script src="js/preview_image.js"></script>
                 <script src="js/preview_audio.js"></script>
-    
-                <p>Tags</p>
-                <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
-                <script>
-                    var el = document.getElementById('container');
-                    new Tags(el);
-                </script>
-                    
-                <div id="publish">
-                    <label class="publish">
-                        <input id="submit" type="submit" value="發佈" style="display:none;">發佈
-                    </label>     
-                </div>
             </form>
-        
-            <script src="js/tags.js"></script>
-            <!--避免tags按enter送出表單-->
-            <script type="text/javascript">
-                $(document).ready(function() {
-                $(window).keydown(function(event){
-                    if(event.keyCode == 13) {
-                        event.preventDefault();
-                    return false;
-                }
-            });
-            });
-            </script>
+        </div>
     </div>
+</div>   
 </body>
 </html>

@@ -17,8 +17,11 @@
 <link rel="icon" href="img/logo.png" type="image/x-icon">
 <!-- google 正體中文字型 -->
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-
-<!--日期jquery-->
+<!--RWD手機導覽列-->
+<!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
+<link rel="stylesheet" href="css/rwdstyle.css" />
+<script src="js/bootstrap.bundle.min.js"></script> 
+<!--日期jquery
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -37,8 +40,8 @@
             $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
         });
     } );
-    
-</script>
+</script>-->
+
 </head>
 <body>
     <!--登入-->
@@ -108,8 +111,8 @@
                     <ul>
                         <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
                         <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
-                        <!--<a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="" title="設定"><li>設定</li></a>-->
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>-->
+                        <a href="set.html" title="設定"><li>設定</li></a>
                         <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
@@ -128,7 +131,7 @@
                 <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
             </div>
             <!--<div >
-                <a href ="inform.html" id="tool2" class="inform" title="通知" role="button"><i class="fas fa-bell"></i></a>
+                <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
             </div>-->
             <div >
                 <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
@@ -145,7 +148,7 @@
                         <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
                         <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
                         <!--<a href="" title="募資平台"><li>募資平台</li></a>
-                        <a href="set.html" title="設定"><li>設定</li></a>-->
+                        <a href="" title="設定"><li>設定</li></a>-->
                         <form action="index.html"class="logout" id="logout">
                             <button>登出<input type="submit" value="登出" ></button>
                         </form>
@@ -154,136 +157,47 @@
             </div>
         </div>
     </nav>
-    
-    <div class="row">
-        <div class="list-group col-md-4 col-xs-4">
-            <div class="personal">
-                <div class="img-container">
-                    <img src="img/ukulele.jpg" alt="music-cover" id="cover">
-                    
-                    <!--<h4 id="title" name="name">姓名</h4>-->    
-                </div>
-            </div>
-            <div class="list">
-                <a id="tab1" href="#" class="tab list-group-item active">我的個人資料</a>
-                <a id="tab2" href="#" class="tab list-group-item">我的聲音故事</a>
-                <!--<a id="tab3" href="#" class="tab list-group-item">聲音故事收藏</a>-->
-                <a id="tab4" href="#" class="tab list-group-item">設定</a>
-            </div>
-        </div>
-        <div class="content2 col-md-8 col-xs-4">
-            <div id="tab-item1" class="tab-item">
-                <div class="i1">
-                    <h2>我的個人資料</h2>
-                    <form class="myinfo" action="editmyphoto.html" method="post" enctype="multipart/form-data"> 
-                            <p class="photo">頭貼</p>               
-                            <img contenteditable=false id=myimg src="upload/myphoto/佳昇.png">
-                            <div class="article1 file">                              
-                                <label class="editphoto">
-                                    <input class="file" type='file' id="imgSel" name="image" accept="image/jpeg, image/png" style="display:none;"/>
-                                    <i class="fas fa-upload"></i>                 
-                                </label>                               
+    <div class="i1">
+        <h2>我的聲音故事</h2>
+        <div class="center">
+            <div class="tab-content-1">                            
+                <div class="new">
+                    <div class="mystory">
+                        <div  class="img">
+                            <img src="upload/myphoto/佳昇.png">
+                            <h4>Kevin</h4>   
+                        </div>
+                        <h2>蟲</h2>
+                        <div class="s1">
+                            <div>2021/10/17 16:22</div>
+                            <div>自然</div>
+                        </div>
+                        <audio controls controlsList="nodownload" id="audio9">
+                            <source src="upload/蟲.mp3" type="audio/mp3">
+                            遇到不支援的瀏覽器會出現這行字
+                        </audio>
+                        <div id="s" class="s2">
+                            在日月潭迷路，找不到九蛙疊像時意外發現的小路，原以為是捷徑，  繞了一圈又回到原地，看似無功而返，卻在迂迴中收錄到此起彼落的蟲鳴，  生命的每一分每一秒都在創造價值，過於聚焦在成果得失，反而會錯失沿途的驚喜。
+                        </div>
+                        <div id="s2" class="s4">
+                            <div class="s5">
+                                <div class="s6">
+                                    <img src=img/heart.png>
+                                </div>
                             </div>
-                            <script src="js/preview_image.js"></script>
-                            <input class="submitedit" id="submitedit" type="submit"  value="儲存頭貼">
-                    </form>
-                    <div id="editmyinfo">            
-                        <h3><i class="fas fa-user"></i>修改個人資料</h3>
-                        
-                        <form class="myinfo" action="editmyinfo.html" method="post">    
-                        
-                            暱稱<input type=text name=name placeholder=輸入姓名 value="Kevin"><br/>
-                            性別<select name=gender>
-                                    <option value="選擇性別" selected hidden>男生</option>
-                                    <option value="女">女生</option>
-                                    <option value="男">男生</option>
-                                </select><br/>
-                            生日<input type=text name=birth placeholder=輸入生日(西元年/月/日) value="2000/05/04"><br/>
-                            手機<input type=tel name=phone placeholder=輸入手機號碼 value="0958462587"><br/>
-                            信箱<input type=mail name=email placeholder=輸入電子郵件 value="adew1527@gmail.com"><br/>
-                            <input class="submitedit" type="reset"  value="取消">
-                            <input class="submitedit" type="submit"  value="儲存">
-                        </form>
-                        
+                            <div id="numb">1</div>
+                        </div>
+                        <script src="js/like19.js"></script>
+                        <!--<form  id="s2" action="comment.html" method="post">
+                            <input id="sendMessage" class="say" type="text" placeholder="請輸入留言... " name="comment" required>
+                            <input type="text" value="10" name="no" class="no">    
+                            <button><input type="submit"><i id="fa-caret-right" class="fas fa-caret-right"></i></button>
+                        </form>-->
                     </div>
-                    <div id="editpassword">    
-                        <form action="editpwd.html" method="post"  class="myinfo">
-                            <h3><i class="fas fa-key"></i>修改密碼</h3><br>
-                            <p>目前密碼</p><input  id="editpwd" type="password" name="oldpwd" value=""panel placeholder="輸入密碼"/><br>
-                            <p>新密碼</p><input  class="editpwd" type="password" name="newpwd" value=""panel placeholder="輸入新密碼"/><br>
-                            <p>確認密碼</p><input id="editpwd" type="password" name="checknewpwd" value=""panel placeholder="確認密碼"/><br>
-                            <input class="submitedit" type="reset" value="取消">
-                            <input class="submitedit" type="submit" value="儲存">   
-                        </form>
-                    </div>    
-                </div> 
+                </div>                           
             </div>
         </div>
-    
-    
-    
-
-    
-        
-<!--發文-->
-<div id="article" class="article">
-    <h2>發表貼文</h2>
-    <div class="close">    
-        <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='none';document.getElementById('fade').style.display='none'">
-            <img src="img/close1.png" width="15px" height="15px" 
-                onmouseover="this.src='img/close2.png'" onmouseout="this.src='img/close1.png'"/>
-        </a>
-    </div>
-    <div  class="img">
-        <img src="img/ukulele.jpg" alt="music-cover" id="cover" name="picture">
-        <h4 id="title" name="name">姓名</h4>   
-    </div>
-        <form name="post" method="post" action="post.html" >
-            <div class="article1">
-                    <div class="article1">
-                    <label><input list="browsers" name="category" placeholder="聲音故事分類" style="cursor: pointer;"></label>
-                    <datalist id="browsers" name="category" style="cursor: pointer;">
-                        <option value="自然">自然</option>
-                        <option value="都市">都市</option>
-                        <option value="器械">器械</option>
-                        <option value="動物">動物</option>
-                        <option value="運動">運動</option>
-                        <option value="交通">交通</option>
-                        <option value="昆蟲">昆蟲</option>
-                        <option value="其他">其他</option>
-                    </datalist>
-            </div>
-            <div class="article1">
-                <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
-                <textarea  id="textarea" name="post" placeholder="聲音故事..." rows="8" cols="37" required></textarea>                              
-            </div>
-            <!--<p>Tags</p>
-            <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
-            <script>
-                var el = document.getElementById('container');
-                new Tags(el);
-            </script>-->
-                
-            <div>
-                <label class="publish">
-                    <input id="submit" type="submit" value="發佈" style="display:none;">發佈
-                </label>     
-            </div>
-        </form>
-    
-        <script src="js/tags.js"></script>
-        <!--避免tags按enter送出表單-->
-        <script type="text/javascript">
-            $(document).ready(function() {
-            $(window).keydown(function(event){
-                if(event.keyCode == 13) {
-                    event.preventDefault();
-                return false;
-            }
-        });
-        });
-        </script>
-</div>        
-
+    </div>                  
 
 </body>
+</html>

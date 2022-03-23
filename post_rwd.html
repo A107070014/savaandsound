@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#3B1E1E"/>
+<meta name="supported-color-schemes" content="light"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/tags.css" type="text/css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+<link rel="stylesheet" href="css/music.css">
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<!--<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/427ec671a2.js" crossorigin="anonymous"></script>
+<script src="js/story.js"></script>
+<title>留聲跡</title>
+<link rel="icon" href="img/logo.png" type="image/x-icon">
+<!-- google 正體中文字型 -->
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<!--RWD手機導覽列-->
+<!--<link rel="stylesheet" href="css/bootstrap.min.css" />-->
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+/>
+<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css" />
+<link rel="stylesheet" href="css/rwdstyle.css" />
+</head>
+
+
+<body>
+    <nav> 
+        <div class="logo2">
+            <div class="picture">
+                
+                <a title="留聲跡" href="home.html">
+                    <img src="img/logo.png" alt="留聲跡" width="50" height="50" >
+                </a>
+            </div>
+            <div class="logoname">
+                <a title="留聲跡" href="home.html">
+                    <span class="logoname">留聲跡</span>
+                </a>
+            </div>   
+        </div>
+        <div class="search">
+            <div class="key">
+                <form action="">
+                    <input type="search" placeholder="搜尋 聲音故事" aria-label="搜尋" name="query" value="" class="searchbox" size="50" />
+                    <button type="submit" title="搜尋" class="searchbutton" style="cursor:pointer">
+                        <i class="fas fa-search"></i>  
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="tool">    
+            <div>
+                <a href = "javascript:void(0)" onclick = "document.getElementById('article').style.display='block';document.getElementById('fade').style.display='block'"
+                id="tool" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i>
+                </a>
+            </div>
+            <div>
+                <a id="tool" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
+            </div>
+            <!--<div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+                <div class="inform-menu-style dropdown-menu">
+                    <span tabindex="0" onclick="return true">
+                        <a id="tool" class="inform" title="通知" role="button" style="cursor: pointer;">
+                            <i class="fas fa-bell"></i></a>
+                    </span>
+                    <div tabindex="0" onclick="return true"></div>
+                        <ul>
+                            <li><a href="#" onclick="sampleMenu(this)">本週</a></li>
+                                <p>本週訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">本月</a></li>
+                                <p>本月訊息</p>
+                            <li><a href="#" onclick="sampleMenu(this)">更早之前</a></li>
+                                <p>更早之前訊息</p>
+                        </ul>
+                </div>
+            </div>-->
+            <div >
+                <a id="tool" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
+            </div>
+            
+            <!--<div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+                <div class="another-menu-style dropdown-menu">
+                    <span tabindex="0" onclick="return true">
+                        <img  id="" src="img/another1.png" title="其他" alt="其他" width="25" height="32" style="cursor: pointer;" 
+                        onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
+                    </span>
+                    <div tabindex="0" onclick="return true"></div>
+                    <ul>
+                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
+                        <a href="" title="聯絡我們"><li>聯絡我們</li></a>
+                        <a href="" title="募資平台"><li>募資平台</li></a>
+                        <a href="" title="設定"><li>設定</li></a>
+                        <form action="index.html"class="logout" id="logout">
+                            <button>登出<input type="submit" value="登出" ></button>
+                        </form>
+                    </ul>
+                </div>
+            </div>-->
+        </div>
+        <div class="tool2">
+            <div>
+                <a id="tool2" class="home" title="首頁" role="button" href="home.html"><i class="fas fa-home"></i></a>
+            </div>
+            <div>
+                <a href ="post_rwd.html" id="tool2" class="postw" title="發文" style="cursor: pointer;"><i class="fas fa-pen"></i></a>
+            </div>
+            <div>
+                <a id="tool2" class="game" title="小遊戲" role="button" href="game.html"><i class="fas fa-gamepad"></i></a>
+            </div>
+            <!--<div >
+                <a href ="inform.html" id="tool2" class="inform" title="通知" role="button" href="mysound.html"><i class="fas fa-bell"></i></a>
+            </div>-->
+            <div >
+                <a id="tool2" class="mysound" title="我的聲跡" role="button" href="mysound.html"><i class="fas fa-user"></i></a>
+            </div>
+            
+            <div style="-webkit-tap-highlight-color:rgba(0,0,0,0)" onclick="return true">               
+                <div class="another-menu-style dropdown-menu">
+                    <span tabindex="0" onclick="return true">
+                        <img  id="" src="img/another1.png" title="其他" alt="其他" width="25" height="32" style="cursor: pointer;" 
+                        onmouseover="this.src='img/another2.png'" onmouseout="this.src='img/another1.png'"/>
+                    </span>
+                    <div tabindex="0" onclick="return true"></div>
+                    <ul>
+                        <a href="other_aboutus.html" title="關於我們"><li>關於我們</li></a>
+                        <a href="https://m.me/100123572290088" target="_blank" title="聯絡我們"><li>聯絡我們</li></a>
+                        <!--<a href="" title="募資平台"><li>募資平台</li></a>-->
+                        <a href="set.html" title="設定"><li>設定</li></a>
+                        <form action="index.html"class="logout" id="logout">
+                            <button>登出<input type="submit" value="登出" ></button>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="article2" class="article2">
+        <h2>發表貼文</h2>
+            <div class="img">
+                <img src="upload/myphoto/佳昇.png">
+                <h4 id="title" name="name">Kevin</h4>       
+            </div>
+            <form name="post" method="post" action="post.jsp">
+                <div class="article1">
+                    <div class="article1">
+                    <label><input list="browsers" name="category" placeholder="聲音故事分類" style="cursor: pointer;" required></label>
+                    <datalist id="browsers" name="category" style="cursor: pointer;">
+                        <option value="自然">自然</option>
+                        <option value="都市">都市</option>
+                        <option value="器械">器械</option>
+                        <option value="動物">動物</option>
+                        <option value="運動">運動</option>
+                        <option value="交通">交通</option>
+                        <option value="昆蟲">昆蟲</option>
+                        <option value="其他">其他</option>
+                    </datalist>
+                </div>
+                </div>
+                <div class="article1">
+                    <textarea name="title" placeholder="標題" rows="" cols="70" required></textarea>
+                    <textarea  id="textarea" name="post" placeholder="聲音故事..." rows="8" cols="37" required></textarea>                              
+                </div>
+                <!--<p>Tags</p>
+                <div class="simple-tags" id="container" name="tags" data-simple-tags=""></div>
+                <script>
+                    var el = document.getElementById('container');
+                    new Tags(el);
+                </script>-->
+                    
+                <div id="publish">
+                    <label class="publish">
+                        <input id="submit" type="submit" value="發佈" style="display:none;">發佈
+                    </label>     
+                </div>
+            </form>
+        
+            <script src="js/tags.js"></script>
+            <!--避免tags按enter送出表單-->
+            <script type="text/javascript">
+                $(document).ready(function() {
+                $(window).keydown(function(event){
+                    if(event.keyCode == 13) {
+                        event.preventDefault();
+                    return false;
+                }
+            });
+            });
+            </script>
+    </div>
+</body>
+</html>
