@@ -714,27 +714,21 @@ input[type="search"]::-webkit-search-results-decoration {
     }
     nav>.tool2{
         flex:none;
-        width:520px;
-        height: 60px;
+        width:100%;
+        height: 40px;
         display: flex;
-        padding-top: 12px;
         justify-content: space-evenly;
+        align-items: center;
         position: fixed;
-        top: 685px;
-        right: 1px;
+        bottom:0px;
         z-index: 1002;
         background-color: #3b1e1e;
     }
     
     #tool2>.fas{
-        position: relative;
-        bottom: 2px;
-        left: 90px;
         color:#d9a200;
         font-size:25px;
-    }
-    #tool2>.fa-bell{
-        bottom: 5px;
+
     }
     .another-menu-style{
         display: none;
@@ -1054,26 +1048,20 @@ input[type="search"]::-webkit-search-results-decoration {
     }
     nav>.tool2{
         flex:none;
-        width:500px;
+        width:100%;
+        height: 40px;
         display: flex;
-        padding-top: 12px;
         justify-content: space-evenly;
+        align-items: center;
         position: fixed;
-        top: 630px;
-        right: 1px;
+        bottom:0px;
         z-index: 1002;
         background-color: #3b1e1e;
     }
     
     #tool2>.fas{
-        position: relative;
-        bottom: 4px;
-        left: 90px;
         color:#d9a200;
         font-size:22px;
-    }
-    #tool2>.fa-bell{
-        bottom: 5px;
     }
     .another-menu-style{
         display: none;
